@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sample Decks · Varahe NCC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Varahe Analytics" />
+      <span>Varahe Analytics<small>National Communications</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#hub">Hub</a>
+      <a href="index.html#timeline">Campaign Flow</a>
+      <a href="index.html#teams">Teams</a>
+      <a href="index.html#coord">Coordination</a>
+      <a href="index.html#glossary">Glossary</a>
+      <a href="resources.html" style="color:var(--teal-700);font-weight:700">Sample Decks</a>
+    </nav>
+    <div class="nav-search">
+      <input type="text" id="globalSearch" placeholder="Search teams, SOPs, terms…" autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="kicker scroll-reveal">Reference library</span>
+    <h1 class="scroll-reveal">Sample <span class="grad">Communication Decks</span></h1>
+    <p class="hero-lead scroll-reveal">A reference library of past state-campaign presentations. Use these as starting points and templates for new decks — clone, adapt and rebuild for your engagement.</p>
+
+    <div class="callout scroll-reveal" style="background:#fef3c7;border-left-color:#f59e0b;color:#92400e;max-width:780px;margin-top:24px">
+      ⚠️ <b>These are sample decks for reference only.</b> Each deck was built for a specific state, campaign and audience. Treat them as inspiration — do not redistribute or reuse content without context. Build a fresh deck for every engagement using the appropriate state-specific narratives, data and approvals.
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding:10px 0 30px">
+  <a class="drive-cta scroll-reveal" href="https://drive.google.com/drive/folders/1ymRSdazT-ODQn3g5kUNak6TmvpoMksd5?usp=sharing" target="_blank" rel="noopener">
+    <span class="drive-icon">📁</span>
+    <div>
+      <span class="kicker" style="color:#fff;opacity:.85">Open in Google Drive</span>
+      <b>National Communications Deck folder</b>
+      <small>7 sample presentations · ~670 MB total · hosted on Google Drive</small>
+    </div>
+    <span class="drive-arrow">↗</span>
+  </a>
+</section>
+
+<section class="container" style="padding:10px 0 80px">
+  <div class="section-head">
+    <div>
+      <span class="kicker scroll-reveal">Available decks</span>
+      <h2 class="scroll-reveal">7 sample presentations</h2>
+      <p class="muted scroll-reveal" style="max-width:680px">Click any card to open the Google Drive folder, then download the file you need. All files are PowerPoint (.pptx).</p>
+    </div>
+  </div>
+  <div class="row scroll-reveal" id="deckGrid"></div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© Varahe Analytics · For internal use only. · <a href="index.html">Back to overview</a></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  const DECKS = [
+    {label:"Maharashtra Communications Deck",        state:"Maharashtra", year:"2024",     type:"Full communications deck", size:"137 MB", url:"https://docs.google.com/presentation/d/1PFgzb_FlkvPUW57tnde2qJUg52hX7cy5/edit?usp=sharing"},
+    {label:"Maharashtra Narrative Deck",              state:"Maharashtra", year:"2024",     type:"Narrative-only deck",       size:"57 MB",  url:"https://docs.google.com/presentation/d/13yKq31iqeacyBitt0VxcNMROC27BkIaJ/edit?usp=sharing"},
+    {label:"Maharashtra Comms Update — September",    state:"Maharashtra", year:"Sep 2024", type:"Monthly update deck",       size:"114 MB", url:"https://docs.google.com/presentation/d/1i65dKE6SOhfuunc5kMxl-iijP3-gXzrO/edit?usp=sharing"},
+    {label:"Maharashtra Comms Update — Sep window",   state:"Maharashtra", year:"Sep 2024", type:"Monthly window deck",       size:"39 MB",  url:"https://docs.google.com/presentation/d/1rBODzk2BtXTwPnD__-BmSI4gzUQB-X3m/edit?usp=sharing"},
+    {label:"Kerala Communication Deck",                state:"Kerala",      year:"2024",     type:"Full communications deck", size:"124 MB", url:"https://docs.google.com/presentation/d/1ApW4--czQyqp9eEw7D4sVb38UrIdVh-x/edit?usp=sharing"},
+    {label:"Kerala Communication Deck (variant)",      state:"Kerala",      year:"2024",     type:"Alternate version",         size:"124 MB", url:"https://docs.google.com/presentation/d/1B0uQ8bUGsUhvOO-pZ2_iZm1FPg6wwaF3/edit?usp=sharing"},
+    {label:"District-wise Social Media Workshop",     state:"Cross-state", year:"—",        type:"Training / workshop deck",  size:"44 MB",  url:"https://docs.google.com/presentation/d/1RGTVkDxvLpBbmyU-fWMkQ-_Oplok2IlJ/edit?usp=sharing"}
+  ];
+
+  const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1ymRSdazT-ODQn3g5kUNak6TmvpoMksd5?usp=sharing";
+  document.getElementById("deckGrid").innerHTML = DECKS.map(d=>`
+    <a class="deck-card" href="${d.url || DRIVE_FOLDER}" target="_blank" rel="noopener">
+      <div class="deck-icon">📊</div>
+      <div class="deck-body">
+        <b>${d.label}</b>
+        <small>${d.type}</small>
+        <div class="deck-meta">
+          <span class="deck-pill">${d.state}</span>
+          <span class="deck-pill">${d.year}</span>
+          <span class="deck-pill">PPTX · ${d.size}</span>
+        </div>
+      </div>
+      <span class="deck-cta">Open ↗</span>
+    </a>
+  `).join("");
+</script>
+</body>
+</html>

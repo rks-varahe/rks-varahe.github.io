@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" fill="none">
+  <defs>
+    <radialGradient id="im1" cx=".5" cy=".5" r=".6">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#0e7490" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="700" fill="#0b1726"/>
+  <!-- background grid -->
+  <g stroke="#163554" stroke-width="0.5" opacity=".6">
+    <path d="M0 100 H600 M0 200 H600 M0 300 H600 M0 400 H600 M0 500 H600 M0 600 H600"/>
+    <path d="M100 0 V700 M200 0 V700 M300 0 V700 M400 0 V700 M500 0 V700"/>
+  </g>
+  <!-- abstract India silhouette -->
+  <path d="M280 90 C 240 80 200 95 195 130 C 160 150 145 195 180 240 C 165 280 175 320 215 340
+           C 225 390 245 440 270 490 C 285 540 305 590 330 620 C 360 600 365 555 350 510
+           C 380 475 410 440 425 400 C 445 360 460 320 455 280 C 475 240 470 195 440 165
+           C 420 135 385 110 350 100 C 325 92 300 88 280 90 Z"
+        fill="url(#im1)" stroke="#22d3ee" stroke-width="1.5" stroke-opacity=".7"/>
+  <!-- active state nodes (14) -->
+  <g fill="#22d3ee">
+    <circle cx="270" cy="170" r="7"/><circle cx="240" cy="200" r="7"/>
+    <circle cx="310" cy="195" r="7"/><circle cx="260" cy="245" r="7"/>
+    <circle cx="320" cy="260" r="7"/><circle cx="290" cy="305" r="7"/>
+    <circle cx="360" cy="295" r="7"/><circle cx="245" cy="340" r="7"/>
+    <circle cx="305" cy="370" r="7"/><circle cx="280" cy="425" r="7"/>
+    <circle cx="335" cy="450" r="7"/><circle cx="265" cy="480" r="7"/>
+    <circle cx="310" cy="525" r="7"/><circle cx="290" cy="570" r="7"/>
+  </g>
+  <!-- glow halos for active -->
+  <g fill="#22d3ee" opacity=".25">
+    <circle cx="270" cy="170" r="16"/><circle cx="290" cy="305" r="16"/>
+    <circle cx="305" cy="370" r="16"/><circle cx="310" cy="525" r="16"/>
+  </g>
+  <!-- contact-access (7) — outline -->
+  <g stroke="#67e8f9" stroke-width="2" fill="none" opacity=".7">
+    <circle cx="220" cy="155" r="6"/><circle cx="345" cy="155" r="6"/>
+    <circle cx="380" cy="225" r="6"/><circle cx="215" cy="285" r="6"/>
+    <circle cx="380" cy="370" r="6"/><circle cx="245" cy="420" r="6"/>
+    <circle cx="365" cy="560" r="6"/>
+  </g>
+  <!-- legend -->
+  <g font-family="Space Grotesk, sans-serif" fill="#e6f1f7">
+    <text x="30" y="640" font-size="11" font-weight="600" letter-spacing="2">REPORTER NETWORK</text>
+    <text x="30" y="660" font-size="22" font-weight="700">14 active states · 7 contact-access</text>
+    <g transform="translate(30,675)">
+      <circle cx="6" cy="6" r="5" fill="#22d3ee"/><text x="20" y="10" font-size="11" fill="#92aabd">Active</text>
+      <circle cx="80" cy="6" r="5" fill="none" stroke="#67e8f9" stroke-width="2"/><text x="94" y="10" font-size="11" fill="#92aabd">Contact-access</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Node / Netlify
+node_modules/
+.netlify/
+
+# Local previews / temp
+_extracted-doc.md

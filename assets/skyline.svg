@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="sk" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="sk2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#f7fbfd" rx="16"/>
+  <g>
+    <!-- wireframe grid -->
+    <g stroke="#cffafe" stroke-width="0.6">
+      <path d="M0 360 H600 M0 320 H600 M0 280 H600 M0 240 H600 M0 200 H600 M0 160 H600 M0 120 H600 M0 80 H600"/>
+    </g>
+    <!-- bars -->
+    <rect x="40"  y="200" width="36" height="160" rx="6" fill="url(#sk)"/>
+    <rect x="92"  y="240" width="36" height="120" rx="6" fill="url(#sk2)"/>
+    <rect x="144" y="120" width="36" height="240" rx="6" fill="url(#sk)"/>
+    <rect x="196" y="180" width="36" height="180" rx="6" fill="url(#sk2)"/>
+    <rect x="248" y="60"  width="36" height="300" rx="6" fill="url(#sk)"/>
+    <rect x="300" y="100" width="36" height="260" rx="6" fill="url(#sk2)"/>
+    <rect x="352" y="160" width="36" height="200" rx="6" fill="url(#sk)"/>
+    <rect x="404" y="220" width="36" height="140" rx="6" fill="url(#sk2)"/>
+    <rect x="456" y="140" width="36" height="220" rx="6" fill="url(#sk)"/>
+    <rect x="508" y="260" width="36" height="100" rx="6" fill="url(#sk2)"/>
+    <!-- floating data dots -->
+    <g fill="#0ea5e9">
+      <circle cx="58" cy="180" r="4"/><circle cx="162" cy="100" r="4"/>
+      <circle cx="266" cy="42" r="4"/><circle cx="370" cy="142" r="4"/>
+      <circle cx="474" cy="120" r="4"/>
+    </g>
+    <!-- connection -->
+    <path d="M58 180 L162 100 L266 42 L370 142 L474 120" stroke="#0ea5e9" stroke-width="1.5" fill="none" stroke-dasharray="3 4"/>
+  </g>
+  <g font-family="Space Grotesk, sans-serif" fill="#0e7490">
+    <text x="30" y="386" font-size="11" font-weight="600" letter-spacing="2">SPEND · INTENSITY · PHASE</text>
+  </g>
+</svg>
