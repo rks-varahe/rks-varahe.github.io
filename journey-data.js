@@ -24,7 +24,7 @@ const STATES = {
       phone: "+91 9XXXX 10001",
       email: "suraj.bhan@varaheanalytics.com",
       slack: "@suraj",
-      photo: "https://i.pravatar.cc/200?u=suraj"
+      photo: "https://lh3.googleusercontent.com/d/1sFco8JvKRw77j06KXH_5h9YsryUTUrGC=w400"
     },
     status: {
       "p1.arc.baseline":      { status: "done",        progress: 1,   notes: "" },
