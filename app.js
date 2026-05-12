@@ -800,24 +800,22 @@
       </div>`;
   }
   function renderHiring(t){
-    const hasAny = (t.sizing || t.teamCalc || (t.structure && t.structure.length) || (t.budget && t.budget.length) || (t.skills && (t.skills.must?.length || t.skills.nice?.length)));
+    const hasAny = (t.sizing || t.teamCalc || (t.budget && t.budget.length) || (t.skills && (t.skills.must?.length || t.skills.nice?.length)) || t.recruitment);
     if(!hasAny){
       return `<h2 class="scroll-reveal">Hiring</h2>${noData()}`;
     }
     let parts = [`<h2 class="scroll-reveal">Hiring</h2>
-      <p class="muted scroll-reveal" style="max-width:720px">Team sizing logic, role-by-role accountability and salary brackets used when staffing this team.</p>`];
+      <p class="muted scroll-reveal" style="max-width:720px">Team sizing, recruitment criteria, onboarding flow and salary brackets used when staffing this team.</p>`];
     // Key numerical callouts
-    if(t.kpis || t.sizing || t.teamCalc){
-      const tiles = [];
-      if(t.sizing){
-        tiles.push({b:t.sizing.min, l:"Minimum size"});
-        tiles.push({b:t.sizing.ideal, l:"Ideal size"});
-      }
-      if(t.teamCalc) tiles.push({b:t.teamCalc.formula, l:"Sizing formula"});
-      if(t.scaleNote) tiles.push({b:t.scaleNote, l:"Scaling rule"});
-      if(tiles.length){
-        parts.push(`<div class="hire-tiles scroll-reveal">${tiles.map(x=>`<div class="hire-tile"><b>${x.b}</b><span>${x.l}</span></div>`).join("")}</div>`);
-      }
+    const tiles = [];
+    if(t.sizing){
+      if(t.sizing.min)   tiles.push({b:t.sizing.min,   l:"Minimum size"});
+      if(t.sizing.ideal) tiles.push({b:t.sizing.ideal, l:"Ideal size"});
+    }
+    if(t.teamCalc) tiles.push({b:t.teamCalc.formula, l:"Sizing formula"});
+    if(t.scaleNote) tiles.push({b:t.scaleNote, l:"Scaling rule"});
+    if(tiles.length){
+      parts.push(`<div class="hire-tiles scroll-reveal">${tiles.map(x=>`<div class="hire-tile"><b>${x.b}</b><span>${x.l}</span></div>`).join("")}</div>`);
     }
     if(t.sizing && t.sizing.scale){
       parts.push(`<div class="callout scroll-reveal"><b>Scales up when:</b> ${t.sizing.scale}</div>`);
@@ -825,10 +823,12 @@
     if(t.teamCalc && t.teamCalc.example){
       parts.push(`<div class="callout scroll-reveal" style="background:var(--paper-2);border-left-color:var(--accent-2)"><b>Worked example</b><p>${t.teamCalc.example}</p></div>`);
     }
-    if(t.structure && t.structure.length){
-      parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Roles & accountability</h3>
-        <div class="role-grid scroll-reveal">${t.structure.map(r=>`
-          <div class="role-card"><b>${r.role}</b><p>${r.detail}</p></div>`).join("")}</div>`);
+    if(t.recruitment){
+      const r = t.recruitment;
+      if(r.feeders?.length) parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Recruitment channels</h3><ul class="scroll-reveal">${r.feeders.map(x=>`<li>${x}</li>`).join("")}</ul>`);
+      if(r.criteria?.length) parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Selection criteria</h3><ul class="scroll-reveal">${r.criteria.map(x=>`<li>${x}</li>`).join("")}</ul>`);
+      if(r.steps?.length) parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Onboarding steps</h3><ol class="check-list scroll-reveal">${r.steps.map(s=>`<li><span>${s}</span></li>`).join("")}</ol>`);
+      if(r.content?.length) parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Onboarding content</h3><ul class="scroll-reveal">${r.content.map(x=>`<li>${x}</li>`).join("")}</ul>`);
     }
     if(t.budget && Array.isArray(t.budget)){
       parts.push(`<h3 class="scroll-reveal" style="margin-top:30px">Salary brackets</h3>
