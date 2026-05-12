@@ -212,58 +212,64 @@
     });
   }
 
-  /* ---------- activity matrix ---------- */
-  function renderMatrix(){
-    const wrap = $("#jrnMatrix"); if (!wrap) return;
+  /* ---------- network diagram (vertical, phase-banded) ---------- */
+  function renderNetwork(){
+    const wrap = $("#jrnNetwork"); if (!wrap) return;
     const phases = JOURNEY_BLUEPRINT.phases;
-    const teams = Object.keys(TASKS_BY_TEAM).sort((a,b)=>{
-      const A = getTeam(a).name || a, B = getTeam(b).name || b;
-      return A.localeCompare(B);
-    });
     const st = getState();
 
-    // Build phase header
-    let html = `<div class="jrn-mx-grid" style="grid-template-columns:200px repeat(${phases.length},1fr)">`;
-    html += `<div class="jrn-mx-corner"></div>`;
-    phases.forEach(p => {
+    const html = phases.map((p, pi) => {
       const isCur = st && p.n === st.currentPhase;
-      html += `<div class="jrn-mx-phase ${isCur?'current':''}" style="background:${PHASE_BG[p.n]}">
-        <span class="ph-no">Phase ${p.n}</span>
-        <b>${p.name}</b>
-        <small>${p.sub||""}</small>
-      </div>`;
-    });
+      const tasksDone = p.tasks.filter(t => statusFor(t.id).status === "done").length;
+      const tasksTotal = p.tasks.length;
 
-    // Rows
-    teams.forEach(teamId => {
-      const t = getTeam(teamId);
-      html += `<div class="jrn-mx-team"><span class="icon">${t.icon||"⚙️"}</span><b>${(t.name||teamId).split(" — ")[0].split(" / ")[0]}</b></div>`;
-      phases.forEach(p => {
-        const tasks = p.tasks.filter(x => x.team === teamId);
-        const isCur = st && p.n === st.currentPhase;
-        if (!tasks.length){
-          html += `<div class="jrn-mx-cell empty ${isCur?'current':''}" style="background:${PHASE_BG[p.n]}"></div>`;
-          return;
-        }
-        const taskCells = tasks.map(task => {
-          const s = statusFor(task.id);
-          const pct = pctOf(task, s);
-          const isFocus = st && st.focusTaskId === task.id;
-          const targetVal = targetFor(task, s);
-          return `<button class="jrn-mx-task ${s.status}${isFocus?' focus':''}" data-task="${task.id}" title="${task.title}">
-            <span class="ttl">${task.title}</span>
-            <div class="jrn-mx-bar"><div style="width:${pct}%"></div></div>
-            <span class="sub">${fmt(s.progress)} / ${fmt(targetVal)} ${task.target?.unit||""}</span>
+      // Phase-level summary status
+      const allDone = tasksDone === tasksTotal;
+      const anyActive = p.tasks.some(t => ["in_progress","blocked"].includes(statusFor(t.id).status));
+      const phaseStatus = allDone ? "done" : (anyActive || isCur) ? "active" : "pending";
+
+      const nodes = p.tasks.map(task => {
+        const s = statusFor(task.id);
+        const pct = pctOf(task, s);
+        const isFocus = st && st.focusTaskId === task.id;
+        const targetVal = targetFor(task, s);
+        const team = getTeam(task.team);
+        return `<button class="jrn-net-node ${s.status}${isFocus?' focus':''}" data-task="${task.id}" title="${task.title}">
+          <div class="jrn-net-node-circle">
+            <span class="emo">${team.icon||"⚙️"}</span>
             ${isFocus && st?.stateLead?.photo ? `<img class="poc-avatar lead" src="${st.stateLead.photo}" alt="${st.stateLead.name||''}" title="${(st.stateLead.name||'')+' is here'}" onerror="this.style.display='none'"/>` : ""}
-          </button>`;
-        }).join("");
-        html += `<div class="jrn-mx-cell ${isCur?'current':''}" style="background:${PHASE_BG[p.n]}">${taskCells}</div>`;
-      });
-    });
-    html += `</div>`;
-    wrap.innerHTML = html;
+          </div>
+          <div class="jrn-net-node-team">${(team.name||task.team).split(" — ")[0].split(" / ")[0].split(" (")[0]}</div>
+          <div class="jrn-net-node-title">${task.title}</div>
+          <div class="jrn-net-node-progress" title="${fmt(s.progress)} / ${fmt(targetVal)} ${task.target?.unit||""}">
+            <div style="width:${pct}%"></div>
+          </div>
+          <div class="jrn-net-node-meta">${fmt(s.progress)}/${fmt(targetVal)} <span>${task.target?.unit||""}</span></div>
+          ${s.notes ? `<span class="jrn-net-node-warn" title="${s.notes.replace(/"/g,'&quot;')}">⚠</span>` : ""}
+        </button>`;
+      }).join("");
 
-    $$(".jrn-mx-task", wrap).forEach(c => c.addEventListener("click", () => openDrawer(c.dataset.task)));
+      return `
+        <div class="jrn-net-phase ${phaseStatus} ${isCur?'current':''}" style="--ph-bg:${PHASE_BG[p.n]};--ph-tone:${PHASE_TONE[p.n]}" data-phase="${p.n}">
+          <div class="jrn-net-phase-head">
+            <div class="jrn-net-phase-no">${p.n}</div>
+            <div class="jrn-net-phase-title">
+              <span class="kicker" style="color:var(--ph-tone)">Phase ${p.n}${isCur?' · current':''}</span>
+              <h3>${p.name}</h3>
+              <p>${p.sub || ""}</p>
+            </div>
+            <div class="jrn-net-phase-counter">
+              <b>${tasksDone}</b><span> / ${tasksTotal}</span>
+              <small>tasks done</small>
+            </div>
+          </div>
+          <div class="jrn-net-nodes">${nodes}</div>
+          ${pi < phases.length - 1 ? `<div class="jrn-net-connector"><span></span></div>` : ""}
+        </div>`;
+    }).join("");
+
+    wrap.innerHTML = html;
+    $$(".jrn-net-node", wrap).forEach(c => c.addEventListener("click", () => openDrawer(c.dataset.task)));
   }
 
   /* ---------- detail drawer ---------- */
@@ -376,7 +382,7 @@ overlays per state.`;
     }), 30);
   }
 
-  function renderAll(){ renderHeader(); renderStepper(); renderPhaseDetail(); renderMatrix(); }
+  function renderAll(){ renderHeader(); renderStepper(); renderPhaseDetail(); renderNetwork(); }
 
   document.addEventListener("DOMContentLoaded", async () => {
     buildStateSelector();
