@@ -263,13 +263,40 @@ Team IDs available:
     renderPhaseDetail();
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function showLoading(msg){
+    const el = $("#jrnPolling");
+    if (el) el.innerHTML = `<span style="display:inline-flex;align-items:center;gap:8px"><span class="loading-dot" style="width:8px;height:8px;border-radius:50%;background:var(--teal-500);animation:jrnPulse 1.4s ease-in-out infinite"></span>${msg}</span>`;
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    // 1) Initial render with placeholder data so the page is never empty.
     buildStateSelector();
-    const st = getState();
+    let st = getState();
     activePhaseN = st.currentPhase || 1;
     renderAll();
     buildSchemaPanel();
     $("#jrnDrawerScrim").addEventListener("click", closeDrawer);
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeDrawer(); });
+
+    // 2) Then try to load live data from the Google Sheet and replace.
+    if (typeof loadJourneyFromSheet === "function") {
+      showLoading("Loading latest from Sheet…");
+      try {
+        const live = await loadJourneyFromSheet();
+        const keys = Object.keys(live || {});
+        if (keys.length) {
+          // Replace any state we got fresh data for; keep placeholders otherwise.
+          for (const k of keys) JOURNEY[k] = live[k];
+          // Re-render with fresh data, preserving the currently active state if possible.
+          if (!JOURNEY[activeStateCode]) activeStateCode = keys[0];
+          st = getState();
+          activePhaseN = st.currentPhase || 1;
+          buildStateSelector();
+          renderAll();
+        }
+      } catch (e) {
+        console.warn("Live sheet load failed; showing placeholder data.", e);
+      }
+    }
   });
 })();

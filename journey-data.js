@@ -170,19 +170,120 @@ const JOURNEY = {
   }
 };
 
-/* Sheet loader stub.
-   When the Google Sheet at SHEET_ID is filled with the documented schema and
-   published (File → Share → Publish to web), this loader will pull all tabs
-   and merge into JOURNEY. Call after page mounts.
-   The free gviz JSON endpoint works without API keys for any sheet shared
-   with "Anyone with the link → Viewer".
-*/
+/* Sheet loader — pulls live tabs from the Journey Sheet using the gviz JSON endpoint.
+   Sheet must be shared "Anyone with link → Viewer". No API key required.
+
+   To add a new state: add its tab in the sheet and append the tab code to
+   SHEET_STATES below (and ideally also add a placeholder block above so the
+   page has a fallback while the load is in flight). */
 const SHEET_ID = "1tOojU6WyY-Ss-iZ0ejxTEJhHusJ6Dw1jSCOty9xEtzM";
+const SHEET_STATES = ["MH", "KL"];
+
 async function loadJourneyFromSheet(){
-  // Placeholder — wire up once Sheet has the schema rows populated.
-  // const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=MH`;
-  // const r = await fetch(url); const txt = await r.text();
-  // const json = JSON.parse(txt.slice(txt.indexOf("{"), txt.lastIndexOf("}")+1));
-  // … parse json.table.rows and merge into JOURNEY.MH
-  return JOURNEY;
+  const out = {};
+  await Promise.all(SHEET_STATES.map(async code => {
+    try {
+      const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(code)}`;
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) { console.warn("Sheet fetch HTTP", r.status, "for", code); return; }
+      const txt = await r.text();
+      const start = txt.indexOf("{");
+      const end = txt.lastIndexOf("}");
+      if (start < 0 || end < 0) { console.warn("Unexpected gviz payload for", code); return; }
+      const json = JSON.parse(txt.slice(start, end + 1));
+      const parsed = parseSheetTabToState(code, json);
+      if (parsed) out[code] = parsed;
+    } catch (e) {
+      console.warn("Could not load state", code, e);
+    }
+  }));
+  return out;
+}
+
+function parseSheetTabToState(code, json){
+  const cols = (json.table?.cols || []).map(c => (c.label || c.id || "").trim());
+  if (!cols.length) return null;
+  const colIdx = {};
+  cols.forEach((label, i) => { if (label) colIdx[label] = i; });
+  const cell = (row, name) => {
+    const i = colIdx[name];
+    if (i == null || !row.c || !row.c[i]) return "";
+    const v = row.c[i].v;
+    if (v == null) return "";
+    if (typeof v === "object" && v.toString) return String(v);
+    return String(v);
+  };
+
+  const state = { code, name: code, pollingDate: "", currentPhase: 1, stateLead: {}, phases: [] };
+  const phaseMap = {};
+  const rows = json.table?.rows || [];
+
+  for (const row of rows) {
+    if (!row || !row.c) continue;
+    const section = (cell(row, "Section") || "").toLowerCase().trim();
+
+    if (section === "meta") {
+      state.name = cell(row, "Title") || code;
+      const desc = cell(row, "Description") || "";
+      const pm = desc.match(/Polling\s+(\d{4}-\d{2}-\d{2})/i);
+      if (pm) state.pollingDate = pm[1];
+    } else if (section === "state_lead") {
+      state.stateLead = {
+        name:  cell(row, "PocName"),
+        role:  cell(row, "PocRole"),
+        phone: cell(row, "PocPhone"),
+        email: cell(row, "PocEmail"),
+        slack: cell(row, "PocSlack"),
+        photo: cell(row, "PocPhoto")
+      };
+    } else if (section === "phase") {
+      const n = parseInt(cell(row, "Phase"), 10);
+      if (!n) continue;
+      const status = (cell(row, "Status") || "pending").toLowerCase().trim();
+      const inputStr = cell(row, "Input") || "";
+      const ph = {
+        n,
+        name: cell(row, "Title") || ("Phase " + n),
+        sub: "",
+        status,
+        lead: cell(row, "Description") || "",
+        prerequisites: inputStr ? inputStr.split(/\s+·\s+/).map(s => s.trim()).filter(Boolean) : [],
+        startTrigger: "",
+        completionSignal: cell(row, "Output") || "",
+        tasks: []
+      };
+      phaseMap[n] = ph;
+      state.phases.push(ph);
+      if (status === "active") state.currentPhase = n;
+    } else if (section === "task") {
+      const n = parseInt(cell(row, "Phase"), 10);
+      if (!n || !phaseMap[n]) continue;
+      phaseMap[n].tasks.push({
+        team:        cell(row, "Team"),
+        title:       cell(row, "Title"),
+        description: cell(row, "Description"),
+        eta:         cell(row, "ETA"),
+        input:       cell(row, "Input"),
+        output:      cell(row, "Output"),
+        status:     (cell(row, "Status") || "pending").toLowerCase().trim(),
+        poc: {
+          name:  cell(row, "PocName"),
+          role:  cell(row, "PocRole"),
+          phone: cell(row, "PocPhone"),
+          email: cell(row, "PocEmail"),
+          slack: cell(row, "PocSlack"),
+          photo: cell(row, "PocPhoto")
+        }
+      });
+    }
+  }
+
+  state.phases.sort((a, b) => a.n - b.n);
+  if (!state.phases.length) return null;
+  // Default currentPhase: the first active phase, else first non-done, else last
+  if (!state.phases.find(p => p.status === "active")) {
+    const firstPending = state.phases.find(p => p.status !== "done");
+    state.currentPhase = (firstPending || state.phases[state.phases.length - 1]).n;
+  }
+  return state;
 }
