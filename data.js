@@ -720,6 +720,30 @@ const TEAMS = [
       {label:"Per-task rate",value:"₹100–₹500"},{label:"Payment cycle",value:"15-day national"}
     ],
     scaleNote:"AC-level expansion in election states",
+    recruitment:{
+      feeders:["IPRD reports of all available reporters in the state","Personal/professional contacts","Referrals from trusted sources"],
+      criteria:[
+        "Current employment and conflict sensitivity review",
+        "Field reporting experience and ability to work with remote coordination",
+        "Equipment readiness: camera or smartphone, microphone where available, and reliable data connectivity",
+        "Location utility and responsiveness for district or AC-level access",
+        "Acceptance of RN operating standards on authenticity, lawful filming, and non-fabricated submissions"
+      ],
+      steps:[
+        "Source identification and initial fit check",
+        "Verification of experience, geography, and equipment readiness",
+        "Orientation on assignment types, submission expectations, turnaround discipline, and payment logic",
+        "Assignment to a state-specific or campaign-specific execution pool",
+        "First-task activation with enhanced supervision until reliability is established"
+      ],
+      content:[
+        "Assignment types: vox pops, field visuals, issue-ground inputs, archival retrieval support, and special shoots",
+        "Submission requirements: file naming, metadata, shot completeness, and delivery channels",
+        "Quality standards: video clarity, audio usability, framing, duration, and adherence to brief",
+        "Payment logic: task-specific payouts after QC validation and entry into state-wise payment sheets",
+        "Conduct requirements: no coercion, no impersonation, no staged public reactions presented as genuine, and respect for legal and safety constraints"
+      ]
+    },
     structure:[
       {role:"Central Manager",detail:"All states. National oversight, task ownership, delivery quality, escalation, payout governance, leadership reporting. Final call on delivery acceptance, escalations, payout approval, surge activation."},
       {role:"RN Team Members ×3",detail:"Assigned state clusters. Task intake tracking, field coordination, reporter management, deadlines, quality follow-through. Reporter allocation, first-line escalation, reshoot recommendation."},
