@@ -278,6 +278,27 @@ Team IDs available:
     if (el) el.innerHTML = `<span style="display:inline-flex;align-items:center;gap:8px"><span class="loading-dot" style="width:8px;height:8px;border-radius:50%;background:var(--teal-500);animation:jrnPulse 1.4s ease-in-out infinite"></span>${msg}</span>`;
   }
 
+  // Reveal animation observer — without this, every .scroll-reveal element
+  // stays at opacity:0 (defined in styles.css). app.js isn't loaded on this
+  // page, so we run a local copy.
+  function mountReveal(){
+    const els = $$(".scroll-reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("visible"));
+      return;
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.05, rootMargin: "0px 0px -10% 0px" });
+    els.forEach(el => io.observe(el));
+    // Safety net: anything already in view (or above-the-fold rendered after this script ran)
+    // gets revealed after a short tick.
+    setTimeout(() => els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("visible");
+    }), 30);
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     // 1) Initial render with placeholder data so the page is never empty.
     buildStateSelector();
@@ -285,6 +306,7 @@ Team IDs available:
     activePhaseN = st.currentPhase || 1;
     renderAll();
     buildSchemaPanel();
+    mountReveal();
     $("#jrnDrawerScrim").addEventListener("click", closeDrawer);
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeDrawer(); });
 
@@ -303,6 +325,7 @@ Team IDs available:
           activePhaseN = st.currentPhase || 1;
           buildStateSelector();
           renderAll();
+          mountReveal();
         }
       } catch (e) {
         console.warn("Live sheet load failed; showing placeholder data.", e);
