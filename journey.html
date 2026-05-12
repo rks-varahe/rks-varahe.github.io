@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Campaign Journey · Varahe NCC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="journey.css" />
+<link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Varahe Analytics" />
+      <span>Varahe Analytics<small>National Communications</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#hub">Hub</a>
+      <a href="index.html#timeline">Campaign Flow</a>
+      <a href="index.html#teams">Teams</a>
+      <a href="index.html#coord">Coordination</a>
+      <a href="index.html#glossary">Glossary</a>
+      <a href="resources.html">Sample Decks</a>
+      <a href="journey.html" style="color:var(--teal-700);font-weight:700">Journey</a>
+    </nav>
+    <div class="nav-search">
+      <input type="text" id="globalSearch" placeholder="Search teams, SOPs, terms…" autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<main class="jrn-page">
+  <!-- top hero — state pick + meta ribbon -->
+  <section class="jrn-hero">
+    <div class="container">
+      <div class="jrn-hero-grid">
+        <div>
+          <span class="kicker scroll-reveal">Field campaign journey</span>
+          <h1 class="scroll-reveal">Your <span class="grad">state campaign</span><br/>roadmap.</h1>
+          <p class="muted scroll-reveal" style="max-width:560px">A live, gamified playbook for the on-ground PD. Every phase, every team, every hand-off — sequenced.</p>
+        </div>
+        <div class="jrn-state-pick scroll-reveal">
+          <label>Select state</label>
+          <select id="jrnStateSel"></select>
+          <div class="jrn-polling" id="jrnPolling"></div>
+        </div>
+      </div>
+
+      <div class="jrn-lead-row scroll-reveal">
+        <div class="jrn-lead-card" id="jrnLeadCard"></div>
+        <div class="jrn-stats-card" id="jrnStatsCard"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- phase stepper -->
+  <section class="container jrn-section">
+    <div class="section-head">
+      <div>
+        <span class="kicker scroll-reveal">Mission progress</span>
+        <h2 class="scroll-reveal">The 5-phase journey</h2>
+        <p class="muted scroll-reveal" style="max-width:600px">Tap any phase to dive in. Locked phases unlock when their prerequisites are met.</p>
+      </div>
+    </div>
+    <div class="jrn-stepper" id="jrnStepper"></div>
+  </section>
+
+  <!-- active phase detail -->
+  <section class="container jrn-section">
+    <div class="jrn-phase-detail" id="jrnPhaseDetail"></div>
+  </section>
+
+  <!-- footer / sheet info -->
+  <section class="container jrn-section" style="padding-bottom:80px">
+    <div class="jrn-sheet-cta scroll-reveal">
+      <span class="kicker">Data source</span>
+      <h3>This page reads from a Google Sheet</h3>
+      <p>Each state lives in its own sheet tab. To update phase / task / POC info, edit the sheet directly — the page picks up changes on next reload.</p>
+      <div class="jrn-cta-row">
+        <a class="btn-primary" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1tOojU6WyY-Ss-iZ0ejxTEJhHusJ6Dw1jSCOty9xEtzM/edit?usp=sharing">Open Journey Sheet ↗</a>
+        <a class="btn-secondary" href="#" id="jrnSchemaBtn">Show schema reference</a>
+      </div>
+      <div class="jrn-schema" id="jrnSchema" hidden></div>
+    </div>
+  </section>
+</main>
+
+<!-- team-task drawer -->
+<aside class="jrn-drawer" id="jrnDrawer" aria-hidden="true">
+  <div class="jrn-drawer-scrim" id="jrnDrawerScrim"></div>
+  <div class="jrn-drawer-panel" id="jrnDrawerPanel"></div>
+</aside>
+
+<footer class="footer">
+  <div class="container">
+    <p>© Varahe Analytics · For internal use only. · <a href="index.html">Back to overview</a></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="journey-data.js"></script>
+<script src="journey.js"></script>
+</body>
+</html>
