@@ -1,11 +1,17 @@
-/* Placeholder journey data. Replace with live Sheet load via loadJourneyFromSheet().
-   Schema notes:
-   - One state per top-level key (use state codes: MH, KL, GA, OD, JH, …)
-   - Each state has: name, code, pollingDate, currentPhase, stateLead, phases[]
-   - Each phase has: n, name, status, lead, prerequisites[], startTrigger, completionSignal, tasks[]
-   - Each task has: team (id from TEAMS), title, description, eta, input, output, status, poc{}
+/* PER-STATE STATUS OVERLAY
+   The journey content (phases, tasks, POCs, ETAs, inputs, outputs) lives in
+   journey-blueprint.js — it's fixed and identical across states.
+
+   This file holds the LIVE STATUS per state. Only three things vary by state:
+     1. State metadata (name, polling date, current phase, state lead)
+     2. Per-task status: done / in_progress / blocked / pending
+     3. Per-task progress vs target (e.g. 50 of 100 editors hired)
+     4. Per-task blocker notes (if status === 'blocked' or stuck)
+
+   The Google Sheet provides exactly the same three things — this file is the
+   in-memory placeholder that the sheet overwrites on load.
 */
-const JOURNEY = {
+const STATES = {
   MH: {
     name: "Maharashtra",
     code: "MH",
@@ -19,124 +25,22 @@ const JOURNEY = {
       slack: "@suraj",
       photo: "https://i.pravatar.cc/200?u=suraj"
     },
-    phases: [
-      {
-        n: 1,
-        name: "Foundation",
-        sub: "Pre-MCC · Slow Build",
-        status: "done",
-        lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt — establish team, infrastructure, baseline measurements and stakeholder mapping before the MCC kicks in.",
-        prerequisites: [
-          "Engagement letter signed and PD onboarded in state",
-          "State party POC list shared with VA",
-          "Baseline access to official handles confirmed"
-        ],
-        startTrigger: "PD lands in the state and meets State Communications Convenor.",
-        completionSignal: "Baseline Analysis Report approved + all team SOPs trained.",
-        tasks: [
-          { team:"arc", title:"Baseline Analysis Report", description:"Evaluate state social-media landscape, audit official party pages, key stakeholders, MPs/MLAs.", eta:"7 days from kickoff", input:"State handles list + candidate roster", output:"Signed-off baseline report shared with leadership", status:"done",
-            poc:{ name:"Chandra Shekher", role:"ARC Lead", phone:"+91 9XXXX 20001", email:"chandra.shekher@varaheanalytics.com", slack:"@chandra-arc", photo:"https://i.pravatar.cc/200?u=chandra" } },
-          { team:"legal", title:"Compliance framework setup", description:"Draft SOPs, trackers, compliance checklists; coordinate with State Legal Cell.", eta:"10 days", input:"Candidate affidavits + ECI notification calendar", output:"Trackers live, CMS PoCs trained", status:"done",
-            poc:{ name:"Divakar Kalra", role:"Legal Manager", phone:"+91 9XXXX 20002", email:"divakar.kalra@varaheanalytics.com", slack:"@divakar", photo:"https://i.pravatar.cc/200?u=divakar" } },
-          { team:"media", title:"State media landscape mapping", description:"Map regional outlets, liaison with local units, set up monitoring systems.", eta:"7 days", input:"State media directory", output:"Monitoring framework operational", status:"done",
-            poc:{ name:"Sahil Vats", role:"Media Team Lead", phone:"+91 9XXXX 20003", email:"sahil.vats@varaheanalytics.com", slack:"@sahil", photo:"https://i.pravatar.cc/200?u=sahil" } },
-          { team:"reporter", title:"Reporter Network warm-up", description:"Identify, verify and onboard state-level reporters; pre-position equipment.", eta:"14 days", input:"IPRD reports + state references", output:"Active reporter pool ≥30 confirmed", status:"done",
-            poc:{ name:"Avishka Goel", role:"RN Central Manager", phone:"+91 9XXXX 20004", email:"avishka.goel@varaheanalytics.com", slack:"@avishka", photo:"https://i.pravatar.cc/200?u=avishka" } }
-        ]
-      },
-      {
-        n: 2,
-        name: "Acceleration",
-        sub: "Build-Up · Narrative Push",
-        status: "active",
-        lead: "Lorem ipsum — narrative pipeline live, audiences warming up, paid spend pacing in. Multiple workstreams concurrently — coordination tightens.",
-        prerequisites: [
-          "Phase 1 baseline report approved",
-          "Page audits complete",
-          "Ad accounts verified and disclaimer-cleared"
-        ],
-        startTrigger: "First narrative cycle launched centrally.",
-        completionSignal: "Engagement and reach KPIs met for 2 consecutive weeks; influencer roster active in all 4 cohorts.",
-        tasks: [
-          { team:"narrative", title:"Daily narrative pipeline", description:"Convert state issues into daily infopacks, media pointers, speech pointers.", eta:"Ongoing daily", input:"Bharat Darpan + state PI feeds", output:"≥3 narratives per day disseminated", status:"in_progress",
-            poc:{ name:"Shreyas Bharadwaj", role:"QRT Manager", phone:"+91 9XXXX 30001", email:"shreyas.bharadwaj@varaheanalytics.com", slack:"@shreyas", photo:"https://i.pravatar.cc/200?u=shreyas" } },
-          { team:"growth", title:"Awareness campaign deployment", description:"Launch Meta + Google awareness ads geo-targeted to AC pin codes.", eta:"Continuous", input:"Approved creatives + caption banks", output:"≥2 cr impressions/week at agreed CPM", status:"in_progress",
-            poc:{ name:"Apoorva Sahasrabudhay", role:"Growth Lead", phone:"+91 9XXXX 30002", email:"apoorva.sahasrabudhay@varaheanalytics.com", slack:"@apoorva", photo:"https://i.pravatar.cc/200?u=apoorva" } },
-          { team:"smcc", title:"SMCC pages live", description:"FB + IG pages per AC, brand kit applied, content calendar live.", eta:"21 days from Phase 2 start", input:"AC list + zone mapping", output:"All AC pages live with ≥7 days of content", status:"in_progress",
-            poc:{ name:"Vijaya", role:"State SMCC Head", phone:"+91 9XXXX 30003", email:"vijaya@varaheanalytics.com", slack:"@vijaya", photo:"https://i.pravatar.cc/200?u=vijaya" } },
-          { team:"campaign-branding", title:"Hero campaign visual identity", description:"Master template, design system, animated explainers, hoarding mocks.", eta:"14 days", input:"Campaign brief + narrative beat sheet", output:"Brand kit + first wave of assets approved", status:"pending",
-            poc:{ name:"Neeraj JP", role:"Branding Lead", phone:"+91 9XXXX 30004", email:"neeraj.jp@varaheanalytics.com", slack:"@neeraj", photo:"https://i.pravatar.cc/200?u=neeraj" } },
-          { team:"influencer", title:"Creator cohort activation", description:"Brief 25–40 creators per executive across language and category cohorts.", eta:"7 days from cohort plan", input:"Cohort plan + budget go-ahead", output:"First wave of synchronized drops live", status:"pending",
-            poc:{ name:"Nachiketh Reddy", role:"Influencer Network Lead", phone:"+91 9XXXX 30005", email:"nachiketh.reddy@varaheanalytics.com", slack:"@nachiketh", photo:"https://i.pravatar.cc/200?u=nachiketh" } }
-        ]
-      },
-      {
-        n: 3,
-        name: "Peak Campaign",
-        sub: "MCC · Election Period",
-        status: "locked",
-        lead: "Lorem ipsum — maximum volume, real-time response, multi-account scaling, full-team activation. Every team is at very-high intensity.",
-        prerequisites: [
-          "All Phase 2 KPIs hit",
-          "MCMC approval workflows tested end-to-end",
-          "Multi-account backup live"
-        ],
-        startTrigger: "MCC enforced (announcement of polling schedule).",
-        completionSignal: "End of campaign period; silence-period communications complete.",
-        tasks: [
-          { team:"smcc", title:"Hyperlocal saturation", description:"AC-level attack + positive content at 3+ posts/day per page.", eta:"Continuous", input:"Daily narrative + opposition monitoring", output:"≥500 new followers/page/week, CPM under ₹15", status:"pending",
-            poc:{ name:"Vijaya", role:"State SMCC Head", phone:"+91 9XXXX 30003", email:"vijaya@varaheanalytics.com", slack:"@vijaya", photo:"https://i.pravatar.cc/200?u=vijaya" } },
-          { team:"legal", title:"Real-time MCMC + complaints", description:"Vet every creative + handle opposition violations + nominations.", eta:"Same-day", input:"Creative queue + complaint feed", output:"Zero MCC violations from BJP side", status:"pending",
-            poc:{ name:"Divakar Kalra", role:"Legal Manager", phone:"+91 9XXXX 20002", email:"divakar.kalra@varaheanalytics.com", slack:"@divakar", photo:"https://i.pravatar.cc/200?u=divakar" } },
-          { team:"tvc", title:"AC-specific TVCs", description:"20-second unskippable spots per AC + magnum opus + manifesto film.", eta:"21 days lead", input:"Narrative beat sheet + actor retainers", output:"All AC TVCs delivered + dubbed", status:"pending",
-            poc:{ name:"Abhiraj", role:"Senior Producer", phone:"+91 9XXXX 40001", email:"abhiraj@goodtakestudio.com", slack:"@abhiraj", photo:"https://i.pravatar.cc/200?u=abhiraj" } },
-          { team:"reporter", title:"AC-level field surge", description:"Surge to 600+ reporters via AC-level deployment.", eta:"Continuous", input:"State surge plan + payment float", output:"≥400 field assets/month delivered", status:"pending",
-            poc:{ name:"Avishka Goel", role:"RN Central Manager", phone:"+91 9XXXX 20004", email:"avishka.goel@varaheanalytics.com", slack:"@avishka", photo:"https://i.pravatar.cc/200?u=avishka" } }
-        ]
-      },
-      {
-        n: 4,
-        name: "Conversion",
-        sub: "Voting Phase",
-        status: "locked",
-        lead: "Lorem ipsum — last-mile, hyper-targeted, GOTV and silence-period compliance. Volume tapers but precision rises.",
-        prerequisites: [
-          "All AC TVCs in market",
-          "Telecom Ads vendor lock-in confirmed (15 days before polling)",
-          "Polling-day legal escalation matrix live"
-        ],
-        startTrigger: "T-15 days before polling.",
-        completionSignal: "Polling day ends + silence-period communications archived.",
-        tasks: [
-          { team:"non-meta", title:"Telecom Ads deployment", description:"AC-specific telecom ads in last 15 days; pin codes + LatLong locked.", eta:"15 days", input:"Vendor lock + creative final approvals", output:"All AC telecom assets live in target booths", status:"pending",
-            poc:{ name:"Nishant Sharma", role:"Non-Meta Ads Lead", phone:"+91 9XXXX 50001", email:"nishant.sharma@varaheanalytics.com", slack:"@nishant", photo:"https://i.pravatar.cc/200?u=nishant" } },
-          { team:"partnership", title:"Last-mile creator drops", description:"Synchronised cohort-targeted GOTV creator activations.", eta:"7-day push", input:"Cohort-by-cohort narrative briefs", output:"Reach + sentiment shift in target cohorts", status:"pending",
-            poc:{ name:"Anjali Goswami", role:"Partnership Lead · Nexgrow", phone:"+91 9XXXX 50002", email:"anjali.goswami@nexgrowdigital.com", slack:"@anjali", photo:"https://i.pravatar.cc/200?u=anjali" } },
-          { team:"legal", title:"Polling-day legal support", description:"Booth-level escalations, Police + General Observers coordination.", eta:"Polling day", input:"Booth list + observer map", output:"Zero unresolved escalations >2 hours", status:"pending",
-            poc:{ name:"Divakar Kalra", role:"Legal Manager", phone:"+91 9XXXX 20002", email:"divakar.kalra@varaheanalytics.com", slack:"@divakar", photo:"https://i.pravatar.cc/200?u=divakar" } }
-        ]
-      },
-      {
-        n: 5,
-        name: "Cool Down",
-        sub: "Post-Campaign · Closure",
-        status: "locked",
-        lead: "Lorem ipsum — closure reports, archival, retention decisions, learnings doc.",
-        prerequisites: [
-          "Result-day complete",
-          "Final spend reconciliation closed",
-          "Reporter Network payment cycle resolved"
-        ],
-        startTrigger: "Result declared.",
-        completionSignal: "Comprehensive Campaign Closure Report submitted to leadership.",
-        tasks: [
-          { team:"arc", title:"Closure & learnings report", description:"Key takeaways doc + Comprehensive Campaign Closure Report.", eta:"21 days", input:"All campaign reports + spend data", output:"Closure report signed off", status:"pending",
-            poc:{ name:"Chandra Shekher", role:"ARC Lead", phone:"+91 9XXXX 20001", email:"chandra.shekher@varaheanalytics.com", slack:"@chandra-arc", photo:"https://i.pravatar.cc/200?u=chandra" } },
-          { team:"growth", title:"Spend & asset reconciliation", description:"Final reporting, spend reconciliation, asset recovery, dashboard closure.", eta:"14 days", input:"Vendor invoices + final platform exports", output:"Reconciled spend report", status:"pending",
-            poc:{ name:"Apoorva Sahasrabudhay", role:"Growth Lead", phone:"+91 9XXXX 30002", email:"apoorva.sahasrabudhay@varaheanalytics.com", slack:"@apoorva", photo:"https://i.pravatar.cc/200?u=apoorva" } }
-        ]
-      }
-    ]
+    status: {
+      "p1.arc.baseline":      { status: "done",        progress: 1,   notes: "" },
+      "p1.legal.framework":   { status: "done",        progress: 1,   notes: "" },
+      "p1.media.mapping":     { status: "done",        progress: 1,   notes: "" },
+      "p1.reporter.onboard":  { status: "done",        progress: 34,  notes: "" },
+      "p1.partycoord.setup":  { status: "done",        progress: 1,   notes: "" },
+
+      "p2.narrative.pipeline":{ status: "in_progress", progress: 3,   notes: "" },
+      "p2.growth.awareness":  { status: "in_progress", progress: 14000000, notes: "On track for 20M weekly impressions" },
+      "p2.smcc.pages":        { status: "in_progress", progress: 175, notes: "Awaiting candidate photos for 7 ACs" },
+      "p2.branding.identity": { status: "pending",     progress: 0,   notes: "" },
+      "p2.influencer.cohorts":{ status: "blocked",     progress: 50,  notes: "Budget approval pending from leadership" },
+      "p2.smcc.hiring":       { status: "in_progress", progress: 50,  notes: "Target hiring of 100 editors — 50 closed so far" }
+
+      // Phase 3-5 tasks have no status yet → default to "pending"
+    }
   },
 
   KL: {
@@ -152,37 +56,33 @@ const JOURNEY = {
       slack: "@abantika",
       photo: "https://i.pravatar.cc/200?u=abantika"
     },
-    phases: [
-      { n:1, name:"Foundation", sub:"Pre-MCC · Slow Build", status:"active",
-        lead:"Kerala is at early foundation — team forming, baseline access being established.",
-        prerequisites:["Engagement letter signed","State POC list confirmed"],
-        startTrigger:"PD onboarded in state.",
-        completionSignal:"Baseline Analysis Report approved.",
-        tasks:[
-          { team:"arc", title:"Baseline Analysis Report", description:"Kerala SM landscape baseline.", eta:"14 days", input:"State handles list", output:"Signed-off report", status:"in_progress",
-            poc:{ name:"Shalini Kumari", role:"ARC Associate", phone:"+91 9XXXX 21001", email:"shalini.kumari@varaheanalytics.com", slack:"@shalini", photo:"https://i.pravatar.cc/200?u=shalini" } }
-        ] },
-      { n:2, name:"Acceleration", sub:"Build-Up", status:"locked", lead:"Locked.", prerequisites:[], startTrigger:"", completionSignal:"", tasks:[] },
-      { n:3, name:"Peak Campaign", sub:"MCC · Election", status:"locked", lead:"Locked.", prerequisites:[], startTrigger:"", completionSignal:"", tasks:[] },
-      { n:4, name:"Conversion", sub:"Voting Phase", status:"locked", lead:"Locked.", prerequisites:[], startTrigger:"", completionSignal:"", tasks:[] },
-      { n:5, name:"Cool Down", sub:"Closure", status:"locked", lead:"Locked.", prerequisites:[], startTrigger:"", completionSignal:"", tasks:[] }
-    ]
+    status: {
+      "p1.arc.baseline":      { status: "in_progress", progress: 0,  notes: "Just kicked off" },
+      "p1.legal.framework":   { status: "pending",     progress: 0,  notes: "" },
+      "p1.media.mapping":     { status: "pending",     progress: 0,  notes: "" },
+      "p1.reporter.onboard":  { status: "pending",     progress: 0,  notes: "" },
+      "p1.partycoord.setup":  { status: "pending",     progress: 0,  notes: "" }
+    }
   }
 };
 
-/* Sheet loader — pulls live tabs from the Journey Sheet using the gviz JSON endpoint.
-   Sheet must be shared "Anyone with link → Viewer". No API key required.
+/* SHEET LOADER — new schema
+   Each state tab in the sheet now needs only THREE row types:
 
-   To add a new state: add its tab in the sheet and append the tab code to
-   SHEET_STATES below (and ideally also add a placeholder block above so the
-   page has a fallback while the load is in flight). */
+     Section   Key                          Field1            Field2       Field3       Field4
+     meta      (state name)                 PollingDate       CurrentPhase
+     lead      Name                         Role              Phone        Email        Slack        Photo
+     status    p2.smcc.pages                in_progress       175          288          Awaiting…
+
+   Columns (header row 1):
+     Section | TaskId | Name | Status | Progress | Target | Notes | Phone | Email | Slack | Photo | Role | PollingDate | CurrentPhase
+
+   Status values: done · in_progress · blocked · pending
+*/
 const SHEET_ID = "1tOojU6WyY-Ss-iZ0ejxTEJhHusJ6Dw1jSCOty9xEtzM";
 const SHEET_STATES = ["MH", "KL"];
 
 async function loadJourneyFromSheet(){
-  // Skip when running from a local file — browsers block cross-origin fetch
-  // from `file://` so the call is guaranteed to fail with a noisy CORS error.
-  // The page falls back to the placeholder data in JOURNEY.
   if (typeof location !== "undefined" && location.protocol === "file:") {
     console.info("Skipping live Sheet load on file:// — using placeholder data.");
     return {};
@@ -192,17 +92,14 @@ async function loadJourneyFromSheet(){
     try {
       const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(code)}`;
       const r = await fetch(url, { cache: "no-store" });
-      if (!r.ok) { console.warn("Sheet fetch HTTP", r.status, "for", code); return; }
+      if (!r.ok) return;
       const txt = await r.text();
-      const start = txt.indexOf("{");
-      const end = txt.lastIndexOf("}");
-      if (start < 0 || end < 0) { console.warn("Unexpected gviz payload for", code); return; }
-      const json = JSON.parse(txt.slice(start, end + 1));
+      const a = txt.indexOf("{"); const b = txt.lastIndexOf("}");
+      if (a < 0 || b < 0) return;
+      const json = JSON.parse(txt.slice(a, b + 1));
       const parsed = parseSheetTabToState(code, json);
       if (parsed) out[code] = parsed;
-    } catch (e) {
-      console.warn("Could not load state", code, e);
-    }
+    } catch (e) { console.warn("Could not load state", code, e); }
   }));
   return out;
 }
@@ -216,81 +113,42 @@ function parseSheetTabToState(code, json){
     const i = colIdx[name];
     if (i == null || !row.c || !row.c[i]) return "";
     const v = row.c[i].v;
-    if (v == null) return "";
-    if (typeof v === "object" && v.toString) return String(v);
-    return String(v);
+    return v == null ? "" : String(v);
   };
 
-  const state = { code, name: code, pollingDate: "", currentPhase: 1, stateLead: {}, phases: [] };
-  const phaseMap = {};
-  const rows = json.table?.rows || [];
+  // Default state shell — preserves anything from placeholders we don't overwrite.
+  const fallback = STATES[code] || { name: code, code, pollingDate: "", currentPhase: 1, stateLead: {}, status: {} };
+  const state = {
+    name: fallback.name, code, pollingDate: fallback.pollingDate,
+    currentPhase: fallback.currentPhase, stateLead: { ...fallback.stateLead }, status: {}
+  };
 
-  for (const row of rows) {
+  for (const row of (json.table?.rows || [])) {
     if (!row || !row.c) continue;
     const section = (cell(row, "Section") || "").toLowerCase().trim();
-
     if (section === "meta") {
-      state.name = cell(row, "Title") || code;
-      const desc = cell(row, "Description") || "";
-      const pm = desc.match(/Polling\s+(\d{4}-\d{2}-\d{2})/i);
-      if (pm) state.pollingDate = pm[1];
-    } else if (section === "state_lead") {
+      state.name = cell(row, "Name") || state.name;
+      state.pollingDate = cell(row, "PollingDate") || state.pollingDate;
+      const cp = parseInt(cell(row, "CurrentPhase"), 10);
+      if (cp) state.currentPhase = cp;
+    } else if (section === "lead") {
       state.stateLead = {
-        name:  cell(row, "PocName"),
-        role:  cell(row, "PocRole"),
-        phone: cell(row, "PocPhone"),
-        email: cell(row, "PocEmail"),
-        slack: cell(row, "PocSlack"),
-        photo: cell(row, "PocPhoto")
+        name:  cell(row, "Name")  || state.stateLead.name,
+        role:  cell(row, "Role")  || state.stateLead.role,
+        phone: cell(row, "Phone") || state.stateLead.phone,
+        email: cell(row, "Email") || state.stateLead.email,
+        slack: cell(row, "Slack") || state.stateLead.slack,
+        photo: cell(row, "Photo") || state.stateLead.photo
       };
-    } else if (section === "phase") {
-      const n = parseInt(cell(row, "Phase"), 10);
-      if (!n) continue;
-      const status = (cell(row, "Status") || "pending").toLowerCase().trim();
-      const inputStr = cell(row, "Input") || "";
-      const ph = {
-        n,
-        name: cell(row, "Title") || ("Phase " + n),
-        sub: "",
-        status,
-        lead: cell(row, "Description") || "",
-        prerequisites: inputStr ? inputStr.split(/\s+·\s+/).map(s => s.trim()).filter(Boolean) : [],
-        startTrigger: "",
-        completionSignal: cell(row, "Output") || "",
-        tasks: []
+    } else if (section === "status") {
+      const id = cell(row, "TaskId"); if (!id) continue;
+      state.status[id] = {
+        status:   (cell(row, "Status") || "pending").toLowerCase().trim(),
+        progress: parseFloat(cell(row, "Progress")) || 0,
+        target:   parseFloat(cell(row, "Target")) || null,
+        notes:    cell(row, "Notes") || ""
       };
-      phaseMap[n] = ph;
-      state.phases.push(ph);
-      if (status === "active") state.currentPhase = n;
-    } else if (section === "task") {
-      const n = parseInt(cell(row, "Phase"), 10);
-      if (!n || !phaseMap[n]) continue;
-      phaseMap[n].tasks.push({
-        team:        cell(row, "Team"),
-        title:       cell(row, "Title"),
-        description: cell(row, "Description"),
-        eta:         cell(row, "ETA"),
-        input:       cell(row, "Input"),
-        output:      cell(row, "Output"),
-        status:     (cell(row, "Status") || "pending").toLowerCase().trim(),
-        poc: {
-          name:  cell(row, "PocName"),
-          role:  cell(row, "PocRole"),
-          phone: cell(row, "PocPhone"),
-          email: cell(row, "PocEmail"),
-          slack: cell(row, "PocSlack"),
-          photo: cell(row, "PocPhoto")
-        }
-      });
     }
-  }
-
-  state.phases.sort((a, b) => a.n - b.n);
-  if (!state.phases.length) return null;
-  // Default currentPhase: the first active phase, else first non-done, else last
-  if (!state.phases.find(p => p.status === "active")) {
-    const firstPending = state.phases.find(p => p.status !== "done");
-    state.currentPhase = (firstPending || state.phases[state.phases.length - 1]).n;
   }
   return state;
 }
