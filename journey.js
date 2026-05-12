@@ -6,7 +6,10 @@
   let activeStateCode = "MH";
   let activePhaseN = 1;
 
-  function getState(){ return JOURNEY[activeStateCode]; }
+  function getState(){
+    if (typeof JOURNEY === "undefined") return null;
+    return JOURNEY[activeStateCode] || JOURNEY[Object.keys(JOURNEY)[0]] || null;
+  }
 
   /* ---------- state selector ---------- */
   function buildStateSelector(){
@@ -25,6 +28,11 @@
   /* ---------- header (lead card + stats) ---------- */
   function renderHeader(){
     const st = getState();
+    if (!st) {
+      $("#jrnLeadCard").innerHTML = "<p class='muted'>No state data available.</p>";
+      $("#jrnStatsCard").innerHTML = "";
+      return;
+    }
     // polling date
     const poll = st.pollingDate ? new Date(st.pollingDate) : null;
     let pollingStr = "—";
@@ -67,6 +75,7 @@
   function renderStepper(){
     const st = getState();
     const wrap = $("#jrnStepper");
+    if (!st || !st.phases?.length) { wrap.innerHTML = ""; return; }
     const total = st.phases.length;
     const doneCount = st.phases.filter(p => p.status === "done").length;
     const activeIdx = st.phases.findIndex(p => p.status === "active");
@@ -101,6 +110,7 @@
   /* ---------- active phase detail ---------- */
   function renderPhaseDetail(){
     const st = getState();
+    if (!st || !st.phases?.length) { $("#jrnPhaseDetail").innerHTML = "<p class='muted'>No phases for this state yet.</p>"; return; }
     const p  = st.phases.find(x => x.n === activePhaseN) || st.phases[0];
     const teamLookup = id => (typeof TEAMS !== "undefined" ? TEAMS.find(t => t.id === id) : null);
 

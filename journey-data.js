@@ -180,6 +180,13 @@ const SHEET_ID = "1tOojU6WyY-Ss-iZ0ejxTEJhHusJ6Dw1jSCOty9xEtzM";
 const SHEET_STATES = ["MH", "KL"];
 
 async function loadJourneyFromSheet(){
+  // Skip when running from a local file — browsers block cross-origin fetch
+  // from `file://` so the call is guaranteed to fail with a noisy CORS error.
+  // The page falls back to the placeholder data in JOURNEY.
+  if (typeof location !== "undefined" && location.protocol === "file:") {
+    console.info("Skipping live Sheet load on file:// — using placeholder data.");
+    return {};
+  }
   const out = {};
   await Promise.all(SHEET_STATES.map(async code => {
     try {
