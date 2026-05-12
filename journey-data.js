@@ -17,6 +17,7 @@ const STATES = {
     code: "MH",
     pollingDate: "2026-11-20",
     currentPhase: 2,
+    focusTaskId: "p2.smcc.pages",
     stateLead: {
       name: "Suraj Bhan",
       role: "Project Director · Maharashtra",
@@ -48,6 +49,7 @@ const STATES = {
     code: "KL",
     pollingDate: "2026-04-15",
     currentPhase: 1,
+    focusTaskId: "p1.arc.baseline",
     stateLead: {
       name: "Abantika Mishra",
       role: "Project Director · Kerala",
@@ -131,6 +133,8 @@ function parseSheetTabToState(code, json){
       state.pollingDate = cell(row, "PollingDate") || state.pollingDate;
       const cp = parseInt(cell(row, "CurrentPhase"), 10);
       if (cp) state.currentPhase = cp;
+      const ft = cell(row, "TaskId") || cell(row, "FocusTaskId");
+      if (ft) state.focusTaskId = ft;
     } else if (section === "lead") {
       state.stateLead = {
         name:  cell(row, "Name")  || state.stateLead.name,

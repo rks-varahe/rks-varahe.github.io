@@ -248,13 +248,13 @@
         const taskCells = tasks.map(task => {
           const s = statusFor(task.id);
           const pct = pctOf(task, s);
-          const showPoc = s.status === "in_progress" || s.status === "blocked";
+          const isFocus = st && st.focusTaskId === task.id;
           const targetVal = targetFor(task, s);
-          return `<button class="jrn-mx-task ${s.status}" data-task="${task.id}" title="${task.title}">
+          return `<button class="jrn-mx-task ${s.status}${isFocus?' focus':''}" data-task="${task.id}" title="${task.title}">
             <span class="ttl">${task.title}</span>
             <div class="jrn-mx-bar"><div style="width:${pct}%"></div></div>
             <span class="sub">${fmt(s.progress)} / ${fmt(targetVal)} ${task.target?.unit||""}</span>
-            ${showPoc && task.poc?.photo ? `<img class="poc-avatar" src="${task.poc.photo}" alt="" onerror="this.style.display='none'"/>` : ""}
+            ${isFocus && st?.stateLead?.photo ? `<img class="poc-avatar lead" src="${st.stateLead.photo}" alt="${st.stateLead.name||''}" title="${(st.stateLead.name||'')+' is here'}" onerror="this.style.display='none'"/>` : ""}
           </button>`;
         }).join("");
         html += `<div class="jrn-mx-cell ${isCur?'current':''}" style="background:${PHASE_BG[p.n]}">${taskCells}</div>`;
@@ -343,7 +343,9 @@ Columns (header row 1):
   Phone | Email | Slack | Photo | Role | PollingDate | CurrentPhase
 
 Row types via Section column:
-  meta     → Name = state full name, PollingDate = YYYY-MM-DD, CurrentPhase = 1..5
+  meta     → Name = state full name, PollingDate = YYYY-MM-DD, CurrentPhase = 1..5,
+              TaskId = (optional) the task the State PD is currently focused on
+              (e.g. p2.smcc.pages) — drives where the PD avatar stands
   lead     → Name/Role/Phone/Email/Slack/Photo for the State PD
   status   → TaskId = id from blueprint (e.g. p2.smcc.pages),
              Status = done | in_progress | blocked | pending,
