@@ -980,25 +980,12 @@
     </div>`;
   }
 
-  /* --------------- Landing extras --------------- */
-  function renderBarSpends(){
-    const wrap = $("#mockChart"); if(!wrap) return;
-    const data = [
-      {l:"Phase 1",v:18},{l:"Phase 2",v:42},{l:"Phase 3",v:96},{l:"Phase 4",v:78},{l:"Phase 5",v:14}
-    ];
-    const max = Math.max(...data.map(d=>d.v));
-    wrap.innerHTML = `
-      <div class="bar-chart">${data.map(d=>`<div class="bar" style="height:${(d.v/max)*100}%"><span>${d.v}</span></div>`).join("")}</div>
-      <div class="bar-labels">${data.map(d=>`<span>${d.l}</span>`).join("")}</div>
-    `;
-  }
-
   /* --------------- Init --------------- */
   document.addEventListener("DOMContentLoaded",()=>{
     mountDock(); mountSearch();
     renderTeamGrid(); mountFilters();
     renderHubDiagram(); renderHubTags(); renderCampaignTimeline(); renderCoordMap();
-    renderImagePrompts(); renderGlossaryList(); renderBarSpends();
+    renderImagePrompts(); renderGlossaryList();
     renderTeamPage();
     decorateGlossary(document);
     mountReveal();
