@@ -91,13 +91,6 @@ const TEAMS = [
         "Reports internally to ARC GM (L2) for quality-check before leadership/client sharing"
       ]}
     ],
-    phases:[
-      {ph:1,focus:"Setup data pipelines and baseline reports",act:["Baseline Analysis Report","Tool readiness","State landscape audit"],intensity:"low"},
-      {ph:2,focus:"Acceleration of impact reporting",act:["SMAAR reports","Ad spend assessments","Trend analyses"],intensity:"medium"},
-      {ph:3,focus:"Daily compliance & dissemination tracking",act:["Daily Posting Compliance","24-hr impact","Vendor Pages Report"],intensity:"very-high"},
-      {ph:4,focus:"Last-mile narrative tracking",act:["Narrative penetration","Real-time alerts"],intensity:"high"},
-      {ph:5,focus:"Campaign Closure Report",act:["Takeaways doc","Closure report","Archive"],intensity:"low"}
-    ],
     reportCatalogue:[
       {name:"Baseline Analysis Report",freq:"Campaign start",who:"State social media landscape, official party pages, key stakeholders, MPs/MLAs"},
       {name:"SMAAR — Impact Assessment Report",freq:"Periodic",who:"Comms Team's measurable impact on leader's digital presence"},
@@ -114,10 +107,6 @@ const TEAMS = [
       {name:"Productivity Log",freq:"Ongoing",who:"Comms team members — directed by Project Director"},
       {name:"Key Takeaways & Learnings Doc",freq:"Campaign close",who:"Hand-off learning"},
       {name:"Comprehensive Campaign Closure Report",freq:"Campaign close",who:"Final summary report"}
-    ],
-    downloads:[
-      {label:"cVIGIL — ECI Citizen Vigil",note:"For real-time MCC complaint filing",url:"https://eci.gov.in"},
-      {label:"E-SUVIDHA — CEO / ECI Submission Portal",note:"Permissions and approvals workflow",url:"https://eci.gov.in"}
     ]
   },
   /* --------------------- Campaign Branding & Ads ----------------- */
@@ -132,7 +121,6 @@ const TEAMS = [
       {role:"Creative Team",detail:"Graphic Designers, Video Editors, Motion Graphic Artists, Animators, Caricature Artists, PPT Designers, Content Strategists."},
       {role:"External Vendors",detail:"Print Vendors, Event Agencies, Production Teams, External Designers (scaled by campaign intensity)."}
     ],
-    sizing:{min:"~6 (Lead + 1 PoC + 2 GDs + 1 VE + 1 Writer)",ideal:"~15 across creative, motion, PPT, and tech",scale:"By campaign volume — events, print runs, video frequency"},
     coreFunctions:[
       {title:"Key Responsibilities",items:[
         "Campaign Ideation & Creative Planning — communication planning, narrative visualisation, state-wise audience-specific planning",
@@ -189,13 +177,6 @@ const TEAMS = [
       {role:"Jr. Graphic Designer",range:"₹35K – ₹50K"},
       {role:"Sr. Video Editor",range:"₹60K – ₹85K"},
       {role:"Jr. Video Editor",range:"₹35K – ₹55K"}
-    ],
-    phases:[
-      {ph:1,focus:"Hiring, asset & template prep, narrative familiarisation",act:["Onboard designers/editors/animators","Master templates, asset libraries, typography","Briefing & approval workflows","State-specific narrative familiarisation"],intensity:"low"},
-      {ph:2,focus:"Creative system warm-up across formats",act:["Design system rollout","Initial digital creatives","Print adaptations","Animated explainers"],intensity:"medium"},
-      {ph:3,focus:"Multi-format mass production",act:["Pamphlets/newspaper ads","Hoardings & event branding","Social & WhatsApp creatives","Reels/videos/animated explainers","Leadership decks"],intensity:"very-high"},
-      {ph:4,focus:"Voter-conversion creative push",act:["Last-mile creatives","Rally branding & event support","Speech edits","Manifesto promise visuals"],intensity:"high"},
-      {ph:5,focus:"Closure & archival",act:["Victory/post-result creatives","Asset library archival","Template versioning"],intensity:"low"}
     ]
   },
   /* --------------------------- Party Team ------------------------ */
@@ -262,38 +243,7 @@ const TEAMS = [
         "Last phase: vote appeals, GOTV motivation, framing importance of participation"
       ]}
     ],
-    phases:[
-      {ph:1,focus:"Leader branding and audience building",act:["Page audits","Leader profile build","Audience growth groundwork"],intensity:"low"},
-      {ph:2,focus:"Daily engagement and narrative growth",act:["Routine daily posting","Narrative cycle entry","Spokesperson amplification"],intensity:"medium"},
-      {ph:3,focus:"Mass content output and rapid response",act:["Star campaigner coverage","Rally coverage","Opposition counters","Manifesto dissemination"],intensity:"very-high"},
-      {ph:4,focus:"Emotional conversion messaging",act:["Voter appeals","Polling-day motivation","Constituency-level messaging"],intensity:"high"},
-      {ph:5,focus:"Victory creatives and archive management",act:["Result-day content","Archival","Hand-off to party units"],intensity:"low"}
-    ],
-    sizing:{min:"4 (1 Lead, 2 Sr. Video Editors, 1 Animator)",ideal:"6 members",scale:"By number of official party properties, rally frequency, daily campaign intensity, regional content requirements"},
-    kpis:[
-      ["Daily output","8–20 official videos per day"],
-      ["Weekly output","40–120 videos"],
-      ["Success metrics","Engagement rate, Reach, Narrative consistency"]
-    ],
-    tools:["Adobe Premiere Pro","After Effects","Photoshop","AI Tools","FCP X","DaVinci Resolve","CapCut"],
-    platforms:["Instagram","Facebook","YouTube","X"],
-    contentOutputs:[
-      "Daily news narrative videos","Ground campaign narrative content","Rally edits","Leader speech edits",
-      "Reels and shorts","Opposition counter videos","Event coverage","Platform-specific creatives"
-    ],
-    failurePoints:["Slow approvals","Heavy revision cycles","Delayed footages","Overloaded editors","Branding inconsistency"],
-    escalation:[
-      ["Editing delay","Team Lead","Immediate"],
-      ["Approval issue","Comms Lead","Within 10 mins"],
-      ["Missing footage","Content PoC","Immediate"],
-      ["Urgent campaign edit","Comms Lead","Within 10 mins"]
-    ],
-    example:{title:"PM/CM speech amplification",content:"A PM or CM delivers a major speech during a rally. Ground team sends footage, or Content team provides speech links. Content team extracts key talking points. Editors create multiple reel versions. Final assets delivered within hours. Official pages publish simultaneously. Result: message amplification, viral reach, narrative dominance."},
-    budget:[
-      {role:"Lead Video Editor",range:"₹80K – ₹1L"},
-      {role:"Senior Video Editor",range:"₹50K – ₹80K"},
-      {role:"Senior Animator",range:"₹60K – ₹90K"}
-    ]
+    failurePoints:["Delayed approvals","Unverified data","Weak coordination with district units","Poor visuals","Unclear content planning","Slow opposition response","Over-dependence on a few individuals","Inactive amplification networks","Weak reporting systems","Lack of proper archives","Inconsistent coordination across official/district/candidate handles","Human error during content creation; mistakes can lead to backfiring"]
   },
   /* --------------------------- Growth Team ----------------------- */
   {
@@ -362,34 +312,6 @@ const TEAMS = [
       ["Credit line exhaustion","Finance/Vendor coordination","Immediate"],
       ["EC approval delay","Party PoC + Approval team","Same day"],
       ["Missing creatives/captions","Concerned comms team","Immediate"]
-    ],
-    budgetStrategy:{
-      purpose:"Maximum audience penetration, controlled frequency delivery, efficient spend utilisation, narrative amplification without oversaturation, sustainable pacing.",
-      inputs:["Audience size","Campaign duration","Platform objectives","CPM estimates","Expected engagement rates","Narrative priority","Platform delivery capability"],
-      steps:[
-        "Audience Size Identification — population, geography, gender, age, interest, regional distribution",
-        "Frequency Planning — target ~7–8 frequency cap (political messaging requires repetition)",
-        "Required Impressions = Target Audience × Frequency Cap (e.g. 1 cr × 7 = 7 cr)",
-        "CPM-Based Budget Estimation — typical ₹10–₹40; ₹40 CPM at peak elections / high competition",
-        "Budget = (Impressions ÷ 1000) × CPM. Example: 7 cr ÷ 1000 × ₹20 = ₹14,00,000",
-        "Objective-wise Allocation — Awareness, Engagement, Page Likes, Traffic, Ghost Ads",
-        "Daily Pacing — non-uniform, concentrated on narrative spikes, political events, opposition attacks, media spikes"
-      ],
-      example:"3-month state campaign — 2 cr audience × 7 frequency = 14 cr impressions. At ₹20 CPM ≈ ₹28L; at ₹30 CPM ≈ ₹42L.",
-      allocation:[{label:"Awareness (25–35%)",pct:30,color:"#06b6d4"},{label:"Engagement (40–50%)",pct:45,color:"#0ea5e9"},{label:"Ghost Ads (10–20%)",pct:15,color:"#14b8a6"},{label:"Traffic / Page Like (5–10%)",pct:10,color:"#0e7490"}],
-      additional:["Opposition spends","Platform competition","Festival/event periods","MCC restrictions","State-wise political intensity","Account delivery capacity","Credit line availability","Creative volume availability"]
-    },
-    dashboards:{
-      daily:["Spend","Reach","Impressions","Engagement","CPM","CPC","CTR","Clicks","Video views","Platform-wise spends"],
-      weekly:["Weekly spend trend","Weekly engagement growth","Reach comparison","Week-on-week diff","Platform contribution"],
-      monthly:["Cumulative narrative-wise spend","Audience penetration trajectory","Performance vs targets"]
-    },
-    phases:[
-      {ph:1,focus:"Infrastructure readiness & asset prep",act:["Page creation","Verification","Disclaimer setup","Account prep","Audience planning","Vendor alignment"],intensity:"low",teams:["Growth","Comms","Vendors","Leadership"]},
-      {ph:2,focus:"Narrative amplification & audience building",act:["Awareness campaigns","Engagement campaigns","Audience testing","Budget scaling","Dashboard setup"],intensity:"medium",teams:["Growth","Comms","SMCC","Vendor","Leadership"]},
-      {ph:3,focus:"Maximum scale & operational continuity",act:["High-volume deployment","EC approvals","Ghost ads","Spend optimisation","Crisis handling","Multi-account operations"],intensity:"very-high",teams:["All Teams"]},
-      {ph:4,focus:"Targeted amplification & voter conversion",act:["Hyper-targeted","Last-mile communication","Rapid optimisation","Controlled pacing"],intensity:"high",teams:["All Teams"]},
-      {ph:5,focus:"Reporting, asset stabilisation, closure",act:["Final reporting","Spend reconciliation","Asset recovery","Dashboard closure","Campaign analysis"],intensity:"low",teams:["Growth","Reporting","Leadership"]}
     ]
   },
   /* ----------------------- Influencer Team ----------------------- */
@@ -406,7 +328,6 @@ const TEAMS = [
       {role:"Head of Influencer Narrative Network (1)",detail:"Owns strategy, creator cohort selection, leadership reporting, direct line to Campaign Manager."},
       {role:"Creator Relationship Executives",detail:"Front-line; each handles 25–40 active creators; brief delivery, content review, follow-ups, creator-side crisis comms."}
     ],
-    sizing:{min:"1 Head + 1 Executive",ideal:"1 Head + 4–6 Executives (100–240 creators total)",scale:"By number of states, languages and content categories needed"},
     scaleNote:"25–40 creators per executive",
     coreFunctions:[
       {title:"Key Responsibilities",items:[
@@ -447,13 +368,6 @@ const TEAMS = [
       {t:"1 PM",e:"Creator briefs updated"},
       {t:"3 PM",e:"Draft approvals complete"},
       {t:"6 PM",e:"Content live across creator network"}
-    ],
-    phases:[
-      {ph:1,focus:"Roster build & relationship groundwork",act:["Source & vet creators","Negotiate retainers / NDAs","Brief-bank seeding"],intensity:"low"},
-      {ph:2,focus:"Brief→post pipeline warm-up",act:["Daily creator briefs","Pilot rollouts","Cohort matching"],intensity:"medium"},
-      {ph:3,focus:"Synchronised peak rollouts; <6 hr brief→live",act:["200-voice synchronised drops","Cross-amplification","Trolling response"],intensity:"very-high"},
-      {ph:4,focus:"Conversion narratives across cohorts",act:["Hyperlocal cohort drops","GOTV / vote appeals","Last-mile voice plays"],intensity:"high"},
-      {ph:5,focus:"Retention & creator wind-down",act:["Performance closure","Retain high-trust creators","Network archive"],intensity:"low"}
     ]
   },
   /* ------------------------- Legal Team --------------------------- */
@@ -588,7 +502,6 @@ const TEAMS = [
       {ph:1,focus:"Set up media structure & state landscape",act:["Map regional media","Liaison with local units","Set up monitoring","Onboard/train"],intensity:"low",teams:["Media Monitoring","Party Coordination","Local Units","Comms","Research"]},
       {ph:2,focus:"Strengthen management & narrative positioning",act:["Monitoring reports","Push favourable narratives","Press pointers","Ghost articles","Strategic outreach"],intensity:"medium",teams:["Media Monitoring","Party Coordination","Comms","Research","Client Media Unit"]},
       {ph:3,focus:"Real-time coordination with client",act:["Dedicated media room","Continuous national coordination","Align state with national","Press conferences/articles"],intensity:"very-high",teams:["Media Monitoring","Party Coordination","National Comms","Client Media Unit","Research","Campaign"]},
-      {ph:4,focus:"Voting-phase coverage continuity",act:["Polling-day media monitoring","Last-mile press notes","Field escalations"],intensity:"high",teams:["Media Monitoring","Party Coordination","National Comms","Client Media Unit"]},
       {ph:5,focus:"Continuity through transition",act:["Post-election narrative tracking","National coordination","Govt formation coverage","Important escalations"],intensity:"low",teams:["Media Monitoring","National Comms","Client Media Unit","Party Coordination"]}
     ]
   },
@@ -628,14 +541,7 @@ const TEAMS = [
     skills:{
       must:["Political nuance understanding","Narrativisation","Creativity to convert issue/narrative into desired output","Issue tracking"],
       nice:["Understanding of multiple states' political nuances"]
-    },
-    phases:[
-      {ph:1,focus:"Foundation — narrative bank, issue scanning systems",act:["Issue catalogues","Bharat Darpan baseline","Project Nandaka baseline","Sample decks"],intensity:"low"},
-      {ph:2,focus:"Build-Up — narrative cycles & ideation pipeline",act:["Infopack rollout","Article/byline pipeline","Speech-pointer cadence"],intensity:"medium"},
-      {ph:3,focus:"Peak — rapid narrativisation & response",act:["Daily counters","Real-time pointers","Influencer narrative drops","Long-term research"],intensity:"very-high"},
-      {ph:4,focus:"Voting Phase — targeted narratives & counters",act:["Vote-appeal narratives","Cohort-specific framing","Opposition counters"],intensity:"high"},
-      {ph:5,focus:"Cool Down — learnings & archive",act:["Closure infopack","Narrative diary","Decks & samples archive"],intensity:"low"}
-    ]
+    }
   },
   /* ----------------------- Non-Meta Digital Ads ------------------- */
   {
@@ -713,10 +619,7 @@ const TEAMS = [
       {label:"Non-Meta Digital Ads Master Sheet Template",note:"AC number, name, narrative, Unique ID, TG geography, cohort",url:"https://docs.google.com/spreadsheets/d/1CXedE18ArJCOzqgF5Hr8i2KhEq63Bl39Jz_LbWwYZ6s/edit?usp=sharing"},
       {label:"Telecom Ads Master Sheet Template",note:"Master tracker for telecom campaigns",url:"https://docs.google.com/spreadsheets/d/1PrXp1KwdAJNpVFDhg4qF6Mtb5VHGFfSCn_zecYitouY/edit?usp=sharing"},
       {label:"Telecom Ads Comms Internal Template",note:"Comms collaboration sheet — writers, designers, editors",url:"https://docs.google.com/spreadsheets/d/1wsXCaLfOpN7vJd9YRgEA-SO8Kb5ZIxjyTA68ksow7R0/edit?usp=sharing"},
-      {label:"Telecom Ads Vendor Sheet",note:"AC, pin codes, LatLong, content link",url:"https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"},
-      {label:"Overall Daily Dashboards",note:"Day-wise spend & delivery",url:"https://docs.google.com/spreadsheets/d/1HqxJRxg2PZvoYKL_hUl6o7n9jlX5Y79LBBkOTucK8BU/edit?gid=1313760570#gid=1313760570"},
-      {label:"YouTube Dashboards",note:"YT-specific performance view",url:"https://docs.google.com/spreadsheets/d/1nmgU5eia2dCSshTOC7OZhQNx2IEpuNucbDVBexWEv2M/edit?gid=531845191#gid=531845191"},
-      {label:"GDN Dashboards",note:"Google Display Network performance",url:"https://docs.google.com/spreadsheets/d/1nmgU5eia2dCSshTOC7OZhQNx2IEpuNucbDVBexWEv2M/edit?gid=1668483700#gid=1668483700"}
+      {label:"Telecom Ads Vendor Sheet",note:"AC, pin codes, LatLong, content link",url:"https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"}
     ],
     phases:[
       {ph:1,focus:"Vendor onboarding, master-sheet & tracker setup",act:["Master sheets","Drive folders & Unique IDs","Vendor onboarding","ARC PoC alignment"],intensity:"low"},
@@ -802,13 +705,6 @@ const TEAMS = [
         "Maintain written records of major approvals and strategic directions",
         "Be calm under pressure — campaign environments reward stability"
       ]}
-    ],
-    phases:[
-      {ph:1,focus:"Establish authority, map hierarchy, set protocols",act:["Identify decision-makers","Build Day-1 comms protocols","Approval-chain definition"],intensity:"low"},
-      {ph:2,focus:"Trust building & rapport with party POCs",act:["Daily syncs","Documented summaries of verbal calls","Quick wins"],intensity:"medium"},
-      {ph:3,focus:"High-pressure controlled coordination",act:["Daily morning sync calls","Real-time escalation groups","Crisis posture"],intensity:"very-high"},
-      {ph:4,focus:"Last-mile coordination & vote-day operations",act:["Booth/AC alignment","Backup plans for restrictions/attacks","Silent-period discipline"],intensity:"high"},
-      {ph:5,focus:"Relationship retention",act:["Closure feedback","Stakeholder thank-yous","Documented learnings"],intensity:"low"}
     ]
   },
   /* ----------------------- Reporter Network ----------------------- */
@@ -1180,14 +1076,7 @@ const TEAMS = [
         ["1K – 10K followers","₹35,000","₹25,000","₹15,000"],
         ["10K – 50K followers","₹75,000","₹50,000","₹30,000"]
       ]
-    },
-    phases:[
-      {ph:1,focus:"Audience building",act:["Identify aligned pages","Initial outreach","Acquisition deals"],intensity:"low"},
-      {ph:2,focus:"Narrative expansion",act:["Daily research dissemination","Posting cadence build","Performance scoring"],intensity:"medium"},
-      {ph:3,focus:"Aggressive counter campaigns",act:["Coordinated drops","Counter-narrative bursts","Crisis-handling protocols"],intensity:"very-high"},
-      {ph:4,focus:"Voter influence",act:["Vote-appeal content","Cooling-period coverage","Continuity even in silence period"],intensity:"high"},
-      {ph:5,focus:"Narrative retention",act:["Long-tail content","Vendor handoff","Performance archive"],intensity:"low"}
-    ]
+    }
   },
   /* ----------------------- Third Party Team ---------------------- */
   {
@@ -1293,7 +1182,7 @@ const TEAMS = [
       {role:"Executives",detail:"Director, DOP, Assistant Directors, Editor, DI Artist, Music Composer, Sound Designer, Post Production Supervisor."},
       {role:"Total Strength",detail:"10–12 in-house per state."}
     ],
-    sizing:{min:"8 people",ideal:"10–12 in-house per state",scale:"By number of films and AC-level telecom ad volume"},
+    sizing:{ideal:"10–12 in-house per state",scale:"By number of films and AC-level telecom ad volume"},
     coreFunctions:[
       {title:"Coordination with Other Teams",items:[
         "State Communications — primary coordinator; briefings/requirements; approvals at checkpoints; needs dedicated PoC",
@@ -1351,13 +1240,6 @@ const TEAMS = [
       "Post-production (and all its steps)",
       "Final delivery",
       "Dubbing"
-    ],
-    phases:[
-      {ph:1,focus:"Hiring, recce, narrative groundwork",act:["Director/DOP/Editor hiring","Local crew recce","Early state-team touch base","Narrative familiarisation"],intensity:"low"},
-      {ph:2,focus:"Concept→script→shoot pipeline build",act:["Scripts & approvals","Pre-production","Production blocks","First-cut edits"],intensity:"medium"},
-      {ph:3,focus:"Peak release — TVCs, manifesto films, documentaries",act:["20s unskippable","Magnum opus","Music videos","Achievement docs","EC approvals on every cut"],intensity:"very-high"},
-      {ph:4,focus:"AC-specific telecom films — last phase",act:["AC-specific TVCs","Narrative/cohort films","Final delivery & dubbing"],intensity:"high"},
-      {ph:5,focus:"Asset archival & closure",act:["Master archive","Outputs by platform (FB/WA/YT/Insta)","Subtitle files","Closure docs"],intensity:"low"}
     ]
   },
   /* ---------------------- Partnership Program -------------------- */
@@ -1375,7 +1257,6 @@ const TEAMS = [
       {role:"Head of Influencer Narrative Network",detail:"Overall creator strategy, narrative rollout planning, leadership coordination, crisis management, performance reporting."},
       {role:"Creator Relationship Executives",detail:"Manage creators daily, share briefs, follow up, review drafts, coordinate posting, handle creator comms. Each handles ~25–40 creators."}
     ],
-    sizing:{min:"1 Head + 1 Executive",ideal:"1 Head + 4–6 Executives (100–240 creators)",scale:"By language coverage and content categories"},
     scaleNote:"25–40 creators per executive",
     coreFunctions:[
       {title:"Without a Creator Network",items:[
@@ -1405,14 +1286,7 @@ const TEAMS = [
       {t:"3 PM",e:"Draft approvals complete"},
       {t:"6 PM",e:"Content live across creator network"}
     ],
-    heroCallout:"One message shared by hundreds of trusted creators feels more real than one message coming from one official account.",
-    phases:[
-      {ph:1,focus:"Network groundwork",act:["Source, evaluate, onboard creators","Build trust & retainers","Brief-bank seeding"],intensity:"low"},
-      {ph:2,focus:"Daily creator pipeline warm-up",act:["Talking points → reels","Cohort matching","Posting cadence build"],intensity:"medium"},
-      {ph:3,focus:"Peak narrative warfare across creators",act:["Synchronised drops","Cross-promo","Crisis handling","Real-time response"],intensity:"very-high"},
-      {ph:4,focus:"Conversion-stage creator deployments",act:["Last-mile vote appeals","Cohort-targeted creators","GOTV creators"],intensity:"high"},
-      {ph:5,focus:"Retention & long-tail",act:["High-performer retention","Performance archive","Long-tail content"],intensity:"low"}
-    ]
+    heroCallout:"One message shared by hundreds of trusted creators feels more real than one message coming from one official account."
   }
 ];
 

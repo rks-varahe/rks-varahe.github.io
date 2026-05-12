@@ -562,7 +562,7 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .example-wrap h3{font-size:1.25rem;margin:6px 0 14px}
 .example-wrap p{font-size:1rem;line-height:1.7;color:var(--ink)}
 
-/* GLOSSARY — flat, non-interactive grid */
+/* GLOSSARY — flat grid (no extra rule, keeping the marker line) */
 .glossary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .gloss-item{padding:16px 18px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);transition:var(--transition);border-left:3px solid var(--teal-500)}
 .gloss-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-left-color:var(--teal-700)}

@@ -540,15 +540,15 @@
 
           <nav class="tabs" id="teamTabs">
             <button class="tab active" data-tab="overview">Overview</button>
-            ${t.structure?'<button class="tab" data-tab="structure">Structure</button>':""}
-            ${t.coreFunctions?'<button class="tab" data-tab="responsibilities">Responsibilities</button>':""}
-            ${t.skills?'<button class="tab" data-tab="skills">Skills</button>':""}
+            <button class="tab" data-tab="structure">Structure</button>
+            <button class="tab" data-tab="responsibilities">Responsibilities</button>
+            <button class="tab" data-tab="skills">Skills</button>
             <button class="tab" data-tab="phases">Campaign Flow</button>
-            ${(t.budget||t.sizing||t.teamCalc||(t.structure&&t.structure.length))?'<button class="tab" data-tab="hiring">Hiring</button>':""}
-            ${(t.pricing||t.budgetStrategy||t.dashboards||t.budgetEsc)?'<button class="tab" data-tab="budget">Budget</button>':""}
-            ${(t.kpis||t.escalation||t.priorities||t.beforeAfter||t.references||t.workflow||t.failurePoints||t.crisis||t.closure||t.philosophy||t.finalGoal)?'<button class="tab" data-tab="ops">Operations</button>':""}
-            ${(t.example || hasExtrasFor("example",t))?'<button class="tab" data-tab="example">Example</button>':""}
-            ${t.downloads?'<button class="tab" data-tab="downloads">Resources</button>':""}
+            <button class="tab" data-tab="hiring">Hiring</button>
+            <button class="tab" data-tab="budget">Budget</button>
+            <button class="tab" data-tab="ops">Operations</button>
+            <button class="tab" data-tab="example">Example</button>
+            <button class="tab" data-tab="downloads">Resources</button>
             <button class="tab" data-tab="contact">Contact</button>
           </nav>
         </div>
@@ -558,15 +558,15 @@
         <div id="tab-overview" class="tab-content active">
           ${renderOverview(t)}
         </div>
-        ${t.structure?`<div id="tab-structure" class="tab-content">${renderStructure(t)}</div>`:""}
-        ${t.coreFunctions?`<div id="tab-responsibilities" class="tab-content">${renderResp(t)}</div>`:""}
-        ${t.skills?`<div id="tab-skills" class="tab-content">${renderSkills(t)}</div>`:""}
+        <div id="tab-structure" class="tab-content">${renderStructure(t)}</div>
+        <div id="tab-responsibilities" class="tab-content">${renderResp(t)}</div>
+        <div id="tab-skills" class="tab-content">${renderSkills(t)}</div>
         <div id="tab-phases" class="tab-content">${renderPhases(t)}</div>
-        ${(t.budget||t.sizing||t.teamCalc||(t.structure&&t.structure.length))?`<div id="tab-hiring" class="tab-content">${renderHiring(t)}</div>`:""}
-        ${(t.pricing||t.budgetStrategy||t.dashboards||t.budgetEsc)?`<div id="tab-budget" class="tab-content">${renderBudget(t)}</div>`:""}
-        ${(t.kpis||t.escalation||t.priorities||t.beforeAfter||t.references||t.workflow||t.failurePoints||t.crisis||t.closure||t.philosophy||t.finalGoal)?`<div id="tab-ops" class="tab-content">${renderOps(t)}</div>`:""}
-        ${(t.example || hasExtrasFor("example",t))?`<div id="tab-example" class="tab-content">${renderExample(t)}</div>`:""}
-        ${t.downloads?`<div id="tab-downloads" class="tab-content">${renderDownloads(t)}</div>`:""}
+        <div id="tab-hiring" class="tab-content">${renderHiring(t)}</div>
+        <div id="tab-budget" class="tab-content">${renderBudget(t)}</div>
+        <div id="tab-ops" class="tab-content">${renderOps(t)}</div>
+        <div id="tab-example" class="tab-content">${renderExample(t)}</div>
+        <div id="tab-downloads" class="tab-content">${renderDownloads(t)}</div>
         <div id="tab-contact" class="tab-content">${renderContact(t)}</div>
       </section>
 
@@ -640,7 +640,19 @@
     parts.push(renderExtrasFor("overview", t));
     return parts.join("");
   }
+  // Placeholder rendered when the source SOP doc has no data for a given tab.
+  function noData(label){
+    return `<div class="no-data scroll-reveal">
+      <div class="no-data-icon">📄</div>
+      <h3>${label||"Data not provided"}</h3>
+      <p>This section was not documented in the team's source SOP. Once the team shares the relevant information it will appear here.</p>
+    </div>`;
+  }
+
   function renderStructure(t){
+    if(!t.structure || !t.structure.length){
+      return `<h2 class="scroll-reveal">Team Structure</h2>${noData()}`;
+    }
     const tree = `<div class="org-tree scroll-reveal">
       ${t.structure.map((r,i)=>i===0
         ? `<div class="org-node">${r.role}<small>${r.detail}</small></div>`
@@ -655,15 +667,23 @@
     </div>${renderExtrasFor("structure", t)}`;
   }
   function renderResp(t){
+    const hasCore = t.coreFunctions && t.coreFunctions.length;
+    const extras = renderExtrasFor("responsibilities", t);
+    if(!hasCore && !extras){
+      return `<h2 class="scroll-reveal">Responsibilities & Operations</h2>${noData()}`;
+    }
     return `<h2 class="scroll-reveal">Responsibilities & Operations</h2>
-      <div class="scroll-reveal">${t.coreFunctions.map(s=>`
+      ${hasCore?`<div class="scroll-reveal">${t.coreFunctions.map(s=>`
         <details class="disc" ${s.title.toLowerCase().includes("respons")||s.title.toLowerCase().includes("key")?"open":""}>
           <summary>${s.title}</summary>
           <div class="disc-body"><ul>${(s.items||[]).map(i=>`<li>${i}</li>`).join("")}</ul></div>
         </details>`).join("")}
-      </div>${renderExtrasFor("responsibilities", t)}`;
+      </div>`:""}${extras}`;
   }
   function renderSkills(t){
+    if(!t.skills || (!t.skills.must?.length && !t.skills.nice?.length)){
+      return `<h2 class="scroll-reveal">Skills Required</h2>${noData()}`;
+    }
     return `<h2 class="scroll-reveal">Skills Required</h2>
       <div class="row scroll-reveal">
         ${t.skills.must?`<div class="chart-wrap"><h3>Must-have</h3><ul>${t.skills.must.map(s=>`<li>${s}</li>`).join("")}</ul></div>`:""}
@@ -681,10 +701,10 @@
 
   function renderPhases(t){
     let parts = [`<h2 class="scroll-reveal">Campaign Phase Involvement</h2>`];
-    const phases = t.phases || PHASES.map(p=>({ph:p.n,focus:p.blurb,act:[],intensity:p.intensity,inferred:true}));
-    if(!t.phases){
-      parts.push(`<p class="muted scroll-reveal" style="max-width:720px">Phase-level detail wasn't explicitly written for this team in the source handbook. Below is the inferred mapping based on the team's role and SOP cues — treat as a working draft.</p>`);
+    if(!t.phases || !t.phases.length){
+      return parts.join("") + noData();
     }
+    const phases = t.phases;
     parts.push(`<div class="phase-timeline scroll-reveal">`);
     phases.forEach((p,i)=>{
       const ph = PHASES.find(x=>x.n===p.ph)||{};
@@ -712,6 +732,10 @@
 
   function renderExample(t){
     const e = t.example;
+    const extras = renderExtrasFor("example", t);
+    if(!e && !extras){
+      return `<h2 class="scroll-reveal">Example Use Case</h2>${noData()}`;
+    }
     let parts = [];
     if(e){
       const isString = typeof e === "string";
@@ -725,7 +749,7 @@
     } else {
       parts.push(`<h2 class="scroll-reveal">Examples</h2>`);
     }
-    parts.push(renderExtrasFor("example", t));
+    parts.push(extras);
     return parts.join("");
   }
 
@@ -758,6 +782,9 @@
   }
 
   function renderDownloads(t){
+    if(!t.downloads || !t.downloads.length){
+      return `<h2 class="scroll-reveal">Resources</h2>${noData()}`;
+    }
     return `<h2 class="scroll-reveal">Resources</h2>
       <p class="muted scroll-reveal" style="max-width:720px">External resources, templates, dashboards and official portals referenced in this team's handbook. Click to open.</p>
       <div class="row scroll-reveal">
@@ -773,6 +800,10 @@
       </div>`;
   }
   function renderHiring(t){
+    const hasAny = (t.sizing || t.teamCalc || (t.structure && t.structure.length) || (t.budget && t.budget.length) || (t.skills && (t.skills.must?.length || t.skills.nice?.length)));
+    if(!hasAny){
+      return `<h2 class="scroll-reveal">Hiring</h2>${noData()}`;
+    }
     let parts = [`<h2 class="scroll-reveal">Hiring</h2>
       <p class="muted scroll-reveal" style="max-width:720px">Team sizing logic, role-by-role accountability and salary brackets used when staffing this team.</p>`];
     // Key numerical callouts
@@ -816,6 +847,10 @@
   }
 
   function renderBudget(t){
+    const hasAny = (t.pricing || t.budgetStrategy || t.dashboards || t.budgetEsc);
+    if(!hasAny){
+      return `<h2 class="scroll-reveal">Budget</h2>${noData()}`;
+    }
     let parts = [`<h2 class="scroll-reveal">Budget</h2>
       <p class="muted scroll-reveal" style="max-width:720px">Operational spend, ad investment, allocation strategy and dashboard infrastructure for this team.</p>`];
     if(t.pricing){
@@ -944,6 +979,10 @@
   }
 
   function renderOps(t){
+    const hasAny = (t.kpis || t.escalation || t.priorities || t.beforeAfter || t.references || t.workflow || t.failurePoints || t.crisis || t.closure || t.philosophy || t.finalGoal || t.tools || t.platforms || hasExtrasFor("ops", t));
+    if(!hasAny){
+      return `<h2 class="scroll-reveal">Operations</h2>${noData()}`;
+    }
     let parts = [`<h2 class="scroll-reveal">Operations</h2>`];
     if(t.priorities) parts.push(`<h3>Priority Logic</h3><table class="std scroll-reveal"><thead><tr><th>Priority</th><th>Definition</th><th>Turnaround</th><th>Typical Use</th></tr></thead><tbody>${t.priorities.map(r=>`<tr><th>${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</tbody></table>`);
     if(t.kpis) parts.push(`<h3>KPIs / Benchmarks</h3><table class="std scroll-reveal"><tbody>${t.kpis.map(r=>Array.isArray(r)?`<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`:`<tr><td>${r}</td></tr>`).join("")}</tbody></table>`);
