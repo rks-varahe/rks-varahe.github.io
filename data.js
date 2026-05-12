@@ -541,7 +541,115 @@ const TEAMS = [
         ]
       ],
       "category": "ops",
-      "function": "Paid Media & Operations"
+      "function": "Paid Media & Operations",
+      "skills": {
+        "must": [
+          "Meta Ads Manager operations",
+          "Google Ads operations",
+          "Political advertising compliance understanding",
+          "Budget planning and pacing",
+          "Ownership of tasks",
+          "Dashboard management",
+          "Campaign optimization",
+          "Cross-team coordination",
+          "Crisis and escalation handling",
+          "Attention to detail — technical expertise in Meta and Google ads management",
+          "Reporting discipline",
+          "Creative/Content understanding",
+          "Basic and advanced data analysis",
+          "Excellent grip on analytical tools"
+        ],
+        "nice": [
+          "Election campaign understanding",
+          "Narrative intelligence",
+          "Vendor management",
+          "SQL & Python + PowerBI for data analysis",
+          "Platform policy knowledge",
+          "Competitive analysis capabilities",
+          "Regional/multiple language coordination"
+        ]
+      },
+      "budgetStrategy": {
+        "purpose": "Budget allocation is determined based on multiple campaign and audience variables; budget is then divided across platforms, objectives and geographies, and continuously optimised against narrative traction and opposition activity.",
+        "inputs": [
+          "Campaign duration",
+          "Geography",
+          "Audience size",
+          "Gender split",
+          "Age segmentation",
+          "Platform suitability",
+          "Campaign objective",
+          "Opposition activity",
+          "Available operational infrastructure (No. of pages)"
+        ],
+        "steps": [
+          "Meta vs Google (split between the two or only one)",
+          "Awareness vs Engagement (split between the two or only one)",
+          "Ghost ads vs posted ads (split between the two or only one)",
+          "State-wise allocation",
+          "Narrative-wise allocation",
+          "Vendor/account-wise distribution"
+        ],
+        "additional": [
+          "Narrative traction",
+          "Spend pacing",
+          "Platform performance",
+          "Campaign urgency",
+          "Election timelines",
+          "Opposition campaign activity"
+        ]
+      },
+      "phases": [
+        {
+          "ph": 1,
+          "name": "Foundation / Slow Build",
+          "sub": "Pre-MCC Early",
+          "focus": "Infrastructure readiness and asset preparation",
+          "act": ["Page creation","Verification","Disclaimer setup","Account preparation","Audience planning","Vendor alignment"],
+          "output": "Campaign-ready advertising infrastructure",
+          "intensity": "low",
+          "teams": ["Growth","Comms","Vendors","Leadership"]
+        },
+        {
+          "ph": 2,
+          "name": "Acceleration / Build-Up",
+          "focus": "Narrative amplification and audience building",
+          "act": ["Awareness campaigns","Engagement campaigns","Audience testing","Budget scaling","Dashboard setup"],
+          "output": "Narrative penetration and audience traction",
+          "intensity": "medium",
+          "teams": ["Growth","Comms","SMCC","Vendor","Leadership"]
+        },
+        {
+          "ph": 3,
+          "name": "Peak Campaign",
+          "sub": "MCC / Election Period",
+          "focus": "Maximum campaign scale and operational continuity",
+          "act": ["High-volume campaign deployment","EC approvals","Ghost ads","Spend optimization","Crisis handling","Multi-account operations"],
+          "output": "High narrative reach and sustained campaign visibility",
+          "intensity": "very-high",
+          "teams": ["All teams"]
+        },
+        {
+          "ph": 4,
+          "name": "Conversion / Voting Phase",
+          "focus": "Targeted amplification and voter conversion",
+          "act": ["Hyper-targeted campaigns","Last-mile communication","Rapid optimization","Controlled spend pacing"],
+          "output": "Maximum narrative retention and voter action",
+          "intensity": "very-high",
+          "intensityNote": "but targeted",
+          "teams": ["All teams"]
+        },
+        {
+          "ph": 5,
+          "name": "Post-Campaign / Cool Down",
+          "sub": "Post MCC",
+          "focus": "Reporting, asset stabilization, and closure",
+          "act": ["Final reporting","Spend reconciliation","Asset recovery","Dashboard closure","Campaign analysis"],
+          "output": "Operational closure and reporting visibility",
+          "intensity": "low",
+          "teams": ["Growth","Reporting","Leadership"]
+        }
+      ]
     },
     {
       "id": "influencer",

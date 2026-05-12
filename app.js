@@ -711,16 +711,20 @@
       const w = {low:25,medium:55,high:80,"very-high":100}[p.intensity||ph.intensity]||40;
       const teamsList = p.teams && p.teams.length ? p.teams : DEFAULT_PHASE_TEAMS[p.ph] || [];
       const teamsDefault = !(p.teams && p.teams.length);
+      const phaseName = p.name || ph.name || "";
+      const phaseSub = p.sub || ph.sub || "";
+      const intLabel = (p.intensity||ph.intensity||'') + (p.intensityNote?` · ${p.intensityNote}`:'');
       parts.push(`<div class="phase-step ${p.inferred?'inferred':''}">
         <div class="phase-dot" data-ph="${p.ph}"><span>${p.ph}</span></div>
         <div class="phase-card">
           <div class="phase-card-head">
-            <h4>Phase ${p.ph} · ${ph.name||""}</h4>
-            <span class="phase-int phase-int-${(p.intensity||ph.intensity||'low').replace(' ','-')}">${(p.intensity||ph.intensity||'')}</span>
+            <h4>Phase ${p.ph} · ${phaseName}</h4>
+            <span class="phase-int phase-int-${(p.intensity||ph.intensity||'low').replace(' ','-')}">${intLabel}</span>
           </div>
-          <p class="phase-sub muted">${ph.sub||""}${p.inferred?' · <i>inferred</i>':''}</p>
+          <p class="phase-sub muted">${phaseSub}${p.inferred?' · <i>inferred</i>':''}</p>
           <p><b>Focus:</b> ${p.focus||""}</p>
-          ${p.act&&p.act.length?`<div class="phase-block"><span class="phase-label">Activities</span><div class="badges">${p.act.map(a=>`<span class="badge">${a}</span>`).join("")}</div></div>`:""}
+          ${p.act&&p.act.length?`<div class="phase-block"><span class="phase-label">Key activities</span><div class="badges">${p.act.map(a=>`<span class="badge">${a}</span>`).join("")}</div></div>`:""}
+          ${p.output?`<div class="phase-block"><span class="phase-label">Output expectation</span><p style="margin:0;font-size:.92rem">${p.output}</p></div>`:""}
           ${teamsList.length?`<div class="phase-block"><span class="phase-label">Teams involved${teamsDefault?' <i style="font-weight:400;color:var(--muted)">· default</i>':''}</span><div class="badges">${teamsList.map(x=>`<span class="badge dark">${x}</span>`).join("")}</div></div>`:""}
           <div class="intensity-bar" style="--w:${w}%"></div>
         </div>
