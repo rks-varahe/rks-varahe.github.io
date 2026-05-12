@@ -192,7 +192,6 @@ const TEAMS = [
       {role:"Content Writing Team",detail:"3 writers — captions, scripts, political messaging, reactive content, platform-specific copy."},
       {role:"Reporting Lead",detail:"1 person for reporting, tracker management, coordination."}
     ],
-    sizing:{min:"4 members (1 Lead, 2 Sr. Video Editors, 1 Animator)",ideal:"~10 (PM + Page Manager + 2 GDs + 3 VEs + 1 Animator + 3 Writers + 1 Reporter)",scale:"By number of party properties and rally frequency"},
     coreFunctions:[
       {title:"Key Responsibilities",items:[
         "Planning and managing the overall digital narrative aligned with party's political strategy",
@@ -720,7 +719,6 @@ const TEAMS = [
       {label:"Monthly Output",value:"300–400 assets"},
       {label:"Per-task rate",value:"₹100–₹500"},{label:"Payment cycle",value:"15-day national"}
     ],
-    sizing:{min:"1 Central Manager + 2 Team Members + 150 reporters",ideal:"1 Central + 3 Team Members + 200+ reporters",scale:"Surge to 600+ reporters during elections via AC-level deployment"},
     scaleNote:"AC-level expansion in election states",
     structure:[
       {role:"Central Manager",detail:"All states. National oversight, task ownership, delivery quality, escalation, payout governance, leadership reporting. Final call on delivery acceptance, escalations, payout approval, surge activation."},
@@ -900,7 +898,6 @@ const TEAMS = [
       {role:"Analytics Lead",detail:"Data tracking, performance reporting, weekly insights."}
     ],
     teamCalc:{formula:"For every 3 ACs → 1 Video Editor + 1 Graphic Designer + 1 Content Writer",example:"70 ACs → 24 Writers, 24 Designers, 24 Editors, 5 Zone Coordinators, 2 Ads Managers, 1 Analytics Lead, 1 State SMCC Head ≈ 81 people"},
-    sizing:{min:"~40 (for 30-AC states)",ideal:"~80 (for 70-AC states, see worked example)",scale:"Linear with contested AC count + zone density"},
     scaleNote:"15–20 ACs per Zone Coordinator",
     coreFunctions:[
       {title:"Coordination with BJP Ecosystem",items:[
@@ -1022,7 +1019,6 @@ const TEAMS = [
       {role:"1 Manager",detail:"Acquisition strategy, vendor management, narrative briefing, expansion targets, budgeting."},
       {role:"2 Leads",detail:"Daily coordination, performance tracking, escalation, page-admin work. Ideally one lead handles 20–25 surrogate pages."}
     ],
-    sizing:{min:"1 Manager + 1 Lead",ideal:"1 Manager + 2 Leads (40–50 active pages)",scale:"By number of acquired pages — one lead can manage 20–25"},
     scaleNote:"20–25 pages per lead",
     coreFunctions:[
       {title:"Operational Approach",items:[
