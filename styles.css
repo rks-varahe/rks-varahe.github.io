@@ -267,11 +267,11 @@ html[data-theme="dark"] .rn-mk-lbl.muted{fill:#92aabd}
 .meta-pill b{color:var(--ink);font-weight:600}
 
 /* TABS */
-.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:34px 0 0;position:sticky;top:68px;background:color-mix(in oklab,var(--paper) 88%,transparent);backdrop-filter:blur(8px);z-index:10;padding:0 2px}
-.tab{padding:14px 18px;font-weight:600;border:0;background:transparent;cursor:pointer;color:var(--muted);font-family:inherit;font-size:.94rem;position:relative;transition:var(--transition)}
+.tabs{display:flex;gap:2px;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--line);margin:34px 0 0;position:sticky;top:68px;background:color-mix(in oklab,var(--paper) 88%,transparent);backdrop-filter:blur(8px);z-index:10;padding:0 2px;scrollbar-width:thin}
+.tab{padding:14px 14px;font-weight:600;border:0;background:transparent;cursor:pointer;color:var(--muted);font-family:inherit;font-size:.9rem;position:relative;transition:var(--transition);flex-shrink:0}
 .tab:hover{color:var(--ink)}
 .tab.active{color:var(--teal-700)}
-.tab.active::after{content:"";position:absolute;left:18px;right:18px;bottom:-1px;height:3px;background:var(--gradient);border-radius:3px 3px 0 0}
+.tab.active::after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;height:3px;background:var(--gradient);border-radius:3px 3px 0 0}
 .tab-content{padding:40px 0;display:none;animation:fade .4s ease}
 .tab-content.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
