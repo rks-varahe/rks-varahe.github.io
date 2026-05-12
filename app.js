@@ -871,19 +871,19 @@
     }
     if(t.budgetStrategy){
       const b = t.budgetStrategy;
+      const hasDonut = Array.isArray(b.allocation) && b.allocation.length;
+      const leftCol = `<div>
+        ${b.purpose?`<p><b>Purpose:</b> ${b.purpose}</p>`:""}
+        ${b.inputs?.length?`<h4>Inputs</h4><ul>${b.inputs.map(i=>`<li>${i}</li>`).join("")}</ul>`:""}
+        ${b.steps?.length?`<h4>Steps</h4><ol>${b.steps.map(s=>`<li>${s}</li>`).join("")}</ol>`:""}
+        ${b.example?`<div class="callout"><b>Example</b><p>${b.example}</p></div>`:""}
+        ${b.additional?.length?`<h4>Additional considerations</h4><ul>${b.additional.map(s=>`<li>${s}</li>`).join("")}</ul>`:""}
+      </div>`;
+      const rightCol = hasDonut
+        ? `<div><div class="chart-wrap"><h4>Objective-wise Allocation</h4>${renderDonut(b.allocation)}</div></div>`
+        : "";
       parts.push(`<h3 class="scroll-reveal">Budget-Making Strategy</h3>
-        <div class="row-2 scroll-reveal">
-          <div>
-            <p><b>Purpose:</b> ${b.purpose}</p>
-            <h4>Inputs</h4><ul>${b.inputs.map(i=>`<li>${i}</li>`).join("")}</ul>
-            <h4>Steps</h4><ol>${b.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
-            <div class="callout"><b>Example</b><p>${b.example}</p></div>
-            <h4>Additional considerations</h4><ul>${b.additional.map(s=>`<li>${s}</li>`).join("")}</ul>
-          </div>
-          <div>
-            <div class="chart-wrap"><h4>Objective-wise Allocation</h4>${renderDonut(b.allocation)}</div>
-          </div>
-        </div>`);
+        <div class="${hasDonut?'row-2':''} scroll-reveal">${leftCol}${rightCol}</div>`);
     }
     if(t.dashboards){
       parts.push(`<h3 class="scroll-reveal">Dashboards Maintained</h3>
