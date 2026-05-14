@@ -1247,16 +1247,11 @@ const TEAMS = [
       ],
       "coreFunctions": [
         {
-          "title": "Responsibilities & Deliverables",
+          "title": "Responsible for",
           "items": [
-            "Narratives & Media Pointers",
-            "Communications and Campaigns ideas",
-            "Articles — ghostwriting + bylines",
-            "Speech Pointers",
-            "Long-term research from leadership/client",
-            "Influencers messaging",
-            "Bharat Darpan — macro political issue tracking & leadership alerts with narratives",
-            "Project Nandaka — micro political issue tracking & leadership alerts with narratives"
+            "Narratives",
+            "Ideation",
+            "Identifying the patterns"
           ]
         },
         {
@@ -1273,16 +1268,23 @@ const TEAMS = [
         {
           "title": "Delivers",
           "items": [
-            "Infopacks",
+            "Narrativized Infopacks",
             "Media Pointers",
             "PPTs",
             "Book Reviews",
-            "Narrativised Research Documents",
+            "Narrativized Research Documents",
             "Campaign ideas",
             "Communication ideas",
-            "Themes for major client milestones",
-            "Counters for ecosystem's fake claims",
-            "Narrative and issue tracking reports"
+            "Themes for the major milestones of the client",
+            "Counters for the ecosystem's fake claims",
+            "Narrative and issue tracking reports",
+            "Articles — Ghost writing and Byline writing",
+            "Speech Pointers",
+            "Long-term research",
+            "Influencers messaging",
+            "Bharat Darpan",
+            "Project Nandaka",
+            "The Indian Matrix on all social media platforms"
           ]
         },
         {
@@ -1296,26 +1298,47 @@ const TEAMS = [
         {
           "title": "Tools & Platforms",
           "items": [
-            "Gemini",
-            "Claude",
-            "ChatGPT",
-            "Instagram, X and all media platforms"
+            "Tools: Gemini, Claude, Chat GPT",
+            "Platforms: Instagram, X, all media platforms"
           ]
         },
         {
           "title": "Coordination & Reporting",
           "items": [
-            "Works closely with Comms, Media, NexGrow, Partnership Program",
-            "Depends on Media and PI",
+            "Works closely with Communications, Media, Nexgrow and Partnership Program",
+            "Depends on Research, Media and PI",
             "Reports to Shreyas Bharadwaj and Karthik Kamanna"
           ]
         }
       ],
+      "kpis": [
+        ["Narrativized Infopacks", ""],
+        ["Media Pointers", ""],
+        ["PPTs", ""],
+        ["Book Reviews", ""],
+        ["Narrativized Research Documents", ""],
+        ["Campaign ideas", ""],
+        ["Communication ideas", ""],
+        ["Themes for the major milestones of the client", ""],
+        ["Counters for the ecosystem's fake claims", ""],
+        ["Narrative and issue tracking reports", ""],
+        ["Articles — Ghost writing and Byline writing", ""],
+        ["Speech Pointers", ""],
+        ["Long-term research", ""],
+        ["Influencers messaging", ""],
+        ["Bharat Darpan", ""],
+        ["Project Nandaka", ""],
+        ["The Indian Matrix on all social media platforms", ""]
+      ],
+      "example": {
+        "title": "Connecting the Crucial Dots — Red Fort Blast",
+        "content": "Post the Red Fort blast, QRT launched a high-intensity campaign against what it termed white-collar terrorism. As a result, the incident, which might otherwise have been treated as just another terror attack, gave rise to the now widely used term 'white-collar terrorism' — a phrase that has since been repeatedly invoked by media and social media platforms while discussing similar incidents. QRT connected the dots between the education of the terrorists and their terror activities and established the fact that it is the mentality of the quom that follows a book to create chaos, no matter what their level of education is. Narrativized infopacks, media pointers, influencer messaging, and other forms of messaging pieces were disseminated to the concerned teams to pick up the narrative."
+      },
       "skills": {
         "must": [
-          "Political nuance understanding",
-          "Narrativisation",
-          "Creativity to convert issue/narrative into desired output",
+          "Understanding of political nuances",
+          "Narrativization",
+          "Creativity to convert the issue and narrative into the desired output",
           "Issue tracking"
         ],
         "nice": [
