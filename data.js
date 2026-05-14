@@ -3089,18 +3089,21 @@ const TAG_ORDER = ["Intelligence","Creative","Communications","Operations","Stru
 
 /* Inter-team coordination edges (from→to) for the coordination map */
 const COORD_EDGES = [
-  ["narrative","party"],["narrative","media"],["narrative","influencer"],["narrative","partnership"],["narrative","surrogate"],["narrative","third-party"],["narrative","smcc"],
+  // narrative (QRT) — only teams explicitly named in QRT Updated Doc §3 (lines 22-28)
+  // and §12 (lines 111-114) that map to website teams. Others (Leadership, Communications,
+  // Campaigns, Nexgrow, Research, PI) are external/parent and not site teams.
+  ["narrative","media"],["narrative","partnership"],
+
   ["arc","party"],["arc","smcc"],["arc","growth"],["arc","media"],["arc","non-meta"],
-  ["media","party"],["media","narrative"],["media","party-coord"],["media","smcc"],
+  ["media","party"],["media","party-coord"],["media","smcc"],
   ["legal","growth"],["legal","smcc"],["legal","non-meta"],["legal","tvc"],["legal","campaign-branding"],
   ["growth","smcc"],["growth","campaign-branding"],["growth","non-meta"],
   ["smcc","campaign-branding"],["smcc","third-party"],["smcc","party"],
-  ["influencer","narrative"],
   ["partnership","arc"],["partnership","growth"],["partnership","legal"],["partnership","third-party"],
-  ["reporter","narrative"],["reporter","media"],["reporter","tvc"],["reporter","party"],
+  ["reporter","media"],["reporter","tvc"],["reporter","party"],
   ["tvc","campaign-branding"],["tvc","non-meta"],
   ["party-coord","party"],["party-coord","media"],["party-coord","smcc"],
-  ["surrogate","narrative"],["surrogate","third-party"],
+  ["surrogate","third-party"],
   ["campaign-branding","party"]
 ];
 
