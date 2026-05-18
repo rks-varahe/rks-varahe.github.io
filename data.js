@@ -1863,6 +1863,7 @@ const TEAMS = [
       "icon": "🎯",
       "category": "comms",
       "function": "Hyperlocal Operations",
+      "hideTabs": ["skills", "downloads"],
       "tagline": "Precision Political Communication Engine — hyperlocal narrative-driven content backed by political intelligence.",
       "purpose": "The Social Media Command Centre (SMCC) is a key wing of the Communications team focused on creating high-impact hyperlocal content that can influence election outcomes. It is a centralised team built around two components — (1) producing Assembly Constituency (AC) level hyperlocal, narrative-driven content, and (2) building a hyperlocal dissemination network to amplify it. Unlike traditional communications (which primarily produces high-quality content for party pages and manages third-party pages), SMCC enables strategic hyperlocal content backed by political intelligence and has the flexibility to experiment with new formats and genres. This handbook is a guiding framework — not a fixed rulebook; processes must ultimately be shaped after analysing the political and organisational structure of the campaign State. The SMCC Manager must have a thorough understanding of the state's political scenario and overall narrative, referring to the PI Team's Primer Document and the National Research Team's State Achievement and Chargesheet documents.",
       "objectives": [
