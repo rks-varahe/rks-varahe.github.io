@@ -1863,528 +1863,306 @@ const TEAMS = [
       "icon": "🎯",
       "category": "comms",
       "function": "Hyperlocal Operations",
-      "tagline": "A precision political communication engine for constituency-level digital dominance.",
-      "purpose": "SMCC is a centralised, strategically managed digital operations unit driving hyperlocal social media campaigns for BJP across targeted assembly constituencies. It is the backbone of BJP's grassroots digital presence — going beyond national/state messaging to deliver constituency-specific content. Not a generic digital agency — a precision political communication engine.",
+      "tagline": "Precision Political Communication Engine — hyperlocal narrative-driven content backed by political intelligence.",
+      "purpose": "The Social Media Command Centre (SMCC) is a key wing of the Communications team focused on creating high-impact hyperlocal content that can influence election outcomes. It is a centralised team built around two components — (1) producing Assembly Constituency (AC) level hyperlocal, narrative-driven content, and (2) building a hyperlocal dissemination network to amplify it. Unlike traditional communications (which primarily produces high-quality content for party pages and manages third-party pages), SMCC enables strategic hyperlocal content backed by political intelligence and has the flexibility to experiment with new formats and genres. This handbook is a guiding framework — not a fixed rulebook; processes must ultimately be shaped after analysing the political and organisational structure of the campaign State. The SMCC Manager must have a thorough understanding of the state's political scenario and overall narrative, referring to the PI Team's Primer Document and the National Research Team's State Achievement and Chargesheet documents.",
       "objectives": [
         "Establish BJP's digital footprint in every contested assembly segment",
-        "Run hyperlocal narratives at village/ward/booth level",
-        "Attack opposition messaging through counter-narrative content",
-        "Amplify BJP's governance achievements, candidate profiles, ideology",
-        "Drive voter engagement and sentiment shift through targeted advertising"
+        "Run hyperlocal narratives that connect with voters at village, ward, and booth level",
+        "Attack opposition messaging through strategic counter-narrative content",
+        "Amplify BJP's governance achievements, candidate profiles, and party ideology",
+        "Drive voter engagement and sentiment shift through targeted Meta advertising"
       ],
       "contentFormats": [
-        {
-          "n": "Campaign Songs"
-        },
-        {
-          "n": "Campaign Videos"
-        },
-        {
-          "n": "AI-generated content"
-        },
-        {
-          "n": "Vote for Me"
-        },
-        {
-          "n": "KYC"
-        },
-        {
-          "n": "KYOC"
-        },
-        {
-          "n": "Hyperlocal Documentaries"
-        },
-        {
-          "n": "Cover Stories"
-        },
-        {
-          "n": "Success Stories",
-          "d": "Welfare-scheme beneficiary stories"
-        },
-        {
-          "n": "Chargesheets"
-        },
-        {
-          "n": "Vox Pops",
-          "d": "Man-on-street sentiment"
-        }
+        {"n": "Achievement Videos", "d": "VO + Vox Pop highlighting government achievements (don't name the incumbent unless ticket is confirmed)"},
+        {"n": "Chargesheet Videos", "d": "Failures, corruption, unfulfilled promises of opposition; VO + Public Vox Pops of dissatisfaction"},
+        {"n": "Cover Stories", "d": "VO video with original footage, documents and Vox Pops"},
+        {"n": "Know Your Candidate (KYC)", "d": "Candidate's life/political journey · supporter Vox Pops · 30–45s vote appeal"},
+        {"n": "Know Your Opposition (KYoC)", "d": "Voice-over + Vox Pops against the opposition candidate"},
+        {"n": "Comparison Videos", "d": "BJP candidate vs opposition — reuses KYC and KYoC Vox Pops"},
+        {"n": "CMS Requests", "d": "Content as requested by CMS PoCs (via 3P Campaigns)"},
+        {"n": "Campaign Songs", "d": "Production-to-dissemination owned by SMCC (e.g. TN BJP Campaign Song)"}
       ],
       "activationChecklist": [
-        [
-          "Receive state activation brief from National SMCC Head",
-          "State SMCC Head"
-        ],
-        [
-          "Confirm total number of ACs BJP is contesting",
-          "State SMCC Head"
-        ],
-        [
-          "Complete political & socioeconomic research for all ACs",
-          "State SMCC Head + Team"
-        ],
-        [
-          "Define zones and appoint Zone Coordinators",
-          "State SMCC Head"
-        ],
-        [
-          "Complete all hiring (content team per zone)",
-          "Zone Coordinators"
-        ],
-        [
-          "Set up Meta Business Manager and Ad Account",
-          "Ads Manager"
-        ],
-        [
-          "Create all Facebook and Instagram pages",
-          "Zone Coordinators"
-        ],
-        [
-          "Build brand kit and content templates",
-          "Graphic Design Lead"
-        ],
-        [
-          "Set up content calendar on Google Sheets",
-          "Content Strategist"
-        ],
-        [
-          "Conduct team briefing and onboarding",
-          "State SMCC Head"
-        ],
-        [
-          "Complete trial run and quality check",
-          "State SMCC Head"
-        ],
-        [
-          "Go live — Day 1 of operations",
-          "All"
-        ]
-      ],
-      "weeklyCalendar": [
-        {
-          "day": "Mon",
-          "mix": "2 positive + 1 attack (FB) · 1 reel + 1 story (IG)",
-          "focus": "Week opener — achievement focus"
-        },
-        {
-          "day": "Tue",
-          "mix": "1 meme + 1 news + 1 positive (FB) · 1 story + 1 static (IG)",
-          "focus": "Attack day — opposition pressure"
-        },
-        {
-          "day": "Wed",
-          "mix": "2 attack + 1 candidate (FB) · 1 reel + 2 stories (IG)",
-          "focus": "Mid-week push — negative on opposition"
-        },
-        {
-          "day": "Thu",
-          "mix": "1 local issue + 1 BJP scheme + 1 meme (FB) · 1 carousel (IG)",
-          "focus": "Hyperlocal narrative day"
-        },
-        {
-          "day": "Fri",
-          "mix": "2 positive + 1 news (FB) · 1 reel + 1 story + 1 static (IG)",
-          "focus": "Weekend build-up — positive energy"
-        },
-        {
-          "day": "Sat",
-          "mix": "Event coverage / Rally / Candidate activity (FB + IG)",
-          "focus": "Ground activity amplification"
-        },
-        {
-          "day": "Sun",
-          "mix": "Inspirational / Community connect / Week summary (FB + IG)",
-          "focus": "Sentiment building"
-        }
-      ],
-      "adTierMix": [
-        {
-          "label": "Regular Meta Ads",
-          "pct": 65,
-          "color": "#06b6d4",
-          "note": "Image/video/carousel via Ads Manager — 60–70% of budget"
-        },
-        {
-          "label": "Boosted Posts",
-          "pct": 22,
-          "color": "#0ea5e9",
-          "note": "Amplify high-performing organic posts — 20–25%"
-        },
-        {
-          "label": "Paste / Awareness",
-          "pct": 13,
-          "color": "#14b8a6",
-          "note": "Reach maximisation at low CPM — 10–15%"
-        }
+        ["SMCC Manager defines advertisement budget approval limits for ZCs", "SMCC Manager"],
+        ["Conduct WhatsApp call with all SMAs to discuss and finalise zone narratives", "Zonal Coordinator"],
+        ["Assign tasks on the designated Slack channel", "Zonal Coordinator"],
+        ["Assign the task to the respective Content Writer", "CW Lead"],
+        ["Draft the copy/content and post on Slack for ZC review", "Content Writer"],
+        ["Review content, suggest changes, and on approval tag the Production Head", "Zonal Coordinator"],
+        ["Assign creative task to Graphic Designer and Video Editor", "Production Head"],
+        ["Create and upload final creative/video output on Slack", "GD / VE"],
+        ["Review final output and approve by tagging the SME Lead", "Zonal Coordinator"],
+        ["Publish approved content on Facebook, Instagram, and WhatsApp", "SME Lead"],
+        ["Update the Ads Sheet with respective content links", "SME Lead"],
+        ["Allocate ads budget for the post (seek Manager approval if above limit, e.g. ₹2000)", "Zonal Coordinator"]
       ],
       "adRules": [
-        "Pause underperforming ads (high CPM, low engagement) within 24–48 hours of launch",
-        "Scale up well-performing ads by increasing daily budget 20–30%",
-        "Never change a winning ad — if it works, let it run; duplicate to scale",
-        "Daily ad account health check",
-        "Weekly ad performance report submitted by Ads Manager to State Head"
+        "Meta Ads are the backbone of SMCC — production has little value without strategic amplification through targeted Meta Ads",
+        "SMCC Manager and ZCs MUST sit with the Growth Team to learn ad targeting parameters (gender, interests, age, location, language, behavioural)",
+        "Every social media page must have the necessary Disclaimer attached BEFORE running political ads on Meta",
+        "Obtain pin codes from PI Team and coordinate with Growth Team so ad sets cover the entire AC by AC-level pin demographics",
+        "Growth Team runs ads only AFTER SMEs add post links to the Ads Sheet AND budget is approved by ZC/Manager",
+        "Most (not all) SMCC ads should run in accelerated mode to maximise spend efficiency and impact",
+        "ZC owns per-post budget allocation; anything above the Manager-defined limit (example: ₹2000) needs Manager approval"
       ],
       "securityPolicy": [
-        "Never use personal Facebook accounts as primary admin",
-        "Pages must have at least 2 admins: Zone Coordinator + State SMCC Head",
-        "Strong, unique passwords stored in secure shared password manager",
-        "Two-factor authentication on all accounts immediately upon creation",
-        "Remove access for any team member who leaves the campaign within 24 hours",
-        "Monthly access audit — verify all admins are current active team members",
-        "All hires must sign NDA and Confidentiality Agreement before access"
+        "Slack is the only official professional communication channel — WhatsApp is rapid-response/narrative-identification only and is NOT considered official proof (exception: ZC ↔ SMA, which is WA-only)",
+        "Shared Drive Manager access is limited to National Comms Head, State Lead, SMCC PD and SMCC Manager — do NOT give broad drive access to all team members",
+        "Vendors get access ONLY to the content production folder — never to narratives or other confidential folders",
+        "SMAs are NOT given access to or shared any documents",
+        "Meta Assets must be linked to personal accounts (Growth Team creates these personal accounts and provides manager access)",
+        "All Meta assets created under a SINGLE Meta Business Manager — enables Meta API integration with Sprout Social and automated reporting dashboards",
+        "WhatsApp groups must be created using a WA Business account (not a personal account) — enables tracking and lets us run WA Joining Ads",
+        "Page names must sound neutral and AC-level community-oriented — AVOID names like 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
+        "Disclaimer is mandatory authorisation for political ads on Meta — coordinate with Growth Team early; secure State Lead + PD approval before formal Disclaimer request",
+        "Vendor 10% TDS must be communicated up-front — TDS is advance tax (vendor reclaims via ITR), NOT additional tax over GST"
       ],
       "goaExample": {
         "stats": [
-          {
-            "k": "Total ACs Contested",
-            "v": "40 assembly constituencies"
-          },
-          {
-            "k": "Facebook Pages Created",
-            "v": "40"
-          },
-          {
-            "k": "Instagram Accounts",
-            "v": "40"
-          },
-          {
-            "k": "Primary Language",
-            "v": "Konkani + English (bilingual)"
-          },
-          {
-            "k": "Team Size (Content)",
-            "v": "14 Writers · 14 Designers · 14 Video Editors"
-          },
-          {
-            "k": "Zones",
-            "v": "3 (North Goa · South Goa · Panaji Metro)"
-          },
-          {
-            "k": "Zone Coordinators",
-            "v": "3"
-          },
-          {
-            "k": "Ads Manager",
-            "v": "1 Manager + 1 Assistant"
-          }
+          {"k": "Worked Example — State", "v": "Tamil Nadu SMCC (33 seats)"},
+          {"k": "Total Team Members", "v": "55"},
+          {"k": "Social Media Associates (SMA)", "v": "23"},
+          {"k": "Video Editors", "v": "10"},
+          {"k": "Graphic Designers", "v": "5"},
+          {"k": "Content Writers", "v": "9"},
+          {"k": "Zonal Coordinators", "v": "3 (one per zone — never vendorised)"},
+          {"k": "SM Executives & Others", "v": "5"},
+          {"k": "Comparative Setup — Pondicherry", "v": "First fully-vendorised production team; set up 2 months before election. SMCC-OCC deployed in Pondicherry town; SMAs in Karaikal."}
         ],
-        "attack": "Congress/AAP governance failures, development gaps, local MLA inaction",
-        "positive": "BJP double-engine government, Goa development story, PM Modi's Goa connect",
-        "focus": "Tourism economy · Mining issues · Youth employment (Goa-specific)"
+        "attack": "Opposition government's chargesheet, corruption and unfulfilled promises — sharpened through KYoC and Chargesheet videos (script + final output reviewed by PI Team)",
+        "positive": "BJP candidate's KYC, leader-specific achievement and chargesheet content, scheme-driven hyperlocal narratives",
+        "focus": "TN Phase-Wise Plan · Kerala KYC/KYoC bilingual experimentation · Documentary on Pandav Vada Case · Blank Constitution Issue · Impact of Chargesheet Video · TN BJP Campaign Song (full production-to-dissemination)"
       },
-      "igHighlights": [
-        "Achievements",
-        "Candidate",
-        "Local Issues",
-        "Events"
-      ],
       "scope": [
-        {
-          "k": "Campaign Duration",
-          "v": "1 month minimum to 6 months maximum"
-        },
-        {
-          "k": "Geographic Scope",
-          "v": "State-specific; contested ACs"
-        },
-        {
-          "k": "Platforms",
-          "v": "Facebook, Instagram (Meta), Google Ads where applicable"
-        },
-        {
-          "k": "Pages",
-          "v": "One Facebook + One Instagram per AC"
-        },
-        {
-          "k": "Content Types",
-          "v": "Attack, positive, memes, satire, news narratives, national & hyperlocal stories"
-        },
-        {
-          "k": "Advertising",
-          "v": "Meta Ads, Boosted posts, Paste-like awareness ads"
-        },
-        {
-          "k": "Team Model",
-          "v": "1 Video Editor + 1 Graphic Designer + 1 Content Writer + 1 SME per 3 ACs"
-        }
+        {"k": "Two Core Components", "v": "Hyperlocal Content Creation + Building Dissemination Network"},
+        {"k": "Primary Platforms", "v": "Facebook & Instagram (Targeted Meta Ads) · WhatsApp (AC-level WA Groups)"},
+        {"k": "Geographic Unit", "v": "Assembly Constituency (AC) — content always contextualised to local electorate"},
+        {"k": "Seat Categories", "v": "Focus Seats · High Priority Seats (Cat A/B/C — enhanced focus) · Opposition Seats (narrative attack only)"},
+        {"k": "Content Adaptation", "v": "Design, language and aesthetics adapted to AC context (e.g. Malayalam statewide; Kannada in Kasaragod AC)"},
+        {"k": "Budget Backbone", "v": "Meta Ads typically >50% of overall SMCC budget"},
+        {"k": "Setup Timeline", "v": "Ideal: ~6 months before campaign · Compressed (vendorised) model: <2 months before voting"}
       ],
       "structure": [
-        {
-          "role": "National SMCC Head",
-          "detail": "Overall strategy, SOP governance, state head appointments, cross-state learning. Reports to Party High Command / Senior Leadership."
-        },
-        {
-          "role": "State SMCC Head",
-          "detail": "State-level operations, team management, content approval, budget oversight. Reports to National SMCC Head."
-        },
-        {
-          "role": "Zone Coordinator",
-          "detail": "Manages 15–20 assembly pages within a geographic zone. Reports to State SMCC Head."
-        },
-        {
-          "role": "Content Strategist",
-          "detail": "Narrative planning, attack strategy, content calendar, brief creation."
-        },
-        {
-          "role": "Content Writer",
-          "detail": "1 per 3 ACs — script writing, caption writing, narrative drafting in local language."
-        },
-        {
-          "role": "Graphic Designer",
-          "detail": "1 per 3 ACs — static post creation, meme creation, infographic design."
-        },
-        {
-          "role": "Video Editor",
-          "detail": "1 per 3 ACs — reels, short video, attack videos, positive campaign videos."
-        },
-        {
-          "role": "Ads Manager",
-          "detail": "Meta Ads account management, campaign setup, budget allocation, reporting."
-        },
-        {
-          "role": "Analytics Lead",
-          "detail": "Data tracking, performance reporting, weekly insights."
-        }
+        {"role": "SMCC Project Director (PD)", "detail": "Leads the SMCC budgeting in consultation with National Comms Head, State Lead and State Comms Head. Final approvals on vendor onboarding, Disclaimers and asset creation."},
+        {"role": "SMCC Manager", "detail": "Owns the state's SMCC operations end-to-end. Defines ZC ad-budget approval limits. Sits with PI/3P/Growth/Admin teams to set up cross-team processes. Must have thorough grasp of state political scenario (PI Primer + State Achievement/Chargesheet docs)."},
+        {"role": "Zonal Coordinator (ZC)", "detail": "Single point of contact for all zone-level activities — narratives, approvals, deliverables. Conducts WA calls with SMAs to finalise zone narratives. Owns final content approval. Never vendorised — takes key political and strategic decisions."},
+        {"role": "CW Lead (Content Writers Lead)", "detail": "Single point of contact for the content writing vertical. Routes ZC-assigned tasks to the right Content Writer."},
+        {"role": "Production Head", "detail": "Single point of contact for the production vertical. Routes ZC-approved tasks to Graphic Designers and Video Editors."},
+        {"role": "SME Lead (Social Media Executives Lead)", "detail": "Single point of contact for publishing and updates. Publishes approved content across FB, IG and WhatsApp. Updates the Ads Sheet with respective post links."},
+        {"role": "Content Writer (CW)", "detail": "Drafts copy/content and posts on Slack for ZC review. One per cluster of seats as per team-sizing."},
+        {"role": "Graphic Designer (GD)", "detail": "Creates static creatives and graphics; uploads final output on Slack."},
+        {"role": "Video Editor (VE)", "detail": "Creates and edits videos; uploads final output on Slack."},
+        {"role": "Social Media Associate (SMA)", "detail": "On-ground narrative gatherer at AC level. Communicates with ZC over WhatsApp only. In vendorised model, SMAs are replaced by an on-ground SMCC-OCC team (1 reporter + 1 cameraman)."}
       ],
       "teamCalc": {
-        "formula": "For every 3 Assembly Constituencies → 1 Video Editor + 1 Graphic Designer + 1 Content Writer",
-        "example": "70 ACs → 24 Writers, 24 Designers, 24 Editors, 5 Zone Coordinators, 2 Ads Managers, 1 Analytics Lead, 1 State SMCC Head ≈ 81 people"
+        "formula": "Two models — (1) Hiring from Scratch (>2 months runway, recommended; SMAs directly hired); (2) Vendorising (<2 months runway; entire production team CW/VE/GD vendorised; SMAs replaced by SMCC-OCC reporter+cameraman). Hybrid permitted — e.g. SMCC-OCC for urban, SMAs for rural.",
+        "example": "Tamil Nadu (33 seats) = 23 SMAs · 10 Video Editors · 5 Graphic Designers · 9 Content Writers · 3 Zonal Coordinators · 5 SM Executives & Others = 55 team members"
       },
-      "scaleNote": "15–20 ACs per Zone Coordinator",
+      "scaleNote": "One Zonal Coordinator per zone. ZCs must NEVER be vendorised — they take key political and strategic decisions.",
       "coreFunctions": [
         {
-          "title": "Coordination with BJP Ecosystem",
+          "title": "What SMCC Does — 5 Strategic Objectives",
           "items": [
-            "IT Cell (PIT Cell) — The party's official IT and technology wing",
-            "Media Team — Manages official BJP media channels and press relations",
-            "Communication Team — Sets the state-level and national narrative direction",
-            "Third-Party Page Network — Independent pages amplifying BJP content"
+            "<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 14px;text-align:center;list-style:none\"><div style=\"background:#dcfce7;border-radius:10px;padding:14px 10px\"><div style=\"font-size:11px;color:#15803d;font-weight:700\">STEP 1</div><b>Establish</b><div style=\"font-size:12.5px;margin-top:4px\">BJP's digital footprint in every contested assembly segment</div></div><div style=\"background:#ffedd5;border-radius:10px;padding:14px 10px\"><div style=\"font-size:11px;color:#c2410c;font-weight:700\">STEP 2</div><b>Run Hyperlocal</b><div style=\"font-size:12.5px;margin-top:4px\">narratives that connect at village, ward and booth level</div></div><div style=\"background:#fee2e2;border-radius:10px;padding:14px 10px\"><div style=\"font-size:11px;color:#b91c1c;font-weight:700\">STEP 3</div><b>Attack Opposition</b><div style=\"font-size:12.5px;margin-top:4px\">messaging through strategic counter-narrative content</div></div><div style=\"background:#f3e8ff;border-radius:10px;padding:14px 10px\"><div style=\"font-size:11px;color:#6b21a8;font-weight:700\">STEP 4</div><b>Amplify Achievements</b><div style=\"font-size:12.5px;margin-top:4px\">governance wins, candidate profiles, party ideology</div></div><div style=\"background:#dbeafe;border-radius:10px;padding:14px 10px\"><div style=\"font-size:11px;color:#1d4ed8;font-weight:700\">STEP 5</div><b>Drive Engagement</b><div style=\"font-size:12.5px;margin-top:4px\">voter sentiment shift via targeted Meta advertising</div></div></div>",
+            "All five objectives operate simultaneously — national, state and hyperlocal narratives running in parallel, contextualised to each AC's electorate."
           ]
         },
         {
-          "title": "Pre-Campaign Research",
+          "title": "Two Major Components",
           "items": [
-            "Political landscape — map ACs, voting patterns (last 2–3 elections), swing/strong/weak seats, primary opposition, MLA/candidate profile",
-            "Socioeconomic — dominant castes/communities & leanings, local issues (unemployment, infrastructure, water, power, development), economic profile (agri/industrial/urban), language/dialect, religious demographics",
-            "Zone Mapping — 15–20 ACs per zone by geographic proximity, common language/dialect, similar political challenges, logistical ease"
+            "A. Hyperlocal Content Creation — produce AC-level narrative-driven curated content; narratives can be AC/district/zone/state/national but MUST be contextualised for the local electorate",
+            "Content curation adapts design aesthetics, language and elements (e.g. Malayalam statewide in Kerala; Kannada also produced for Kasaragod AC's Kannada-speaking electorate)",
+            "B. Building Dissemination Network — content creation has no value without hyperlocal dissemination; aim is to reach EVERY voter in the AC",
+            "Dissemination platforms: Facebook + Instagram via Targeted Meta Ads; WhatsApp via AC-level WA Groups"
           ]
         },
         {
-          "title": "Infrastructure Setup",
+          "title": "Budgeting",
           "items": [
-            "Meta Business Manager Account — Day 1 (Ads Manager)",
-            "Facebook Pages 'BJP [AC Name]' — Days 2–5 (Zone Coordinators)",
-            "Instagram accounts linked to corresponding FB page — Days 2–5",
-            "WhatsApp Broadcast Groups per AC — Days 3–5",
-            "Google Drive / Shared Folder — Day 1; Content Calendar Sheet — Day 2",
-            "Brand Kit / Design Templates — Days 3–7",
-            "Ads Account linked to BM with credit line or prepaid balance — Day 2"
+            "First major setup step — led by the SMCC Project Director in consultation with National Comms Head, State Lead and State Comms Head",
+            "Before starting: analyse political and organisational structure of the State — admin zones, expected number of focus seats, SMCC scope and expected deliverables (do this with State Lead, PI PD and PI Manager)",
+            "Clearly define the SMCC scope FIRST — if State Comms is producing achievement/chargesheet videos, those deliverables should NOT be inside SMCC budget; this affects team structure and hiring",
+            "Meta Ads typically account for MORE THAN 50% of overall SMCC budget — they are the backbone",
+            "State context drives both team structure and ad budget — Maharashtra >> Puducherry; hiring strong candidates costs higher in TN vs Chhattisgarh",
+            "Timeline matters — ~6 months before campaign (full setup) vs ~2 months before voting (compressed/vendorised setup)"
           ]
         },
         {
-          "title": "Page Naming & Setup",
+          "title": "Team Structure — Two Models",
           "items": [
-            "Facebook Page Name: BJP [Assembly Constituency Name] (e.g., BJP Panaji, BJP Calangute)",
-            "Instagram Handle: @bjp_[acname] or @bjp[acname] — no spaces, lowercase",
-            "Profile Picture: Candidate photo or BJP logo with state colours",
-            "Cover Photo: State-specific branded template with BJP branding",
-            "Bio/About: 'Official BJP page for [AC Name] Assembly Constituency'",
-            "Use dedicated campaign email (not personal); enable 2FA on creation; at least 2 admins (Zone Coordinator + State SMCC Head)"
+            "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0\"><div style=\"background:#ecfdf5;border:1px solid #86efac;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#15803d;font-weight:700;letter-spacing:.5px\">RECOMMENDED · >2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Hiring Team from Scratch</b><div style=\"font-size:13px;margin-top:6px\">Better ideological alignment, thorough skill evaluation. SMAs directly hired and integrated into team structure.</div></div><div style=\"background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#c2410c;font-weight:700;letter-spacing:.5px\">FALLBACK · <2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Vendorising</b><div style=\"font-size:13px;margin-top:6px\">Entire production team (CW, VE, GD) vendorised. SMAs replaced by on-ground SMCC-OCC team (1 reporter + 1 cameraman). ZCs are NEVER vendorised — they take key political/strategic decisions.</div></div></div>",
+            "Hybrid is permitted — e.g. SMCC-OCC for urban areas (easier news capture, higher quality expectations), SMAs for rural areas",
+            "Tamil Nadu (33 seats) team example: 23 SMAs · 10 VEs · 5 GDs · 9 CWs · 3 ZCs · 5 SM Execs & Others = 55 members",
+            "Pondicherry was the first fully-vendorised production team (2-month runway); SMCC-OCC in Pondicherry town, SMAs in Karaikal — strategic call based on UT's small geography"
           ]
         },
         {
-          "title": "Content Strategy & Calendar",
+          "title": "Seat Categories",
           "items": [
-            "Hyperlocal Over Everything — national, state and hyperlocal narratives operate simultaneously",
-            "Content categories — Positive, Attack, Memes & Satire, News & Journal, Reels & Short Videos",
-            "Weekly calendar — Mon: 2 positive + 1 attack; Tue: meme + news + positive; Wed: 2 attack + 1 candidate; Thu: local issue + scheme + meme; Fri: 2 positive + 1 news; Sat: event/rally coverage; Sun: inspirational/community",
-            "Language — primary language of the constituency; Hindi/English only for national narrative or bilingual audiences",
-            "Tone — Positive: aspirational, proud, forward-looking; Attack: sharp, fact-based, indignant — never abusive or personal; Memes: witty, relatable, impactful",
-            "Avoid hate speech, communal targeting, defamation, unverified claims"
+            "Focus Seat — ACs where SMCC actively runs AC-level pages and digital campaigns",
+            "High Priority Seat — subset of Focus Seats strategically important by winnability, political significance or key leader/candidate presence (Cat A, B, C); enhanced focus and resources",
+            "Opposition Seat — constituencies where the party may not be contesting directly, but SMCC runs narrative-building and attack content against opposition candidates",
+            "PI Team provides the seat classification list; classification may change during the campaign — structure with flexibility and factor changes into budget and resource planning"
           ]
         },
         {
-          "title": "Approval Workflow",
+          "title": "Hiring Process",
           "items": [
-            "Content Creator drafts content (copy + visual brief)",
-            "Zone Coordinator reviews for accuracy, tone, and local relevance",
-            "State SMCC Head spot-checks 20% of content daily; any sensitive/attack content must be cleared by State Head",
-            "Communication Team consulted for content touching state-level narrative or official party positions",
-            "Approved content scheduled via Creator Studio / Meta Business Suite"
+            "Refer to the Roles & Responsibilities document for required skill sets per role",
+            "Coordinate with HR Team for onboarding format and a single email-thread standard (avoids influx of emails)",
+            "For vendor onboarding: consult SMCC PD and State Lead first; onboarding mail must include the quotation (members, roles, financials), duration and end-date of engagement",
+            "After approval, work with the legal team to draft the vendor contract",
+            "TDS clarity is critical: 10% TDS will be deducted on payments even when the agreement states 'excluding GST and other taxes' — TDS is advance tax, NOT additional; vendor reclaims it via ITR",
+            "Worked example: ₹1,50,000/month excl. GST → ₹1,35,000 credited to vendor after 10% TDS"
           ]
         },
         {
-          "title": "Advertising — 3 Tiers",
+          "title": "Operational Workflow",
           "items": [
-            "Regular Meta Ads — 60–70% of budget — Image, video, carousel campaigns via Ads Manager",
-            "Boosted Posts — 20–25% — amplify organic posts that are performing well or are strategically critical",
-            "Paste/Awareness Ads — 10–15% — Reach objective campaigns, video views, brand awareness at low CPM"
+            "<div style=\"margin:10px 0\"><div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px\"><div style=\"background:#fef3c7;border-left:4px solid #d97706;padding:10px 12px;border-radius:6px\"><b>1 · SMCC Manager</b><div style=\"font-size:12.5px;margin-top:2px\">Defines ad budget approval limits for ZCs</div></div><div style=\"background:#dcfce7;border-left:4px solid #16a34a;padding:10px 12px;border-radius:6px\"><b>2 · ZC (WhatsApp)</b><div style=\"font-size:12.5px;margin-top:2px\">Calls all SMAs · finalises zone narratives</div></div><div style=\"background:#dbeafe;border-left:4px solid #2563eb;padding:10px 12px;border-radius:6px\"><b>3 · ZC (Slack)</b><div style=\"font-size:12.5px;margin-top:2px\">Assigns tasks on designated Slack channel</div></div><div style=\"background:#e0e7ff;border-left:4px solid #4f46e5;padding:10px 12px;border-radius:6px\"><b>4 · CW Lead</b><div style=\"font-size:12.5px;margin-top:2px\">Assigns task to the respective Content Writer</div></div><div style=\"background:#fef9c3;border-left:4px solid #ca8a04;padding:10px 12px;border-radius:6px\"><b>5 · Content Writer</b><div style=\"font-size:12.5px;margin-top:2px\">Drafts copy/content · posts on Slack for ZC review</div></div><div style=\"background:#dcfce7;border-left:4px solid #16a34a;padding:10px 12px;border-radius:6px\"><b>6 · ZC reviews</b><div style=\"font-size:12.5px;margin-top:2px\">Suggests changes if required</div></div><div style=\"background:#dcfce7;border-left:4px solid #16a34a;padding:10px 12px;border-radius:6px\"><b>7 · ZC approves</b><div style=\"font-size:12.5px;margin-top:2px\">Tags Production Head on Slack</div></div><div style=\"background:#f3e8ff;border-left:4px solid #9333ea;padding:10px 12px;border-radius:6px\"><b>8 · Production Head</b><div style=\"font-size:12.5px;margin-top:2px\">Assigns to GD and VE</div></div><div style=\"background:#cffafe;border-left:4px solid #0891b2;padding:10px 12px;border-radius:6px\"><b>9 · GD + VE</b><div style=\"font-size:12.5px;margin-top:2px\">Create creative/video · upload final output on Slack</div></div><div style=\"background:#dcfce7;border-left:4px solid #16a34a;padding:10px 12px;border-radius:6px\"><b>10 · ZC final review</b><div style=\"font-size:12.5px;margin-top:2px\">Approves and tags SME Lead</div></div><div style=\"background:#fce7f3;border-left:4px solid #db2777;padding:10px 12px;border-radius:6px\"><b>11 · SME Lead publishes</b><div style=\"font-size:12.5px;margin-top:2px\">FB · Instagram · WhatsApp</div></div><div style=\"background:#fce7f3;border-left:4px solid #db2777;padding:10px 12px;border-radius:6px\"><b>12 · SME Lead updates</b><div style=\"font-size:12.5px;margin-top:2px\">Ads Sheet with content links</div></div><div style=\"background:#dcfce7;border-left:4px solid #16a34a;padding:10px 12px;border-radius:6px\"><b>13 · ZC allocates ads budget</b><div style=\"font-size:12.5px;margin-top:2px\">For the published posts</div></div><div style=\"background:#fee2e2;border-left:4px solid #dc2626;padding:10px 12px;border-radius:6px\"><b>14 · Budget gate</b><div style=\"font-size:12.5px;margin-top:2px\">Above limit (e.g. ₹2000)? → SMCC Manager approval. Otherwise → deploy ads.</div></div></div></div>",
+            "ZC must coordinate closely with the production team during production to minimise revisions at the final review stage"
           ]
         },
         {
-          "title": "Audience Targeting",
+          "title": "Infrastructure — Shared Drive (Google Drive)",
           "items": [
-            "Geographic — AC pin codes or pin-drop with 3–5km radius; exclude neighbouring constituencies",
-            "Demographic — age 18–65+, gender-split tests, language targeting",
-            "Interest — political content, news, regional language content, local community groups",
-            "Lookalike audiences from page followers and engaged users; Custom audiences from local party-worker phone lists with consent"
+            "A Shared Google Drive is the central SMCC repository — set up BEFORE any team member is onboarded",
+            "Request via the va-data-manager Slack channel, tagging the VA Data Manager and all relevant stakeholders",
+            "Shared Drive Manager access ONLY to: National Comms Head, State Lead, SMCC PD, SMCC Manager",
+            "Create deliverable-specific folders and share with the specific team members working on them",
+            "Vendors get access ONLY to the content production folder — never narratives or confidential files. SMAs get NO document access."
           ]
         },
         {
-          "title": "Page Maintenance",
+          "title": "Infrastructure — Slack Channels (6 essential)",
           "items": [
-            "Facebook — minimum 3 posts/day; Instagram — minimum 2 posts + 2 stories/day",
-            "Comment moderation every 4 hours during active hours (8am–10pm)",
-            "Reply to messages within 2 hours during campaign hours",
-            "Weekly page health check (no violations/restrictions); daily ad account health check"
+            "Slack is used for ALL professional communication — ensures transparency and accountability",
+            "Raise channel-creation requests on va-data-manager; add National Comms Head, State Lead, SMCC PD, SMCC Manager and ZCs to ALL channels",
+            "<b>mh-smcc-zc</b> — ZCs only · all confidential deliverables and important communication",
+            "<b>mh-smcc-content</b> — ZCs, CWs, VEs, GDs, SMEs · all content production operations",
+            "<b>mh-smcc-pi-coordination</b> — PI PD, PI Managers, PI ZCs · PI raises content/ads requests; ZCs seek PI approval on narratives",
+            "<b>mh-smcc-3p</b> — 3P PD, 3P Managers, 3P ZCs · 3P content requests and coordination",
+            "<b>mh-smcc-growth</b> — Growth Team PoCs, SMEs · ALL ads-related conversations happen here",
+            "<b>mh-smcc-cms</b> — 3P PD, 3P Managers, 3P ZCs, CMS PoCs · all CMS requests"
           ]
         },
         {
-          "title": "Reporting",
+          "title": "Infrastructure — WhatsApp Groups",
           "items": [
-            "Daily — Ads Manager submits ad spend summary to State Head; Zone Coordinators flag issues",
-            "Weekly — Analytics Lead compiles report (followers, reach, top posts, ad performance, budget); State Head sends exec summary to National Head; strategy meeting",
-            "Monthly — Full monthly campaign performance report from State SMCC Head to National Head"
+            "WhatsApp is rapid-response and narrative-identification only — NOT official accountability proof (Slack is)",
+            "Exception: ZC ↔ SMA communication runs ONLY on WhatsApp",
+            "<b>Narrative Group</b> — all team members; share news, narratives and content-ready issues",
+            "<b>Zone-wise Groups</b> — each zone's ZC plus its SMAs; SMAs share narratives and content needing ZC approval",
+            "<b>Leads Group</b> — ZCs + CW Lead + SME Lead + Production Head; team-wide announcements and content discussions",
+            "SMCC PD and SMCC Manager must be added to all the above WA groups"
+          ]
+        },
+        {
+          "title": "Infrastructure — Asset Creation (Meta Pages + WA Groups)",
+          "items": [
+            "Obtain Focus Seats list from PI Team (post State Lead approval) — Meta Assets and WA Groups are created for these seats",
+            "A Disclaimer is mandatory authorisation to run political ads on Meta — pages cannot publish political ads without one",
+            "SMCC Manager coordinates with Growth Team on Disclaimer requirements; formal mail goes out AFTER State Lead and PD approval",
+            "Maintain ALL asset details (names, logos, cover pics, bios) in a single sheet — used for rapid re-creation if assets get struck down",
+            "Asset naming must be neutral and AC-level community-style — AVOID 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
+            "Meta Assets linked to personal accounts (Growth Team also creates these); all under a SINGLE Meta Business Manager (enables Meta API integration with Sprout Social etc.)",
+            "WA Groups created using a WA Business account (NOT personal) — enables tracking and WA Joining Ads"
+          ]
+        },
+        {
+          "title": "Cross-Team Co-ordination — PI Team",
+          "items": [
+            "Obtain 5 major AC/district/zone/state-level narratives (positive + negative) for each Focus Seat",
+            "Get leader-specific Chargesheet and Achievement documents → drives KYC/KYoC and achievement/chargesheet content",
+            "Ask for the DPU on a daily basis",
+            "Establish PI review/approval for Chargesheet, Achievement, KYC and KYoC content — script AND final output reviewed",
+            "Reach out to PI for hiring resources and SMAs via their FA contacts",
+            "Obtain AC pin codes for targeted ads"
+          ]
+        },
+        {
+          "title": "Cross-Team Co-ordination — 3P Campaigns",
+          "items": [
+            "Hire resources/SMAs through 3P FA contacts",
+            "Obtain 3P narrative documents and DPUs regularly; secure PI approval on those narratives before producing content",
+            "3P may raise content creation requests — check bandwidth and fulfil accordingly",
+            "Set up the CMS process EARLY — this is the most important coordination with the 3P Campaigns team"
+          ]
+        },
+        {
+          "title": "Cross-Team Co-ordination — Growth Team",
+          "items": [
+            "Share a (preferably inflated) rough estimate of Meta Pages, WA Groups and Disclaimers needed — ensures Growth procures SIMs from Admin in advance",
+            "Ask for SIM cards for creating WA Groups and ensure all SIMs are recharged at regular intervals",
+            "SMCC Manager + ZCs MUST sit with Growth to learn ad targeting (gender, interests, age, location, language, behaviour)",
+            "Obtain the Ads Sheet to be filled daily with post links",
+            "Obtain the weekly Ads report to analyse performance and strategise"
+          ]
+        },
+        {
+          "title": "Cross-Team Co-ordination — Admin & IT Team",
+          "items": [
+            "Obtain required number of SIM cards; ensure activation and timely recharges",
+            "Arrange laptops/machines for SMCC operations and dissemination",
+            "Arrange mobile phones for page posting, WA dissemination and coordination",
+            "Internet via dongles, Wi-Fi and data packs — must be uninterrupted",
+            "Create and manage official email IDs, passwords and access credentials",
+            "Tech support for setup, login, software installation and device troubleshooting",
+            "Inventory tracking of all issued devices, SIMs and operational assets; timely replacement/repair of faulty devices"
+          ]
+        },
+        {
+          "title": "WhatsApp Growth Strategy — 4 Dissemination Types",
+          "items": [
+            "<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:8px 0\"><div style=\"background:#eff6ff;border-left:4px solid #2563eb;padding:12px;border-radius:6px\"><div style=\"font-size:11px;color:#1d4ed8;font-weight:700;letter-spacing:.5px\">TYPE 1</div><b>In-House WA Groups</b><div style=\"font-size:12.5px;margin-top:4px\">(a) Created via WA Joining Ads on Meta pages · (b) SMA-added members from each block within the AC</div></div><div style=\"background:#ecfdf5;border-left:4px solid #16a34a;padding:12px;border-radius:6px\"><div style=\"font-size:11px;color:#15803d;font-weight:700;letter-spacing:.5px\">TYPE 2</div><b>Infiltrated WA Groups</b><div style=\"font-size:12.5px;margin-top:4px\">SMA gets office WA number added to thematic groups — RWA, college, caste-based, profession-based</div></div><div style=\"background:#fff7ed;border-left:4px solid #ea580c;padding:12px;border-radius:6px\"><div style=\"font-size:11px;color:#c2410c;font-weight:700;letter-spacing:.5px\">TYPE 3</div><b>Cohort-based WA Groups</b><div style=\"font-size:12.5px;margin-top:4px\">WA Joining Ads targeting women, youth, caste/community — dedicated groups for targeted narrative + scheme communication</div></div><div style=\"background:#faf5ff;border-left:4px solid #9333ea;padding:12px;border-radius:6px\"><div style=\"font-size:11px;color:#6b21a8;font-weight:700;letter-spacing:.5px\">TYPE 4</div><b>Party's WA Groups</b><div style=\"font-size:12.5px;margin-top:4px\">Coordinate with State Comms Lead to ensure SMCC content is regularly disseminated through the party's state-wide WA groups</div></div></div>",
+            "Push mass, highly emotional, filmy, CapCut-style edited videos — easily forwarded and uploaded to stories; prioritise shareability",
+            "DO NOT spam — Manager must give clear mandates; curate strategy around peak active hours (dinner / post-working hours)",
+            "Push at regular pre-decided intervals; address opposition counter-arguments inside the groups; maintain activity to build ideological perception"
+          ]
+        },
+        {
+          "title": "WA Joining Ads — Case Studies",
+          "items": [
+            "Always A/B test creatives BEFORE large budget allocations",
+            "<b>Case Study 1 (Maharashtra LBY):</b> women-focused groups using Ladki Bahin Yojana benefit-led creatives (benefit amount prominently highlighted). WhatsApp Joining Ads targeting women 18+ → CPA per WA member dropped from ₹8 → ₹1.4",
+            "<b>Case Study 2 (TN):</b> hooks like 'To bring revolution in this AC, join…', 'To get news updates in this AC, join…', 'To see Modiji as our PM again, join…' — mix of creatives onboards believers, persuadables AND resisters",
+            "Do NOT build believer-only groups — healthy mix of believers, persuadables and resisters is the objective; we're targeting the entire electorate"
+          ]
+        },
+        {
+          "title": "Special Content & Experimentation — Case Studies",
+          "items": [
+            "Documentary on Pandav Vada Case",
+            "Blank Constitution Issue",
+            "Kerala KYC and KYoC Videos",
+            "Impact of Chargesheet Video",
+            "TN BJP Campaign Song (full Production → Dissemination owned by SMCC)",
+            "TN SMCC Phase-Wise Plan"
           ]
         }
       ],
       "objectivesAds": [
-        [
-          "Reach",
-          "Brand awareness, maximizing voter touchpoints with BJP pages",
-          "High reach, low CPM"
-        ],
-        [
-          "Engagement",
-          "Boosting posts that have social proof, driving comments and shares",
-          "Comments, likes, shares"
-        ],
-        [
-          "Video Views",
-          "Attack videos, candidate intro videos, achievement reels",
-          "High view count, ThruPlay metric"
-        ],
-        [
-          "Page Likes/Follows",
-          "Early campaign phase — building page audience base",
-          "Growing follower count"
-        ],
-        [
-          "Traffic",
-          "Driving voters to the BJP website, event registration, or landing pages",
-          "Link clicks, website visits"
-        ],
-        [
-          "Lead Generation",
-          "Collecting volunteer/supporter contact details via instant forms",
-          "Lead capture for party database"
-        ]
+        ["Page Like Ads", "Run on FB to build follower base — AVOID on IG (low conversion). Tip: Test 3 creatives with varying themes; popular faces (Modiji) reduce CPM. Finalise after A/B testing.", "Discuss with State Lead whether pages are client-facing; if yes, target 5K followers/page (~₹1 per follower)"],
+        ["Post Ads", "Actual content amplification. Prefer Awareness for positive/pro content, Engagement for negative content. Strong hook is critical. Validate continuously with Growth Team.", "Based on narrative importance and regional electoral impact. Rural → higher budget (higher CPMs); urban → lower."],
+        ["Ghost Ads", "Content not visible on the page timeline but still served to the target audience. Best for short-lifespan content or aggressive/spiritually-toned narratives.", "Allocate based on importance of the narrative"]
       ],
       "budgetEsc": [
-        [
-          "Awareness Phase",
-          "8–12 weeks out",
-          "Base budget — 15–20% of total"
-        ],
-        [
-          "Engagement Phase",
-          "5–7 weeks out",
-          "Increase by 30% — 25–30% of total"
-        ],
-        [
-          "Intensification Phase",
-          "3–4 weeks out",
-          "Maximum spend — 35–40% of total"
-        ],
-        [
-          "Final Push Phase",
-          "1–2 weeks out",
-          "All remaining budget — full saturation"
-        ]
+        ["Meta Ads (Backbone)", "Targeted Meta Ads — the strategic amplification layer that makes hyperlocal content matter", "More than 50% of overall SMCC budget"],
+        ["Production Team", "Content Writers, Video Editors, Graphic Designers (or vendor team if vendorised)", "Sized per state political/admin structure"],
+        ["SMA / SMCC-OCC Layer", "Social Media Associates OR reporter+cameraman team if vendorised", "Per AC / per zone"],
+        ["Infrastructure", "Devices, SIMs, WA Business accounts, dongles, software (via Admin & IT)", "Sized to team count"],
+        ["State Cost Sensitivity", "Maharashtra >> Puducherry; strong candidate hiring costs higher in TN vs Chhattisgarh", "Planned with State Lead, PI PD/Manager"],
+        ["Setup Timeline", "6 months before campaign (full setup) vs 2 months before voting (compressed/vendorised)", "Directly impacts team model and total spend"]
       ],
       "kpis": [
-        [
-          "Page Growth — Weekly follower growth",
-          "Minimum 500 new followers per AC page per week in active campaign"
-        ],
-        [
-          "Page Growth — Page reach",
-          "Organic reach: minimum 2,000 unique accounts/week per page"
-        ],
-        [
-          "Content — Engagement rate",
-          "Minimum 3–5% on boosted posts; 1–2% on organic"
-        ],
-        [
-          "Content — Video views (Reels)",
-          "Minimum 500 views per reel; 5,000+ on boosted reels"
-        ],
-        [
-          "Content — Shares (attack)",
-          "Minimum 50+ shares per post"
-        ],
-        [
-          "Ads — CPM",
-          "Below ₹15 for reach campaigns; below ₹40 for engagement"
-        ],
-        [
-          "Ads — CTR",
-          "Minimum 1.5% for traffic campaigns"
-        ],
-        [
-          "Ads — Frequency",
-          "Keep below 3.0 — avoid ad fatigue"
-        ]
-      ],
-      "escalation": [
-        [
-          "Post with factual error goes live",
-          "Zone Coordinator: delete; State SMCC Head: review cause and fix process",
-          "Within 30 minutes"
-        ],
-        [
-          "Page restriction / account disabled",
-          "Zone Coord → State Head; Ads Manager submits Meta support ticket; State Head informs National Head",
-          "Within 2 hours"
-        ],
-        [
-          "Defamatory or potentially illegal content posted",
-          "Zone Coordinator removes immediately; State Head involves Communication Team + Legal",
-          "Within 15 minutes"
-        ],
-        [
-          "Ad account disabled",
-          "Ads Manager → State Head; State Head contacts National Head; explore backup ad accounts",
-          "Within 1 hour"
-        ],
-        [
-          "Opposition or media attacks SMCC content",
-          "State Head decides response strategy; Communication Team crafts official BJP response",
-          "Within 3 hours"
-        ],
-        [
-          "Team member leak / breach of confidentiality",
-          "State Head reports to National Head; immediate access removal; legal team notified",
-          "Within 24 hours"
-        ]
-      ],
-      "crisis": [
-        "STOP — Immediately pause all scheduled posts across affected pages while the crisis is assessed",
-        "ASSESS — State SMCC Head and Communication Team assess severity, scope, source",
-        "CONTAIN — Remove or correct the offending content immediately",
-        "COMMUNICATE — State SMCC Head briefs National Head within 1 hour; silence protocol (no external statements)",
-        "RESPOND — Communication Team crafts response; SMCC supports with social amplification",
-        "REVIEW — Post-crisis team debrief to identify cause and implement process fixes"
-      ],
-      "closure": [
-        "T-3 days before polling — reduce to 1–2 posts/day (positive, voter motivation only); pause all attack content; pause all Meta ads (MCC & Meta policies)",
-        "Polling Day — 'Go Vote' content and motivational voter participation only; no party-specific content",
-        "Post-result — win: celebrate, thank voters, acknowledge leadership; loss: gracious messaging, pledge to continue serving, no blame; begin page hand-off/archiving within 1 week"
-      ],
-      "pageDisposition": [
-        "Hand off to local party unit — transfer admin access to local BJP mandal president for ongoing constituency communication",
-        "Merge with state party page — for smaller ACs, merge page followers into state BJP page",
-        "Archive — unpublish (not delete) so content is preserved as a campaign record",
-        "Rebrand for next campaign — keep page live in dormant mode for reactivation at the next election"
+        ["Page Like Ads — Cost per Follower", "Target ~₹1 per follower; each page should reach minimum 5K followers (if shown to clients)"],
+        ["Page Like Creatives", "Test 3 creatives with varying themes; finalise after A/B testing — featuring Modiji/popular leaders typically yields lower CPMs"],
+        ["Post Ads — Type Preference", "Prefer Awareness ads for positive/pro content; Engagement ads for negative content (always re-validate with Growth Team)"],
+        ["Post Ads — Geography Sensitivity", "Rural → higher CPMs → higher budgets; Urban → lower CPMs → lower budgets"],
+        ["Ads Mode", "Most (not all) ads should run in accelerated mode to maximise spend efficiency and impact"],
+        ["WA Joining Ads — CPA", "Maharashtra LBY (women-focused) case: CPA per WA member dropped from ₹8 → ₹1.4 with benefit-led creatives"],
+        ["WA Group Composition", "Mix of believers, persuadables AND resisters — do NOT target believers only"],
+        ["Budget Gate (per post)", "ZC can allocate up to the Manager-defined limit (e.g. ₹2000); above that, SMCC Manager approval required"]
       ]
     },
     {
