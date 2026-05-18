@@ -973,7 +973,7 @@
       <h3 class="scroll-reveal" style="margin-top:30px">Ad performance rules</h3>
       <ul class="scroll-reveal">${t.adRules.map(r=>`<li>${r}</li>`).join("")}</ul>`},
     goaExample: {slot:"example", render:t=>`
-      <h3 class="scroll-reveal" style="margin-top:30px">State example · Goa</h3>
+      <h3 class="scroll-reveal" style="margin-top:30px">State example · ${t.goaExample.state || 'Goa'}</h3>
       <div class="chart-wrap scroll-reveal">
         <table class="std">${t.goaExample.stats.map(s=>`<tr><th style="width:42%">${s.k}</th><td>${s.v}</td></tr>`).join("")}</table>
         <p style="margin-top:14px"><b>Key attack narrative:</b> ${t.goaExample.attack}</p>
