@@ -663,7 +663,7 @@
       ${t.structure.map(r=>`<details class="disc"><summary>${r.role}</summary><div class="disc-body"><p>${r.detail}</p></div></details>`).join("")}`;
     return `<div class="row-2">
       <div><h2>Team Structure</h2>${tree}</div>
-      <div>${list}${t.teamCalc?`<div class="callout"><b>Team Calculation</b><div style="margin-top:6px">${t.teamCalc.formula}</div><div style="margin-top:10px">${t.teamCalc.example}</div></div>`:""}</div>
+      <div>${list}</div>
     </div>${renderExtrasFor("structure", t)}`;
   }
   function renderResp(t){
@@ -816,16 +816,25 @@
       if(t.sizing.min)   tiles.push({b:t.sizing.min,   l:"Minimum size"});
       if(t.sizing.ideal) tiles.push({b:t.sizing.ideal, l:"Ideal size"});
     }
-    if(t.teamCalc) tiles.push({b:t.teamCalc.formula, l:"Sizing formula"});
-    if(t.scaleNote) tiles.push({b:t.scaleNote, l:"Scaling rule"});
+    const richTeamCalc = t.teamCalc && typeof t.teamCalc.formula === 'string' && t.teamCalc.formula.trim().startsWith('<');
+    if(t.teamCalc && !richTeamCalc) tiles.push({b:t.teamCalc.formula, l:"Sizing formula"});
+    if(t.scaleNote && !richTeamCalc) tiles.push({b:t.scaleNote, l:"Scaling rule"});
     if(tiles.length){
       parts.push(`<div class="hire-tiles scroll-reveal">${tiles.map(x=>`<div class="hire-tile"><b>${x.b}</b><span>${x.l}</span></div>`).join("")}</div>`);
     }
     if(t.sizing && t.sizing.scale){
       parts.push(`<div class="callout scroll-reveal"><b>Scales up when:</b> ${t.sizing.scale}</div>`);
     }
+    if(richTeamCalc){
+      parts.push(`<h3 class="scroll-reveal" style="margin-top:24px">Team Structure Models</h3>
+        <div class="scroll-reveal" style="margin-top:6px">${t.teamCalc.formula}</div>`);
+      if(t.scaleNote){
+        parts.push(`<div class="callout scroll-reveal" style="margin-top:14px"><b>Scaling rule</b><div style="margin-top:4px">${t.scaleNote}</div></div>`);
+      }
+    }
     if(t.teamCalc && t.teamCalc.example){
-      parts.push(`<div class="callout scroll-reveal" style="background:var(--paper-2);border-left-color:var(--accent-2)"><b>Worked example</b><p>${t.teamCalc.example}</p></div>`);
+      parts.push(`<h3 class="scroll-reveal" style="margin-top:24px">Worked Example</h3>
+        <div class="scroll-reveal" style="margin-top:6px">${t.teamCalc.example}</div>`);
     }
     if(t.recruitment){
       const r = t.recruitment;
