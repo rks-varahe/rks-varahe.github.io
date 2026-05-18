@@ -2539,7 +2539,7 @@ const TEAMS = [
         {
           "title": "Campaign Workflow For Each Project",
           "items": [
-            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/tvc/workflow.png\" alt=\"TVC & Documentaries Campaign Workflow — 11 stages with Comms-approval checkpoints highlighted\" style=\"max-width:100%;width:700px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: TVC SOP §G — Campaign Workflow For Each Project · stages highlighted in green are Comms-approval checkpoints</figcaption>",
+            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/tvc/workflow.jpg\" alt=\"TVC & Documentaries Campaign Workflow — 11 stages with Comms-approval checkpoints highlighted\" style=\"max-width:100%;width:700px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: TVC SOP §G — Campaign Workflow For Each Project · stages highlighted in green are Comms-approval checkpoints</figcaption>",
             "Stages in order: Narrative Briefing from Comms Team → Ideation & Script Writing → <b>Script Approval (Comms Team)</b> → <b>Script Approval (Client)</b> → Project Budget Approval → Pre Production → Production → <b>Edit Approval (Comms Team)</b> → Final Edit Submission to EC → Post Production (Sound, Music, DI, Subtitles) → Final Delivery → Dubbing, TV, Theatre Outs (if required)"
           ]
         },
