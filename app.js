@@ -663,7 +663,7 @@
       ${t.structure.map(r=>`<details class="disc"><summary>${r.role}</summary><div class="disc-body"><p>${r.detail}</p></div></details>`).join("")}`;
     return `<div class="row-2">
       <div><h2>Team Structure</h2>${tree}</div>
-      <div>${list}${t.teamCalc?`<div class="callout"><b>Team Calculation</b><p>${t.teamCalc.formula}</p><p>${t.teamCalc.example}</p></div>`:""}</div>
+      <div>${list}${t.teamCalc?`<div class="callout"><b>Team Calculation</b><div style="margin-top:6px">${t.teamCalc.formula}</div><div style="margin-top:10px">${t.teamCalc.example}</div></div>`:""}</div>
     </div>${renderExtrasFor("structure", t)}`;
   }
   function renderResp(t){
