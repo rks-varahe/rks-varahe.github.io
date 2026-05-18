@@ -786,12 +786,15 @@
   }
 
   function renderDownloads(t){
-    if(!t.downloads || !t.downloads.length){
+    const hasDownloads = t.downloads && t.downloads.length;
+    const hasVideos = t.videoExamples && t.videoExamples.length;
+    if(!hasDownloads && !hasVideos){
       return `<h2 class="scroll-reveal">Resources</h2>${noData()}`;
     }
-    return `<h2 class="scroll-reveal">Resources</h2>
-      <p class="muted scroll-reveal" style="max-width:720px">External resources, templates, dashboards and official portals referenced in this team's handbook. Click to open.</p>
-      <div class="row scroll-reveal">
+    let parts = [`<h2 class="scroll-reveal">Resources</h2>
+      <p class="muted scroll-reveal" style="max-width:720px">External resources, templates, dashboards and official portals referenced in this team's handbook. Click to open.</p>`];
+    if(hasDownloads){
+      parts.push(`<div class="row scroll-reveal">
         ${t.downloads.map(d=>`
           <a class="download-card" href="${d.url}" target="_blank" rel="noopener">
             <span class="dl-icon">📄</span>
@@ -801,7 +804,22 @@
               <span class="dl-host">${new URL(d.url).hostname.replace('www.','')} ↗</span>
             </div>
           </a>`).join("")}
-      </div>`;
+      </div>`);
+    }
+    if(hasVideos){
+      parts.push(`<h3 class="scroll-reveal" style="margin-top:36px">Weapon Arsenal — Sample Films</h3>
+        <p class="muted scroll-reveal" style="max-width:720px;margin-top:-6px">Categories of films produced by the team. Click any thumbnail to open the reference video on Google Drive.</p>`);
+      t.videoExamples.forEach(cat=>{
+        parts.push(`<div class="scroll-reveal" style="margin-top:22px">
+          <h4 style="margin:0 0 10px;font-size:15px;color:#0f172a">${cat.title}</h4>
+          ${cat.note?`<p class="muted" style="margin:0 0 10px;max-width:720px;font-size:13px">${cat.note}</p>`:""}
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+            ${cat.items.map(v=>`<a href="${v.url}" target="_blank" rel="noopener" style="display:block;position:relative;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#0f172a;text-decoration:none;box-shadow:0 1px 6px rgba(15,23,42,.08);transition:transform .15s ease,box-shadow .15s ease" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(15,23,42,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 6px rgba(15,23,42,.08)'"><img src="${v.thumb}" alt="${v.label||cat.title}" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)"><div style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25)"><div style="width:0;height:0;border-left:14px solid #0f172a;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px"></div></div></div>${v.label?`<div style="position:absolute;left:8px;bottom:8px;right:8px;color:#fff;font-size:11.5px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.7);line-height:1.3">${v.label}</div>`:""}</a>`).join("")}
+          </div>
+        </div>`);
+      });
+    }
+    return parts.join("");
   }
   function renderHiring(t){
     const hasAny = (t.sizing || t.teamCalc || (t.budget && t.budget.length) || (t.skills && (t.skills.must?.length || t.skills.nice?.length)) || t.recruitment);

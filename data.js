@@ -2495,186 +2495,198 @@ const TEAMS = [
       "icon": "🎬",
       "category": "creative",
       "function": "Films & Documentaries",
-      "tagline": "Conceptualisation, production & post-production of ads and documentaries.",
-      "purpose": "Working closely with the comms/PI team to understand the key narratives of the state; conceptualisation, production & post-production of the ads & Documentaries.",
+      "hideTabs": ["skills"],
+      "tagline": "Operational structure and workflow of the TVC & Documentaries team — from script to final delivery.",
+      "purpose": "The TVC & Documentaries team works closely with the Comms & PI team to understand the key narratives, political context, and communication priorities of the state. Based on these inputs, the team handles the complete process of making the ad films and documentaries — including conceptualisation, production, and post-production.",
       "structure": [
-        {
-          "role": "Team Lead / Senior Producer",
-          "detail": "Abhiraj — coordinates with state leads and senior management."
-        },
-        {
-          "role": "Associate Producer / Creative Producer (TVC)",
-          "detail": "Ritesh — coordinates with state teams on a daily basis."
-        },
-        {
-          "role": "Associate Producer / Creative Producer (Documentaries)",
-          "detail": "Aditya — coordinates with state teams on a daily basis."
-        },
-        {
-          "role": "Executives",
-          "detail": "Director, DOP, Assistant Directors, Editor, DI Artist, Music Composer, Sound Designer, Post Production Supervisor."
-        },
-        {
-          "role": "Total Strength",
-          "detail": "10–12 in house people per state."
-        }
+        {"role": "Team Lead / Senior Producer — Abhiraj", "detail": "Coordination with state leads and senior management, along with overseeing project planning and execution."},
+        {"role": "Associate Producer / Creative Producer (TVC) — Ritesh", "detail": "Coordinates with state teams on a daily basis for ad film requirements, scripting, production planning, and execution."},
+        {"role": "Associate Producer / Creative Producer (Documentaries) — Aditya", "detail": "Handles daily coordination for documentary-related work and long-format content execution."},
+        {"role": "Executing Team", "detail": "Directors, DOPs, Assistant Directors, Editors, DI Artists, Music Composers, Sound Designers, and a Post-Production Supervisor."},
+        {"role": "Team Strength", "detail": "10–12 in-house members per state, depending on campaign requirements and workload."}
+      ],
+      "scaleNote": "1 dedicated POC per campaign state — single POC ensures quicker decisions, consistent communication, and smoother day-to-day coordination.",
+      "scope": [
+        {"k": "Primary Function", "v": "Conceptualisation, production and post-production of ad films and documentaries"},
+        {"k": "Primary Coordinator", "v": "State Communication Team — routes all briefings, narratives, deadlines and approvals"},
+        {"k": "Narrative Source", "v": "State PI Team — state-level, AC-level, cohort-level, and issue-based narratives"},
+        {"k": "Compliance Layer", "v": "Legal Team — EC compliance review at script level; final edit submitted for EC approval"},
+        {"k": "Ideal Campaign Runway", "v": "4–5 months before polling (minimum 3 months)"},
+        {"k": "Final Phase Focus", "v": "AC-level films — constituency-specific narratives, local issues, targeted communication"}
+      ],
+      "deliverables": [
+        {"n": "YouTube Out", "d": "4K (16:9)"},
+        {"n": "Facebook Out", "d": "HD (16:9)"},
+        {"n": "WhatsApp Out", "d": "LQ (16:9)"},
+        {"n": "Instagram Out", "d": "4:5"},
+        {"n": "Clean MOV", "d": "4K (without any text & graphics)"},
+        {"n": "Radio Jingle", "d": "WAV (Audio mix)"},
+        {"n": "Subtitle File", "d": "SRT (English)"},
+        {"n": "Theatre Outs", "d": "If required"},
+        {"n": "TV Outs", "d": "If required"},
+        {"n": "Dubbing", "d": "Multiple languages — if required"}
       ],
       "coreFunctions": [
         {
           "title": "Coordination with Other Teams",
           "items": [
-            "State Communications — primary coordinator; briefings/requirements from comms team; approvals at each checkpoint; needs dedicated POC",
-            "State PI — primary source for the list of state-level, ac-level, cohort-level narratives",
-            "Research — (infrequent) helps in fetching additional data for fulfilling narrative requirements",
-            "Legal — vets scripts for EC compliance & suggests changes from concept level; WIP films submitted for EC approval; additional protocols"
+            "<b>State Communication Team</b> — primary coordinating team. Routes ALL campaign narratives, communication priorities, political context and content requirements. Provides initial briefings, campaign objectives, references, deadlines and specific instructions before each project starts. Also gives approvals at every major checkpoint (concepts, scripts, edits, final outputs). MUST assign one dedicated Point of Contact (POC) for coordination.",
+            "<b>State PI Team</b> — primary source for state-level, AC-level, cohort-level and issue-based narratives. Provides the political insights that shape the creative direction of the content.",
+            "<b>Research Team</b> — supports on an as-needed basis. Sources additional data, statistics, background info and factual inputs required for specific narratives or campaign requirements.",
+            "<b>Legal Team</b> — reviews scripts for Election Commission (EC) compliance and other legal requirements. Involvement is primarily at script level (concepts, dialogues, claims, visuals, messaging). Any additional compliance steps or precautions must be followed during production and post-production. Once edit is final, it is submitted for EC approval — disclaimers/modifications from Legal or EC must be incorporated before final exports."
           ]
         },
         {
-          "title": "Weapon Arsenal",
+          "title": "Campaign Workflow For Each Project",
           "items": [
-            "20 second unskippable video ads",
-            "Longer skippable ads, magnum opus",
-            "Music Videos",
-            "Telecom Ads — AC Specific Videos",
-            "Telecom Ads — Narrative Videos",
-            "Telecom Ads — Cohort Based",
-            "Manifesto Films",
-            "Achievement documentaries (scheme, infra, etc.)",
-            "Issue based documentaries (yet to crack format)"
-          ]
-        },
-        {
-          "title": "Key Deliverables per Film",
-          "items": [
-            "FB Out (16:9, HD)",
-            "WA Out (16:9, LQ)",
-            "YT Out (16:9, 4K)",
-            "Insta Out (4:5)",
-            "Audio Mix (Radio jingle)",
-            "Clean MOV",
-            "Subtitle File (English)",
-            "Dubbing — if required",
-            "Theatre Outs — if required",
-            "TV Outs — if required"
+            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/tvc/workflow.png\" alt=\"TVC & Documentaries Campaign Workflow — 11 stages with Comms-approval checkpoints highlighted\" style=\"max-width:100%;width:700px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: TVC SOP §G — Campaign Workflow For Each Project · stages highlighted in green are Comms-approval checkpoints</figcaption>",
+            "Stages in order: Narrative Briefing from Comms Team → Ideation & Script Writing → <b>Script Approval (Comms Team)</b> → <b>Script Approval (Client)</b> → Project Budget Approval → Pre Production → Production → <b>Edit Approval (Comms Team)</b> → Final Edit Submission to EC → Post Production (Sound, Music, DI, Subtitles) → Final Delivery → Dubbing, TV, Theatre Outs (if required)"
           ]
         },
         {
           "title": "Pre-Campaign Preparation",
           "items": [
-            "Hiring",
-            "Early touch base with the state teams",
-            "Setting up the briefing & approval process",
-            "Understanding local politics & narratives",
-            "Pre campaign ground work (recce, local crew etc)"
-          ]
-        },
-        {
-          "title": "Campaign Workflow",
-          "items": [
-            "Project Briefing from Comms team",
-            "Ideation & Scripting",
-            "Script Approval from Comms team",
-            "Script Approval from the client",
-            "Project Budget Approval",
-            "Pre Production",
-            "Production",
-            "Edit Approval from the Comms team",
-            "Post Production (and all its steps)",
-            "Final delivery",
-            "Dubbing"
+            "<b>Hiring</b> — early hiring and internal team planning based on expected campaign workload",
+            "<b>Early Touch Base with State Teams</b> — establish coordination to understand local political dynamics, key narratives and communication strategies",
+            "<b>Ground Work</b> — recce visits, identifying local crews, understanding locations, and building local production support systems for smoother execution"
           ]
         },
         {
           "title": "Logic of Process",
           "items": [
-            "Scalability",
-            "20 seconds",
-            "Longer films",
-            "Actor retainers",
-            "Dedicated POCs"
+            "<b>Scalability</b> — streamlined workflow is critical for managing timelines, coordination, approvals and deliveries across multiple projects simultaneously during peak campaign",
+            "<b>20 Seconds</b> — most campaign ads designed in 20s format; works effectively as unskippable on digital platforms; better performance and retention vs longer skippable formats; easier to produce in bulk",
+            "<b>Longer Films</b> — generally perform better on social media; more effective for explaining complex narratives in detail; more creative flexibility for storytelling → better organic reach and virality",
+            "<b>Actor Retainers</b> — during peak campaign, actor availability and per-day costs become a major challenge. Working with lookalike actors on a retainer basis keeps them readily available, reduces repeated negotiation, coordination delays and high per-day talent costs",
+            "<b>Dedicated POCs</b> — one dedicated POC per campaign state ensures quicker decisions, consistent communication and smoother day-to-day coordination"
           ]
         },
         {
-          "title": "Campaign Timeline",
+          "title": "Key Learnings — Start Early & Limited Narratives",
           "items": [
-            "Phased workload executable",
-            "The final phase always goes to AC level films"
+            "<b>Start Early</b> — campaigns should ideally be initiated <b>4–5 months before polling</b> (and nothing less than 3). Starting early aligns processes, streamlines approvals, builds smooth client coordination, lets us understand client expectations of films AND gives local teams time to understand state narratives in depth.",
+            "<b>Limited Narratives over Films</b> — a 20-second ad should focus on a SINGLE clear narrative. Multiple narratives in a 20s ad make script writing very difficult. Longer ads can accommodate 2–3 narratives only if they're relevant to one another.",
+            "<b>Narrative Beat Sheet</b> — narratives work best when shared as core ideas and directions instead of detailed scripts. Gives flexibility to develop scripts that work better from production and timeline perspectives while staying true to the intended message. State Comms + PI team should fill out the Narrative Beat Sheet (template linked under Resources)."
           ]
         },
         {
-          "title": "Key Learnings from Earlier Campaigns",
+          "title": "Key Learnings — Internal Approval Process",
           "items": [
-            "Start early, escalate if timelines are slipping",
-            "Setting up an internal approval process",
-            "Expected client approval obstacles and workarounds",
-            "Narrative beat sheet",
-            "Limited narratives over films",
-            "Fixing CTAs soon",
-            "The mind-numbing time waste of endcard protocols, and possible early interventions",
-            "Additional unsolicited gyan"
+            "The approval process should be clearly defined at the START of the campaign and followed consistently by everyone",
+            "Proper alignment between script approvals, production and final delivery becomes critical during peak campaign phases",
+            "Every detail of a script — big or small — is accounted for and planned extensively. Changes made AFTER a script is locked and has moved into production create avoidable challenges. Even small changes can: (a) increase costs by affecting logistics, talent, locations and timelines; (b) disrupt production planning → execution delays and added pressure on delivery."
+          ]
+        },
+        {
+          "title": "Key Learnings — Expected Client Approval Obstacles & Workarounds",
+          "items": [
+            "When scripts/films remain stuck in review, planning, production and delivery timelines get affected. Solution: a clear client approval/review system with FIXED timelines at every stage.",
+            "<table class=\"std\" style=\"margin-top:6px\"><thead><tr><th>Stage of Campaign</th><th>Approval / Review TAT</th></tr></thead><tbody><tr><td>Initial Campaign Submissions <small style=\\\"color:#64748b\\\">(3 Months Before Polling)</small></td><td><b>Up to 14 Days</b></td></tr><tr><td>Mid Campaign Submissions <small style=\\\"color:#64748b\\\">(2 Months Before Polling)</small></td><td><b>Up to 3 Days</b></td></tr><tr><td>Peak Campaign Submissions <small style=\\\"color:#64748b\\\">(1 Month Before Polling)</small></td><td><b>1 Day</b></td></tr></tbody></table>",
+            "If approvals are delayed beyond these timelines → escalate to avoid workflow disruption",
+            "For 3P TVCs, OICs can be given approval authority so films do not always need client approval before production. Final films can still be shared with the client later — if they take them up, great; if not, they continue as planned on 3P."
+          ]
+        },
+        {
+          "title": "Key Learnings — CTAs & Endcard Protocols",
+          "items": [
+            "<b>Fixing CTAs Soon</b> — finalise CTAs during the scripting stage. In a 20s ad, the CTA usually gets only 2–3 seconds; adding/changing CTAs after production makes them difficult to fit. CTA also decides the ending mood/tone of the ad — early alignment avoids post-production rework.",
+            "<b>Mind-numbing Time Waste of Endcard Protocols</b> — even minor changes in logos, protocols or layouts require ALL final outputs to be exported again, delaying delivery during active campaigns. Finalise endcard requirements/protocols at an EARLY stage; wherever possible, avoid unnecessary protocol elements on end cards."
+          ]
+        },
+        {
+          "title": "Campaign Timeline — Phased Workload",
+          "items": [
+            "The campaign workload is executed in phases based on communication strategies and campaign timeline. This phased approach helps manage volume, maintain faster turnaround times, and streamline production planning.",
+            "<b>The Final Phase — Always AC-Level Films</b> — final phase is usually focused on AC-level films, where constituency-specific narratives, local issues and targeted communication become the primary focus."
+          ]
+        },
+        {
+          "title": "Phased Campaign Work — Week-by-Week",
+          "items": [
+            "<table class=\"std\"><thead><tr><th>Phase</th><th>Focus</th></tr></thead><tbody><tr><td><b>Preparation Phase</b><br><small style=\\\"color:#64748b\\\">28–24 Weeks Before</small></td><td>Understanding state narratives and communication priorities; establishing coordination with state teams; hiring based on campaign requirements; figuring out filming logistics, local crews and production support systems</td></tr><tr><td><b>20–16 Weeks Before Polling</b></td><td>Hiring and deployment of teams based on campaign requirements and workload planning</td></tr><tr><td><b>16–12 Weeks Before Polling</b></td><td>Production of the FIRST SET of state-level ads, along with initiation of special projects (magnum opus)</td></tr><tr><td><b>12–8 Weeks Before Polling</b></td><td>Second set of ads executed; special projects finalised; work on AC-level films begins</td></tr><tr><td><b>8–4 Weeks Before Polling</b></td><td>Execution of the final set of state ads and remaining special projects</td></tr><tr><td><b>4–1 Weeks Before Polling</b></td><td>Primary focus shifts to production and fast turnaround of AC-level films and ad-hoc state-level content requirements</td></tr><tr><td><b>1 Week Before Polling → 30 Days After Polling</b></td><td>Campaign closing activities and post-campaign requirements — campaign reports, key learnings, closing out budgets, data management etc.</td></tr></tbody></table>"
           ]
         }
       ],
-      "deliverables": [
+      "videoExamples": [
         {
-          "n": "FB Out",
-          "d": "16:9, HD"
+          "title": "20 Sec. Unskippable Ads",
+          "note": "20-second format ads designed for unskippable digital placements — high performance and retention.",
+          "items": [
+            {"thumb": "assets/tvc/unskippable-1.jpg", "url": "https://drive.google.com/file/d/1J2IjknImcbUPGJqDif_UKfVDd8eunVwm/view?usp=drive_link"},
+            {"thumb": "assets/tvc/unskippable-2.jpg", "url": "https://drive.google.com/file/d/1fJSzQ2H7DDCRVwYQVWv_cmv1w4RFNlun/view?usp=drive_link"},
+            {"thumb": "assets/tvc/unskippable-3.jpg", "url": "https://drive.google.com/file/d/1gxYlSh2FhjDb5qj-0B50NnR4iVMC_tPc/view?usp=drive_link"}
+          ]
         },
         {
-          "n": "WA Out",
-          "d": "16:9, LQ"
+          "title": "Longer Skippable Ads (Magnum Opus)",
+          "note": "Longer-format films — better suited for explaining complex narratives in detail; greater creative flexibility for storytelling.",
+          "items": [
+            {"thumb": "assets/tvc/magnum-1.jpg", "url": "https://drive.google.com/file/d/19U18DblVcEd3fdPYY_bMPzwGIBXF7rXh/view?usp=drivesdk"},
+            {"thumb": "assets/tvc/magnum-2.jpg", "url": "https://drive.google.com/file/d/1l0W-Do7-5dwF3q8HcaEba7ntCug-8tEh/view?usp=drive_link", "label": "Maha Vikas Aghadi — MVANIMAL"},
+            {"thumb": "assets/tvc/magnum-3.jpg", "url": "https://drive.google.com/file/d/1vcOYuh_2eYb0Ef1AB-zcE85x8qW-fWXG/view?usp=drive_link"}
+          ]
         },
         {
-          "n": "YT Out",
-          "d": "16:9, 4K"
+          "title": "Music Videos",
+          "note": "Musical narrative-driven films.",
+          "items": [
+            {"thumb": "assets/tvc/music-1.jpg", "url": "https://drive.google.com/file/d/1a9V1t9u_1ahTmT_ptvoiDbgcm0ORsmI0/view?usp=drive_link"},
+            {"thumb": "assets/tvc/music-2.jpg", "url": "https://drive.google.com/file/d/1UY5f10bGGI8XC0xcHWR0WT2ah1VQplnh/view?usp=drive_link"}
+          ]
         },
         {
-          "n": "Insta Out",
-          "d": "4:5"
+          "title": "Telecom Ads — AC Specific Videos",
+          "note": "Constituency-specific films — featured in the final phase of every campaign.",
+          "items": [
+            {"thumb": "assets/tvc/ac-1.jpg", "url": "https://drive.google.com/file/d/1WN0AazcMLBCjF-a8GqGtIrpXC7vf7Jcm/view?usp=drive_link"},
+            {"thumb": "assets/tvc/ac-2.jpg", "url": "https://drive.google.com/file/d/1yVH5DPe8IVx2VuR5-scrm0yKR3MJfgfz/view?usp=drive_link"},
+            {"thumb": "assets/tvc/ac-3.jpg", "url": "https://drive.google.com/file/d/1iUvq2gA_wr8W3qpawSlvePOny47HSyxD/view?usp=drive_link"}
+          ]
         },
         {
-          "n": "Audio Mix",
-          "d": "Radio jingle"
+          "title": "Telecom Ads — Narrative Based Videos",
+          "note": "Narrative-led short-format ads.",
+          "items": [
+            {"thumb": "assets/tvc/narrative-1.jpg", "url": "https://drive.google.com/file/d/1mOhbXS1cYCYZHwNI2AQ-zEZKMS_AU9Oh/view?usp=drive_link"},
+            {"thumb": "assets/tvc/narrative-2.jpg", "url": "https://drive.google.com/file/d/1FExS852cI6nXd8E_4EtMQMCpFj-XVXlE/view?usp=drive_link"},
+            {"thumb": "assets/tvc/narrative-3.jpg", "url": "https://drive.google.com/file/d/1uqUiazAZl7iG2WXO6ay1PefHx-Ji5g0M/view?usp=sharing"}
+          ]
         },
         {
-          "n": "Clean MOV",
-          "d": ""
+          "title": "Telecom Ads — Cohort Based Videos",
+          "note": "Cohort-targeted creative — speaks to specific demographics or community segments.",
+          "items": [
+            {"thumb": "assets/tvc/cohort-1.jpg", "url": "https://drive.google.com/file/d/1fcAzdm_TPJoll1fhdstfkYLuXt-flNme/view?usp=drive_link"},
+            {"thumb": "assets/tvc/cohort-2.jpg", "url": "https://drive.google.com/file/d/1iQjYK2rt6v99wm2GaBDTz4Os6PbCUmMf/view?usp=drive_link"},
+            {"thumb": "assets/tvc/cohort-3.jpg", "url": "https://drive.google.com/file/d/1gRP7NFGh9vQ1_qovYVs1pwk_1A3ZczSD/view?usp=sharing"}
+          ]
         },
         {
-          "n": "Subtitle File",
-          "d": "English"
+          "title": "Manifesto Ads",
+          "note": "Films built around the party manifesto.",
+          "items": [
+            {"thumb": "assets/tvc/manifesto-1.jpg", "url": "https://drive.google.com/file/d/1d57zqbKFq8nXXanM1YBD3JEJDydjc85P/view?usp=drive_link"},
+            {"thumb": "assets/tvc/manifesto-2.jpg", "url": "https://drive.google.com/file/d/17kWavxY2R83LG0z6ZrE3gBKsVNhoUSjg/view?usp=drive_link"},
+            {"thumb": "assets/tvc/manifesto-3.jpg", "url": "https://drive.google.com/file/d/1I_2myGQYgDgoRysaHHAKZzvibS8jFoxm/view?usp=drive_link"}
+          ]
         },
         {
-          "n": "Dubbing",
-          "d": "If required"
-        },
-        {
-          "n": "Theatre Outs",
-          "d": "If required"
-        },
-        {
-          "n": "TV Outs",
-          "d": "If required"
+          "title": "Achievement Documentaries",
+          "note": "Long-format documentaries highlighting scheme implementation, infrastructure and other government achievements.",
+          "items": [
+            {"thumb": "assets/tvc/achievement-1.jpg", "url": "https://drive.google.com/file/d/1rSaNlmIkzXks03v7lnxTGq9Z07QkY1rF/view?usp=sharing"},
+            {"thumb": "assets/tvc/achievement-2.jpg", "url": "https://drive.google.com/file/d/1tBMixMS1YktwWIUe9Bt5etIq6SNmPjyZ/view?usp=sharing"},
+            {"thumb": "assets/tvc/achievement-3.jpg", "url": "https://drive.google.com/drive/folders/11ho3hKzkob3xjjglq4ru7RxNi3Coddbx", "label": "Folder — multiple documentaries"}
+          ]
         }
       ],
-      "workflow11": [
-        "Project Briefing from Comms team",
-        "Ideation & Scripting",
-        "Script Approval from Comms team",
-        "Script Approval from the client",
-        "Project Budget Approval",
-        "Pre Production",
-        "Production",
-        "Edit Approval from the Comms team",
-        "Post Production (and all its steps)",
-        "Final delivery",
-        "Dubbing"
+      "downloads": [
+        {"url": "https://docs.google.com/spreadsheets/d/1jOUchDTpiz-MKrOmnmdl-mbZilmo5rOI1eB6kaFDlcs/edit?gid=0#gid=0", "label": "Narrative Beat Sheet — Template", "note": "Structured template for State Comms & PI to share core ideas and directions (instead of detailed scripts)"}
       ],
       "stats": [
-        {
-          "label": "In-house team / state",
-          "value": "10–12"
-        }
+        {"label": "In-house team / state", "value": "10–12"},
+        {"label": "Ideal runway", "value": "4–5 months"},
+        {"label": "Sample films catalogued", "value": "23"}
       ]
     },
     {
