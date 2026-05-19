@@ -1696,10 +1696,6 @@ const TEAMS = [
         {
           "role": "State / District / AC Reporters",
           "detail": "Defined territories or assignments. Ground collection, raw visuals, vox pops, local access, and time-bound submission. Field execution within approved brief."
-        },
-        {
-          "role": "Internal Requestors / Page Managers",
-          "detail": "Raise requests, provide brief clarity, receive approved data, and feed back on utilization. Approve brief intent and downstream use."
         }
       ],
       "coreFunctions": [
