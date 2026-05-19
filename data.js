@@ -2296,24 +2296,20 @@ const TEAMS = [
       "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
       "structure": [
         {
-          "role": "Manager",
-          "detail": "Responsible for the overall third-party ecosystem strategy and narrative alignment."
+          "role": "Project Manager",
+          "detail": "Oversees the overall campaign workflow, coordination, narrative decision, approvals, and strategy."
         },
         {
-          "role": "Creator/Consultant",
-          "detail": "Daily content creation, trend research, and work related to page admin. One-resource-one-page model."
+          "role": "Creator",
+          "detail": "Manages daily content creation, content research, daily publishing, coordination and other daily works."
         },
         {
-          "role": "Intern/Associate",
-          "detail": "Daily backend work — searching old bytes and researching data/statements; manages pages when creators are on leave/exit."
+          "role": "Intern",
+          "detail": "Helping in daily backend work — searching old bytes and researching data/statements; also trained to manage pages when creators are on leave/exit."
         },
         {
-          "role": "Video Editor — Positive Properties",
-          "detail": "Positive amplification, emotional storytelling, soft political influence."
-        },
-        {
-          "role": "Video Editor — Negative Surrogate Properties",
-          "detail": "Opposition attack videos, comparative edits, counter narratives, rapid response content."
+          "role": "Creative Team",
+          "detail": "Includes Graphic Designers, Video Editors (VE), and Animator responsible for daily creatives, reels, videos, motion graphics, and other visual creative content."
         }
       ],
       "coreFunctions": [
