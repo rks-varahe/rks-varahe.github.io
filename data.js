@@ -2029,7 +2029,8 @@ const TEAMS = [
             "Request via the va-data-manager Slack channel, tagging the VA Data Manager and all relevant stakeholders",
             "Shared Drive Manager access ONLY to: National Comms Head, State Lead, SMCC PD, SMCC Manager",
             "Create deliverable-specific folders and share with the specific team members working on them",
-            "Vendors get access ONLY to the content production folder — never narratives or confidential files. SMAs get NO document access."
+            "Vendors get access ONLY to the content production folder — never narratives or confidential files. SMAs get NO document access.",
+            "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE REQUEST MESSAGE</div><div style=\"text-align:center\"><img src=\"assets/smcc-drive-request.jpg\" alt=\"Sample Slack message requesting creation of a Shared Google Drive for SMCC\" style=\"max-width:100%;width:580px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 3 — Request for Google Drive (sample message in va-data-manager channel)</figcaption></div>"
           ]
         },
         {
@@ -2042,7 +2043,8 @@ const TEAMS = [
             "<b>mh-smcc-pi-coordination</b> — PI PD, PI Managers, PI ZCs · PI raises content/ads requests; ZCs seek PI approval on narratives",
             "<b>mh-smcc-3p</b> — 3P PD, 3P Managers, 3P ZCs · 3P content requests and coordination",
             "<b>mh-smcc-growth</b> — Growth Team PoCs, SMEs · ALL ads-related conversations happen here",
-            "<b>mh-smcc-cms</b> — 3P PD, 3P Managers, 3P ZCs, CMS PoCs · all CMS requests"
+            "<b>mh-smcc-cms</b> — 3P PD, 3P Managers, 3P ZCs, CMS PoCs · all CMS requests",
+            "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE CHANNEL-CREATION REQUEST</div><div style=\"text-align:center\"><img src=\"assets/smcc-slack-request.jpg\" alt=\"Sample Slack messages requesting creation of TN-SMCC and TN-SMCC-PI-Coordination private channels\" style=\"max-width:100%;width:520px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 4 — Request for Slack Workspace (sample channel-creation messages)</figcaption></div>"
           ]
         },
         {
