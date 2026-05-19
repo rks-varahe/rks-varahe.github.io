@@ -2293,19 +2293,19 @@ const TEAMS = [
       "icon": "🎭",
       "category": "creative",
       "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
-      "purpose": "Internally manages surrogate Instagram pages that majorly align with state politics. Unlike surrogate pages, these pages are not acquired externally but are created, developed, and operated completely within the organization through dedicated internal teams. The objective is to create multiple independent-looking digital voices that can communicate narratives in a native internet style rather than through direct political communication formats.",
+      "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
       "structure": [
         {
           "role": "Manager",
-          "detail": "Responsible for the overall third-party ecosystem strategy, narrative alignment. Salary ₹90K–₹1.3L (varies by state)."
+          "detail": "Responsible for the overall third-party ecosystem strategy and narrative alignment."
         },
         {
           "role": "Creator/Consultant",
-          "detail": "Daily content creation, trend research, and work related to page admin. One-resource-one-page model. Salary ₹40K–₹70K."
+          "detail": "Daily content creation, trend research, and work related to page admin. One-resource-one-page model."
         },
         {
           "role": "Intern/Associate",
-          "detail": "Daily backend work — searching old bytes and researching data/statements; manages pages when creators are on leave/exit. Stipend ₹20K–₹35K."
+          "detail": "Daily backend work — searching old bytes and researching data/statements; manages pages when creators are on leave/exit."
         },
         {
           "role": "Video Editor — Positive Properties",
@@ -2316,11 +2316,6 @@ const TEAMS = [
           "detail": "Opposition attack videos, comparative edits, counter narratives, rapid response content."
         }
       ],
-      "sizing": {
-        "min": "2 Members",
-        "ideal": "2–4 Members",
-        "scale": "Depends on number of surrogate pages, election intensity, opposition aggression, viral content demand"
-      },
       "coreFunctions": [
         {
           "title": "Operational Approach — Categories",
@@ -2434,28 +2429,6 @@ const TEAMS = [
           "Narrative confusion",
           "Content Poc",
           "Immediate"
-        ]
-      ],
-      "budget": [
-        [
-          "Manager",
-          "₹90K – ₹1.3L (varies by state)"
-        ],
-        [
-          "Creator / Consultant",
-          "₹40K – ₹70K"
-        ],
-        [
-          "Intern / Associate",
-          "₹20K – ₹35K"
-        ],
-        [
-          "Junior Video Editor",
-          "₹30K – ₹45K"
-        ],
-        [
-          "Senior Video Editor",
-          "₹50K – ₹80K"
         ]
       ],
       "phases": [

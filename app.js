@@ -652,7 +652,7 @@
     parts.push(`<div class="row-2 scroll-reveal">
       <div>
         <h2>Purpose</h2>
-        <p>${t.purpose||""}</p>
+        ${(t.purpose||"").split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join("")}
         ${t.objectives?`<div class="callout"><b>Core objectives</b><ul>${t.objectives.map(o=>`<li>${o}</li>`).join("")}</ul></div>`:""}
         ${t.philosophy?`<h3 style="margin-top:24px">Philosophy</h3><ul>${t.philosophy.map(p=>`<li>${p}</li>`).join("")}</ul>`:""}
         ${t.finalGoal?`<h3 style="margin-top:24px">Final goal</h3><ul>${t.finalGoal.map(p=>`<li>${p}</li>`).join("")}</ul>`:""}
