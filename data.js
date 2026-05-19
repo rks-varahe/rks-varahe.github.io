@@ -2497,7 +2497,7 @@ const TEAMS = [
       "icon": "🎬",
       "category": "creative",
       "function": "Films & Documentaries",
-      "hideTabs": ["skills"],
+      "hideTabs": ["skills", "phases", "hiring", "budget", "ops", "example"],
       "tagline": "Operational structure and workflow of the TVC & Documentaries team — from script to final delivery.",
       "purpose": "The TVC & Documentaries team works closely with the Comms & PI team to understand the key narratives, political context, and communication priorities of the state. Based on these inputs, the team handles the complete process of making the ad films and documentaries — including conceptualisation, production, and post-production.",
       "structure": [

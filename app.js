@@ -543,11 +543,11 @@
             <button class="tab" data-tab="structure">Structure</button>
             <button class="tab" data-tab="responsibilities">Responsibilities</button>
             ${(t.hideTabs||[]).includes("skills")?"":`<button class="tab" data-tab="skills">Skills</button>`}
-            <button class="tab" data-tab="phases">Campaign Flow</button>
-            <button class="tab" data-tab="hiring">Hiring</button>
-            <button class="tab" data-tab="budget">Budget</button>
-            <button class="tab" data-tab="ops">Operations</button>
-            <button class="tab" data-tab="example">Example</button>
+            ${(t.hideTabs||[]).includes("phases")?"":`<button class="tab" data-tab="phases">Campaign Flow</button>`}
+            ${(t.hideTabs||[]).includes("hiring")?"":`<button class="tab" data-tab="hiring">Hiring</button>`}
+            ${(t.hideTabs||[]).includes("budget")?"":`<button class="tab" data-tab="budget">Budget</button>`}
+            ${(t.hideTabs||[]).includes("ops")?"":`<button class="tab" data-tab="ops">Operations</button>`}
+            ${(t.hideTabs||[]).includes("example")?"":`<button class="tab" data-tab="example">Example</button>`}
             ${(t.hideTabs||[]).includes("downloads")?"":`<button class="tab" data-tab="downloads">Resources</button>`}
             <button class="tab" data-tab="contact">Contact</button>
           </nav>
@@ -561,11 +561,11 @@
         <div id="tab-structure" class="tab-content">${renderStructure(t)}</div>
         <div id="tab-responsibilities" class="tab-content">${renderResp(t)}</div>
         ${(t.hideTabs||[]).includes("skills")?"":`<div id="tab-skills" class="tab-content">${renderSkills(t)}</div>`}
-        <div id="tab-phases" class="tab-content">${renderPhases(t)}</div>
-        <div id="tab-hiring" class="tab-content">${renderHiring(t)}</div>
-        <div id="tab-budget" class="tab-content">${renderBudget(t)}</div>
-        <div id="tab-ops" class="tab-content">${renderOps(t)}</div>
-        <div id="tab-example" class="tab-content">${renderExample(t)}</div>
+        ${(t.hideTabs||[]).includes("phases")?"":`<div id="tab-phases" class="tab-content">${renderPhases(t)}</div>`}
+        ${(t.hideTabs||[]).includes("hiring")?"":`<div id="tab-hiring" class="tab-content">${renderHiring(t)}</div>`}
+        ${(t.hideTabs||[]).includes("budget")?"":`<div id="tab-budget" class="tab-content">${renderBudget(t)}</div>`}
+        ${(t.hideTabs||[]).includes("ops")?"":`<div id="tab-ops" class="tab-content">${renderOps(t)}</div>`}
+        ${(t.hideTabs||[]).includes("example")?"":`<div id="tab-example" class="tab-content">${renderExample(t)}</div>`}
         ${(t.hideTabs||[]).includes("downloads")?"":`<div id="tab-downloads" class="tab-content">${renderDownloads(t)}</div>`}
         <div id="tab-contact" class="tab-content">${renderContact(t)}</div>
       </section>
