@@ -94,19 +94,49 @@
   }
 
   /* --------------- Glossary auto-tooltips --------------- */
+  // Walks text nodes only so HTML attributes (alt="...SMCC...", title="...", etc.) are never touched.
+  // Earlier innerHTML-regex approach corrupted IMG/anchor attributes when glossary terms appeared inside them.
   function decorateGlossary(scope){
     const targets = (scope||document).querySelectorAll("p,li,td");
     const terms = Object.keys(GLOSSARY).sort((a,b)=>b.length-a.length);
+    const termRes = terms.map(t=>({
+      term:t,
+      re:new RegExp(`(?<![A-Za-z0-9_])(${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})(?![A-Za-z0-9_])`,"g"),
+      tip:GLOSSARY[t].replace(/"/g,'&quot;')
+    }));
+    const SKIP = /^(A|CODE|PRE|SCRIPT|STYLE|TEXTAREA|BUTTON)$/;
     targets.forEach(el=>{
       if(el.dataset.gd) return; el.dataset.gd="1";
-      let html = el.innerHTML;
-      terms.forEach(t=>{
-        const re = new RegExp(`(?<![A-Za-z0-9_>])(${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})(?![A-Za-z0-9_<])`,"g");
-        if(re.test(html) && !html.includes(`data-tip="${GLOSSARY[t]}`)){
-          html = html.replace(re,`<span class="tip" data-tip="${GLOSSARY[t].replace(/"/g,'&quot;')}">$1</span>`);
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+        acceptNode:n=>{
+          if(!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          let p = n.parentElement;
+          while(p && p!==el){
+            if(SKIP.test(p.tagName) || (p.classList && p.classList.contains('tip'))) return NodeFilter.FILTER_REJECT;
+            p = p.parentElement;
+          }
+          return NodeFilter.FILTER_ACCEPT;
         }
       });
-      el.innerHTML = html;
+      const nodes = [];
+      let n; while((n = walker.nextNode())) nodes.push(n);
+      nodes.forEach(node=>{
+        let html = node.nodeValue.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+        let changed = false;
+        termRes.forEach(({re,tip})=>{
+          re.lastIndex = 0;
+          if(re.test(html)){
+            re.lastIndex = 0;
+            html = html.replace(re, `<span class="tip" data-tip="${tip}">$1</span>`);
+            changed = true;
+          }
+        });
+        if(changed){
+          const tpl = document.createElement('template');
+          tpl.innerHTML = html;
+          node.replaceWith(tpl.content);
+        }
+      });
     });
   }
 
