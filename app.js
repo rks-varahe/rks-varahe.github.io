@@ -209,7 +209,7 @@
     const wrap = $("#hubDiagram"); if(!wrap) return;
     const W=900, H=540, cx=W/2, cy=H/2, R=210;
     const teams = TEAMS;
-    let parts = `<svg class="hub-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" aria-label="National Communications Hub">
+    let parts = `<svg class="hub-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" aria-label="Communications Hub">
       <defs><radialGradient id="hubg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#0e7490"/></radialGradient></defs>`;
     teams.forEach((t,i)=>{
       const a = (i/teams.length)*Math.PI*2 - Math.PI/2;
@@ -217,8 +217,7 @@
       parts += `<line class="hub-line" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/>`;
     });
     parts += `<g class="hub-center"><circle cx="${cx}" cy="${cy}" r="56" fill="url(#hubg)"/>
-      <text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="14">NATIONAL</text>
-      <text x="${cx}" y="${cy+14}" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="14">COMMS</text></g>`;
+      <text x="${cx}" y="${cy+5}" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="14">COMMS</text></g>`;
     teams.forEach((t,i)=>{
       const a = (i/teams.length)*Math.PI*2 - Math.PI/2;
       const x = cx + Math.cos(a)*R, y = cy + Math.sin(a)*R;
