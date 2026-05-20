@@ -649,23 +649,39 @@
 
   function renderOverview(t){
     let parts = [];
-    parts.push(`<div class="row-2 scroll-reveal">
-      <div>
+    const leftBody = `
         <h2>Purpose</h2>
         ${(t.purpose||"").split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join("")}
         ${t.objectives?`<div class="callout"><b>Core objectives</b><ul>${t.objectives.map(o=>`<li>${o}</li>`).join("")}</ul></div>`:""}
         ${t.philosophy?`<h3 style="margin-top:24px">Philosophy</h3><ul>${t.philosophy.map(p=>`<li>${p}</li>`).join("")}</ul>`:""}
-        ${t.finalGoal?`<h3 style="margin-top:24px">Final goal</h3><ul>${t.finalGoal.map(p=>`<li>${p}</li>`).join("")}</ul>`:""}
-      </div>
-      <div>
+        ${t.finalGoal?`<h3 style="margin-top:24px">Final goal</h3><ul>${t.finalGoal.map(p=>`<li>${p}</li>`).join("")}</ul>`:""}`;
+    let rightBody = `
         ${t.stats?`<div class="chart-wrap"><h3>Key numbers</h3><div class="row" style="grid-template-columns:1fr 1fr">
           ${t.stats.map(s=>`<div class="stat" style="min-width:0;text-align:center;padding:18px 12px"><b>${s.value}</b><span>${s.label}</span></div>`).join("")}
         </div></div>`:""}
         ${t.scope?`<table class="std">${t.scope.map(s=>`<tr><th style="width:42%">${s.k}</th><td>${s.v}</td></tr>`).join("")}</table>`:""}
         ${t.sizing?`<div class="chart-wrap"><h3>Sizing</h3><p><b>Minimum:</b> ${t.sizing.min}</p><p><b>Ideal:</b> ${t.sizing.ideal}</p><p><b>Scale up when:</b> ${t.sizing.scale}</p></div>`:""}
-        ${t.igHighlights?`<div class="chart-wrap"><h4>Instagram Story Highlights</h4><div class="badges">${t.igHighlights.map(x=>`<span class="badge">${x}</span>`).join("")}</div></div>`:""}
-      </div>
-    </div>`);
+        ${t.igHighlights?`<div class="chart-wrap"><h4>Instagram Story Highlights</h4><div class="badges">${t.igHighlights.map(x=>`<span class="badge">${x}</span>`).join("")}</div></div>`:""}`;
+    // Fallback right-column content: pull in summary cards built from data the team already has
+    // (KPIs / Platforms / Tools) so the column isn't blank for teams without stats/scope/sizing.
+    if(!rightBody.trim()){
+      const blocks = [];
+      if(t.kpis && t.kpis.length){
+        blocks.push(`<div class="chart-wrap"><h3>At a glance</h3><ul style="margin:0;padding-left:18px;line-height:1.6">${t.kpis.map(r=>`<li>${Array.isArray(r)?`<b>${r[0]}</b> — ${r[1]}`:r}</li>`).join("")}</ul></div>`);
+      }
+      if(t.platforms && t.platforms.length){
+        blocks.push(`<div class="chart-wrap"><h3>Platforms</h3><div class="badges">${t.platforms.map(x=>`<span class="badge dark">${x}</span>`).join("")}</div></div>`);
+      }
+      if(t.tools && t.tools.length){
+        blocks.push(`<div class="chart-wrap"><h3>Tools</h3><div class="badges">${t.tools.map(x=>`<span class="badge">${x}</span>`).join("")}</div></div>`);
+      }
+      rightBody = blocks.join("");
+    }
+    if(rightBody.trim()){
+      parts.push(`<div class="row-2 scroll-reveal"><div>${leftBody}</div><div>${rightBody}</div></div>`);
+    } else {
+      parts.push(`<div class="scroll-reveal" style="max-width:820px">${leftBody}</div>`);
+    }
     parts.push(renderExtrasFor("overview", t));
     return parts.join("");
   }

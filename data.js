@@ -2292,6 +2292,7 @@ const TEAMS = [
       "name": "Third Party Team",
       "icon": "🎭",
       "category": "creative",
+      "hideTabs": ["budget", "example", "downloads"],
       "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
       "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
       "structure": [
@@ -2314,33 +2315,25 @@ const TEAMS = [
       ],
       "coreFunctions": [
         {
-          "title": "Operational Approach — Categories",
-          "items": [
-            "Meme and youth culture pages",
-            "Regional and local narrative pages",
-            "Political infotainment pages",
-            "Hyper-trend and Issue-based thematic pages"
-          ]
-        },
-        {
-          "title": "Why Internal Control Wins",
-          "items": [
-            "Execution speed, narrative discipline, and posting consistency remain significantly higher compared to externally managed ecosystems",
-            "Faster experimentation with formats",
-            "Better narrative synchronization",
-            "Higher posting frequency",
-            "Rapid amplification during political moments",
-            "Better crisis control and content moderation"
-          ]
-        },
-        {
           "title": "Working Objective",
           "items": [
-            "Operates a centralized network of internally managed third-party pages to amplify campaign narratives in internet-native language",
-            "Creates the perception of widespread organic conversations across meme pages, youth culture, and regional digital spaces",
-            "Reduces overdependence on official political handles by distributing messaging through multiple independent-looking pages",
-            "Makes campaign communication feel more relatable, trend-driven, culturally relevant, and socially embedded among audiences",
-            "Enables rapid response narrative warfare during political events, opposition attacks, and high-engagement news cycles"
+            "Build and operate a decentralized network of internally managed third party properties designed to amplify campaign messaging through audience-native communication styles",
+            "Expand narrative reach beyond official political handles by distributing content through multiple independent-looking digital communities",
+            "Increase relatability and engagement through meme culture, trend-driven communication, regional references, and internet-first storytelling formats",
+            "Strengthen narrative visibility during high-attention political moments, major news cycles, and fast-moving online conversations",
+            "Create scalable communication ecosystems capable of shaping public discourse organically across diverse audience segments",
+            "Enable faster narrative dissemination, fast messaging, and high-frequency content participation during election periods"
+          ]
+        },
+        {
+          "title": "Operational Approach",
+          "items": [
+            "Plan and manage the broader digital narrative ecosystem in alignment with campaign communication objectives",
+            "Execute daily, weekly, and monthly content planning while ensuring quality control and consistency across all ecosystem properties",
+            "Monitor political developments, public discourse, rallies, protests, and media conversations for rapid content adaptation",
+            "Develop growth and engagement strategies to improve reach, audience penetration, and content performance across platforms",
+            "Coordinate with state-level social media teams, regional stakeholders, and campaign communication units for narrative alignment",
+            "Ensure surrogate pages maintain distinct audience identities, content styles, and platform-native positioning"
           ]
         },
         {
@@ -2354,21 +2347,6 @@ const TEAMS = [
           ]
         },
         {
-          "title": "Skills Required",
-          "items": [
-            "Deep understanding of Instagram ecosystem and meme culture",
-            "Strong political narrative understanding",
-            "Trend spotting and rapid adaptation capability",
-            "High-speed content execution skills",
-            "Reel editing and meme creation capability",
-            "Audience psychology understanding",
-            "Internet culture awareness",
-            "Crisis management judgment",
-            "Strong coordination and communication ability",
-            "Ability to maintain narrative consistency while keeping content organic-looking"
-          ]
-        },
-        {
           "title": "Video Editing — Inputs/Outputs",
           "items": [
             "Inputs from Page Manager — opposition monitoring, viral trends, research insights",
@@ -2377,6 +2355,20 @@ const TEAMS = [
           ]
         }
       ],
+      "skills": {
+        "must": [
+          "Deep understanding of Instagram ecosystem and meme culture",
+          "Strong political narrative understanding",
+          "Trend spotting and rapid adaptation capability",
+          "High-speed content execution skills",
+          "Reel editing and meme creation capability",
+          "Audience psychology understanding",
+          "Internet culture awareness",
+          "Crisis management judgment",
+          "Strong coordination and communication ability",
+          "Ability to maintain narrative consistency while keeping content organic-looking"
+        ]
+      },
       "kpis": [
         "Daily output: 10–20 video per day",
         "Weekly output: 80–100 videos",
