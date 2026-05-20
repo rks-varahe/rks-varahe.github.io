@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Campaign Journey · Varahe NCC</title>
+<meta name="description" content="An animated journey through every campaign phase — see how the narrative flows from Party Team to ground." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
 <link rel="stylesheet" href="journey.css" />
 <link rel="icon" href="assets/logo.png" />
 </head>
-<body>
+<body class="jrn-body">
 
 <header class="nav">
   <div class="container nav-inner">
@@ -34,77 +35,67 @@
   </div>
 </header>
 
-<main class="jrn-page">
-  <!-- top hero — state pick + meta ribbon -->
-  <section class="jrn-hero">
-    <div class="container">
-      <div class="jrn-hero-grid">
-        <div>
-          <span class="kicker scroll-reveal">Field campaign journey</span>
-          <h1 class="scroll-reveal">Your <span class="grad">state campaign</span><br/>roadmap.</h1>
-          <p class="muted scroll-reveal" style="max-width:560px">A live, gamified playbook for the on-ground PD. Every phase, every team, every hand-off — sequenced.</p>
-        </div>
-        <div class="jrn-state-pick scroll-reveal">
-          <label>Select state</label>
-          <select id="jrnStateSel"></select>
-          <div class="jrn-polling" id="jrnPolling"></div>
-        </div>
-      </div>
+<!-- HERO -->
+<section class="jrn-hero">
+  <div class="container">
+    <span class="kicker scroll-reveal">From kickoff to result day</span>
+    <h1 class="scroll-reveal">The <span class="grad">Campaign Journey</span><br/>through every team.</h1>
+    <p class="hero-lead scroll-reveal" style="max-width:680px">Follow the car. It rolls through six months of campaign time — phase by phase, team by team — showing how a single brief from the Party Team becomes a narrative, becomes a creative, becomes a vote.</p>
+  </div>
 
-      <div class="jrn-lead-row scroll-reveal">
-        <div class="jrn-lead-card" id="jrnLeadCard"></div>
-        <div class="jrn-stats-card" id="jrnStatsCard"></div>
-      </div>
-    </div>
-  </section>
+  <!-- Phase ribbon -->
+  <div class="container">
+    <div class="jrn-ribbon scroll-reveal" id="jrnRibbon"></div>
+  </div>
+</section>
 
-  <!-- phase stepper -->
-  <section class="container jrn-section">
-    <div class="section-head">
-      <div>
-        <span class="kicker scroll-reveal">Mission progress</span>
-        <h2 class="scroll-reveal">The 5-phase journey</h2>
-        <p class="muted scroll-reveal" style="max-width:600px">Tap any phase to dive in. Locked phases unlock when their prerequisites are met.</p>
-      </div>
+<!-- THE JOURNEY -->
+<main class="jrn-stage" id="jrnStage">
+  <!-- fixed car element (positioned by JS based on scroll progress) -->
+  <div class="jrn-car-rail" aria-hidden="true">
+    <div class="jrn-car" id="jrnCar">
+      <svg viewBox="0 0 64 32" width="64" height="32">
+        <!-- shadow -->
+        <ellipse cx="32" cy="30" rx="24" ry="2" fill="rgba(15,23,42,.18)"/>
+        <!-- body -->
+        <path d="M6 22 L10 13 Q12 10 16 10 L40 10 Q44 10 47 13 L54 18 Q58 18 58 22 L58 26 Q58 27 57 27 L7 27 Q6 27 6 26 Z" fill="#0e7490"/>
+        <!-- windshield -->
+        <path d="M18 13 L24 11 L36 11 L40 13 L40 18 L18 18 Z" fill="#67e8f9" opacity=".85"/>
+        <!-- door line -->
+        <line x1="29" y1="13" x2="29" y2="18" stroke="#155e75" stroke-width=".7"/>
+        <!-- wheels -->
+        <circle cx="18" cy="27" r="4" fill="#0f172a"/>
+        <circle cx="18" cy="27" r="1.6" fill="#94a3b8"/>
+        <circle cx="46" cy="27" r="4" fill="#0f172a"/>
+        <circle cx="46" cy="27" r="1.6" fill="#94a3b8"/>
+        <!-- headlight -->
+        <circle cx="56" cy="22" r="1.4" fill="#fef3c7"/>
+      </svg>
     </div>
-    <div class="jrn-stepper" id="jrnStepper"></div>
-  </section>
+    <!-- vertical road line -->
+    <div class="jrn-road-line"></div>
+  </div>
 
-  <!-- active phase detail -->
-  <section class="container jrn-section">
-    <div class="jrn-phase-detail" id="jrnPhaseDetail"></div>
-  </section>
-
-  <!-- network diagram -->
-  <section class="container jrn-section">
-    <div class="section-head">
-      <div>
-        <span class="kicker scroll-reveal">Journey network</span>
-        <h2 class="scroll-reveal">Phase by phase · top to bottom</h2>
-        <p class="muted scroll-reveal" style="max-width:680px">Each phase is a band. The PD avatar stands on the task they're currently focused on. Click any task to drill in.</p>
-      </div>
-    </div>
-    <div class="jrn-network-wrap scroll-reveal">
-      <div id="jrnNetwork"></div>
-    </div>
-  </section>
-
-  <!-- footer / sheet info -->
-  <section class="container jrn-section" style="padding-bottom:80px">
-    <div class="jrn-sheet-cta scroll-reveal">
-      <span class="kicker">Data source</span>
-      <h3>This page reads from a Google Sheet</h3>
-      <p>Each state lives in its own sheet tab. To update phase / task / POC info, edit the sheet directly — the page picks up changes on next reload.</p>
-      <div class="jrn-cta-row">
-        <a class="btn-primary" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1tOojU6WyY-Ss-iZ0ejxTEJhHusJ6Dw1jSCOty9xEtzM/edit?usp=sharing">Open Journey Sheet ↗</a>
-        <a class="btn-secondary" href="#" id="jrnSchemaBtn">Show schema reference</a>
-      </div>
-      <div class="jrn-schema" id="jrnSchema" hidden></div>
-    </div>
-  </section>
+  <div class="container" id="jrnScenes"></div>
 </main>
 
-<!-- team-task drawer -->
+<!-- LEGEND / FOOTER -->
+<section class="container jrn-footer-section">
+  <div class="jrn-legend scroll-reveal">
+    <h3>How to read this journey</h3>
+    <p class="muted">Each phase block has six lanes — the same handoff chain from <b>Strategy</b> on the left to <b>Amplification</b> on the right. Click any team chip to see its full role in that phase.</p>
+    <div class="jrn-lane-key">
+      <span data-lane="strategy">Strategy</span>
+      <span data-lane="intel">Intelligence</span>
+      <span data-lane="direction">Direction</span>
+      <span data-lane="creation">Creation</span>
+      <span data-lane="distribution">Distribution</span>
+      <span data-lane="amplify">Amplification</span>
+    </div>
+  </div>
+</section>
+
+<!-- Team-phase drawer -->
 <aside class="jrn-drawer" id="jrnDrawer" aria-hidden="true">
   <div class="jrn-drawer-scrim" id="jrnDrawerScrim"></div>
   <div class="jrn-drawer-panel" id="jrnDrawerPanel"></div>
@@ -117,8 +108,6 @@
 </footer>
 
 <script src="data.js"></script>
-<script src="journey-blueprint.js"></script>
-<script src="journey-data.js"></script>
 <script src="journey.js"></script>
 </body>
 </html>

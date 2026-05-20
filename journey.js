@@ -1,414 +1,347 @@
-/* Campaign Journey — activity-matrix renderer.
-   Reads the fixed JOURNEY_BLUEPRINT and overlays the per-state status from STATES. */
+/* Campaign Journey — scroll-driven narrative through 5 phases × team handoff lanes.
+   Role text per team-per-phase is composed from each team's own phase data in data.js
+   (XLSX focus text for the 12 sheet teams; docx purpose/window for party/party-coord;
+   workflow steps for partnership). The journey itself is a designed product.
+*/
 (function(){
-  const $  = (s, r=document) => r.querySelector(s);
-  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  "use strict";
 
-  let activeStateCode = "MH";
-  let activePhaseN = 1;
+  // ---- 5 phases the user asked for ----
+  const JOURNEY_PHASES = [
+    { n:1, name:"Foundation & Setup", duration:"3 months", window:"T-6 mo → T-3 mo",
+      tint:"#ecfeff", accent:"#0e7490",
+      headline:"Set the political direction. Build the infrastructure.",
+      blurb:"Teams form. Maps and baselines are drawn. The handles, the legal scaffolding, the reporter network — everything that the later phases will lean on — is built now, quietly." },
+    { n:2, name:"Narrative Build-Up", duration:"1 month", window:"T-3 mo → T-2 mo",
+      tint:"#f0fdfa", accent:"#0891b2",
+      headline:"Narratives go live. Networks warm up.",
+      blurb:"The first narrative buckets break out of the war room and into the wild. Pages amplify. Influencers pilot. Ads start testing. The campaign is no longer a draft." },
+    { n:3, name:"Acceleration", duration:"1 month", window:"T-2 mo → T-1 mo",
+      tint:"#fffbeb", accent:"#b45309",
+      headline:"High-frequency execution. MCC kicks in.",
+      blurb:"Daily narrative meetings begin. The ad volume jumps. Legal vetting goes from steady to constant. Reporter Network deploys at AC level." },
+    { n:4, name:"Peak Campaign & Polling", duration:"1 month", window:"T-1 mo → Polling Day",
+      tint:"#fef2f2", accent:"#b91c1c",
+      headline:"War room. Star campaigners. GOTV.",
+      blurb:"Everything is hyperlocal. Everything is timed to the booth. The narrative has moved from screen to street to ballot." },
+    { n:5, name:"Wind-Down & Learnings", duration:"1 month", window:"Post-Polling → T+1 mo",
+      tint:"#f1f5f9", accent:"#334155",
+      headline:"Closure, archival, retention.",
+      blurb:"Result-day comms. Final reports. The networks built over six months are stabilised for the next state." }
+  ];
 
-  const PHASE_BG = {
-    1: "linear-gradient(180deg,#f0fdfa 0%,#ecfeff 100%)",
-    2: "linear-gradient(180deg,#ecfeff 0%,#e0f2fe 100%)",
-    3: "linear-gradient(180deg,#e0f2fe 0%,#bae6fd 100%)",
-    4: "linear-gradient(180deg,#fde68a 0%,#fef3c7 100%)",
-    5: "linear-gradient(180deg,#f1f5f9 0%,#e2e8f0 100%)"
+  // ---- Lane definitions — which teams sit in which lane ----
+  const LANES = [
+    { id:"strategy",     label:"Strategy",      teams:["party","party-coord"] },
+    { id:"intel",        label:"Intelligence",  teams:["arc","reporter","media"] },
+    { id:"direction",    label:"Direction",     teams:["narrative","legal"] },
+    { id:"creation",     label:"Creation",      teams:["campaign-branding","tvc"] },
+    { id:"distribution", label:"Distribution",  teams:["growth","non-meta","smcc"] },
+    { id:"amplify",      label:"Amplification", teams:["third-party","surrogate","influencer","partnership"] }
+  ];
+
+  // ---- Per-team-per-phase short role one-liner ----
+  // For teams with no XLSX phase entries (party, party-coord, narrative, partnership),
+  // we use the composed map below. Everything else reads from t.phases[ph-1].focus.
+  const ROLES = {
+    "party": {
+      1: "Sets political direction with leadership; defines narrative buckets, constituency map and content bank.",
+      2: "Narratives go live softly — governance, welfare and leadership messaging start receiving visibility.",
+      3: "Daily narrative meetings begin. Quick Response System activates. Paid campaigns roll out.",
+      4: "Star campaigners covered live. Mass dissemination across WhatsApp, AC pages and influencers.",
+      5: "Result-day narrative prepared in advance; learnings archived for the next election."
+    },
+    "party-coord": {
+      1: "Builds relationships with party leadership; sets up communication protocols and approval logs.",
+      2: "Protocols and trackers become daily-use; pre-narrative-call prep tightens.",
+      3: "Regular narrative calls with leadership; written task allocation and channel alignment.",
+      4: "Real-time coordination, faster approvals, polling-day comms and crisis response.",
+      5: "Result-day comms and relationship continuity beyond the result."
+    },
+    "narrative": {
+      1: "Maps the campaign's strategic spine — narrative priorities, opposition vulnerabilities and angles to seed.",
+      2: "Translates buckets into reactive frames; briefs content teams as narratives go live.",
+      3: "Daily narrative cycles. Triggers from media, opposition and ground are converted into infopacks and speech pointers.",
+      4: "Real-time counter-narratives. Rapid frames for star-campaigner moments and ground incidents.",
+      5: "Archives narrative-performance learnings; key takeaways doc for the next cycle."
+    },
+    "partnership": {
+      1: "Identifies creator partners; vets editorially, ideologically and commercially.",
+      2: "Contracts and onboards partners; aligns them on narrative and briefs.",
+      3: "Partner properties carry campaign narratives at full delivery cadence.",
+      4: "Last-mile partner pushes synchronised with the polling window.",
+      5: "Performance read-out; retain top performers for future campaigns."
+    }
   };
-  const PHASE_TONE = { 1:"#0e7490", 2:"#0891b2", 3:"#1e40af", 4:"#a16207", 5:"#475569" };
 
-  function getState(){
-    if (typeof STATES === "undefined") return null;
-    return STATES[activeStateCode] || STATES[Object.keys(STATES)[0]] || null;
-  }
-  function getTeam(id){ return (typeof TEAMS !== "undefined" ? TEAMS.find(t => t.id === id) : null) || { icon:"⚙️", name:id, function:"" }; }
-  function statusFor(taskId){
-    const st = getState(); if (!st || !st.status) return { status: "pending", progress: 0, notes: "" };
-    return st.status[taskId] || { status: "pending", progress: 0, notes: "" };
-  }
-  function targetFor(task, s){
-    if (s.target && s.target > 0) return s.target;
-    if (task.target && task.target.value) return task.target.value;
-    return 1;
-  }
-  function pctOf(task, s){
-    const t = targetFor(task, s); if (!t) return 0;
-    return Math.max(0, Math.min(100, Math.round((s.progress / t) * 100)));
-  }
-  function fmt(n){
-    if (n >= 1000000) return (n/1000000).toFixed(1).replace(/\.0$/,"") + "M";
-    if (n >= 1000)    return (n/1000).toFixed(1).replace(/\.0$/,"") + "K";
-    return String(n);
+  function teamById(id){ return TEAMS.find(t => t.id === id); }
+  function teamShortName(t){
+    return t.name.split(" — ")[0].split(" / ")[0].split(" (")[0];
   }
 
-  /* ---------- state selector ---------- */
-  function buildStateSelector(){
-    const sel = $("#jrnStateSel");
-    sel.innerHTML = Object.values(STATES).map(s =>
-      `<option value="${s.code}" ${s.code===activeStateCode?"selected":""}>${s.name} (${s.code})</option>`
-    ).join("");
-    sel.addEventListener("change", e => {
-      activeStateCode = e.target.value;
-      const st = getState();
-      activePhaseN = st.currentPhase || 1;
-      renderAll();
+  function roleFor(teamId, ph){
+    if (ROLES[teamId] && ROLES[teamId][ph]) return ROLES[teamId][ph];
+    const t = teamById(teamId);
+    if (!t || !t.phases) return "";
+    const p = t.phases.find(x => x.ph === ph);
+    return p ? (p.focus || "") : "";
+  }
+
+  function fullRoleFor(teamId, ph){
+    const t = teamById(teamId);
+    if (!t) return "";
+    if (teamId === "party" && t.partyPhases){
+      const ix = ph <= 4 ? ph - 1 : 4;
+      const block = t.partyPhases[ix];
+      if (!block) return "";
+      return `<span class="drw-window">${block.window||""}</span>
+              <h4>${block.name||""}</h4>
+              <p class="drw-purpose">${block.purpose||""}</p>
+              ${block.opsGroups ? `
+                <div class="drw-ops">${block.opsGroups.map(g=>`
+                  <div class="drw-op">
+                    <b>${g.head||""}</b>
+                    <ul>${(g.bullets||[]).map(b=>`<li>${b}</li>`).join("")}</ul>
+                  </div>`).join("")}</div>` : ""}`;
+    }
+    if (teamId === "party-coord" && t.partyPhases){
+      const mapping = {1:0, 2:0, 3:1, 4:2, 5:2};
+      const block = t.partyPhases[mapping[ph]];
+      if (!block) return "";
+      return `<span class="drw-window">${block.window||""}</span>
+              <h4>${block.name||""}</h4>
+              <p class="drw-purpose">${block.purpose||""}</p>
+              ${block.bullets ? `<ul class="drw-bullets">${block.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>`:""}`;
+    }
+    if (teamId === "partnership" && t.workflowFlow){
+      const activeRanges = {1:[0,1], 2:[2,3,4], 3:[5,6], 4:[6,7], 5:[8]};
+      const active = new Set(activeRanges[ph]||[]);
+      return `<h4>Workflow steps active in this phase</h4>
+              <ol class="drw-workflow">${t.workflowFlow.map((s,i)=>`<li class="${active.has(i)?'on':''}">${s}</li>`).join("")}</ol>`;
+    }
+    if (teamId === "narrative"){
+      const r = ROLES["narrative"][ph]||"";
+      return `<h4>Narrative — Phase ${ph}</h4><p>${r}</p>`;
+    }
+    if (t.phases){
+      const p = t.phases.find(x=>x.ph===ph);
+      if (p){
+        let body = `<h4>Phase ${ph} focus</h4><p>${p.focus||""}</p>`;
+        if (p.intensity) body += `<p class="muted" style="font-size:.85rem">Intensity: ${p.intensity}</p>`;
+        if (t.criticalPhase && isCriticalPhase(t, ph)){
+          body += `<div class="drw-crit"><span class="kicker">Most Critical Phase</span>
+                   <p>${t.whyCritical||""}</p></div>`;
+        }
+        return body;
+      }
+    }
+    return "<p class='muted'>No source data for this team in this phase.</p>";
+  }
+
+  function isCriticalPhase(t, ph){
+    if (!t.criticalPhase) return false;
+    const map = { "foundation":1, "acceleration":2, "peak":3, "conversion":4, "cool":5 };
+    const c = t.criticalPhase.toLowerCase();
+    for (const k in map){
+      if (c.includes(k) && map[k] === ph) return true;
+    }
+    return false;
+  }
+
+  // ---- Render: phase ribbon ----
+  function renderRibbon(){
+    const r = document.getElementById("jrnRibbon");
+    r.innerHTML = JOURNEY_PHASES.map(p => `
+      <a class="jrn-rib-chip" href="#jrn-phase-${p.n}" data-ph="${p.n}" style="--accent:${p.accent}">
+        <span class="rib-num">${p.n}</span>
+        <span class="rib-meta">
+          <b>${p.name}</b>
+          <small>${p.window} · ${p.duration}</small>
+        </span>
+      </a>`).join("");
+  }
+
+  // ---- Render: phase scenes ----
+  function renderScenes(){
+    const host = document.getElementById("jrnScenes");
+    host.innerHTML = JOURNEY_PHASES.map(p => renderScene(p)).join("");
+    host.querySelectorAll(".jrn-team-chip").forEach(el => {
+      el.addEventListener("click", () => openDrawer(el.dataset.team, parseInt(el.dataset.ph,10)));
     });
   }
 
-  /* ---------- header ---------- */
-  function renderHeader(){
-    const st = getState();
-    if (!st) { $("#jrnLeadCard").innerHTML = "<p class='muted'>No state data.</p>"; $("#jrnStatsCard").innerHTML = ""; return; }
-
-    const poll = st.pollingDate ? new Date(st.pollingDate) : null;
-    let pollingStr = "—";
-    if (poll && !isNaN(poll)){
-      const days = Math.round((poll - new Date()) / 86400000);
-      const dt = poll.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
-      pollingStr = `<b>${dt}</b>` + (days >= 0 ? ` · T-${days} days` : ` · post-poll`);
-    }
-    $("#jrnPolling").innerHTML = `Polling: ${pollingStr}`;
-
-    const lead = st.stateLead || {};
-    const photo = lead.photo ? `<img src="${lead.photo}" alt="${lead.name||""}" onerror="this.style.display='none'"/>` : "";
-    $("#jrnLeadCard").innerHTML = `
-      <div class="jrn-lead-photo">${photo}</div>
-      <div class="jrn-lead-info">
-        <div class="role">${lead.role || "State Lead"}</div>
-        <b>${lead.name || "—"}</b>
-        <div class="jrn-lead-contacts">
-          ${lead.phone ? `<a class="jrn-contact-btn" href="tel:${(lead.phone||"").replace(/\s/g,"")}">📞 ${lead.phone}</a>` : ""}
-          ${lead.email ? `<a class="jrn-contact-btn" href="mailto:${lead.email}">✉️ Email</a>` : ""}
-          ${lead.slack ? `<a class="jrn-contact-btn" href="#">💬 ${lead.slack}</a>` : ""}
-        </div>
-      </div>`;
-
-    const phases = JOURNEY_BLUEPRINT.phases;
-    const total = phases.length;
-    // compute completion across all tasks for honest progress
-    const allTasks = phases.flatMap(p => p.tasks);
-    let done = 0, total_t = allTasks.length;
-    allTasks.forEach(t => { if (statusFor(t.id).status === "done") done++; });
-    const pct = total_t ? Math.round(done / total_t * 100) : 0;
-    const cur = st.currentPhase || 1;
-    $("#jrnStatsCard").innerHTML = `
-      <div class="jrn-progress-label">
-        <b>Phase ${cur} of ${total}</b><span>${done} of ${total_t} tasks complete</span>
-      </div>
-      <div class="jrn-progress-bar"><div class="jrn-progress-fill" style="width:${pct}%"></div></div>
-      <div class="jrn-progress-pct">${pct}%</div>`;
-  }
-
-  /* ---------- phase stepper ---------- */
-  function renderStepper(){
-    const st = getState(); if (!st) return;
-    const wrap = $("#jrnStepper");
-    const phases = JOURNEY_BLUEPRINT.phases;
-    const total = phases.length;
-    const cur = st.currentPhase || 1;
-
-    // Stepper status derives from current phase + per-task completion of that phase
-    function phaseStatus(ph){
-      const tasks = ph.tasks;
-      if (!tasks.length) return "locked";
-      const allDone = tasks.every(t => statusFor(t.id).status === "done");
-      if (allDone) return "done";
-      if (ph.n === cur) return "active";
-      if (ph.n < cur) return "active"; // earlier phase still has work
-      return "locked";
-    }
-    const phasesWithStatus = phases.map(p => ({ ...p, _status: phaseStatus(p) }));
-    const segments = total - 1;
-    const doneCount = phasesWithStatus.filter(p => p._status === "done").length;
-    const activeIdx = phasesWithStatus.findIndex(p => p._status === "active");
-    const fillIdx = doneCount + (activeIdx >= 0 ? 0.5 : 0);
-    const fillPct = Math.min(100, (fillIdx / segments) * 80);
-
-    wrap.innerHTML = `
-      <div class="jrn-stepper-fill" style="width:${fillPct}%"></div>
-      ${phasesWithStatus.map(p => `
-        <div class="jrn-step ${p._status} ${p.n===activePhaseN?"selected":""}" data-n="${p.n}">
-          <div class="jrn-step-dot">${p._status==="done"?"✓":p.n}</div>
-          <div class="jrn-step-card">
-            <div class="ph-label">Phase ${p.n}</div>
-            <h4>${p.name}</h4>
-            <p class="sub">${p.sub||""}</p>
-            <span class="jrn-step-status">${p._status==="done"?"Complete":p._status==="active"?"In progress":"Locked"}</span>
-          </div>
-        </div>`).join("")}`;
-
-    $$(".jrn-step", wrap).forEach(s => s.addEventListener("click", () => {
-      activePhaseN = parseInt(s.dataset.n, 10);
-      renderStepper(); renderPhaseDetail();
-      $("#jrnPhaseDetail").scrollIntoView({behavior:"smooth", block:"start"});
-    }));
-  }
-
-  /* ---------- active phase detail ---------- */
-  function renderPhaseDetail(){
-    const st = getState(); if (!st) return;
-    const phases = JOURNEY_BLUEPRINT.phases;
-    const p = phases.find(x => x.n === activePhaseN) || phases[0];
-    if (!p) return;
-
-    const tasksWithStatus = p.tasks.map(t => ({ ...t, _s: statusFor(t.id) }));
-    const allDone = tasksWithStatus.every(t => t._s.status === "done");
-    const anyActive = tasksWithStatus.some(t => t._s.status === "in_progress");
-    const phStatus = allDone ? "done" : anyActive ? "active" : "pending";
-
-    $("#jrnPhaseDetail").innerHTML = `
-      <div class="ph-head">
-        <div>
-          <div class="ph-sub">Phase ${p.n} · ${p.sub || ""}</div>
-          <h2>${p.name}</h2>
-        </div>
-        <span class="jrn-task-status ${phStatus}">${phStatus==="done"?"Complete":phStatus==="active"?"In progress":"Pending"}</span>
-      </div>
-      <p class="lead">${p.lead || ""}</p>
-
-      <div class="jrn-prereqs">
-        <div class="jrn-prereq-col">
-          <div class="col-label">Prerequisites</div>
-          <ul>${(p.prerequisites||[]).map(x=>`<li>${x}</li>`).join("")}</ul>
-        </div>
-        <div class="jrn-prereq-col">
-          <div class="col-label">Start trigger</div>
-          <p>${p.startTrigger || "—"}</p>
-        </div>
-        <div class="jrn-prereq-col">
-          <div class="col-label">Completion signal</div>
-          <p>${p.completionSignal || "—"}</p>
-        </div>
-      </div>
-
-      <div class="jrn-teams-section">
-        <h3>Teams in play this phase · ${tasksWithStatus.length}</h3>
-        <div class="jrn-team-grid">
-          ${tasksWithStatus.map(task => {
-            const t = getTeam(task.team);
-            const pct = pctOf(task, task._s);
-            const targetVal = targetFor(task, task._s);
-            return `<button class="jrn-team-card ${task._s.status}" data-task="${task.id}">
-              <div class="row">
-                <span class="icon">${t.icon||"⚙️"}</span>
-                <div class="nm"><b>${t.name?.split(" — ")[0] || task.team}</b><small>${task.title}</small></div>
-              </div>
-              <p class="desc">${task.description||""}</p>
-              <div class="jrn-mini-progress" title="${task._s.progress} of ${targetVal} ${task.target?.unit||""}">
-                <div class="jrn-mini-progress-bar"><div style="width:${pct}%"></div></div>
-                <span>${fmt(task._s.progress)} / ${fmt(targetVal)} ${task.target?.unit||""}</span>
-              </div>
-              <div class="badges">
-                <span class="jrn-task-status ${task._s.status}">${task._s.status.replace("_"," ")}</span>
-                ${task.eta?`<span class="jrn-eta-pill">${task.eta}</span>`:""}
-                ${task._s.notes?`<span class="jrn-blocker-pill" title="${task._s.notes.replace(/"/g,'&quot;')}">⚠ note</span>`:""}
-              </div>
-            </button>`;
-          }).join("")}
-        </div>
-      </div>`;
-
-    $$(".jrn-team-card", $("#jrnPhaseDetail")).forEach(c => {
-      c.addEventListener("click", () => openDrawer(c.dataset.task));
-    });
-  }
-
-  /* ---------- network diagram (vertical, phase-banded) ---------- */
-  function renderNetwork(){
-    const wrap = $("#jrnNetwork"); if (!wrap) return;
-    const phases = JOURNEY_BLUEPRINT.phases;
-    const st = getState();
-
-    const html = phases.map((p, pi) => {
-      const isCur = st && p.n === st.currentPhase;
-      const tasksDone = p.tasks.filter(t => statusFor(t.id).status === "done").length;
-      const tasksTotal = p.tasks.length;
-
-      // Phase-level summary status
-      const allDone = tasksDone === tasksTotal;
-      const anyActive = p.tasks.some(t => ["in_progress","blocked"].includes(statusFor(t.id).status));
-      const phaseStatus = allDone ? "done" : (anyActive || isCur) ? "active" : "pending";
-
-      const nodes = p.tasks.map(task => {
-        const s = statusFor(task.id);
-        const pct = pctOf(task, s);
-        const isFocus = st && st.focusTaskId === task.id;
-        const targetVal = targetFor(task, s);
-        const team = getTeam(task.team);
-        return `<button class="jrn-net-node ${s.status}${isFocus?' focus':''}" data-task="${task.id}" title="${task.title}">
-          <div class="jrn-net-node-circle">
-            <span class="emo">${team.icon||"⚙️"}</span>
-            ${isFocus && st?.stateLead?.photo ? `<img class="poc-avatar lead" src="${st.stateLead.photo}" alt="${st.stateLead.name||''}" title="${(st.stateLead.name||'')+' is here'}" onerror="this.style.display='none'"/>` : ""}
-          </div>
-          <div class="jrn-net-node-team">${(team.name||task.team).split(" — ")[0].split(" / ")[0].split(" (")[0]}</div>
-          <div class="jrn-net-node-title">${task.title}</div>
-          <div class="jrn-net-node-progress" title="${fmt(s.progress)} / ${fmt(targetVal)} ${task.target?.unit||""}">
-            <div style="width:${pct}%"></div>
-          </div>
-          <div class="jrn-net-node-meta">${fmt(s.progress)}/${fmt(targetVal)} <span>${task.target?.unit||""}</span></div>
-          ${s.notes ? `<span class="jrn-net-node-warn" title="${s.notes.replace(/"/g,'&quot;')}">⚠</span>` : ""}
-        </button>`;
+  function renderScene(p){
+    const lanesHtml = LANES.map((lane,laneIdx) => {
+      const chips = lane.teams.map(tid => {
+        const t = teamById(tid);
+        if (!t) return "";
+        const role = roleFor(tid, p.n);
+        const critical = isCriticalPhase(t, p.n);
+        const icon = t.icon || "•";
+        return `
+          <button class="jrn-team-chip ${critical?'critical':''} ${role?'':'dim'}"
+                  data-team="${tid}" data-ph="${p.n}" type="button" style="--accent:${p.accent}">
+            <span class="chip-icon">${icon}</span>
+            <span class="chip-body">
+              <b>${teamShortName(t)}</b>
+              <span>${role || "—"}</span>
+            </span>
+            ${critical?`<span class="chip-flag" title="Most critical phase">★</span>`:""}
+          </button>`;
       }).join("");
-
       return `
-        <div class="jrn-net-phase ${phaseStatus} ${isCur?'current':''}" style="--ph-bg:${PHASE_BG[p.n]};--ph-tone:${PHASE_TONE[p.n]}" data-phase="${p.n}">
-          <div class="jrn-net-phase-head">
-            <div class="jrn-net-phase-no">${p.n}</div>
-            <div class="jrn-net-phase-title">
-              <span class="kicker" style="color:var(--ph-tone)">Phase ${p.n}${isCur?' · current':''}</span>
-              <h3>${p.name}</h3>
-              <p>${p.sub || ""}</p>
-            </div>
-            <div class="jrn-net-phase-counter">
-              <b>${tasksDone}</b><span> / ${tasksTotal}</span>
-              <small>tasks done</small>
-            </div>
+        <div class="jrn-lane" data-lane="${lane.id}">
+          <div class="jrn-lane-side">
+            <span class="jrn-lane-num">${laneIdx+1}</span>
+            <span class="jrn-lane-label">${lane.label}</span>
           </div>
-          <div class="jrn-net-nodes">${nodes}</div>
-          ${pi < phases.length - 1 ? `<div class="jrn-net-connector"><span></span></div>` : ""}
+          <div class="jrn-lane-chips">${chips}</div>
+          ${laneIdx < LANES.length-1 ? `<div class="jrn-lane-arrow" aria-hidden="true">→</div>` : ""}
         </div>`;
     }).join("");
 
-    wrap.innerHTML = html;
-    $$(".jrn-net-node", wrap).forEach(c => c.addEventListener("click", () => openDrawer(c.dataset.task)));
+    return `
+      <section class="jrn-scene scroll-reveal" id="jrn-phase-${p.n}" data-ph="${p.n}" style="--tint:${p.tint};--accent:${p.accent}">
+        <div class="jrn-scene-head">
+          <span class="jrn-scene-stamp">PHASE ${p.n}</span>
+          <span class="jrn-scene-window">${p.window} · ${p.duration}</span>
+          <h2>${p.name}</h2>
+          <p class="jrn-scene-headline">${p.headline}</p>
+          <p class="jrn-scene-blurb">${p.blurb}</p>
+        </div>
+        <div class="jrn-scene-flow">${lanesHtml}</div>
+        ${p.n < 5 ? `<div class="jrn-scene-arrow" aria-hidden="true">▾</div>` : `<div class="jrn-scene-finish" aria-hidden="true">🏁 Result Day</div>`}
+      </section>`;
   }
 
-  /* ---------- detail drawer ---------- */
-  function openDrawer(taskId){
-    const task = TASKS_BY_ID[taskId]; if (!task) return;
-    const team = getTeam(task.team);
-    const s = statusFor(taskId);
-    const targetVal = targetFor(task, s);
-    const pct = pctOf(task, s);
-    const poc = task.poc || {};
-    const pocPhoto = poc.photo ? `<img src="${poc.photo}" alt="" onerror="this.style.display='none'"/>` : "";
-
-    $("#jrnDrawerPanel").innerHTML = `
-      <div class="jrn-drawer-head">
-        <button class="close" id="jrnDrawerClose">✕</button>
-        <span class="icon">${team.icon||"⚙️"}</span>
-        <div class="team-name">${(team.name||task.team).split(" — ")[0]} · Phase ${task.phase}</div>
-        <h3>${task.title || ""}</h3>
+  // ---- Drawer ----
+  function openDrawer(teamId, ph){
+    const t = teamById(teamId);
+    if (!t) return;
+    const phase = JOURNEY_PHASES.find(x=>x.n===ph);
+    const drawer = document.getElementById("jrnDrawer");
+    const panel = document.getElementById("jrnDrawerPanel");
+    panel.innerHTML = `
+      <div class="drw-head" style="--accent:${phase.accent}">
+        <button class="drw-close" id="drwClose" type="button" aria-label="Close">×</button>
+        <span class="drw-phase-chip" style="background:${phase.accent}">Phase ${ph} · ${phase.name}</span>
+        <div class="drw-team">
+          <span class="drw-team-icon">${t.icon||"•"}</span>
+          <div>
+            <h3>${teamShortName(t)}</h3>
+            <p class="muted">${t.tagline||""}</p>
+          </div>
+        </div>
       </div>
-      <div class="jrn-drawer-body">
-
-        <div class="jrn-drawer-block"><div class="label">Status</div>
-          <p><span class="jrn-task-status ${s.status}">${s.status.replace("_"," ")}</span></p>
-          ${s.notes ? `<div class="jrn-blocker-note">⚠ ${s.notes}</div>` : ""}
-        </div>
-
-        <div class="jrn-drawer-block"><div class="label">Progress</div>
-          <div class="jrn-mini-progress">
-            <div class="jrn-mini-progress-bar"><div style="width:${pct}%"></div></div>
-            <span><b>${fmt(s.progress)}</b> / ${fmt(targetVal)} ${task.target?.unit||""} <i style="color:var(--muted)">(${pct}%)</i></span>
-          </div>
-        </div>
-
-        <div class="jrn-drawer-block"><div class="label">What this team provides</div><p>${task.description || ""}</p></div>
-        <div class="jrn-drawer-block"><div class="label">ETA</div><p><b>${task.eta || "—"}</b></p></div>
-        <div class="jrn-drawer-block"><div class="label">Input required</div><p>${task.input || "—"}</p></div>
-        <div class="jrn-drawer-block"><div class="label">Completion criteria</div><p>${task.output || "—"}</p></div>
-
-        <div class="jrn-drawer-block">
-          <div class="label">Point of contact</div>
-          <div class="jrn-drawer-poc">
-            <div class="jrn-drawer-poc-photo">${pocPhoto}</div>
-            <div class="jrn-drawer-poc-info">
-              <b>${poc.name || "—"}</b>
-              <small>${poc.role || ""}</small>
-              <div class="jrn-drawer-poc-contacts">
-                ${poc.phone?`<a class="jrn-contact-btn" href="tel:${(poc.phone||"").replace(/\s/g,"")}">📞 ${poc.phone}</a>`:""}
-                ${poc.email?`<a class="jrn-contact-btn" href="mailto:${poc.email}">✉️ Email</a>`:""}
-                ${poc.slack?`<a class="jrn-contact-btn" href="#">💬 ${poc.slack}</a>`:""}
-                <a class="jrn-contact-btn" href="team.html?id=${task.team}">↗ Team page</a>
-              </div>
-            </div>
-          </div>
+      <div class="drw-body">
+        ${fullRoleFor(teamId, ph)}
+        <div class="drw-cta">
+          <a class="btn-primary" href="team.html?id=${teamId}">Open full team page →</a>
         </div>
       </div>`;
-    $("#jrnDrawer").setAttribute("aria-hidden","false");
-    document.body.style.overflow = "hidden";
-    $("#jrnDrawerClose").addEventListener("click", closeDrawer);
+    document.getElementById("drwClose").addEventListener("click", closeDrawer);
+    document.getElementById("jrnDrawerScrim").addEventListener("click", closeDrawer, { once: true });
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden","false");
   }
   function closeDrawer(){
-    $("#jrnDrawer").setAttribute("aria-hidden","true");
-    document.body.style.overflow = "";
+    const drawer = document.getElementById("jrnDrawer");
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden","true");
   }
 
-  /* ---------- schema reference panel ---------- */
-  function buildSchemaPanel(){
-    const btn = $("#jrnSchemaBtn"); const box = $("#jrnSchema");
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      box.hidden = !box.hidden;
-      btn.textContent = box.hidden ? "Show schema reference" : "Hide schema reference";
+  // ---- Car animation ----
+  function updateCarPosition(){
+    const stage = document.getElementById("jrnStage");
+    if (!stage) return;
+    const stageRect = stage.getBoundingClientRect();
+    const stageTop = window.scrollY + stageRect.top;
+    const stageHeight = stage.offsetHeight;
+    const vp = window.innerHeight;
+    let progress = (window.scrollY + vp*0.45 - stageTop) / stageHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    const car = document.getElementById("jrnCar");
+    if (!car) return;
+    const rail = car.parentElement;
+    const railHeight = rail.offsetHeight;
+    const carHeight = car.offsetHeight;
+    const usable = railHeight - carHeight;
+    const y = progress * usable;
+    const tilt = Math.sin(progress * Math.PI * 4) * 4;
+    car.style.transform = `translateY(${y}px) rotate(${tilt}deg)`;
+    const wiggle = Math.sin(progress * Math.PI * 5) * 14;
+    car.style.marginLeft = `${wiggle}px`;
+
+    const currentPh = Math.min(5, Math.max(1, Math.ceil(progress * 5 + 0.001)));
+    document.querySelectorAll(".jrn-rib-chip").forEach(el => {
+      el.classList.toggle("on", parseInt(el.dataset.ph,10) === currentPh);
     });
-    box.textContent = `Sheet schema — one tab per state (tab name = state code, e.g. MH, KL).
-
-Columns (header row 1):
-  Section | TaskId | Name | Status | Progress | Target | Notes |
-  Phone | Email | Slack | Photo | Role | PollingDate | CurrentPhase
-
-Row types via Section column:
-  meta     → Name = state full name, PollingDate = YYYY-MM-DD, CurrentPhase = 1..5,
-              TaskId = (optional) the task the State PD is currently focused on
-              (e.g. p2.smcc.pages) — drives where the PD avatar stands
-  lead     → Name/Role/Phone/Email/Slack/Photo for the State PD
-  status   → TaskId = id from blueprint (e.g. p2.smcc.pages),
-             Status = done | in_progress | blocked | pending,
-             Progress = current value (number),
-             Target = goal value (optional; falls back to blueprint default),
-             Notes = blocker / context note
-
-The journey (phases, tasks, POCs, ETAs, inputs, outputs) is FIXED in
-journey-blueprint.js — the sheet only carries live status & progress
-overlays per state.`;
   }
 
-  function showLoading(msg){
-    const el = $("#jrnPolling");
-    if (el) el.innerHTML = `<span style="display:inline-flex;align-items:center;gap:8px"><span class="loading-dot"></span>${msg}</span>`;
+  function attachScrollDriver(){
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateCarPosition();
+        ticking = false;
+      });
+    }, { passive: true });
+    window.addEventListener("resize", () => requestAnimationFrame(updateCarPosition), { passive:true });
+    requestAnimationFrame(updateCarPosition);
   }
 
-  function mountReveal(){
-    const els = $$(".scroll-reveal");
-    if (!("IntersectionObserver" in window)) { els.forEach(el => el.classList.add("visible")); return; }
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-    }, { threshold: 0.05, rootMargin: "0px 0px -10% 0px" });
-    els.forEach(el => io.observe(el));
-    setTimeout(() => els.forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("visible");
-    }), 30);
-  }
-
-  function renderAll(){ renderHeader(); renderStepper(); renderPhaseDetail(); renderNetwork(); }
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    buildStateSelector();
-    let st = getState();
-    activePhaseN = st?.currentPhase || 1;
-    renderAll();
-    buildSchemaPanel();
-    mountReveal();
-    $("#jrnDrawerScrim").addEventListener("click", closeDrawer);
-    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
-
-    if (typeof loadJourneyFromSheet === "function") {
-      showLoading("Loading latest from Sheet…");
-      try {
-        const live = await loadJourneyFromSheet();
-        const keys = Object.keys(live || {});
-        if (keys.length) {
-          for (const k of keys) STATES[k] = live[k];
-          if (!STATES[activeStateCode]) activeStateCode = keys[0];
-          st = getState();
-          activePhaseN = st?.currentPhase || 1;
-          buildStateSelector();
-          renderAll();
-          mountReveal();
-        }
-      } catch (e) { console.warn("Live sheet load failed; using placeholder.", e); }
+  function attachReveal(){
+    const els = document.querySelectorAll(".scroll-reveal");
+    if (!("IntersectionObserver" in window)){
+      els.forEach(el => el.classList.add("visible"));
+      return;
     }
-  });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+    els.forEach(el => io.observe(el));
+  }
+
+  function attachSearch(){
+    const el = document.getElementById("globalSearch");
+    if (!el) return;
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter"){
+        const q = (el.value||"").trim();
+        if (q) location.href = "index.html?q=" + encodeURIComponent(q);
+      }
+    });
+  }
+
+  function init(){
+    renderRibbon();
+    renderScenes();
+    attachReveal();
+    attachScrollDriver();
+    attachSearch();
+    document.querySelectorAll(".jrn-rib-chip").forEach(a => {
+      a.addEventListener("click", e => {
+        const target = document.querySelector(a.getAttribute("href"));
+        if (target){
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+        }
+      });
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
