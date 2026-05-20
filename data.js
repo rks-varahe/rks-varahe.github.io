@@ -42,2797 +42,3578 @@ const PHASES = [
 ];
 
 const TEAMS = [
-    {
-      "id": "arc",
-      "name": "ARC | Feedback and Reporting",
-      "tagline": "Converts raw platform numbers, narratives and performance trends into actionable strategic inputs.",
-      "purpose": "To function as the central communication reporting, monitoring and strategic support during and outside campaigns. The team converts raw platform numbers, narratives and performance trends into actionable strategic inputs for National, State and Campaign teams on a weekly, monthly and ad-hoc basis. It is especially critical during elections because it helps in real-time decision-making, narrative correction and content optimisation across Official, VA-Administered, In-House and Partnership programmes, influencer and amplification networks. Without ARC, the communication efforts become fragmented and reactive to measurement. During election or polling phases, ARC resources act as the dedicated monitoring and strategic coordination unit, aiding in competition analysis, narrative alignment, issue escalation and state-level communication optimisation.",
-      "structure": [
-        {
-          "role": "ARC GM (L2)",
-          "detail": "Internal hierarchy unchanged; team members report to ARC's GM who quality-checks all insights and suggestions for strategic accuracy before sharing with leadership or client."
-        },
-        {
-          "role": "State-deployed Members",
-          "detail": "1-2 members typically assigned per campaign state to work with the PD directly; support state specific requirements comprising tracking, data extraction and report preparation."
-        }
-      ],
-      "skills": {
-        "must": [
-          "A deep understanding of political messaging and the ability to translate numbers into usable, tactical insights for the end consumer of the report.",
-          "Proficiency in a high-stakes, real-time reporting environment, maintaining 100% accuracy.",
-          "Technical proficiency in Google Docs, Sheets, Slides and all other relevant tools."
-        ],
-        "nice": [
-          "The ability to interpret political nuances and local sentiment trends and report them.",
-          "Ensuring smooth communication with the Project Director and senior State Communications Team members, acting as a liaison between State Comms and ARC."
-        ]
+  {
+    "id": "arc",
+    "name": "ARC | Feedback and Reporting",
+    "tagline": "Converts raw platform numbers, narratives and performance trends into actionable strategic inputs.",
+    "purpose": "To function as the central communication reporting, monitoring and strategic support during and outside campaigns. The team converts raw platform numbers, narratives and performance trends into actionable strategic inputs for National, State and Campaign teams on a weekly, monthly and ad-hoc basis. It is especially critical during elections because it helps in real-time decision-making, narrative correction and content optimisation across Official, VA-Administered, In-House and Partnership programmes, influencer and amplification networks. Without ARC, the communication efforts become fragmented and reactive to measurement. During election or polling phases, ARC resources act as the dedicated monitoring and strategic coordination unit, aiding in competition analysis, narrative alignment, issue escalation and state-level communication optimisation.",
+    "structure": [
+      {
+        "role": "ARC GM (L2)",
+        "detail": "Internal hierarchy unchanged; team members report to ARC's GM who quality-checks all insights and suggestions for strategic accuracy before sharing with leadership or client."
       },
-      "coreFunctions": [
-        {
-          "title": "Role in Campaign Flow",
-          "items": [
-            "Baseline Analysis Report at the start of the campaign — evaluates the state's social media landscape.",
-            "Analysis of official party pages and key stakeholders, such as office bearers, MPs, MLAs, and other significant figures as per the client's requirements.",
-            "Periodic Impact Assessment Report (SMAAR) — documents measurable effect of the Communications Team's interventions on the digital profile and social media presence of the assigned leader(s).",
-            "Periodic assessment documents evaluating Ad Spend on Ghost Advertisements and Engagement Posting, with strategic interventions to optimise performance and returns.",
-            "Periodic Trend Analysis of client's and opposition's digital ecosystems, with key takeaways, best practices and effective narrative strategies presented as concise case studies.",
-            "Daily Narrative Performance report for real-time monitoring and a Monthly Narrative Performance report for leadership.",
-            "During active narrative cycles — daily Posting Compliance and Dissemination Reports tracking rollout and spread of the narrative.",
-            "Coordinates with Vendor Pages on narrative dissemination, posting frequency, and content compliance; prepares a consolidated Vendor Pages Report weekly.",
-            "End-to-end content tracking and data support for all campaign activities, catering to the data requirements of the Communications Team.",
-            "Handles confidential social media analysis reports and fulfils ad-hoc research and reporting requirements, for direct consumption by the client.",
-            "Maintains a repository of all reports and datasets; keeps a productivity log of Comms team members as directed by the Project Director.",
-            "Prepares the performance tracking reports of the Social Media Command Centre.",
-            "Upon conclusion of the campaign — aids in preparation of a Key Takeaways and Learnings Document along with a Comprehensive Campaign Closure Report."
-          ]
-        },
-        {
-          "title": "Routine — Performance Intelligence",
-          "items": [
-            "Benchmarks and tracks BJP's performance across Official, VA, Partner, In-House, Influencer and Partner ecosystems to identify gaps and refine competitive positioning.",
-            "Prepares 24-hour impact reports, weekly and monthly reports, and routinely undertakes ad-hoc social media analysis requests for state leaders/pages, including but not limited to MP, MLAs, UM, CMs.",
-            "Qualitative analysis of tone, language, design alignment alongside quantitative measurements of posting rates, views, narrative choice and audience sentiment.",
-            "Helps identify untapped opportunities, top performers and replicate best practices throughout the BJP ecosystem."
-          ]
-        },
-        {
-          "title": "Working Logic",
-          "items": [
-            "Converts raw social media metrics (received from Analytics or fetched using data extraction tools) into structured assessment and performance insights across the political landscape.",
-            "Impacts narrative and campaign success by identifying strategic ways to launch coordinated attacks and by auditing BJP pages and leader profiles to gauge effectiveness of narrative deployment and social media utilisation.",
-            "Weekly and monthly reports offer leadership and the client insights to pivot strategies based on our and the Oppositions' strengths and vulnerabilities in real-time.",
-            "Key dependency — uninterrupted flow of data, competitive intelligence and seamless integration of state-level ground updates into reporting."
-          ]
-        },
-        {
-          "title": "Coordination with Other Teams",
-          "items": [
-            "Works closely with VA-administered state teams to ensure narrative execution is aligned and delivers data-driven reports on page health, performance and narrative success.",
-            "Assists the state team with data extraction and extends support in combined tasks and reports on a regular basis.",
-            "Coordinates and assists state teams at the request of State leads; team members report internally to ARC GM (L2) who quality-checks insights and suggestions for strategic accuracy before sharing with leadership or client."
-          ]
-        }
+      {
+        "role": "State-deployed Members",
+        "detail": "1-2 members typically assigned per campaign state to work with the PD directly; support state specific requirements comprising tracking, data extraction and report preparation."
+      }
+    ],
+    "skills": {
+      "must": [
+        "A deep understanding of political messaging and the ability to translate numbers into usable, tactical insights for the end consumer of the report.",
+        "Proficiency in a high-stakes, real-time reporting environment, maintaining 100% accuracy.",
+        "Technical proficiency in Google Docs, Sheets, Slides and all other relevant tools."
       ],
-      "icon": "📊",
-      "category": "intel",
-      "function": "Intelligence & Reporting"
-    },
-    {
-      "id": "campaign-branding",
-      "name": "Campaign Branding & Ads",
-      "icon": "",
-      "category": "creative",
-      "function": "Creative & Campaigns",
-      "hideTabs": ["budget"],
-      "tagline": "Centralised branding, creative and coordination unit across print, digital, ground, video, animation and tech.",
-      "purpose": "The Campaign Branding & Ads Team functions as a centralised branding, creative and coordination unit that supports national and state-level campaigns across multiple formats and platforms. It ensures smooth implementation of campaign-related requirements involving branding, events, print communication, digital creatives, media support, video communication, presentations, animation and campaign infrastructure support.",
-      "skills": {
-        "table": {
-          "headers": ["Graphic Designing", "Video Editing"],
-          "rows": [
-            ["Adobe Photoshop", "Adobe Premiere Pro"],
-            ["Adobe Illustrator", "Adobe After Effect"],
-            ["Adobe InDesign", "AI Tools"],
-            ["Corel Draw", ""],
-            ["AI Tools", ""]
-          ]
-        }
-      },
-      "structure": [
-        {
-          "role": "Project Manager",
-          "detail": "Planning, priority management, resource allocation, approval coordination, inter-department coordination, final supervision."
-        },
-        {
-          "role": "Operations & Coordination POCs",
-          "detail": "Stakeholder communication, brief collection, task assignment, timeline tracking, feedback, approvals, vendor coordination, follow-ups."
-        },
-        {
-          "role": "Creative Team",
-          "detail": "Graphic Designers, Video Editors, Motion Graphic Artists, Animators, Caricature Artists, PPT Designers, Content Strategists."
-        },
-        {
-          "role": "External Vendors",
-          "detail": "Print Vendors, Event Agencies, Production Teams, External Designers (scaled by campaign intensity)."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Key Responsibilities",
-          "items": [
-            "Campaign Ideation & Creative Planning — communication planning, narrative visualisation, state-wise audience-specific planning",
-            "Content Production & Creative Support — social media creatives, digital assets, print collateral, outdoor branding, WhatsApp creatives & GIFs",
-            "Ground Branding & Event Support — meetings, yatras, conferences, backdrops, stage branding, gates, pole banners, LED, venue branding",
-            "Video, Animation & Motion Graphics — campaign videos, speech edits, teasers, reels, motion graphic explainers, 2D animation, caricatures",
-            "Print & Production Support — pamphlets, brochures, newspaper ads, manifestos, booklets, print-ready adaptations, vendor specifications",
-            "PPTs — review decks, leadership presentations, research/strategy/ARC presentations",
-            "AI & Automation — websites, landing pages, dashboards, automation support",
-            "Coordination & Campaign Support — client coordination, brief management, approval management, inter-team tracking"
-          ]
-        },
-        {
-          "title": "How a Typical Requirement Flows",
-          "items": [
-            "Begins with: a campaign brief, event requirement, communication objective, research-based narrative, media requirement, or stakeholder request",
-            "PoC coordinates objective, timeline/urgency, deliverables, platform/usage, approval flow, language/state adaptations",
-            "Designers and editors begin execution according to the inputs received from the PoC",
-            "Inputs from Research, Campaign, Communication, Media, Ground/Event, Leadership Offices"
-          ]
-        },
-        {
-          "title": "Internal Working Process",
-          "items": [
-            "Designers — branding and creatives",
-            "Video editors — reels and campaign videos",
-            "Animators — motion graphics and explainers",
-            "PPT teams — presentations",
-            "Technical teams — websites or automation",
-            "PoCs — coordination, feedback, approvals, timelines"
-          ]
-        },
-        {
-          "title": "Coordination & Feedback Loop",
-          "items": [
-            "Continuous coordination with Stakeholders, Campaign Teams, Communication Teams, Vendors, Event Agencies, Media Teams",
-            "Multiple rounds of feedback and revisions before final closure"
-          ]
-        },
-        {
-          "title": "Dissemination",
-          "items": [
-            "Outputs go to: social media dissemination, print production, event deployment, media usage, on-ground branding, WhatsApp circulation, presentations, digital publishing",
-            "Deliverables include: backdrops & event branding, pamphlets & print, social creatives, videos/reels, animated content, presentations, websites/landing pages"
-          ]
-        },
-        {
-          "title": "Pre-Campaign Preparation",
-          "items": [
-            "Hiring & resource allocation — designers, editors, animators based on campaign needs",
-            "Coordination systems — briefing, approval workflows, escalation hierarchies",
-            "Narrative familiarisation — state-specific political narratives, positioning, local issues, regional sensitivities",
-            "Asset & template preparation — master templates, design systems, asset libraries, typography systems"
-          ]
-        }
-      ],
-      "workflow": [
-        {
-          "step": "Request Initiation",
-          "desc": "Stakeholders initiate tasks with detailed brief; appropriate PoC tagged."
-        },
-        {
-          "step": "Content & Ideation",
-          "desc": "Content provided by campaigns PoC or developed internally."
-        },
-        {
-          "step": "Task Assignment",
-          "desc": "Tasks assigned to appropriate team members."
-        },
-        {
-          "step": "Execution",
-          "desc": "Team works to defined timeline upholding creative and quality standards."
-        },
-        {
-          "step": "Quality Assurance",
-          "desc": "Internal review for quality, brand alignment, creative expectations."
-        },
-        {
-          "step": "Completion",
-          "desc": "Final creatives shared with stakeholders for review/approval/dissemination."
-        }
-      ],
-      "example": {
-        "title": "GST Awareness & Achievement Campaign",
-        "content": "A GST awareness/achievements campaign communicates impact and benefits of GST implementation across print, digital, media, on-ground. Starts with objectives, target audience, messaging direction, deliverables, rollout timelines. Inputs from Campaign, Research, Communication, Media. Direction finalised → communication angles, messaging structure, creative references, visual direction, look & feel, platform-wise approach. Designers do print/branding/digital, video editors do reels/videos, animators do motion graphics, PPT designers do decks. PoC manages timelines, internal coordination, vendor communication, feedback, deliverable tracking. Workflow may include pamphlets, newspaper ads, hoardings, event branding, social creatives, reels, videos, animated explainers, leadership decks, media briefing presentations. Review for branding/narrative/platform/quality alignment → stakeholder feedback → revisions → final outputs."
-      },
-      "budget": [
-        {
-          "role": "Campaign Branding Lead",
-          "range": "₹1L – ₹1.3L"
-        },
-        {
-          "role": "Sr. Content Writer",
-          "range": "₹50K – ₹75K"
-        },
-        {
-          "role": "Jr. Content Writer",
-          "range": "₹35K – ₹50K"
-        },
-        {
-          "role": "Sr. Graphic Designer",
-          "range": "₹55K – ₹80K"
-        },
-        {
-          "role": "Jr. Graphic Designer",
-          "range": "₹35K – ₹50K"
-        },
-        {
-          "role": "Sr. Video Editor",
-          "range": "₹60K – ₹85K"
-        },
-        {
-          "role": "Jr. Video Editor",
-          "range": "₹35K – ₹55K"
-        }
+      "nice": [
+        "The ability to interpret political nuances and local sentiment trends and report them.",
+        "Ensuring smooth communication with the Project Director and senior State Communications Team members, acting as a liaison between State Comms and ARC."
       ]
     },
-    {
-      "id": "party",
-      "name": "Party Team",
-      "icon": "🏛️",
-      "category": "comms",
-      "function": "Official Communications",
-      "tagline": "Mouthpiece of the party and first line of narrative dissemination to the public.",
-      "purpose": "This team exists to manage and drive the official digital communication of the party during the campaign. The official party handles act as the mouthpiece of the party and serves as the first line of narrative dissemination to the public. If this team does not exist, the party's communication becomes scattered, opposition narratives can dominate, development work remains under-amplified, and ground-level messaging does not reach voters in a structured way.",
-      "structure": [
-        {
-          "role": "Project Manager",
-          "detail": "Oversees the overall campaign workflow, coordination, approvals, and alignment with party leadership."
-        },
-        {
-          "role": "Party Page Manager",
-          "detail": "Manages official party handles, daily publishing, content planning, and platform coordination."
-        },
-        {
-          "role": "Creative Team",
-          "detail": "Includes 2 Graphic Designers (GD), 3 Video Editors (VE), and 1 Animator responsible for creatives, reels, videos, motion graphics, and visual campaign content."
-        },
-        {
-          "role": "Content Writing Team",
-          "detail": "A team of 3 writers responsible for captions, scripts, political messaging, reactive content, and platform-specific copy."
-        },
-        {
-          "role": "Reporting Lead",
-          "detail": "One person is required to handle reporting, tracker management and coordination."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Key Responsibilities",
-          "items": [
-            "Planning and managing the overall digital narrative of the campaign in alignment with the party's political strategy",
-            "Daily, weekly, and monthly content planning, and checking content quality before posting",
-            "Covers rallies and protests, promotes party spokesperson statements",
-            "Plans growth strategies, proposes ads for growth",
-            "Coordinates with the State Social Media Convenor"
-          ]
-        },
-        {
-          "title": "Role in Campaign Flow",
-          "items": [
-            "Plays a key role in the 360-degree dissemination of campaign communication",
-            "Ensures content created for official party handles is further amplified through leaders' accounts, district-level channels, candidate pages, influencer networks, and WhatsApp dissemination systems",
-            "Acts as a bridge between central campaign communication and ground-level distribution so that campaign narratives reach voters across all digital touchpoints in a coordinated manner"
-          ]
-        },
-        {
-          "title": "Daily Narrative Call at 8 AM",
-          "items": [
-            "Based on the previous day's media monitoring report and important morning news updates",
-            "Discussions with party leadership and communication teams to understand the party's position and finalise action points",
-            "Ensure all messaging remains aligned with the party's narrative; district-level events and developments are also reviewed",
-            "After the call, an actionable report is prepared with clear task allocation and division of responsibilities for the day"
-          ]
-        },
-        {
-          "title": "Daily Workflow / SOP",
-          "items": [
-            "After the daily narrative call and actionable report, content and creative teams begin production between 9:00 AM and 10:30 AM",
-            "Prepare at least 4-5 key content pieces before lunch so they can be sent to the party team for timely posting during the day",
-            "Remaining planned content completed before 6:00 PM and shared by 6:30 PM to ensure smooth publishing by around 8:00 PM",
-            "Helps maintain timely communication and avoids content pile-up; late evening delivery means party handles may not be able to publish all posts effectively"
-          ]
-        },
-        {
-          "title": "Coordination with Other Teams",
-          "items": [
-            "Works closely with political strategy team, research team, media monitoring team, design team, video team, field content team, district social media teams, candidate teams, influencer team, paid ads team, WhatsApp dissemination team, event team, and party leadership",
-            "Depends on verified data, timely ground inputs, leadership direction, event schedules, photos/videos from the field, approval authority, and active dissemination by party units",
-            "Reports to the State Campaign Head, State Social Media Incharge, Communications Head, War Room Lead, and senior leadership wherever required"
-          ]
-        },
-        {
-          "title": "Common Failure Points / Loopholes",
-          "items": [
-            "Delayed approvals, unverified data, weak coordination with district units",
-            "Poor visuals, unclear content planning, slow opposition response, and over-dependence on a few individuals",
-            "Inactive amplification networks, weak reporting systems, a lack of proper archives, and inconsistent coordination between official, district, and candidate handles",
-            "Human error during content creation and quality checks; mistakes can lead to content backfiring or creating negative public reactions",
-            "Frequent errors can reduce the party's trust in the team and damage credibility"
-          ]
-        },
-        {
-          "title": "Escalation Matrix",
-          "items": [
-            "Any major error, misinformation, or issue in published content is first escalated by the Project Manager (PM) to the Project Director (PD)",
-            "The matter is then communicated to the State Lead, who further coordinates with the Party Point of Contact (POC) for review, corrective action, and damage control"
-          ]
-        },
-        {
-          "title": "Campaign Flow",
-          "items": [
-            "Campaign narrative strategy is planned and finalised with the party approximately 6-7 months before the election",
-            "Based on the approved strategy, a planning calendar is created and the social media and communication process is executed in a structured manner",
-            "Final 45 days: highly active — star campaigner visits to the election state, rally coverage, speeches of key leaders, manifesto dissemination, opposition counters, and voter outreach",
-            "Last phase before voting: vote appeals, motivating voters to turn out, and politically framing the importance of participation by explaining how their vote can directly impact them, their community, and the future of their state"
-          ]
-        }
-      ],
-      "failurePoints": [
-        "Delayed approvals",
-        "Unverified data",
-        "Weak coordination with district units",
-        "Poor visuals",
-        "Unclear content planning",
-        "Slow opposition response",
-        "Over-dependence on a few individuals",
-        "Inactive amplification networks",
-        "Weak reporting systems",
-        "Lack of proper archives",
-        "Inconsistent coordination across official/district/candidate handles",
-        "Human error during content creation; mistakes can lead to backfiring"
-      ]
-    },
-    {
-      "id": "growth",
-      "name": "Growth Team",
-      "icon": "📈",
-      "tagline": "Manages, executes, optimises and safeguards political digital advertising operations across platforms.",
-      "purpose": "Manages, executes, optimises and safeguards political digital advertising operations across platforms while ensuring campaigns remain compliant, scalable, and strategically aligned with campaign narratives. The entire paid media ecosystem depends on this team's ability to coordinate multiple stakeholders and maintain uninterrupted campaign delivery.",
-      "structure": [
-        {
-          "role": "Team Lead",
-          "detail": "Operational control, budget approvals, escalation handling, internal/external coordination, budget forecasting, Direct Impact Purchase ads coordination, resource mapping & deployment."
-        },
-        {
-          "role": "Managers",
-          "detail": "Platform management, campaign monitoring, vendor coordination, reporting supervision, compliance, ad account management."
-        },
-        {
-          "role": "Executives / Consultants",
-          "detail": "Ad campaigns & reporting, execution, dashboard maintenance, creative tagging, approval tracking, daily monitoring."
-        }
-      ],
-      "sizing": {
-        "min": "3–5 (small state campaigns like PY)",
-        "ideal": "12–15 (parallel campaigns, multi-platform, continuous monitoring, dedicated reporting, compliance, asset recovery, shift-based peak monitoring)",
-        "scale": "When multiple states active; MCC/elections intensify; platform restrictions rise; narrative volume rises; multiple vendors/accounts run simultaneously."
-      },
-      "coreFunctions": [
-        {
-          "title": "Responsible For",
-          "items": [
-            "Creating and maintaining social media assets and advertising infrastructure",
-            "Meta and Google political advertising compliance",
-            "Platform health, account safety, recovery operations",
-            "Planning and optimising campaign budgets across platforms and objectives",
-            "Daily spend monitoring; reporting dashboards",
-            "Campaign execution across awareness, engagement, traffic, page likes and ghost ads",
-            "Coordinating with party leadership for Direct Impact Purchase ads (creatives, budget, approvals, sizing, performance)"
-          ]
-        },
-        {
-          "title": "Executes",
-          "items": [
-            "Campaign launches and media deployment",
-            "Political disclaimer setup and identity verification",
-            "Audience segmentation and targeting strategy implementation",
-            "Spend allocation optimisation based on narrative priorities",
-            "Ghost ad deployment for sensitive narratives",
-            "Google Election Commission approval workflows"
-          ]
-        },
-        {
-          "title": "Manages",
-          "items": [
-            "Ad accounts and credit lines",
-            "Vendor and prepaid advertising accounts",
-            "Internal & external social media properties and portfolio access",
-            "Campaign dashboards and reporting structures",
-            "Cross-platform spend pacing",
-            "Asset recovery and escalation processes"
-          ]
-        },
-        {
-          "title": "Coordinates With",
-          "items": [
-            "Varahe Leadership",
-            "National Comms",
-            "State Comms",
-            "State SMCC",
-            "Third-party communication teams",
-            "Official party teams",
-            "Vendors and platform representatives"
-          ]
-        },
-        {
-          "title": "Delivers",
-          "items": [
-            "Scaled campaign execution",
-            "Operational continuity during high-intensity campaigns",
-            "Real-time spend visibility & reporting",
-            "Narrative amplification through paid media",
-            "Safe and compliant advertising infrastructure"
-          ]
-        },
-        {
-          "title": "Daily Workflow",
-          "items": [
-            "Morning (9–11 AM) — review previous day, check page/account health, platform restrictions/warnings, align with comms, dashboards, competition spend reports",
-            "Afternoon (12–5 PM) — execution & optimisation, creative approvals & tagging, Google EC workflow, ghost ad deployment, vendor coordination, audience/spend adjustments",
-            "Evening (6–10 PM) — peak monitoring, reporting updates, spend reconciliation, escalation, campaign shifts between accounts, final dashboard updates"
-          ]
-        },
-        {
-          "title": "KPIs",
-          "items": [
-            "Daily — live execution, spend dashboards, optimisation updates, asset monitoring, approval processing",
-            "Weekly — budget pacing, platform-wise summaries, performance analysis, asset health, opposition spend analysis",
-            "Success — campaign uptime, spend efficiency, page/account survival, timely launches, compliance approval rate, reporting accuracy, narrative reach & engagement"
-          ]
-        },
-        {
-          "title": "Tools & Platforms",
-          "items": [
-            "Meta Ads Manager",
-            "Google Ads",
-            "Meta Business Manager",
-            "Google Sheets",
-            "AI deployment platforms",
-            "Web marketing tools",
-            "Dashboard systems",
-            "Supermetrics",
-            "Claude / GPT / Gemini",
-            "Budget trackers",
-            "Approval sheets",
-            "Asset management sheets",
-            "Audience targeting tools",
-            "Vendor account management systems"
-          ]
-        },
-        {
-          "title": "Common Failure Points",
-          "items": [
-            "Payment delays to prepaid ad accounts",
-            "Delayed creative approvals; improper creative tagging",
-            "Platform policy violations → account suspension",
-            "Delayed EC approvals; credit line exhaustion; asset access loss",
-            "Poor inter-team coordination; incorrect audience mapping",
-            "Budget overspend/underutilisation; incomplete dashboard reporting"
-          ]
-        }
-      ],
-      "escalation": [
-        [
-          "Page restriction",
-          "Team Lead + Leadership",
-          "Immediate"
-        ],
-        [
-          "Ad account suspension",
-          "Platform operations lead",
-          "Immediate"
-        ],
-        [
-          "Budget overspend",
-          "Campaign Lead",
-          "Same day"
-        ],
-        [
-          "Credit line exhaustion",
-          "Finance/Vendor coordination",
-          "Immediate"
-        ],
-        [
-          "EC approval delay",
-          "Party PoC + Approval team",
-          "Same day"
-        ],
-        [
-          "Missing creatives/captions",
-          "Concerned comms team",
-          "Immediate"
-        ]
-      ],
-      "category": "ops",
-      "function": "Paid Media & Operations",
-      "skills": {
-        "must": [
-          "Meta Ads Manager operations",
-          "Google Ads operations",
-          "Political advertising compliance understanding",
-          "Budget planning and pacing",
-          "Ownership of tasks",
-          "Dashboard management",
-          "Campaign optimization",
-          "Cross-team coordination",
-          "Crisis and escalation handling",
-          "Attention to detail — technical expertise in Meta and Google ads management",
-          "Reporting discipline",
-          "Creative/Content understanding",
-          "Basic and advanced data analysis",
-          "Excellent grip on analytical tools"
-        ],
-        "nice": [
-          "Election campaign understanding",
-          "Narrative intelligence",
-          "Vendor management",
-          "SQL & Python + PowerBI for data analysis",
-          "Platform policy knowledge",
-          "Competitive analysis capabilities",
-          "Regional/multiple language coordination"
+    "coreFunctions": [
+      {
+        "title": "Role in Campaign Flow",
+        "items": [
+          "Baseline Analysis Report at the start of the campaign — evaluates the state's social media landscape.",
+          "Analysis of official party pages and key stakeholders, such as office bearers, MPs, MLAs, and other significant figures as per the client's requirements.",
+          "Periodic Impact Assessment Report (SMAAR) — documents measurable effect of the Communications Team's interventions on the digital profile and social media presence of the assigned leader(s).",
+          "Periodic assessment documents evaluating Ad Spend on Ghost Advertisements and Engagement Posting, with strategic interventions to optimise performance and returns.",
+          "Periodic Trend Analysis of client's and opposition's digital ecosystems, with key takeaways, best practices and effective narrative strategies presented as concise case studies.",
+          "Daily Narrative Performance report for real-time monitoring and a Monthly Narrative Performance report for leadership.",
+          "During active narrative cycles — daily Posting Compliance and Dissemination Reports tracking rollout and spread of the narrative.",
+          "Coordinates with Vendor Pages on narrative dissemination, posting frequency, and content compliance; prepares a consolidated Vendor Pages Report weekly.",
+          "End-to-end content tracking and data support for all campaign activities, catering to the data requirements of the Communications Team.",
+          "Handles confidential social media analysis reports and fulfils ad-hoc research and reporting requirements, for direct consumption by the client.",
+          "Maintains a repository of all reports and datasets; keeps a productivity log of Comms team members as directed by the Project Director.",
+          "Prepares the performance tracking reports of the Social Media Command Centre.",
+          "Upon conclusion of the campaign — aids in preparation of a Key Takeaways and Learnings Document along with a Comprehensive Campaign Closure Report."
         ]
       },
-      "budgetStrategy": {
-        "purpose": "Budget allocation is determined based on multiple campaign and audience variables; budget is then divided across platforms, objectives and geographies, and continuously optimised against narrative traction and opposition activity.",
-        "inputs": [
-          "Campaign duration",
-          "Geography",
-          "Audience size",
-          "Gender split",
-          "Age segmentation",
-          "Platform suitability",
-          "Campaign objective",
-          "Opposition activity",
-          "Available operational infrastructure (No. of pages)"
-        ],
-        "steps": [
-          "Meta vs Google (split between the two or only one)",
-          "Awareness vs Engagement (split between the two or only one)",
-          "Ghost ads vs posted ads (split between the two or only one)",
-          "State-wise allocation",
-          "Narrative-wise allocation",
-          "Vendor/account-wise distribution"
-        ],
-        "additional": [
-          "Narrative traction",
-          "Spend pacing",
-          "Platform performance",
-          "Campaign urgency",
-          "Election timelines",
-          "Opposition campaign activity"
+      {
+        "title": "Routine — Performance Intelligence",
+        "items": [
+          "Benchmarks and tracks BJP's performance across Official, VA, Partner, In-House, Influencer and Partner ecosystems to identify gaps and refine competitive positioning.",
+          "Prepares 24-hour impact reports, weekly and monthly reports, and routinely undertakes ad-hoc social media analysis requests for state leaders/pages, including but not limited to MP, MLAs, UM, CMs.",
+          "Qualitative analysis of tone, language, design alignment alongside quantitative measurements of posting rates, views, narrative choice and audience sentiment.",
+          "Helps identify untapped opportunities, top performers and replicate best practices throughout the BJP ecosystem."
         ]
       },
-      "phases": [
-        {
-          "ph": 1,
-          "name": "Foundation / Slow Build",
-          "sub": "Pre-MCC Early",
-          "focus": "Infrastructure readiness and asset preparation",
-          "act": ["Page creation","Verification","Disclaimer setup","Account preparation","Audience planning","Vendor alignment"],
-          "output": "Campaign-ready advertising infrastructure",
-          "intensity": "low",
-          "teams": ["Growth","Comms","Vendors","Leadership"]
-        },
-        {
-          "ph": 2,
-          "name": "Acceleration / Build-Up",
-          "focus": "Narrative amplification and audience building",
-          "act": ["Awareness campaigns","Engagement campaigns","Audience testing","Budget scaling","Dashboard setup"],
-          "output": "Narrative penetration and audience traction",
-          "intensity": "medium",
-          "teams": ["Growth","Comms","SMCC","Vendor","Leadership"]
-        },
-        {
-          "ph": 3,
-          "name": "Peak Campaign",
-          "sub": "MCC / Election Period",
-          "focus": "Maximum campaign scale and operational continuity",
-          "act": ["High-volume campaign deployment","EC approvals","Ghost ads","Spend optimization","Crisis handling","Multi-account operations"],
-          "output": "High narrative reach and sustained campaign visibility",
-          "intensity": "very-high",
-          "teams": ["All teams"]
-        },
-        {
-          "ph": 4,
-          "name": "Conversion / Voting Phase",
-          "focus": "Targeted amplification and voter conversion",
-          "act": ["Hyper-targeted campaigns","Last-mile communication","Rapid optimization","Controlled spend pacing"],
-          "output": "Maximum narrative retention and voter action",
-          "intensity": "very-high",
-          "intensityNote": "but targeted",
-          "teams": ["All teams"]
-        },
-        {
-          "ph": 5,
-          "name": "Post-Campaign / Cool Down",
-          "sub": "Post MCC",
-          "focus": "Reporting, asset stabilization, and closure",
-          "act": ["Final reporting","Spend reconciliation","Asset recovery","Dashboard closure","Campaign analysis"],
-          "output": "Operational closure and reporting visibility",
-          "intensity": "low",
-          "teams": ["Growth","Reporting","Leadership"]
-        }
-      ]
-    },
-    {
-      "id": "influencer",
-      "name": "Influencer Management",
-      "icon": "🎙️",
-      "function": "Creator Network",
-      "tagline": "Converts paid messaging into earned credibility via a curated army of trusted regional voices.",
-      "purpose": "Converts paid messaging into earned credibility by routing campaign narratives through a curated, regionally distributed army of trusted voices instead of broadcast channels alone. Without it, the campaign is forced to depend on top-down media buys, official spokespersons and party handles — all perceived as paid propaganda. Conversion rates fall, narrative penetration (especially India 1 geographies) collapses, opposition messaging dominates social media, and cultural moments are lost.",
-      "philosophy": [
-        "Build, brief and operate a network of trusted voices: macro influencers, micro-influencers, page admins, vernacular creators, citizen journalists and cultural figures, who carry the campaign's narrative into communities that institutional media cannot reach.",
-        "The modern voter with an ever decreasing attention span trusts a relatable face that can dissect and distribute the narrative tailored down to each cohort in the audience."
-      ],
-      "structure": [
-        {
-          "role": "Head of Influencer Narrative Network (1)",
-          "detail": "Owns strategy, creator cohort selection, leadership reporting, and direct line to the Campaign Manager."
-        },
-        {
-          "role": "Creator Relationship Executives",
-          "detail": "Front-line; one executive typically handles 25–40 active creators; brief delivery, content review, follow-ups, and crisis communication with the creator."
-        }
-      ],
-      "scaleNote": "25–40 creators per executive",
-      "coreFunctions": [
-        {
-          "title": "Key Responsibilities",
-          "items": [
-            "Onboarding & Execution — Sourcing, vetting, onboarding and retaining a tiered roster of influencers across languages, geographies and content categories (political, lifestyle, devotional, sports, comedy, news, youth, women-led, agri, student)",
-            "Creative Guidance — Executing narrative rollouts by translating talking points into infopacks, creator briefs, sample reels, captions and hashtags that creators can post natively without sounding scripted",
-            "Daily Operations — Managing the day-to-day pipeline of content commissioning, approvals, scheduling, posting windows, cross-amplification, and deletion/correction protocols when something goes off-script",
-            "KPI-based Measurement — Reach, sentiment shift, hashtag dominance, comment-section sentiment, and voter-intent/brand-intent movement in target segments",
-            "Relationship Building — Establishing relationships, contracts, payments and creator confidentiality including NDAs, exclusivity windows and incentivising creators to organically produce pro-party content"
-          ]
-        },
-        {
-          "title": "Role in Campaign Flow",
-          "items": [
-            "Input from QRT (daily narrative line, attack/defence priorities), Research & Data (target segments, geo heat-maps, sentiment dashboards), Field Intelligence (on-ground sentiment, viral local moments)",
-            "Internal — Translate the strategic narrative into creator-native formats; match the right narrative to the right creator tier and language; brief the creator with an infopack; review drafts; approve final cuts; schedule synchronized rollouts across micro-clusters; monitor performance and trolling response"
-          ]
-        },
-        {
-          "title": "Working Logic",
-          "items": [
-            "Influence as a distributed network, not a single broadcast",
-            "Instead of one big ad, 200 small voices say the same idea in 200 culturally-native ways within the same window — making the message look like an organic public mood rather than a campaign",
-            "Key dependency: tight daily feedback loop with narrative/research — if narrative changes at 11 AM, creator briefs must update by 1 PM and first reels live by 6 PM",
-            "Embedded cultural knowledge — regional executives live inside their language's meme economy, devotional calendar, sports moods, exam cycles and festival cycles, so content is timed to the audience's mental state, not the campaign's calendar"
-          ]
-        },
-        {
-          "title": "NexGrow ↔ Varahe Coordination Framework",
-          "items": [
-            "Campaign Initiation — NexGrow prepares a comprehensive plan (suggestive narrative points aligned to communication objective, proposed creator count, execution timeline, budget outline); submitted to VA for review",
-            "Approval & Go-Ahead — Varahe team evaluates the plan and, upon approval, communicates a formal go-ahead along with the sanctioned budget; this triggers execution",
-            "Creator Deployment & Alignment — Based on budget, NexGrow deploys creators per the approved narrative framework; as the campaign progresses, additional creators are identified, approached and aligned to evolving narrative requirements or shifting market conditions",
-            "Daily Reporting — NexGrow shares a daily overview with VA covering total budget deployed to date and the number and details of creators engaged"
-          ]
-        }
-      ],
-      "skills": {
-        "must": [
-          "Native fluency in at least one regional language and deep cultural literacy of that geography",
-          "Creator-relationship management: emotional intelligence, negotiation, and the ability to make a creator feel like a partner, not a vendor",
-          "Narrative writing: converting a 2-line party positioning directive into a 90-second reel script, a tweet thread, and a vernacular caption",
-          "Speed — ability to move from brief to live content in under 6 hours during peak phase",
-          "Crisis instinct — pattern recognition for when a piece of creator content is about to go wrong, and the discipline to pull it before it does"
+      {
+        "title": "Working Logic",
+        "items": [
+          "Converts raw social media metrics (received from Analytics or fetched using data extraction tools) into structured assessment and performance insights across the political landscape.",
+          "Impacts narrative and campaign success by identifying strategic ways to launch coordinated attacks and by auditing BJP pages and leader profiles to gauge effectiveness of narrative deployment and social media utilisation.",
+          "Weekly and monthly reports offer leadership and the client insights to pivot strategies based on our and the Oppositions' strengths and vulnerabilities in real-time.",
+          "Key dependency — uninterrupted flow of data, competitive intelligence and seamless integration of state-level ground updates into reporting."
         ]
       },
-      "functionScope": [
-        [
-          "Onboarding & Execution",
-          "Sourcing, vetting, onboarding and retaining a tiered roster of influencers across languages, geographies and content categories (political, lifestyle, devotional, sports, comedy, news, youth, women-led, agri, student)"
-        ],
-        [
-          "Creative Guidance",
-          "Executing narrative rollouts by translating talking points into infopacks, creator briefs, sample reels, captions and hashtags that creators can post natively without sounding scripted"
-        ],
-        [
-          "Daily Operations",
-          "Managing the day-to-day pipeline of content commissioning, approvals, scheduling, posting windows, cross-amplification, and deletion/correction protocols when something goes off-script"
-        ],
-        [
-          "KPI-based Measurement",
-          "Delivering measurable narrative penetration — reach, sentiment shift, hashtag dominance, comment-section sentiment, and voter-intent/brand-intent movement in target segments"
-        ],
-        [
-          "Relationship Building",
-          "Establishing relationships, contracts, payments and creator confidentiality including NDAs, exclusivity windows and incentivising creators to organically produce pro-party content"
+      {
+        "title": "Coordination with Other Teams",
+        "items": [
+          "Works closely with VA-administered state teams to ensure narrative execution is aligned and delivers data-driven reports on page health, performance and narrative success.",
+          "Assists the state team with data extraction and extends support in combined tasks and reports on a regular basis.",
+          "Coordinates and assists state teams at the request of State leads; team members report internally to ARC GM (L2) who quality-checks insights and suggestions for strategic accuracy before sharing with leadership or client."
         ]
-      ],
-      "speedTimeline": [
-        {
-          "t": "11 AM",
-          "e": "Narrative changes"
-        },
-        {
-          "t": "1 PM",
-          "e": "Creator briefs updated"
-        },
-        {
-          "t": "6 PM",
-          "e": "First reels live"
-        }
-      ],
-      "category": "creative"
-    },
-    {
-      "id": "legal",
-      "name": "Legal Team",
-      "icon": "⚖️",
-      "category": "ops",
-      "function": "Compliance & Legal",
-      "tagline": "Ensures all campaign activity remains compliant with ECI, MCC and election law.",
-      "purpose": "Ensures that all campaign activities, political advertisements, candidate operations, and ground-level election activities remain fully compliant with Election Commission of India (ECI) guidelines, election laws, and Model Code of Conduct (MCC) regulations. Without it: rejection of advertisements and TVCs, MCC violations, delayed permissions, legal notices, compliance gaps, and operational disruptions. Also safeguards the campaign from operational disruption and reputational damage by handling complaints, monitoring compliance, and addressing legal issues in real time.",
-      "structure": [
-        {
-          "role": "Manager (1)",
-          "detail": "Supervises strategy, escalations, coordination with party legal cell and senior leadership; ensures smooth functioning of overall legal process."
-        },
-        {
-          "role": "Consultants (3–4)",
-          "detail": "MCMC approvals, permissions, compliance, nomination support, complaint drafting, tracker management, coordination with other teams, Party legal cell, and authorities."
-        }
-      ],
-      "sizing": {
-        "min": "3 members (preferably one local resource from the state)",
-        "ideal": "4 members for active campaign operations",
-        "scale": "Large or high-intensity campaign states — constituency volume, permissions, nominations, MCC compliance, and polling-day escalations increase operational workload."
+      }
+    ],
+    "icon": "📊",
+    "category": "intel",
+    "function": "Intelligence & Reporting",
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Baseline assessment of social media and third-party landscape; social media planning initiated ~6 months before elections"
       },
-      "skills": {
-        "must": [
-          "Strong understanding of ECI guidelines, MCC, RPA 1951, and nomination procedures",
-          "Drafting skills for complaints, representations, SOPs, and compliance formats",
-          "Coordination skills for working with candidates, authorities, and internal teams",
-          "Fast issue-spotting and escalation judgment during campaign and polling period",
-          "Knowledge of election commission compliance and relevant procedure",
-          "Ability to work under tight timelines and high-pressure election environments"
-        ],
-        "nice": [
-          "Political campaign experience",
-          "Social media law and digital compliance understanding",
-          "Public policy knowledge",
-          "Litigation exposure",
-          "Data management and reporting skills"
-        ]
+      {
+        "ph": 2,
+        "focus": "Regular monitoring and weekly deliverables continue; campaign-specific requirements begin increasing"
       },
-      "coreFunctions": [
-        {
-          "title": "Key Responsibilities",
-          "items": [
-            "MCMC approvals & legal vetting of political advertisements, creatives, scripts, social media content, and campaign material across GDNs, TVCs, Radio Jingles, Print Ads, SMS, OBDs, and digital campaigns",
-            "Executes appeals, representations, complaints, and submissions before the ECI, CEO Office, MCMC, District Authorities, and other election officials",
-            "Manages permissions and compliance for LED/Video Vans, rallies, public meetings, star campaigner vehicles, silent period communication, and other regulated campaign activities",
-            "Handles criminal antecedent compliance and statutory filings including C-1, C-2, C-7, and C-8 forms",
-            "Coordinates with Communications, Campaigns, CMS, PI, and Media Teams, State Legal Cell, and election authorities",
-            "Monitors social media, opposition violations, MCC breaches, electoral offences, and election-day incidents, and escalates complaints before relevant authorities",
-            "Supports GOTV and polling-day operations through legal escalation, sensitive booth monitoring, incident resolution, and liaison with police, observers, and election officials",
-            "Conducts legal training sessions and prepares SOPs, primers, compliance decks, checklists, operational advisories, and guidance documents"
-          ]
-        },
-        {
-          "title": "Working Logic",
-          "items": [
-            "Integrates legal compliance into every operational and communication layer of the campaign",
-            "Proactively reviews campaign material, secures permissions, resolves election-related disputes, and coordinates with Election Commission authorities to minimise legal risks",
-            "Impact: uninterrupted campaign operations, reduced advertisement rejections, mitigating MCC violations, protecting candidate interests, and enabling rapid legal escalation handling",
-            "Key dependency: Continuous coordination with Communications Team, Campaign Team, PI Team, Party State Legal Cell, Political Leadership, and Election Commission officials"
-          ]
-        },
-        {
-          "title": "Daily Workflow",
-          "items": [
-            "Morning — reviewing overnight approvals and rejections, coordinating follow-ups with MCMC, internal teams and CEO offices, updating internal trackers, addressing urgent field escalations, and conducting coordination calls",
-            "Entire Day — submission of creatives and permissions, drafts complaints and representations, coordinates with internal teams, Party Legal Cell and ECI officials, resolves CMS team queries, scrutinizes candidate documentation, disseminates approval certificates, tracker consolidation and reporting"
-          ]
-        },
-        {
-          "title": "Tools & Platforms",
-          "items": [
-            "Google Sheets / Google Doc",
-            "PowerPoint Presentations",
-            "Complaint & Approval Trackers",
-            "Eci.net",
-            "cVIGIL",
-            "E-SUVIDHA (CEO/ECI Submission Portal)",
-            "Social Media Monitoring Platforms"
-          ]
-        },
-        {
-          "title": "Common Failure Points",
-          "items": [
-            "Delayed document submission by candidates and incomplete details",
-            "MCMC rejection due to non-compliant content",
-            "Incorrect vehicle documentation",
-            "Delayed escalation to authorities",
-            "Improper tracking of approvals",
-            "Communication gaps between teams"
-          ]
-        }
-      ],
-      "example": "A video creative is received from the communications team for immediate release. The legal team first vets the script and visuals for MCC compliance, AI disclosure, religious references, and other rejection risks; after corrections, it files the application before MCMC, follows up for approval, obtains the certificate, and shares the cleared approval with the communications team for dissemination.",
-      "phases": [
-        {
-          "ph": 1,
-          "focus": "Establishing legal team structure, understanding ECI procedures, establishing coordination with election authorities & Party Legal Cell, and building coordination mechanisms with internal teams",
-          "act": [
-            "Preparing SOPs and legal frameworks",
-            "Coordinating with the State Legal Cell",
-            "Understanding local ECI processes",
-            "Creating trackers and documentation systems",
-            "Drafting compliance checklists",
-            "Conducting preliminary training sessions for campaign teams"
-          ],
-          "intensity": "low",
-          "teams": [
-            "Legal Team",
-            "State Legal Cell",
-            "Communications Team",
-            "Campaigns Team",
-            "PI Team",
-            "Research Team",
-            "Party Coordination Team"
-          ]
-        },
-        {
-          "ph": 2,
-          "focus": "Strengthening legal operations, streamlining approval mechanisms, and ensuring campaign preparedness before the MCC period intensifies",
-          "act": [
-            "Coordinating with MCMC officials",
-            "Legally vetting campaign creatives and speeches",
-            "Initiating permission processes",
-            "Monitoring opposition violations",
-            "Drafting representations",
-            "Conducting legal training for CMS POCs"
-          ],
-          "intensity": "medium",
-          "teams": [
-            "Legal Team",
-            "Communications Team",
-            "Campaigns Team",
-            "CMS Team",
-            "State Legal Cell"
-          ]
-        },
-        {
-          "ph": 3,
-          "focus": "Managing high-volume legal operations, ensuring uninterrupted campaign execution, and maintaining full compliance during the active election period",
-          "act": [
-            "Obtaining MCMC approvals",
-            "Processing vehicle and campaign permissions",
-            "Verifying nominations and affidavits",
-            "Drafting complaints and representations",
-            "Handling escalations",
-            "Real-time legal support to campaign teams"
-          ],
-          "intensity": "very-high",
-          "teams": [
-            "Legal Team",
-            "Communications Team",
-            "Campaigns Team",
-            "Media Team",
-            "CMS Team",
-            "State Legal Cell"
-          ]
-        },
-        {
-          "ph": 4,
-          "focus": "Providing polling-day legal support, resolving election-day violations, and ensuring smooth and lawful voting operations",
-          "act": [
-            "Managing GOTV legal operations",
-            "Handling booth-level escalations",
-            "Coordinating with Police and General Observers",
-            "Reporting electoral offences",
-            "Resolving voter-related issues",
-            "Ensuring compliance during the silence period and polling process"
-          ],
-          "intensity": "high",
-          "teams": [
-            "Legal Team",
-            "Communications Team",
-            "Campaigns Team",
-            "Media Team",
-            "CMS Team",
-            "State Legal Cell"
-          ]
-        },
-        {
-          "ph": 5,
-          "focus": "Compiling campaign learnings, documenting legal operations, and preparing post-election reports and compliance records",
-          "act": [
-            "Preparing closure reports",
-            "Compiling approval and complaint data",
-            "Documenting legal learnings",
-            "Archiving trackers and representations",
-            "Conducting internal review meetings"
-          ],
-          "intensity": "low",
-          "teams": [
-            "Legal Team"
-          ]
-        }
-      ],
-      "statutoryForms": [
-        {
-          "form": "C-1",
-          "desc": "Criminal antecedents / statutory filing under election compliance"
-        },
-        {
-          "form": "C-2",
-          "desc": "Criminal antecedents / statutory filing under election compliance"
-        },
-        {
-          "form": "C-7",
-          "desc": "Criminal antecedents / statutory filing under election compliance"
-        },
-        {
-          "form": "C-8",
-          "desc": "Criminal antecedents / statutory filing under election compliance"
-        }
-      ],
-      "ipo": [
-        {
-          "stage": "Input",
-          "items": [
-            "Scripts and creatives from Communications/Campaigns Team",
-            "Documents from State Legal Cell",
-            "Candidate affidavit",
-            "Vehicle details from Campaigns Team",
-            "Complaints and field issues from CMS/ground teams",
-            "Election notifications and ECI circulars"
-          ]
-        },
-        {
-          "stage": "Process",
-          "items": [
-            "Legal vetting",
-            "Compliance review",
-            "MCC scrutiny",
-            "Documentation",
-            "Drafting representations",
-            "Filing applications",
-            "Escalation handling",
-            "Coordination with ECI officials"
-          ]
-        },
-        {
-          "stage": "Output",
-          "items": [
-            "Approved creatives and certificates",
-            "Cleared nominations and affidavits",
-            "Vehicle and campaign permissions",
-            "Legal advisories and SOPs",
-            "Complaint filings and escalations",
-            "Poll-day issue resolution support"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "media",
-      "name": "Media Team",
-      "icon": "📰",
-      "category": "intel",
-      "function": "Media Intelligence",
-      "tagline": "Monitor, analyze, and shape media narratives across print, electronic, and digital platforms.",
-      "purpose": "Addresses the critical need for real-time tracking and analysis of narratives across print, electronic, and digital platforms. Supports the client by providing research inputs, drafting communication materials, and ensuring consistent dissemination of press notes and pro-client narratives. In the absence of this team, systematic media tracking would be severely compromised, leading to gaps in narrative awareness, delayed responses, and weakened coordination between the client and media stakeholders.",
-      "structure": [
-        {
-          "role": "Team Lead",
-          "detail": "Oversees the two primary verticals — Media Monitoring and Party Coordination — and is responsible for managing overall operations, strategic direction, and inter-team coordination. Reports directly to the Communications Lead."
-        },
-        {
-          "role": "Managers (2)",
-          "detail": "Two managers oversee one vertical each, ensuring smooth execution of daily operations and team coordination."
-        },
-        {
-          "role": "Media Associates",
-          "detail": "Responsible for monitoring, reporting, and coordination tasks across assigned states, with approximately 4–5 associates handling smaller states and 7–8 associates managing larger states."
-        }
-      ],
-      "sizing": {
-        "min": "2 Media Associates — sufficient to manage essential media monitoring, reporting, and client deliverables during non-campaign periods",
-        "ideal": "6 Media Associates and 2 Vertical Managers — split into Media Monitoring and Party Coordination verticals",
-        "scale": "Scales further based on campaign intensity, media volume, and coordination requirements during election periods"
+      {
+        "ph": 3,
+        "focus": "High volume of adhoc reports, CM reports, comparison reports, and campaign-specific analysis",
+        "intensity": "very-high"
       },
-      "skills": {
-        "must": [
-          "Strong political acumen and understanding of the media and political landscape",
-          "Proficiency in local languages for effective media tracking and regional coordination",
-          "Strong writing and communication skills, with the ability to draft clear, concise, and media-friendly content"
-        ],
-        "nice": [
-          "Prior experience or background in media, journalism, or political communication",
-          "Media liaisoning and stakeholder coordination skills"
-        ]
+      {
+        "ph": 4,
+        "focus": "Continued reporting and requirement handling from state teams"
       },
-      "coreFunctions": [
-        {
-          "title": "Key Responsibilities",
-          "items": [
-            "Responsible for media monitoring, narrative analysis, and assessment of client and opposition coverage across print, electronic, and digital platforms",
-            "Prepares and delivers media coverage reports, speech pointers, article inputs, and press notes to support informed communication and strategic outreach",
-            "Manages coordination with the party's media team and oversees press release-related activities to ensure timely dissemination of information",
-            "Coordinates with Client's media unit",
-            "Delivers media monitoring and media coverage reports, speech pointers, article pointers and press notes"
-          ]
-        },
-        {
-          "title": "Role in Campaign Flow",
-          "items": [
-            "Input Received — media monitoring feeds, client mandates, leadership directives, political developments, and research inputs (coordinates with Research, Campaign, Analytics, Digital, Party Coordination)",
-            "Core Work — identifies and prioritises actionable narratives, conducts media research and analysis, develops explainers, drafts media-friendly communication, prepares strategic content (assists Quick Response, Digital, Research, Campaign)",
-            "Outputs delivered — media monitoring reports, narrative assessments, speech pointers, press notes, articles, and communication briefs (supports Communications, Digital, Research, Campaign)"
-          ]
-        },
-        {
-          "title": "Working Logic",
-          "items": [
-            "Continuously monitors mainstream media, identifies actionable narratives, assesses narrative penetration, recommends strategic counter-narratives aligned with the client's objectives",
-            "Supports communication efforts through media research, speech inputs, press notes, and narrative-driven content",
-            "Contributes to campaign success by shaping and responding to narratives in mainstream media, enabling timely communication, informed decision-making, and coordinated media outreach",
-            "Key dependencies: active client involvement, effective media management, and close coordination with research, campaign, and communication teams"
-          ]
-        },
-        {
-          "title": "Daily Workflow",
-          "items": [
-            "Morning (9–11 AM) — Tracking top national and regional headlines, analysing newspaper coverage, identifying actionable narratives, monitoring narrative penetration, conducting narrative calls, sharing morning media updates, and reviewing client mandates and priority tasks",
-            "Afternoon (12–5 PM) — Executing client mandates such as preparing speech pointers, press inputs, and media briefs; providing timely media updates to the client and internal teams; compiling media round-up reports, narrative assessments, and research-based deliverables",
-            "Evening (6–10 PM) — Monitoring prime-time debates, special programmes, and breaking developments across media platforms, while tracking emerging and actionable narratives for further escalation and strategic response"
-          ]
-        },
-        {
-          "title": "KPIs",
-          "items": [
-            "Daily Deliverables — print media coverage reports, electronic media coverage reports, bi-hourly media updates, narratives-of-the-day reports, editorial reports, press pointers, speech pointers, article inputs, press notes",
-            "Weekly Deliverables — consolidated compilations of daily reports, key media developments, major narratives, important political updates of the week",
-            "Quality — accuracy, relevance, and strategic value of narratives flagged; clarity, effectiveness, and media suitability of speech pointers/press inputs; consistency and comprehensiveness of monitoring",
-            "Speed — real-time or near real-time dissemination of media updates and narrative alerts; quick turnaround for client mandates, speech inputs, press notes, urgent media deliverables"
-          ]
-        },
-        {
-          "title": "Tools & Platforms",
-          "items": [
-            "Direct monitoring of newspapers, news channels, digital media platforms, and social media",
-            "Varahe Newscore Platform",
-            "Clipchamp",
-            "Google Studio",
-            "NordGPT",
-            "Perplexity",
-            "ChatGPT",
-            "National and regional digital media platforms, local news channels, newspapers, and social media platforms"
-          ]
-        },
-        {
-          "title": "Coordination with Other Teams",
-          "items": [
-            "Works closely with the client's media team, communications team, research teams, and campaign units",
-            "Depends on client mandates, leadership priorities, campaign requirements, and the evolving media and news cycle",
-            "Reports to the client's media team, communications leadership, and senior organisational leadership through regular media updates, narrative reports, and strategic communication deliverables"
-          ]
-        },
-        {
-          "title": "Common Failure Points",
-          "items": [
-            "Critical news developments or important narratives may occasionally be missed or not escalated in a timely manner due to the fast-paced and high-volume nature of media monitoring",
-            "Since Media Associates are often freshers or newly onboarded, there can be gaps in political understanding or contextual interpretation of issues with long-term strategic relevance",
-            "Media monitoring primarily relies on publicly available reporting which can provide only surface-level information; deeper political, policy, or strategic insights may require additional research and cross-team coordination"
-          ]
-        }
-      ],
-      "escalation": [
-        [
-          "Important news developments, media narratives, or sensitive political issues identified through monitoring",
-          "Internal teams, client communication channels, and relevant stakeholders through official escalation channels (primarily WhatsApp groups and reporting systems)",
-          "Real-time / Immediate"
+      {
+        "ph": 5,
+        "focus": "Regular monitoring and reporting continue post campaign"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "Increased adhoc analysis and campaign-specific reporting requirements"
+  },
+  {
+    "id": "campaign-branding",
+    "name": "Campaign Branding & Ads",
+    "icon": "",
+    "category": "creative",
+    "function": "Creative & Campaigns",
+    "hideTabs": [
+      "budget"
+    ],
+    "tagline": "Centralised branding, creative and coordination unit across print, digital, ground, video, animation and tech.",
+    "purpose": "The Campaign Branding & Ads Team functions as a centralised branding, creative and coordination unit that supports national and state-level campaigns across multiple formats and platforms. It ensures smooth implementation of campaign-related requirements involving branding, events, print communication, digital creatives, media support, video communication, presentations, animation and campaign infrastructure support.",
+    "skills": {
+      "table": {
+        "headers": [
+          "Graphic Designing",
+          "Video Editing"
         ],
-        [
-          "Actionable narratives requiring strategic response",
-          "Communications, research, and media coordination teams",
-          "Within minutes of identification"
-        ],
-        [
-          "Speech pointers, press inputs, and narrative explainers",
-          "Client leadership, spokespersons, and media teams",
-          "Within 1–2 hours"
-        ],
-        [
-          "Media coverage reports and detailed documentation",
-          "Client and internal leadership teams",
-          "As per reporting cycle"
-        ]
-      ],
-      "phases": [
-        {
-          "ph": 1,
-          "focus": "Building the media team structure, understanding the state's media landscape, and establishing coordination and escalation mechanisms",
-          "act": [
-            "Mapping regional media",
-            "Liaisoning with local units",
-            "Setting up monitoring systems",
-            "Onboarding/training team members"
+        "rows": [
+          [
+            "Adobe Photoshop",
+            "Adobe Premiere Pro"
           ],
-          "intensity": "low",
-          "teams": [
-            "Media Monitoring",
-            "Party Coordination",
-            "Local Units",
-            "Communications",
-            "Research"
-          ]
-        },
-        {
-          "ph": 2,
-          "focus": "Strengthening media management, increasing team visibility, and enhancing narrative positioning for the client",
-          "act": [
-            "Providing media monitoring reports",
-            "Pushing favorable narratives",
-            "Drafting and circulating press pointers",
-            "Facilitating ghost articles and strategic media outreach"
+          [
+            "Adobe Illustrator",
+            "Adobe After Effect"
           ],
-          "intensity": "medium",
-          "teams": [
-            "Media Monitoring",
-            "Party Coordination",
-            "Communications",
-            "Research",
-            "Client Media Unit"
-          ]
-        },
-        {
-          "ph": 3,
-          "focus": "Establishing real-time media coordination with the client and ensuring strong alignment with national campaign narratives during the election period",
-          "act": [
-            "Setting up and operating a dedicated media room with the party",
-            "Coordinating continuously with the national team",
-            "Aligning state-level communication with national narratives",
-            "Intensively pushing press conferences, articles, and strategic media content"
+          [
+            "Adobe InDesign",
+            "AI Tools"
           ],
-          "intensity": "very-high",
-          "teams": [
-            "Media Monitoring",
-            "Party Coordination",
-            "National Communications",
-            "Client Media Unit",
-            "Research",
-            "Campaign"
-          ]
-        },
-        {
-          "ph": 5,
-          "focus": "Ensuring continuity in media monitoring and narrative coordination during the post-election transition and government formation period",
-          "act": [
-            "Tracking post-election media narratives",
-            "Coordinating with national teams on sensitive or high-impact developments",
-            "Monitoring government formation coverage",
-            "Managing important media escalations and communication requirements"
+          [
+            "Corel Draw",
+            ""
           ],
-          "intensity": "low",
-          "teams": [
-            "Media Monitoring",
-            "National Communications",
-            "Client Media Unit",
-            "Party Coordination"
+          [
+            "AI Tools",
+            ""
           ]
-        }
-      ]
-    },
-    {
-      "id": "narrative",
-      "name": "Narrative Team (QRT)",
-      "icon": "💡",
-      "category": "intel",
-      "function": "Narrative & Research",
-      "tagline": "Identifies issues and converts them into narratives, infopacks, speech pointers and ideation.",
-      "purpose": "The Quick Response Team identifies state/national issues and crafts narrative aligned with the client's messaging to the relevant target groups. Without QRT, teams cannot pick narratives crucial to the client.",
-      "structure": [
-        {
-          "role": "PD",
-          "detail": "Overall direction."
-        },
-        {
-          "role": "Manager",
-          "detail": "Direction on identifying patterns and narratives."
-        },
-        {
-          "role": "Team Lead",
-          "detail": "Takes the narrative and directs executives to convert into the desired output."
-        },
-        {
-          "role": "Executives",
-          "detail": "Convert TL/Manager directions into deliverables."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Responsible for",
-          "items": [
-            "Narratives",
-            "Ideation",
-            "Identifying the patterns"
-          ]
-        },
-        {
-          "title": "Coordinates With",
-          "items": [
-            "Leadership team",
-            "Media team",
-            "Communications team",
-            "Campaigns team",
-            "NexGrow team",
-            "Partnership team"
-          ]
-        },
-        {
-          "title": "Delivers",
-          "items": [
-            "Narrativized Infopacks",
-            "Media Pointers",
-            "PPTs",
-            "Book Reviews",
-            "Narrativized Research Documents",
-            "Campaign ideas",
-            "Communication ideas",
-            "Themes for the major milestones of the client",
-            "Counters for the ecosystem's fake claims",
-            "Narrative and issue tracking reports",
-            "Articles — Ghost writing and Byline writing",
-            "Speech Pointers",
-            "Long-term research",
-            "Influencers messaging",
-            "Bharat Darpan",
-            "Project Nandaka",
-            "The Indian Matrix on all social media platforms"
-          ]
-        },
-        {
-          "title": "Working Logic",
-          "items": [
-            "Identifies issues, patterns and narrativisation",
-            "Outputs flow to communications, campaigns, influencers, leadership",
-            "Central piece of campaign messaging — no key dependency"
-          ]
-        },
-        {
-          "title": "Tools & Platforms",
-          "items": [
-            "Tools: Gemini, Claude, Chat GPT",
-            "Platforms: Instagram, X, all media platforms"
-          ]
-        },
-        {
-          "title": "Coordination & Reporting",
-          "items": [
-            "Works closely with Communications, Media, Nexgrow and Partnership Program",
-            "Depends on Research, Media and PI",
-            "Reports to Shreyas Bharadwaj and Karthik Kamanna"
-          ]
-        }
-      ],
-      "kpis": [
-        ["Narrativized Infopacks", ""],
-        ["Media Pointers", ""],
-        ["PPTs", ""],
-        ["Book Reviews", ""],
-        ["Narrativized Research Documents", ""],
-        ["Campaign ideas", ""],
-        ["Communication ideas", ""],
-        ["Themes for the major milestones of the client", ""],
-        ["Counters for the ecosystem's fake claims", ""],
-        ["Narrative and issue tracking reports", ""],
-        ["Articles — Ghost writing and Byline writing", ""],
-        ["Speech Pointers", ""],
-        ["Long-term research", ""],
-        ["Influencers messaging", ""],
-        ["Bharat Darpan", ""],
-        ["Project Nandaka", ""],
-        ["The Indian Matrix on all social media platforms", ""]
-      ],
-      "example": {
-        "title": "Connecting the Crucial Dots — Red Fort Blast",
-        "content": "Post the Red Fort blast, QRT launched a high-intensity campaign against what it termed white-collar terrorism. As a result, the incident, which might otherwise have been treated as just another terror attack, gave rise to the now widely used term 'white-collar terrorism' — a phrase that has since been repeatedly invoked by media and social media platforms while discussing similar incidents. QRT connected the dots between the education of the terrorists and their terror activities and established the fact that it is the mentality of the quom that follows a book to create chaos, no matter what their level of education is. Narrativized infopacks, media pointers, influencer messaging, and other forms of messaging pieces were disseminated to the concerned teams to pick up the narrative."
-      },
-      "skills": {
-        "must": [
-          "Understanding of political nuances",
-          "Narrativization",
-          "Creativity to convert the issue and narrative into the desired output",
-          "Issue tracking"
-        ],
-        "nice": [
-          "Understanding of multiple states' political nuances"
         ]
       }
     },
-    {
-      "id": "non-meta",
-      "name": "Non-Meta Digital Ads",
-      "icon": "📡",
-      "category": "ops",
-      "function": "Paid Media & Operations",
-      "tagline": "GDN, YouTube, PG Deals, DV360, OTT, Apps and Telecom Ads.",
-      "purpose": "Non_Meta Digital Ads consist of GDN(Google Display Network), YouTube, PG Deals(Direct Deal with the Websites), DV360 (Miscellaneous), OTT, Apps, and Telecom Ads. GDNs, YT, PG Deals, DV360, Apps, and OTT ads help us target voters everywhere. Telecom Ads should be planned separately from everything else as we use them in the last phase and the purpose of those ads is a bit different from the rest.",
-      "structure": [
-        {
-          "role": "2 Managers",
-          "detail": "One to coordinate with the content creation team, and the other to coordinate with GTS, legal team, Nexgrow, and Vendors."
-        },
-        {
-          "role": "Content Writers",
-          "detail": "Four content writers are required for a few days as and when the work is required. But one dedicated content writer is required throughout the ad campaign for legal team docs and primary content QC."
-        },
-        {
-          "role": "5 Graphic Designers + 3 Video Editors",
-          "detail": "For designing and resizing of the deliverables."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Documentation — Two Master Sheets",
-          "items": [
-            "Telecom Ads Master Sheet — AC number, AC Name, Narrative, Campaign Unique ID, TG geographical description, and Cohort to be targeted",
-            "Comms internal sheet — content writers, graphic designers, and video editors; all your content will be in this sheet",
-            "Vendor sheet — AC number, AC name, Pin Codes, LatLong, and Content link",
-            "Drive folders to upload all the content according to the unique ID names for each",
-            "Other Non-Meta — One tracker with tabs: budget allocation and daily spend; content sizes and content formats; each section dedicated tab"
-          ]
-        },
-        {
-          "title": "Vertical Operations",
-          "items": [
-            "GDNs and YouTube — coordination with the Nexgrow team; share Master sheet, location, amount to be spent, and duration",
-            "PG Deals, DV360, OTT, Apps — managed by the vendor; clear and daily communication with the vendor; take written feedback (ideally in a group); enquire daily about the implementation",
-            "Telecom Ads — managed by the vendor; clear and precise timeframe at least 15 days before the day of polling; finalize number of creatives, number of sets, and number of constituencies with the vendor"
-          ]
-        },
-        {
-          "title": "Key Notes",
-          "items": [
-            "Coordination with several teams is crucial. Nexgrow, GTS, legal team, and most importantly vendor coordination is critical to the success of this project.",
-            "ARC PoC has to be involved right from the beginning. From documentation, to drive folders creation, and Unique ID has to be in coordination with the ARC PoC.",
-            "Dashboard/reports from each team is important for the campaign closure report."
-          ]
-        }
-      ],
-      "references": [
-        {
-          "label": "Non-Meta Digital Ads Master Sheet Template",
-          "url": "https://docs.google.com/spreadsheets/d/1CXedE18ArJCOzqgF5Hr8i2KhEq63Bl39Jz_LbWwYZ6s/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Master Sheet Template",
-          "url": "https://docs.google.com/spreadsheets/d/1PrXp1KwdAJNpVFDhg4qF6Mtb5VHGFfSCn_zecYitouY/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Comms internal Template",
-          "url": "https://docs.google.com/spreadsheets/d/1wsXCaLfOpN7vJd9YRgEA-SO8Kb5ZIxjyTA68ksow7R0/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Vendor Sheet",
-          "url": "https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"
-        }
-      ],
-      "pipelines": [
-        {
-          "title": "Telecom Ads Pipeline",
-          "rows": [
-            [
-              "Strategy",
-              "Define narratives and actionable goals for specific constituencies and booths.",
-              "PI and Campaigns Teams"
-            ],
-            [
-              "Production",
-              "Develop copy, static graphics (GfX), and motion graphics.",
-              "Comms Team"
-            ],
-            [
-              "Quality Control",
-              "Multi-stage review: Manager QC, Final QC.",
-              "Telecom PoC"
-            ],
-            [
-              "Documentation",
-              "Upload to Drive with Unique IDs per narrative/constituency.",
-              "ARC Team"
-            ],
-            [
-              "Finalization",
-              "Acquire Pincodes and LatLongs; populate the Vendor Copy Sheet.",
-              "Analytics Team"
+    "structure": [
+      {
+        "role": "Project Manager",
+        "detail": "Planning, priority management, resource allocation, approval coordination, inter-department coordination, final supervision."
+      },
+      {
+        "role": "Operations & Coordination POCs",
+        "detail": "Stakeholder communication, brief collection, task assignment, timeline tracking, feedback, approvals, vendor coordination, follow-ups."
+      },
+      {
+        "role": "Creative Team",
+        "detail": "Graphic Designers, Video Editors, Motion Graphic Artists, Animators, Caricature Artists, PPT Designers, Content Strategists."
+      },
+      {
+        "role": "External Vendors",
+        "detail": "Print Vendors, Event Agencies, Production Teams, External Designers (scaled by campaign intensity)."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Key Responsibilities",
+        "items": [
+          "Campaign Ideation & Creative Planning — communication planning, narrative visualisation, state-wise audience-specific planning",
+          "Content Production & Creative Support — social media creatives, digital assets, print collateral, outdoor branding, WhatsApp creatives & GIFs",
+          "Ground Branding & Event Support — meetings, yatras, conferences, backdrops, stage branding, gates, pole banners, LED, venue branding",
+          "Video, Animation & Motion Graphics — campaign videos, speech edits, teasers, reels, motion graphic explainers, 2D animation, caricatures",
+          "Print & Production Support — pamphlets, brochures, newspaper ads, manifestos, booklets, print-ready adaptations, vendor specifications",
+          "PPTs — review decks, leadership presentations, research/strategy/ARC presentations",
+          "AI & Automation — websites, landing pages, dashboards, automation support",
+          "Coordination & Campaign Support — client coordination, brief management, approval management, inter-team tracking"
+        ]
+      },
+      {
+        "title": "How a Typical Requirement Flows",
+        "items": [
+          "Begins with: a campaign brief, event requirement, communication objective, research-based narrative, media requirement, or stakeholder request",
+          "PoC coordinates objective, timeline/urgency, deliverables, platform/usage, approval flow, language/state adaptations",
+          "Designers and editors begin execution according to the inputs received from the PoC",
+          "Inputs from Research, Campaign, Communication, Media, Ground/Event, Leadership Offices"
+        ]
+      },
+      {
+        "title": "Internal Working Process",
+        "items": [
+          "Designers — branding and creatives",
+          "Video editors — reels and campaign videos",
+          "Animators — motion graphics and explainers",
+          "PPT teams — presentations",
+          "Technical teams — websites or automation",
+          "PoCs — coordination, feedback, approvals, timelines"
+        ]
+      },
+      {
+        "title": "Coordination & Feedback Loop",
+        "items": [
+          "Continuous coordination with Stakeholders, Campaign Teams, Communication Teams, Vendors, Event Agencies, Media Teams",
+          "Multiple rounds of feedback and revisions before final closure"
+        ]
+      },
+      {
+        "title": "Dissemination",
+        "items": [
+          "Outputs go to: social media dissemination, print production, event deployment, media usage, on-ground branding, WhatsApp circulation, presentations, digital publishing",
+          "Deliverables include: backdrops & event branding, pamphlets & print, social creatives, videos/reels, animated content, presentations, websites/landing pages"
+        ]
+      },
+      {
+        "title": "Pre-Campaign Preparation",
+        "items": [
+          "Hiring & resource allocation — designers, editors, animators based on campaign needs",
+          "Coordination systems — briefing, approval workflows, escalation hierarchies",
+          "Narrative familiarisation — state-specific political narratives, positioning, local issues, regional sensitivities",
+          "Asset & template preparation — master templates, design systems, asset libraries, typography systems"
+        ]
+      }
+    ],
+    "workflow": [
+      {
+        "step": "Request Initiation",
+        "desc": "Stakeholders initiate tasks with detailed brief; appropriate PoC tagged."
+      },
+      {
+        "step": "Content & Ideation",
+        "desc": "Content provided by campaigns PoC or developed internally."
+      },
+      {
+        "step": "Task Assignment",
+        "desc": "Tasks assigned to appropriate team members."
+      },
+      {
+        "step": "Execution",
+        "desc": "Team works to defined timeline upholding creative and quality standards."
+      },
+      {
+        "step": "Quality Assurance",
+        "desc": "Internal review for quality, brand alignment, creative expectations."
+      },
+      {
+        "step": "Completion",
+        "desc": "Final creatives shared with stakeholders for review/approval/dissemination."
+      }
+    ],
+    "example": {
+      "title": "GST Awareness & Achievement Campaign",
+      "content": "A GST awareness/achievements campaign communicates impact and benefits of GST implementation across print, digital, media, on-ground. Starts with objectives, target audience, messaging direction, deliverables, rollout timelines. Inputs from Campaign, Research, Communication, Media. Direction finalised → communication angles, messaging structure, creative references, visual direction, look & feel, platform-wise approach. Designers do print/branding/digital, video editors do reels/videos, animators do motion graphics, PPT designers do decks. PoC manages timelines, internal coordination, vendor communication, feedback, deliverable tracking. Workflow may include pamphlets, newspaper ads, hoardings, event branding, social creatives, reels, videos, animated explainers, leadership decks, media briefing presentations. Review for branding/narrative/platform/quality alignment → stakeholder feedback → revisions → final outputs."
+    },
+    "budget": [
+      {
+        "role": "Campaign Branding Lead",
+        "range": "₹1L – ₹1.3L"
+      },
+      {
+        "role": "Sr. Content Writer",
+        "range": "₹50K – ₹75K"
+      },
+      {
+        "role": "Jr. Content Writer",
+        "range": "₹35K – ₹50K"
+      },
+      {
+        "role": "Sr. Graphic Designer",
+        "range": "₹55K – ₹80K"
+      },
+      {
+        "role": "Jr. Graphic Designer",
+        "range": "₹35K – ₹50K"
+      },
+      {
+        "role": "Sr. Video Editor",
+        "range": "₹60K – ₹85K"
+      },
+      {
+        "role": "Jr. Video Editor",
+        "range": "₹35K – ₹55K"
+      }
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "State familiarization, campaign understanding, hiring, team setup, resource allocation, narrative familiarization, workflow and template preparation"
+      },
+      {
+        "ph": 2,
+        "focus": "Achievement Hoardings, branding materials and aspirations collection, initial campaign creatives, moderate advertising rollout, campaign identity building"
+      },
+      {
+        "ph": 3,
+        "focus": "Mid-level execution including rally branding, vans, buses, stage branding, physical collaterals, print materials, social media creatives, videos and presentations",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Aggressive branding and communication after MCC implementation; rapid deployment of attack creatives, event branding, digital and physical campaign assets, high-volume execution across platforms",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 5,
+        "focus": "Post-campaign communication support, ghost ads, residual digital amplification and campaign closure support"
+      }
+    ],
+    "criticalPhase": "Conversion / Peak Campaign",
+    "whyCritical": "Maximum branding intensity, high-volume creative execution, physical and digital campaign rollout, rapid stakeholder coordination"
+  },
+  {
+    "id": "party",
+    "name": "Party Team",
+    "icon": "🏛️",
+    "category": "comms",
+    "function": "Official Communications",
+    "tagline": "Mouthpiece of the party and first line of narrative dissemination to the public.",
+    "purpose": "This team exists to manage and drive the official digital communication of the party during the campaign. The official party handles act as the mouthpiece of the party and serves as the first line of narrative dissemination to the public. If this team does not exist, the party's communication becomes scattered, opposition narratives can dominate, development work remains under-amplified, and ground-level messaging does not reach voters in a structured way.",
+    "structure": [
+      {
+        "role": "Project Manager",
+        "detail": "Oversees the overall campaign workflow, coordination, approvals, and alignment with party leadership."
+      },
+      {
+        "role": "Party Page Manager",
+        "detail": "Manages official party handles, daily publishing, content planning, and platform coordination."
+      },
+      {
+        "role": "Creative Team",
+        "detail": "Includes 2 Graphic Designers (GD), 3 Video Editors (VE), and 1 Animator responsible for creatives, reels, videos, motion graphics, and visual campaign content."
+      },
+      {
+        "role": "Content Writing Team",
+        "detail": "A team of 3 writers responsible for captions, scripts, political messaging, reactive content, and platform-specific copy."
+      },
+      {
+        "role": "Reporting Lead",
+        "detail": "One person is required to handle reporting, tracker management and coordination."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Key Responsibilities",
+        "items": [
+          "Planning and managing the overall digital narrative of the campaign in alignment with the party's political strategy",
+          "Daily, weekly, and monthly content planning, and checking content quality before posting",
+          "Covers rallies and protests, promotes party spokesperson statements",
+          "Plans growth strategies, proposes ads for growth",
+          "Coordinates with the State Social Media Convenor"
+        ]
+      },
+      {
+        "title": "Role in Campaign Flow",
+        "items": [
+          "Plays a key role in the 360-degree dissemination of campaign communication",
+          "Ensures content created for official party handles is further amplified through leaders' accounts, district-level channels, candidate pages, influencer networks, and WhatsApp dissemination systems",
+          "Acts as a bridge between central campaign communication and ground-level distribution so that campaign narratives reach voters across all digital touchpoints in a coordinated manner"
+        ]
+      },
+      {
+        "title": "Daily Narrative Call at 8 AM",
+        "items": [
+          "Based on the previous day's media monitoring report and important morning news updates",
+          "Discussions with party leadership and communication teams to understand the party's position and finalise action points",
+          "Ensure all messaging remains aligned with the party's narrative; district-level events and developments are also reviewed",
+          "After the call, an actionable report is prepared with clear task allocation and division of responsibilities for the day"
+        ]
+      },
+      {
+        "title": "Daily Workflow / SOP",
+        "items": [
+          "After the daily narrative call and actionable report, content and creative teams begin production between 9:00 AM and 10:30 AM",
+          "Prepare at least 4-5 key content pieces before lunch so they can be sent to the party team for timely posting during the day",
+          "Remaining planned content completed before 6:00 PM and shared by 6:30 PM to ensure smooth publishing by around 8:00 PM",
+          "Helps maintain timely communication and avoids content pile-up; late evening delivery means party handles may not be able to publish all posts effectively"
+        ]
+      },
+      {
+        "title": "Coordination with Other Teams",
+        "items": [
+          "Works closely with political strategy team, research team, media monitoring team, design team, video team, field content team, district social media teams, candidate teams, influencer team, paid ads team, WhatsApp dissemination team, event team, and party leadership",
+          "Depends on verified data, timely ground inputs, leadership direction, event schedules, photos/videos from the field, approval authority, and active dissemination by party units",
+          "Reports to the State Campaign Head, State Social Media Incharge, Communications Head, War Room Lead, and senior leadership wherever required"
+        ]
+      },
+      {
+        "title": "Common Failure Points / Loopholes",
+        "items": [
+          "Delayed approvals, unverified data, weak coordination with district units",
+          "Poor visuals, unclear content planning, slow opposition response, and over-dependence on a few individuals",
+          "Inactive amplification networks, weak reporting systems, a lack of proper archives, and inconsistent coordination between official, district, and candidate handles",
+          "Human error during content creation and quality checks; mistakes can lead to content backfiring or creating negative public reactions",
+          "Frequent errors can reduce the party's trust in the team and damage credibility"
+        ]
+      },
+      {
+        "title": "Escalation Matrix",
+        "items": [
+          "Any major error, misinformation, or issue in published content is first escalated by the Project Manager (PM) to the Project Director (PD)",
+          "The matter is then communicated to the State Lead, who further coordinates with the Party Point of Contact (POC) for review, corrective action, and damage control"
+        ]
+      },
+      {
+        "title": "Campaign Flow",
+        "items": [
+          "Campaign narrative strategy is planned and finalised with the party approximately 6-7 months before the election",
+          "Based on the approved strategy, a planning calendar is created and the social media and communication process is executed in a structured manner",
+          "Final 45 days: highly active — star campaigner visits to the election state, rally coverage, speeches of key leaders, manifesto dissemination, opposition counters, and voter outreach",
+          "Last phase before voting: vote appeals, motivating voters to turn out, and politically framing the importance of participation by explaining how their vote can directly impact them, their community, and the future of their state"
+        ]
+      }
+    ],
+    "failurePoints": [
+      "Delayed approvals",
+      "Unverified data",
+      "Weak coordination with district units",
+      "Poor visuals",
+      "Unclear content planning",
+      "Slow opposition response",
+      "Over-dependence on a few individuals",
+      "Inactive amplification networks",
+      "Weak reporting systems",
+      "Lack of proper archives",
+      "Inconsistent coordination across official/district/candidate handles",
+      "Human error during content creation; mistakes can lead to backfiring"
+    ],
+    "partyPhases": [
+      {
+        "n": 1,
+        "name": "Strategy, Planning & Infrastructure Setup",
+        "window": "6–7 Months Before Elections",
+        "purpose": "This phase focuses on laying the foundation of the campaign. The objective is to define the political direction, identify key voter groups, prepare teams, and establish systems required for execution during later stages.",
+        "opsGroups": [
+          {
+            "head": "Narrative Planning",
+            "bullets": [
+              "Discussions are conducted with party leadership to understand major narrative priorities, governance achievements, sensitive issues, opposition vulnerabilities, and long-term election goals.",
+              "Based on these inputs, broad narrative buckets are prepared such as development, governance, welfare schemes, regional issues, leadership image building, caste/community outreach, and opposition counters."
             ]
-          ]
-        },
-        {
-          "title": "Non-Meta Digital Ads Pipeline",
-          "rows": [
-            [
-              "Scoping",
-              "Define target locations and finalize asset counts (creatives/videos) based on budget.",
-              "State Leadership"
-            ],
-            [
-              "Development",
-              "Write content, finalize designs, and resize assets for all platform verticals.",
-              "Comms & Branding Teams"
-            ],
-            [
-              "Broadcast Sync",
-              "Integrate and coordinate TVC (Television Commercial) assets.",
-              "GTS Team"
-            ],
-            [
-              "Compliance",
-              "Daily Coordination: Secure mandatory EC (Election Commission) approval for all creatives.",
-              "Legal Team"
-            ],
-            [
-              "Deployment",
-              "Release assets in iterative sets to reflect changing narratives and Manifesto promises.",
-              "Nexgrow Team and Vendors"
+          },
+          {
+            "head": "Constituency & Voter Mapping",
+            "bullets": [
+              "Constituencies are studied to identify demographic patterns, local issues, influential communities, and voter expectations in coordination with PI team.",
+              "District-specific communication requirements and potential political risks are mapped in advance."
             ]
-          ]
-        }
+          },
+          {
+            "head": "Digital Asset & Handle Preparation",
+            "bullets": [
+              "Existing party handles, district pages, candidate pages, and unofficial amplification pages are audited.",
+              "Party is asked to get the missing handles created and branding is standardised to maintain visual consistency across all communication channels."
+            ]
+          },
+          {
+            "head": "Team Formation & Vendor Onboarding",
+            "bullets": [
+              "Human resources including content writers, graphic designers, video editors and dissemination teams are identified and onboarded.",
+              "External vendors for media buying, influencers and field coverage are finalised."
+            ]
+          },
+          {
+            "head": "Approval System & SOP Building",
+            "bullets": [
+              "Internal workflows, approval hierarchies, escalation mechanisms, and reporting structures are prepared to avoid operational delays during active campaigning."
+            ]
+          },
+          {
+            "head": "Content Bank Creation",
+            "bullets": [
+              "Historical achievements, statistics, government schemes, photos, speeches, quotes, manifesto points, and leader visuals are collected and archived for future use."
+            ]
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "name": "Narrative Seeding & Network Building",
+        "window": "3–6 Months Before Elections",
+        "purpose": "The focus shifts towards gradually influencing public perception while strengthening communication networks and amplification systems.",
+        "opsGroups": [
+          {
+            "head": "Soft Narrative Deployment",
+            "bullets": [
+              "Governance achievements, development works, welfare initiatives, and leadership messaging begin receiving increased visibility.",
+              "The aim is to shape positive public perception before election rhetoric intensifies."
+            ]
+          },
+          {
+            "head": "District-Level Issue Mapping",
+            "bullets": [
+              "Inputs from district teams are collected regularly to identify local dissatisfaction, civic issues, and opportunities for narrative building."
+            ]
+          },
+          {
+            "head": "Growth of Amplification Ecosystem",
+            "bullets": [
+              "Influencers, city pages, district pages, WhatsApp groups, volunteers, and local digital supporters are identified and onboarded.",
+              "Amplification channels are strengthened before peak campaigning begins."
+            ]
+          },
+          {
+            "head": "Audience Growth Activities",
+            "bullets": [
+              "Paid promotions, page growth strategies and engagement campaigns are conducted to increase digital reach."
+            ]
+          },
+          {
+            "head": "Testing Narrative Effectiveness",
+            "bullets": [
+              "Different content formats, hooks, messaging styles, and regional narratives are tested to understand audience behaviour and engagement patterns."
+            ]
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "name": "Active Campaign",
+        "window": "starts 90-120 Days Before Elections",
+        "purpose": "Campaign operations shift into a high-frequency mode. Communication becomes faster, more reactive, and increasingly political.",
+        "opsGroups": [
+          {
+            "head": "Daily Narrative Meetings Begin",
+            "bullets": [
+              "Daily review calls are conducted with leadership based on media monitoring reports, opposition activities, and ground feedback.",
+              "Clear action points and deliverables are assigned to teams after each discussion."
+            ]
+          },
+          {
+            "head": "Quick Response System Activation",
+            "bullets": [
+              "Teams begin monitoring opposition statements, controversies, misinformation, and local incidents continuously.",
+              "Reactive content is prepared within shorter timelines."
+            ]
+          },
+          {
+            "head": "Manifesto & Governance Communication",
+            "bullets": [
+              "Party achievements and upcoming promises are communicated through structured campaigns."
+            ]
+          },
+          {
+            "head": "Ground-to-Digital Coordination",
+            "bullets": [
+              "Photos, videos, public reactions, and local event coverage are collected from district units and converted into digital communication assets."
+            ]
+          },
+          {
+            "head": "Candidate Promotion Intensifies",
+            "bullets": [
+              "Constituency-level leaders receive increased visibility through issue-based communication and campaign content."
+            ]
+          },
+          {
+            "head": "Paid Campaign Rollout",
+            "bullets": [
+              "Meta ads, targeted campaigns, and geo-specific communication strategies are aggressively deployed."
+            ]
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "name": "High Intensity Campaign Operations",
+        "window": "Last 30 Days Before Voting",
+        "purpose": "This is the most critical campaign period where communication directly impacts voter perception and mobilisation.",
+        "opsGroups": [
+          {
+            "head": "War Room Functioning",
+            "bullets": [
+              "Teams operate with extended hours and faster approval cycles.",
+              "Real-time coordination becomes essential due to rallies, speeches, and political developments."
+            ]
+          },
+          {
+            "head": "Star Campaigner Coverage",
+            "bullets": [
+              "Visits of senior leaders are covered extensively across platforms through reels, graphics, speeches, clips, and rapid dissemination."
+            ]
+          },
+          {
+            "head": "Constituency-Level Communication",
+            "bullets": [
+              "Messaging becomes highly localised and targeted according to district issues, candidate strengths, and voter concerns."
+            ]
+          },
+          {
+            "head": "Mass Dissemination Activation",
+            "bullets": [
+              "WhatsApp groups, district/AC pages, influencers and candidate handles used simultaneously for maximum reach."
+            ]
+          },
+          {
+            "head": "Emotional & Persuasive Communication",
+            "bullets": [
+              "Content increasingly focuses on identity, development, local pride, leadership trust, and future aspirations."
+            ]
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "name": "Final 72 Hours & Polling Day",
+        "window": null,
+        "purpose": "The objective shifts from persuasion to voter turnout mobilisation and maintaining narrative discipline.",
+        "opsGroups": [
+          {
+            "head": "Vote Appeal Campaigns",
+            "bullets": [
+              "Emotional appeals, governance reminders, and leadership messaging are amplified aggressively."
+            ]
+          },
+          {
+            "head": "Polling Awareness Communication",
+            "bullets": [
+              "Information regarding voting timings, participation awareness, and civic responsibility is promoted via GOTV campaign."
+            ]
+          },
+          {
+            "head": "Monitoring Misinformation",
+            "bullets": [
+              "Teams remain active to identify and respond to rumours or misleading narratives during polling."
+            ]
+          },
+          {
+            "head": "Voting Day Coordination",
+            "bullets": [
+              "Continuous communication and a legal setup is maintained with local units to tackle with escalations and emerging issues from ground."
+            ]
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "name": "Post Polling & Results Management",
+        "window": null,
+        "purpose": "Maintain narrative control even after voting concludes.",
+        "opsGroups": [
+          {
+            "head": "Result Day Preparedness",
+            "bullets": [
+              "Victory messaging and narrative line is prepared in advance.",
+              "Opposition claims, media sentiment, and public reactions are tracked closely and countered if required."
+            ]
+          },
+          {
+            "head": "Post Campaign Documentation",
+            "bullets": [
+              "Reports are created documenting content performance, successful narratives, operational gaps, and lessons learnt.",
+              "Assets, reports, SOP improvements, and campaign learnings are archived for future elections."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "growth",
+    "name": "Growth Team",
+    "icon": "📈",
+    "tagline": "Manages, executes, optimises and safeguards political digital advertising operations across platforms.",
+    "purpose": "Manages, executes, optimises and safeguards political digital advertising operations across platforms while ensuring campaigns remain compliant, scalable, and strategically aligned with campaign narratives. The entire paid media ecosystem depends on this team's ability to coordinate multiple stakeholders and maintain uninterrupted campaign delivery.",
+    "structure": [
+      {
+        "role": "Team Lead",
+        "detail": "Operational control, budget approvals, escalation handling, internal/external coordination, budget forecasting, Direct Impact Purchase ads coordination, resource mapping & deployment."
+      },
+      {
+        "role": "Managers",
+        "detail": "Platform management, campaign monitoring, vendor coordination, reporting supervision, compliance, ad account management."
+      },
+      {
+        "role": "Executives / Consultants",
+        "detail": "Ad campaigns & reporting, execution, dashboard maintenance, creative tagging, approval tracking, daily monitoring."
+      }
+    ],
+    "sizing": {
+      "min": "3–5 (small state campaigns like PY)",
+      "ideal": "12–15 (parallel campaigns, multi-platform, continuous monitoring, dedicated reporting, compliance, asset recovery, shift-based peak monitoring)",
+      "scale": "When multiple states active; MCC/elections intensify; platform restrictions rise; narrative volume rises; multiple vendors/accounts run simultaneously."
+    },
+    "coreFunctions": [
+      {
+        "title": "Responsible For",
+        "items": [
+          "Creating and maintaining social media assets and advertising infrastructure",
+          "Meta and Google political advertising compliance",
+          "Platform health, account safety, recovery operations",
+          "Planning and optimising campaign budgets across platforms and objectives",
+          "Daily spend monitoring; reporting dashboards",
+          "Campaign execution across awareness, engagement, traffic, page likes and ghost ads",
+          "Coordinating with party leadership for Direct Impact Purchase ads (creatives, budget, approvals, sizing, performance)"
+        ]
+      },
+      {
+        "title": "Executes",
+        "items": [
+          "Campaign launches and media deployment",
+          "Political disclaimer setup and identity verification",
+          "Audience segmentation and targeting strategy implementation",
+          "Spend allocation optimisation based on narrative priorities",
+          "Ghost ad deployment for sensitive narratives",
+          "Google Election Commission approval workflows"
+        ]
+      },
+      {
+        "title": "Manages",
+        "items": [
+          "Ad accounts and credit lines",
+          "Vendor and prepaid advertising accounts",
+          "Internal & external social media properties and portfolio access",
+          "Campaign dashboards and reporting structures",
+          "Cross-platform spend pacing",
+          "Asset recovery and escalation processes"
+        ]
+      },
+      {
+        "title": "Coordinates With",
+        "items": [
+          "Varahe Leadership",
+          "National Comms",
+          "State Comms",
+          "State SMCC",
+          "Third-party communication teams",
+          "Official party teams",
+          "Vendors and platform representatives"
+        ]
+      },
+      {
+        "title": "Delivers",
+        "items": [
+          "Scaled campaign execution",
+          "Operational continuity during high-intensity campaigns",
+          "Real-time spend visibility & reporting",
+          "Narrative amplification through paid media",
+          "Safe and compliant advertising infrastructure"
+        ]
+      },
+      {
+        "title": "Daily Workflow",
+        "items": [
+          "Morning (9–11 AM) — review previous day, check page/account health, platform restrictions/warnings, align with comms, dashboards, competition spend reports",
+          "Afternoon (12–5 PM) — execution & optimisation, creative approvals & tagging, Google EC workflow, ghost ad deployment, vendor coordination, audience/spend adjustments",
+          "Evening (6–10 PM) — peak monitoring, reporting updates, spend reconciliation, escalation, campaign shifts between accounts, final dashboard updates"
+        ]
+      },
+      {
+        "title": "KPIs",
+        "items": [
+          "Daily — live execution, spend dashboards, optimisation updates, asset monitoring, approval processing",
+          "Weekly — budget pacing, platform-wise summaries, performance analysis, asset health, opposition spend analysis",
+          "Success — campaign uptime, spend efficiency, page/account survival, timely launches, compliance approval rate, reporting accuracy, narrative reach & engagement"
+        ]
+      },
+      {
+        "title": "Tools & Platforms",
+        "items": [
+          "Meta Ads Manager",
+          "Google Ads",
+          "Meta Business Manager",
+          "Google Sheets",
+          "AI deployment platforms",
+          "Web marketing tools",
+          "Dashboard systems",
+          "Supermetrics",
+          "Claude / GPT / Gemini",
+          "Budget trackers",
+          "Approval sheets",
+          "Asset management sheets",
+          "Audience targeting tools",
+          "Vendor account management systems"
+        ]
+      },
+      {
+        "title": "Common Failure Points",
+        "items": [
+          "Payment delays to prepaid ad accounts",
+          "Delayed creative approvals; improper creative tagging",
+          "Platform policy violations → account suspension",
+          "Delayed EC approvals; credit line exhaustion; asset access loss",
+          "Poor inter-team coordination; incorrect audience mapping",
+          "Budget overspend/underutilisation; incomplete dashboard reporting"
+        ]
+      }
+    ],
+    "escalation": [
+      [
+        "Page restriction",
+        "Team Lead + Leadership",
+        "Immediate"
       ],
-      "downloads": [
-        {
-          "label": "Non-Meta Digital Ads Master Sheet Template",
-          "url": "https://docs.google.com/spreadsheets/d/1CXedE18ArJCOzqgF5Hr8i2KhEq63Bl39Jz_LbWwYZ6s/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Master Sheet Template",
-          "url": "https://docs.google.com/spreadsheets/d/1PrXp1KwdAJNpVFDhg4qF6Mtb5VHGFfSCn_zecYitouY/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Comms Internal Template",
-          "url": "https://docs.google.com/spreadsheets/d/1wsXCaLfOpN7vJd9YRgEA-SO8Kb5ZIxjyTA68ksow7R0/edit?usp=sharing"
-        },
-        {
-          "label": "Telecom Ads Vendor Sheet",
-          "url": "https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"
-        }
+      [
+        "Ad account suspension",
+        "Platform operations lead",
+        "Immediate"
+      ],
+      [
+        "Budget overspend",
+        "Campaign Lead",
+        "Same day"
+      ],
+      [
+        "Credit line exhaustion",
+        "Finance/Vendor coordination",
+        "Immediate"
+      ],
+      [
+        "EC approval delay",
+        "Party PoC + Approval team",
+        "Same day"
+      ],
+      [
+        "Missing creatives/captions",
+        "Concerned comms team",
+        "Immediate"
+      ]
+    ],
+    "category": "ops",
+    "function": "Paid Media & Operations",
+    "skills": {
+      "must": [
+        "Meta Ads Manager operations",
+        "Google Ads operations",
+        "Political advertising compliance understanding",
+        "Budget planning and pacing",
+        "Ownership of tasks",
+        "Dashboard management",
+        "Campaign optimization",
+        "Cross-team coordination",
+        "Crisis and escalation handling",
+        "Attention to detail — technical expertise in Meta and Google ads management",
+        "Reporting discipline",
+        "Creative/Content understanding",
+        "Basic and advanced data analysis",
+        "Excellent grip on analytical tools"
+      ],
+      "nice": [
+        "Election campaign understanding",
+        "Narrative intelligence",
+        "Vendor management",
+        "SQL & Python + PowerBI for data analysis",
+        "Platform policy knowledge",
+        "Competitive analysis capabilities",
+        "Regional/multiple language coordination"
       ]
     },
-    {
-      "id": "party-coord",
-      "name": "Party Coordination & Narrative Management",
-      "icon": "🤝",
-      "category": "ops",
-      "function": "Stakeholder Management",
-      "tagline": "The objective is not just coordination — it is controlled coordination.",
-      "purpose": "A successful political communication strategist ensures that leadership feels heard, the party feels supported, operations remain structured, and strategy stays protected from chaos.",
-      "coreFunctions": [
-        {
-          "title": "Establishing Authority Without Friction",
-          "items": [
-            "Enter as a solution partner, not as an agency/vendor",
-            "Build credibility early through quick wins, responsiveness, and preparedness",
-            "Always communicate with clarity, confidence, and data-backed reasoning",
-            "Understand internal party hierarchy before operations begin",
-            "Identify actual decision-makers vs influencers vs information carriers",
-            "Respect political sensitivities, egos, and chain of command",
-            "Never publicly contradict party leadership or senior functionaries",
-            "Ensure party POCs are informed before major narrative pushes"
-          ]
-        },
-        {
-          "title": "Building Rapport — Relationship Management",
-          "items": [
-            "Maintain regular personal communication beyond task-based interactions",
-            "Understand each POC's working style, political ambitions, and pressure points",
-            "Give credit to party teams publicly wherever necessary",
-            "Ensure party POCs feel included in strategy, not bypassed",
-            "Be accessible during high-pressure news cycles and crisis",
-            "Maintain composure even during emotional or aggressive conversations"
-          ]
-        },
-        {
-          "title": "Building Rapport — Trust Building",
-          "items": [
-            "Deliver on timelines consistently",
-            "Never overpromise to impress leadership",
-            "Share updates proactively before they ask",
-            "Protect confidential discussions and internal disagreements",
-            "Build confidence through preparedness in meetings and war-room discussions"
-          ]
-        },
-        {
-          "title": "Communication Discipline",
-          "items": [
-            "Define clear communication protocols from Day 1 — WhatsApp for urgent coordination, Daily narrative calls for narrative alignment, one clear approval chain for creatives/narratives",
-            "Avoid parallel instructions from multiple leaders without clarification",
-            "Always summarize verbal instructions in writing after meetings/calls",
-            "Use concise updates: what was done, current status, pending approvals, risks/issues"
-          ]
-        },
-        {
-          "title": "Managing Expectations & Unrealistic Demands — Handling Pressure",
-          "items": [
-            "Political environments are emotionally driven; avoid reactive responses",
-            "Separate urgency from importance",
-            "Not every leader request needs instant execution",
-            "Saying No diplomatically — never say 'This cannot be done'",
-            "Instead: explain operational limitations, provide alternative solutions, suggest realistic timelines, use data/platform limitations to justify pushback, convert emotional demands into measurable objectives"
-          ]
-        },
-        {
-          "title": "Managing Leadership Requests",
-          "items": [
-            "Prioritize tasks based on electoral impact, narrative relevance, resource availability, platform performance",
-            "Escalate conflicting instructions carefully and privately",
-            "Avoid creating dependence on unsustainable execution models"
-          ]
-        },
-        {
-          "title": "Taking Operational Control",
-          "items": [
-            "Establish systems early",
-            "Create centralized approval and escalation structures",
-            "Define who approves: creatives, captions, ad spends, crisis responses",
-            "Maintain structured reporting formats and dashboards",
-            "Control through process — documentation creates operational authority",
-            "Use daily trackers, content calendars and End of Day summaries",
-            "Reduce chaos by converting verbal politics into documented workflows"
-          ]
-        },
-        {
-          "title": "Conflict Management",
-          "items": [
-            "Never take political disagreements personally",
-            "Resolve disputes privately, never in group forums",
-            "During internal conflicts — stay neutral, factual and process-oriented",
-            "Maintain relationships across factions within the party structure",
-            "Avoid becoming associated with one internal camp/group"
-          ]
-        },
-        {
-          "title": "Election-Time Coordination Best Practices",
-          "items": [
-            "Conduct daily morning narrative sync calls",
-            "Maintain a real-time escalation group for urgent approvals",
-            "Share feedback with party leadership regularly",
-            "Ensure district-level and vidhan sabha level content alignment with central messaging",
-            "Maintain backup plans for account restrictions, media attacks, legal notices and opposition misinformation"
-          ]
-        },
-        {
-          "title": "Professional Conduct",
-          "items": [
-            "Never become emotionally invested in internal politics",
-            "Maintain discretion at all times",
-            "Avoid informal political gossip within campaign structures",
-            "Maintain written records of major approvals and strategic directions",
-            "Be calm under pressure — campaign environments reward stability"
-          ]
-        }
+    "budgetStrategy": {
+      "purpose": "Budget allocation is determined based on multiple campaign and audience variables; budget is then divided across platforms, objectives and geographies, and continuously optimised against narrative traction and opposition activity.",
+      "inputs": [
+        "Campaign duration",
+        "Geography",
+        "Audience size",
+        "Gender split",
+        "Age segmentation",
+        "Platform suitability",
+        "Campaign objective",
+        "Opposition activity",
+        "Available operational infrastructure (No. of pages)"
+      ],
+      "steps": [
+        "Meta vs Google (split between the two or only one)",
+        "Awareness vs Engagement (split between the two or only one)",
+        "Ghost ads vs posted ads (split between the two or only one)",
+        "State-wise allocation",
+        "Narrative-wise allocation",
+        "Vendor/account-wise distribution"
+      ],
+      "additional": [
+        "Narrative traction",
+        "Spend pacing",
+        "Platform performance",
+        "Campaign urgency",
+        "Election timelines",
+        "Opposition campaign activity"
       ]
     },
-    {
-      "id": "reporter",
-      "name": "Reporter Network (RN)",
-      "icon": "📹",
-      "category": "intel",
-      "function": "Field Intelligence",
-      "tagline": "Decentralized field intelligence and content execution system — local presence converted to usable assets.",
-      "purpose": "A decentralized field intelligence and content execution system built to provide rapid on-ground access, structured media inputs, and reliable operational support across geographically distributed environments. It exists to close the gap between central planning and field reality by converting local presence into usable assets, validated inputs, and auditable delivery.",
-      "stats": [
-        {
-          "label": "Active States",
-          "value": "14"
-        },
-        {
-          "label": "Contact-Access States",
-          "value": "7"
-        },
-        {
-          "label": "Baseline Reporters",
-          "value": "150–200"
-        },
-        {
-          "label": "Election Surge",
-          "value": "600+"
-        },
-        {
-          "label": "Archival Retrieval",
-          "value": "1–2 hrs"
-        },
-        {
-          "label": "Fresh Shoot",
-          "value": "24–48 hrs"
-        },
-        {
-          "label": "Monthly Output",
-          "value": "300–400 assets"
-        },
-        {
-          "label": "Per-task rate",
-          "value": "₹100–₹500"
-        },
-        {
-          "label": "Payment cycle",
-          "value": "15-day national"
-        }
-      ],
-      "scaleNote": "AC-level expansion in election states",
-      "recruitment": {
-        "feeders": [
-          "IPRD reports",
-          "Personal/professional contacts",
-          "Referrals from trusted sources"
-        ],
-        "criteria": [
-          "Current employment and conflict sensitivity review",
-          "Field reporting experience and ability to work with remote coordination",
-          "Equipment readiness: camera or smartphone, microphone where available, and reliable data connectivity",
-          "Location utility and responsiveness for district or AC-level access",
-          "Acceptance of RN operating standards on authenticity, lawful filming, and non-fabricated submissions"
-        ],
-        "steps": [
-          "Source identification and initial fit check",
-          "Verification of experience, geography, and equipment readiness",
-          "Orientation on assignment types, submission expectations, turnaround discipline, and payment logic",
-          "Assignment to a state-specific or campaign-specific execution pool",
-          "First-task activation with enhanced supervision until reliability is established"
-        ],
-        "content": [
-          "Assignment types: vox pops, field visuals, issue-ground inputs, archival retrieval support, and special shoots",
-          "Submission requirements: file naming, metadata, shot completeness, and delivery channels",
-          "Quality standards: video clarity, audio usability, framing, duration, and adherence to brief",
-          "Payment logic: task-specific payouts after QC validation and entry into state-wise payment sheets",
-          "Conduct requirements: no coercion, no impersonation, no staged public reactions presented as genuine, and respect for legal and safety constraints"
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Infrastructure readiness, asset creation, page verification, disclaimer setup, SIM/device readiness, domain purchase, audience planning, budget preparation, coordination with state leads for campaign pages"
+      },
+      {
+        "ph": 2,
+        "focus": "Meta engagement campaigns, audience building, A/B testing through ghost ads, ad approval workflows, budget optimization, dashboard setup and campaign testing.\n\nFor the Google ads campaigns, Growth team coordinates with the Party to securely take ownership transfer of the official ads account on their mail account, setup the account campaigns, check funds availability and other technical parameters."
+      },
+      {
+        "ph": 3,
+        "focus": "High-volume ad execution across platforms, aggressive deployment of engagement and traffic ads, crisis handling, copyright management, multi-account operations, spend optimization, real-time monitoring.\n\nFor GDN & YT ads, EC approved creatives are resized and provided to the growth team - Growth implements the budget, targeting, CPM, Frequency cap based on their discretion.\n\nFor Direct Impact buying, Growth team lead coordinates with the Party IT team to provide the resized creatives, manages the budget, targeting and ensure the requirements are fulfilled by coordinating with the comms team.",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Pincode-level targeting, last-mile amplification, targeted spend allocation, remaining budget optimization and pacing across Meta, GDN, YT & DIP ads",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 5,
+        "focus": "Spend reconciliation, dashboard closure, asset recovery, reporting, tracking page/account casualties, campaign analysis for Meta and GDN ads."
+      }
+    ],
+    "criticalPhase": "Peak Campaign/Conversion phase",
+    "whyCritical": "Maximum ad deployment intensity, operational continuity, crisis management, and high-volume narrative amplification"
+  },
+  {
+    "id": "influencer",
+    "name": "Influencer Management",
+    "icon": "🎙️",
+    "function": "Creator Network",
+    "tagline": "Converts paid messaging into earned credibility via a curated army of trusted regional voices.",
+    "purpose": "Converts paid messaging into earned credibility by routing campaign narratives through a curated, regionally distributed army of trusted voices instead of broadcast channels alone. Without it, the campaign is forced to depend on top-down media buys, official spokespersons and party handles — all perceived as paid propaganda. Conversion rates fall, narrative penetration (especially India 1 geographies) collapses, opposition messaging dominates social media, and cultural moments are lost.",
+    "philosophy": [
+      "Build, brief and operate a network of trusted voices: macro influencers, micro-influencers, page admins, vernacular creators, citizen journalists and cultural figures, who carry the campaign's narrative into communities that institutional media cannot reach.",
+      "The modern voter with an ever decreasing attention span trusts a relatable face that can dissect and distribute the narrative tailored down to each cohort in the audience."
+    ],
+    "structure": [
+      {
+        "role": "Head of Influencer Narrative Network (1)",
+        "detail": "Owns strategy, creator cohort selection, leadership reporting, and direct line to the Campaign Manager."
+      },
+      {
+        "role": "Creator Relationship Executives",
+        "detail": "Front-line; one executive typically handles 25–40 active creators; brief delivery, content review, follow-ups, and crisis communication with the creator."
+      }
+    ],
+    "scaleNote": "25–40 creators per executive",
+    "coreFunctions": [
+      {
+        "title": "Key Responsibilities",
+        "items": [
+          "Onboarding & Execution — Sourcing, vetting, onboarding and retaining a tiered roster of influencers across languages, geographies and content categories (political, lifestyle, devotional, sports, comedy, news, youth, women-led, agri, student)",
+          "Creative Guidance — Executing narrative rollouts by translating talking points into infopacks, creator briefs, sample reels, captions and hashtags that creators can post natively without sounding scripted",
+          "Daily Operations — Managing the day-to-day pipeline of content commissioning, approvals, scheduling, posting windows, cross-amplification, and deletion/correction protocols when something goes off-script",
+          "KPI-based Measurement — Reach, sentiment shift, hashtag dominance, comment-section sentiment, and voter-intent/brand-intent movement in target segments",
+          "Relationship Building — Establishing relationships, contracts, payments and creator confidentiality including NDAs, exclusivity windows and incentivising creators to organically produce pro-party content"
         ]
       },
-      "structure": [
-        {
-          "role": "Central Manager",
-          "detail": "All states. National oversight, task ownership, delivery quality, escalation handling, payout governance, and leadership reporting. Final call on delivery acceptance, escalations, payout approval readiness, surge activation."
-        },
-        {
-          "role": "RN Team Members ×3",
-          "detail": "Assigned state clusters. Task intake tracking, field coordination, reporter management, deadline adherence, and quality follow-through. Reporter allocation, first-line escalation, reshoot recommendation."
-        },
-        {
-          "role": "State / District / AC Reporters",
-          "detail": "Defined territories or assignments. Ground collection, raw visuals, vox pops, local access, and time-bound submission. Field execution within approved brief."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Operating Models",
-          "items": [
-            "Reactive execution — Page manager / internal team raises a task with location, narrative/content need, deadline, and deliverable requirement. RN assigns field reporters, conducts QC, and delivers approved assets to the internal team.",
-            "Proactive ideation — RN identifies timely political or social topics with field value and proposes them internally. RN develops a basic outline, executes collection, and returns final assets for editing and publishing."
-          ]
-        },
-        {
-          "title": "Strategic Importance",
-          "items": [
-            "Speed — supports archival retrieval in 1–2 hours and fresh shoots within 24–48 hours depending on urgency and field complexity",
-            "Coverage — maintains an always-available footprint across 14 active states, with 7 additional contact-access states for extension",
-            "Scalability — scales from 150–200 active reporters in steady state to 600+ during election operations through AC-level deployment",
-            "Cost efficiency — provides field outputs at a fraction of the cost of conventional production models that may require lakhs for single projects",
-            "Continuity — preserves institutional memory through recurring reporter relationships, payment documentation, and archival discipline"
-          ]
-        },
-        {
-          "title": "Task Intake — Mandatory Inputs",
-          "items": [
-            "Topic or issue statement",
-            "Location / geography",
-            "Deadline and urgency level",
-            "Content requirement (vox pop, visual package, issue scan, archival retrieval, interview support, etc.)",
-            "Questionnaire / outline / reference prompts",
-            "Any non-negotiable output conditions such as duration or shot list"
-          ]
-        },
-        {
-          "title": "Assignment Workflow",
-          "items": [
-            "Task received from page manager or internal stakeholder",
-            "RN team reviews brief for clarity, feasibility, and timing",
-            "Task is tagged as reactive execution or proactive ideation follow-through",
-            "The appropriate reporter or reporter cluster is identified based on geography, reliability, and urgency",
-            "Field briefs are communicated with deadlines, content requirements, and submission expectations",
-            "RN team tracks execution until submission, QC, and final delivery are complete"
-          ]
-        },
-        {
-          "title": "Field Execution & Deliverables",
-          "items": [
-            "Primary deliverables — vox pops/public bytes, raw visuals from field locations, issue-ground inputs and context clips, archival retrieval, special interview or event-based field packages",
-            "Video quality should be above 1080p wherever the device permits",
-            "Background noise should be minimized to preserve usability",
-            "Bytes should generally exceed 50 seconds when a byte is specifically requested",
-            "Visual packages should generally exceed 60 seconds of usable footage where visuals are required",
-            "Submission must match the approved brief in topic, location, and shot completeness",
-            "Basic metadata should accompany every submission: location, date, reporter, and assignment reference"
-          ]
-        },
-        {
-          "title": "3-Layer QC",
-          "items": [
-            "Technical QC — resolution, audio, stability, file integrity, duration, visibility (material is editable and platform-usable)",
-            "Brief QC — topic relevance, location match, requested responses/shots, completeness (submission materially addresses the request)",
-            "Administrative QC — naming, metadata, submission mapping, payment-sheet eligibility (submission can be tracked, archived, and paid without ambiguity)"
-          ]
-        },
-        {
-          "title": "Reshoot Triggers",
-          "items": [
-            "Low audio intelligibility or disruptive background noise",
-            "Wrong location or unverified context",
-            "Missing visual support where a package was requested",
-            "Insufficient duration for byte or visual requirement",
-            "Off-brief responses or incomplete coverage",
-            "File corruption or upload failure"
-          ]
-        },
-        {
-          "title": "Payment Operations",
-          "items": [
-            "Task-specific payouts — fixed rates generally range from ₹100 to ₹500 depending on state and assignment complexity",
-            "Workflow — reporter submits → RN validates quality → daily state-wise payment sheet → every 15 days consolidated into national payment sheet for approval → approved funds transferred centrally and distributed → payment screenshots and records stored for audit",
-            "Maintain a clear history of response time, acceptance rate, and quality reliability for repeat allocation",
-            "Separate high-trust reporters from opportunistic or inconsistent vendors",
-            "Close disputes with evidence: submission record, QC note, and payment proof",
-            "Protect retention by keeping payment cycles predictable and communication unambiguous"
-          ]
-        },
-        {
-          "title": "Crisis Response & Escalation",
-          "items": [
-            "Reporter unresponsive → switch to alternate reporter or adjacent geography → Assigned RN team member",
-            "Low-quality submission → trigger reshoot or partial salvage decision → Assigned RN team member + central manager if repeated",
-            "Field access disruption → use archived material, alternate district, or revised scope → Central manager",
-            "Payment dispute → check sheet entry, QC note, and transfer proof → Central manager / finance control owner",
-            "Compliance concern → hold delivery and review facts before release → Central manager + leadership"
-          ]
-        },
-        {
-          "title": "Campaign Support History",
-          "items": [
-            "Odisha legislative assembly election",
-            "Jharkhand legislative assembly election",
-            "Jammu by-elections (Budgam & Nagrota)",
-            "Punjab by-elections (Tarn Taran)",
-            "Odisha by-elections (Nuapada)",
-            "ULB campaigns (CG, HP, HR)",
-            "BMC Maharashtra",
-            "Goa by-elections (Ponda)",
-            "National issue-based campaigns"
-          ]
-        }
-      ],
-      "priorities": [
-        [
-          "L1",
-          "Immediate / highest priority",
-          "3–4 hours",
-          "Time-sensitive issue already in circulation or requiring urgent field confirmation"
-        ],
-        [
-          "L2",
-          "Planned / standard priority",
-          "24–48 hours",
-          "Pre-planned stories, scheduled shoots, or requested issue packages"
-        ],
-        [
-          "L3",
-          "Extended / low urgency",
-          "1–4 days",
-          "Longer-form assignments, person-specific or location-specific pieces, documentary-style requests"
+      {
+        "title": "Role in Campaign Flow",
+        "items": [
+          "Input from QRT (daily narrative line, attack/defence priorities), Research & Data (target segments, geo heat-maps, sentiment dashboards), Field Intelligence (on-ground sentiment, viral local moments)",
+          "Internal — Translate the strategic narrative into creator-native formats; match the right narrative to the right creator tier and language; brief the creator with an infopack; review drafts; approve final cuts; schedule synchronized rollouts across micro-clusters; monitor performance and trolling response"
         ]
-      ],
-      "beforeAfter": [
-        [
-          "Field access",
-          "Ad hoc sourcing and uncertain local availability",
-          "Structured multi-state network with repeat-use field access"
-        ],
-        [
-          "Turnaround",
-          "Dependent on vendor mobilization and fragmented coordination",
-          "1–2 hour archival retrieval and 24–48 hour fresh shoot capability"
-        ],
-        [
-          "Cost profile",
-          "Traditional production teams may cost lakhs for single projects",
-          "Comparable field outputs delivered at a fraction of those costs"
-        ],
-        [
-          "Scale during campaigns",
-          "Rapid expansion is difficult and uneven",
-          "AC-level surge to 600+ reporters during election periods"
-        ],
-        [
-          "Documentation and auditability",
-          "Often scattered across vendors and threads",
-          "State-wise sheets, national consolidation, and payment proof records"
+      },
+      {
+        "title": "Working Logic",
+        "items": [
+          "Influence as a distributed network, not a single broadcast",
+          "Instead of one big ad, 200 small voices say the same idea in 200 culturally-native ways within the same window — making the message look like an organic public mood rather than a campaign",
+          "Key dependency: tight daily feedback loop with narrative/research — if narrative changes at 11 AM, creator briefs must update by 1 PM and first reels live by 6 PM",
+          "Embedded cultural knowledge — regional executives live inside their language's meme economy, devotional calendar, sports moods, exam cycles and festival cycles, so content is timed to the audience's mental state, not the campaign's calendar"
         ]
+      },
+      {
+        "title": "NexGrow ↔ Varahe Coordination Framework",
+        "items": [
+          "Campaign Initiation — NexGrow prepares a comprehensive plan (suggestive narrative points aligned to communication objective, proposed creator count, execution timeline, budget outline); submitted to VA for review",
+          "Approval & Go-Ahead — Varahe team evaluates the plan and, upon approval, communicates a formal go-ahead along with the sanctioned budget; this triggers execution",
+          "Creator Deployment & Alignment — Based on budget, NexGrow deploys creators per the approved narrative framework; as the campaign progresses, additional creators are identified, approached and aligned to evolving narrative requirements or shifting market conditions",
+          "Daily Reporting — NexGrow shares a daily overview with VA covering total budget deployed to date and the number and details of creators engaged"
+        ]
+      }
+    ],
+    "skills": {
+      "must": [
+        "Native fluency in at least one regional language and deep cultural literacy of that geography",
+        "Creator-relationship management: emotional intelligence, negotiation, and the ability to make a creator feel like a partner, not a vendor",
+        "Narrative writing: converting a 2-line party positioning directive into a 90-second reel script, a tweet thread, and a vernacular caption",
+        "Speed — ability to move from brief to live content in under 6 hours during peak phase",
+        "Crisis instinct — pattern recognition for when a piece of creator content is about to go wrong, and the discipline to pull it before it does"
       ]
     },
-    {
-      "id": "smcc",
-      "name": "SMCC — Social Media Command Centre",
-      "icon": "🎯",
-      "category": "comms",
-      "function": "Hyperlocal Operations",
-      "hideTabs": ["skills", "downloads"],
-      "tagline": "Precision Political Communication Engine — hyperlocal narrative-driven content backed by political intelligence.",
-      "purpose": "The Social Media Command Centre (SMCC) is a key wing of the Communications team focused on creating high-impact hyperlocal content that can influence election outcomes. It is a centralised team built around two components — (1) producing Assembly Constituency (AC) level hyperlocal, narrative-driven content, and (2) building a hyperlocal dissemination network to amplify it. Unlike traditional communications (which primarily produces high-quality content for party pages and manages third-party pages), SMCC enables strategic hyperlocal content backed by political intelligence and has the flexibility to experiment with new formats and genres. This handbook is a guiding framework — not a fixed rulebook; processes must ultimately be shaped after analysing the political and organisational structure of the campaign State. The SMCC Manager must have a thorough understanding of the state's political scenario and overall narrative, referring to the PI Team's Primer Document and the National Research Team's State Achievement and Chargesheet documents.",
-      "objectives": [
-        "Establish BJP's digital footprint in every contested assembly segment",
-        "Run hyperlocal narratives that connect with voters at village, ward, and booth level",
-        "Attack opposition messaging through strategic counter-narrative content",
-        "Amplify BJP's governance achievements, candidate profiles & party ideology",
-        "Drive voter engagement & sentiment shift through targeted advertising"
+    "functionScope": [
+      [
+        "Onboarding & Execution",
+        "Sourcing, vetting, onboarding and retaining a tiered roster of influencers across languages, geographies and content categories (political, lifestyle, devotional, sports, comedy, news, youth, women-led, agri, student)"
       ],
-      "contentFormats": [
-        {"n": "Achievement Videos", "d": "VO + Vox Pop highlighting government achievements (don't name the incumbent unless ticket is confirmed)"},
-        {"n": "Chargesheet Videos", "d": "Failures, corruption, unfulfilled promises of opposition; VO + Public Vox Pops of dissatisfaction"},
-        {"n": "Cover Stories", "d": "VO video with original footage, documents and Vox Pops"},
-        {"n": "Know Your Candidate (KYC)", "d": "Candidate's life/political journey · supporter Vox Pops · 30–45s vote appeal"},
-        {"n": "Know Your Opposition (KYoC)", "d": "Voice-over + Vox Pops against the opposition candidate"},
-        {"n": "Comparison Videos", "d": "BJP candidate vs opposition — reuses KYC and KYoC Vox Pops"},
-        {"n": "CMS Requests", "d": "Content as requested by CMS PoCs (via 3P Campaigns)"},
-        {"n": "Campaign Songs", "d": "Production-to-dissemination owned by SMCC (e.g. TN BJP Campaign Song)"}
+      [
+        "Creative Guidance",
+        "Executing narrative rollouts by translating talking points into infopacks, creator briefs, sample reels, captions and hashtags that creators can post natively without sounding scripted"
       ],
-      "activationChecklist": [
-        ["SMCC Manager defines advertisement budget approval limits for ZCs", "SMCC Manager"],
-        ["Conduct WhatsApp call with all SMAs to discuss and finalise zone narratives", "Zonal Coordinator"],
-        ["Assign tasks on the designated Slack channel", "Zonal Coordinator"],
-        ["Assign the task to the respective Content Writer", "CW Lead"],
-        ["Draft the copy/content and post on Slack for ZC review", "Content Writer"],
-        ["Review content, suggest changes, and on approval tag the Production Head", "Zonal Coordinator"],
-        ["Assign creative task to Graphic Designer and Video Editor", "Production Head"],
-        ["Create and upload final creative/video output on Slack", "GD / VE"],
-        ["Review final output and approve by tagging the SME Lead", "Zonal Coordinator"],
-        ["Publish approved content on Facebook, Instagram, and WhatsApp", "SME Lead"],
-        ["Update the Ads Sheet with respective content links", "SME Lead"],
-        ["Allocate ads budget for the post (seek Manager approval if above limit, e.g. ₹2000)", "Zonal Coordinator"]
+      [
+        "Daily Operations",
+        "Managing the day-to-day pipeline of content commissioning, approvals, scheduling, posting windows, cross-amplification, and deletion/correction protocols when something goes off-script"
       ],
-      "adRules": [
-        "Meta Ads are the backbone of SMCC — production has little value without strategic amplification through targeted Meta Ads",
-        "SMCC Manager and ZCs MUST sit with the Growth Team to learn ad targeting parameters (gender, interests, age, location, language, behavioural)",
-        "Every social media page must have the necessary Disclaimer attached BEFORE running political ads on Meta",
-        "Obtain pin codes from PI Team and coordinate with Growth Team so ad sets cover the entire AC by AC-level pin demographics",
-        "Growth Team runs ads only AFTER SMEs add post links to the Ads Sheet AND budget is approved by ZC/Manager",
-        "Most (not all) SMCC ads should run in accelerated mode to maximise spend efficiency and impact",
-        "ZC owns per-post budget allocation; anything above the Manager-defined limit (example: ₹2000) needs Manager approval"
+      [
+        "KPI-based Measurement",
+        "Delivering measurable narrative penetration — reach, sentiment shift, hashtag dominance, comment-section sentiment, and voter-intent/brand-intent movement in target segments"
       ],
-      "securityPolicy": [
-        "Slack is the only official professional communication channel — WhatsApp is rapid-response/narrative-identification only and is NOT considered official proof (exception: ZC ↔ SMA, which is WA-only)",
-        "Shared Drive Manager access is limited to National Comms Head, State Lead, SMCC PD and SMCC Manager — do NOT give broad drive access to all team members",
-        "Vendors get access ONLY to the content production folder — never to narratives or other confidential folders",
-        "SMAs are NOT given access to or shared any documents",
-        "Meta Assets must be linked to personal accounts (Growth Team creates these personal accounts and provides manager access)",
-        "All Meta assets created under a SINGLE Meta Business Manager — enables Meta API integration with Sprout Social and automated reporting dashboards",
-        "WhatsApp groups must be created using a WA Business account (not a personal account) — enables tracking and lets us run WA Joining Ads",
-        "Page names must sound neutral and AC-level community-oriented — AVOID names like 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
-        "Disclaimer is mandatory authorisation for political ads on Meta — coordinate with Growth Team early; secure State Lead + PD approval before formal Disclaimer request",
-        "Vendor 10% TDS must be communicated up-front — TDS is advance tax (vendor reclaims via ITR), NOT additional tax over GST"
-      ],
-      "goaExample": {
-        "state": "Tamil Nadu (33 seats · SMCC Production Team)",
-        "stats": [
-          {"k": "Total Team Members", "v": "55"},
-          {"k": "Social Media Associates (SMA)", "v": "23"},
-          {"k": "Video Editors", "v": "10"},
-          {"k": "Graphics Designers", "v": "5"},
-          {"k": "Content Writers", "v": "9"},
-          {"k": "Zonal Co-ordinators", "v": "3 (one per zone — never vendorised)"},
-          {"k": "SM Executives & Others", "v": "5"},
-          {"k": "Comparative Setup — Pondicherry", "v": "First fully-vendorised production team; set up 2 months before election. SMCC-OCC deployed in Pondicherry town; SMAs in Karaikal."}
-        ],
-        "attack": "Opposition government's chargesheet, corruption and unfulfilled promises — sharpened through KYoC and Chargesheet videos (script + final output reviewed by PI Team)",
-        "positive": "BJP candidate's KYC, leader-specific achievement and chargesheet content, scheme-driven hyperlocal narratives",
-        "focus": "TN Phase-Wise Plan · Kerala KYC/KYoC bilingual experimentation · Documentary on Pandav Vada Case · Blank Constitution Issue · Impact of Chargesheet Video · TN BJP Campaign Song (full production-to-dissemination)"
+      [
+        "Relationship Building",
+        "Establishing relationships, contracts, payments and creator confidentiality including NDAs, exclusivity windows and incentivising creators to organically produce pro-party content"
+      ]
+    ],
+    "speedTimeline": [
+      {
+        "t": "11 AM",
+        "e": "Narrative changes"
       },
-      "scope": [
-        {"k": "Two Core Components", "v": "Hyperlocal Content Creation + Building Dissemination Network"},
-        {"k": "Primary Platforms", "v": "Facebook & Instagram (Targeted Meta Ads) · WhatsApp (AC-level WA Groups)"},
-        {"k": "Geographic Unit", "v": "Assembly Constituency (AC) — content always contextualised to local electorate"},
-        {"k": "Seat Categories", "v": "Focus Seats · High Priority Seats (Cat A/B/C — enhanced focus) · Opposition Seats (narrative attack only)"},
-        {"k": "Content Adaptation", "v": "Design, language and aesthetics adapted to AC context (e.g. Malayalam statewide; Kannada in Kasaragod AC)"},
-        {"k": "Budget Backbone", "v": "Meta Ads typically >50% of overall SMCC budget"},
-        {"k": "Setup Timeline", "v": "Ideal: ~6 months before campaign · Compressed (vendorised) model: <2 months before voting"}
-      ],
-      "structure": [
-        {"role": "SMCC Project Director (PD)", "detail": "Leads the SMCC budgeting in consultation with National Comms Head, State Lead and State Comms Head. Final approvals on vendor onboarding, Disclaimers and asset creation."},
-        {"role": "SMCC Manager", "detail": "Owns the state's SMCC operations end-to-end. Defines ZC ad-budget approval limits. Sits with PI/3P/Growth/Admin teams to set up cross-team processes. Must have thorough grasp of state political scenario (PI Primer + State Achievement/Chargesheet docs)."},
-        {"role": "Zonal Coordinator (ZC)", "detail": "Single point of contact for all zone-level activities — narratives, approvals, deliverables. Conducts WA calls with SMAs to finalise zone narratives. Owns final content approval. Never vendorised — takes key political and strategic decisions."},
-        {"role": "CW Lead (Content Writers Lead)", "detail": "Single point of contact for the content writing vertical. Routes ZC-assigned tasks to the right Content Writer."},
-        {"role": "Production Head", "detail": "Single point of contact for the production vertical. Routes ZC-approved tasks to Graphic Designers and Video Editors."},
-        {"role": "SME Lead (Social Media Executives Lead)", "detail": "Single point of contact for publishing and updates. Publishes approved content across FB, IG and WhatsApp. Updates the Ads Sheet with respective post links."},
-        {"role": "Content Writer (CW)", "detail": "Drafts copy/content and posts on Slack for ZC review. One per cluster of seats as per team-sizing."},
-        {"role": "Graphic Designer (GD)", "detail": "Creates static creatives and graphics; uploads final output on Slack."},
-        {"role": "Video Editor (VE)", "detail": "Creates and edits videos; uploads final output on Slack."},
-        {"role": "Social Media Associate (SMA)", "detail": "On-ground narrative gatherer at AC level. Communicates with ZC over WhatsApp only. In vendorised model, SMAs are replaced by an on-ground SMCC-OCC team (1 reporter + 1 cameraman)."}
-      ],
-      "teamCalc": {
-        "formula": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:6px 0 4px\"><div style=\"background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;padding:16px\"><div style=\"display:inline-block;background:#16a34a;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.6px;margin-bottom:8px\">RECOMMENDED</div><div style=\"font-size:16px;font-weight:700;color:#0f172a\">Hiring Team from Scratch</div><div style=\"display:inline-block;background:#fff;border:1px solid #86efac;color:#15803d;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:8px\">Ideal Period: More than 2 Months time for election date</div><p style=\"margin:10px 0 0;font-size:13px;color:#334155;line-height:1.55\">This is the <b>most suitable and recommended model</b>, as it ensures better ideological alignment and thorough skill evaluation during hiring.</p><p style=\"margin:8px 0 0;font-size:13px;color:#334155;line-height:1.55\">Under this model, SMAs are directly hired and integrated into the team structure.</p></div><div style=\"background:#fff7ed;border:1px solid #fb923c;border-radius:12px;padding:16px\"><div style=\"display:inline-block;background:#ea580c;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.6px;margin-bottom:8px\">COMPRESSED TIMELINE</div><div style=\"font-size:16px;font-weight:700;color:#0f172a\">Vendorising</div><div style=\"display:inline-block;background:#fff;border:1px solid #fdba74;color:#c2410c;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:8px\">Ideal Period: Less than 2 Months time for election date</div><p style=\"margin:10px 0 0;font-size:13px;color:#334155;line-height:1.55\">This model should be implemented only when there is limited time available to set up the SMCC and the first model cannot be implemented.</p><p style=\"margin:8px 0 0;font-size:13px;color:#334155;line-height:1.55\">Under this model, the entire production team which includes CW, VE and GD is vendorised. SMAs are replaced with an on-ground SMCC OCC team comprising one reporter and one cameraman.</p><p style=\"margin:8px 0 0;font-size:12.5px;color:#475569;font-style:italic;line-height:1.55\">Note: Zonal Coordinators (ZCs) should not be vendorised, as they are responsible for taking key political and strategic decisions.</p></div></div><div style=\"font-size:12.5px;color:#475569;background:#f1f5f9;border-radius:8px;padding:10px 12px;margin-top:10px;line-height:1.55\"><b style=\"color:#0f172a\">Note:</b> There is no fixed rule that only one of these models must be adopted. A hybrid approach can also be implemented. For example, an SMCC-OCC team can be deployed in urban areas, while rural areas can operate with SMAs. News and narratives from urban regions are generally easier to capture and audiences often consume higher quality content production.</div><div style=\"font-size:11.5px;color:#64748b;margin-top:8px;font-style:italic;line-height:1.5\">Footnote (PDF): In Pondicherry, the SMCC was set up just two months before the election. This was the first instance where the entire production team was fully vendorised. After analysing the small geography of the UT, a strategic decision was made to deploy the SMCC-OCC model in the Pondicherry town region, while SMAs were deployed in the Karaikal region.</div><div style=\"font-size:12.5px;color:#0369a1;background:#e0f2fe;border-left:4px solid #0284c7;border-radius:6px;padding:8px 12px;margin-top:10px;line-height:1.5\">A worked example of the Tamil Nadu SMCC team structure (33 seats · 55 members) is available on the <b>Example</b> tab.</div>"
+      {
+        "t": "1 PM",
+        "e": "Creator briefs updated"
       },
-      "scaleNote": "One Zonal Coordinator per zone. ZCs must NEVER be vendorised — they take key political and strategic decisions.",
-      "coreFunctions": [
-        {
-          "title": "What SMCC Does — 5 Strategic Objectives",
-          "items": [
-            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-objectives.png\" alt=\"SMCC — Precision Political Communication Engine: 5 strategic objectives\" style=\"max-width:100%;width:880px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 1 — Precision Political Communication Engine</figcaption>"
-          ]
-        },
-        {
-          "title": "Two Major Components",
-          "items": [
-            "A. Hyperlocal Content Creation — produce AC-level narrative-driven curated content; narratives can be AC/district/zone/state/national but MUST be contextualised for the local electorate",
-            "Content curation adapts design aesthetics, language and elements (e.g. Malayalam statewide in Kerala; Kannada also produced for Kasaragod AC's Kannada-speaking electorate)",
-            "B. Building Dissemination Network — content creation has no value without hyperlocal dissemination; aim is to reach EVERY voter in the AC",
-            "Dissemination platforms: Facebook + Instagram via Targeted Meta Ads; WhatsApp via AC-level WA Groups"
-          ]
-        },
-        {
-          "title": "Budgeting",
-          "items": [
-            "First major setup step — led by the SMCC Project Director in consultation with National Comms Head, State Lead and State Comms Head",
-            "Before starting: analyse political and organisational structure of the State — admin zones, expected number of focus seats, SMCC scope and expected deliverables (do this with State Lead, PI PD and PI Manager)",
-            "Clearly define the SMCC scope FIRST — if State Comms is producing achievement/chargesheet videos, those deliverables should NOT be inside SMCC budget; this affects team structure and hiring",
-            "Meta Ads typically account for MORE THAN 50% of overall SMCC budget — they are the backbone",
-            "State context drives both team structure and ad budget — Maharashtra >> Puducherry; hiring strong candidates costs higher in TN vs Chhattisgarh",
-            "Timeline matters — ~6 months before campaign (full setup) vs ~2 months before voting (compressed/vendorised setup)"
-          ]
-        },
-        {
-          "title": "Team Structure — Two Models",
-          "items": [
-            "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0\"><div style=\"background:#ecfdf5;border:1px solid #86efac;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#15803d;font-weight:700;letter-spacing:.5px\">RECOMMENDED · >2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Hiring Team from Scratch</b><div style=\"font-size:13px;margin-top:6px\">Better ideological alignment, thorough skill evaluation. SMAs directly hired and integrated into team structure.</div></div><div style=\"background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#c2410c;font-weight:700;letter-spacing:.5px\">FALLBACK · <2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Vendorising</b><div style=\"font-size:13px;margin-top:6px\">Entire production team (CW, VE, GD) vendorised. SMAs replaced by on-ground SMCC-OCC team (1 reporter + 1 cameraman). ZCs are NEVER vendorised — they take key political/strategic decisions.</div></div></div>",
-            "Hybrid is permitted — e.g. SMCC-OCC for urban areas (easier news capture, higher quality expectations), SMAs for rural areas",
-            "Tamil Nadu (33 seats) team example: 23 SMAs · 10 VEs · 5 GDs · 9 CWs · 3 ZCs · 5 SM Execs & Others = 55 members",
-            "Pondicherry was the first fully-vendorised production team (2-month runway); SMCC-OCC in Pondicherry town, SMAs in Karaikal — strategic call based on UT's small geography"
-          ]
-        },
-        {
-          "title": "Seat Categories",
-          "items": [
-            "Focus Seat — ACs where SMCC actively runs AC-level pages and digital campaigns",
-            "High Priority Seat — subset of Focus Seats strategically important by winnability, political significance or key leader/candidate presence (Cat A, B, C); enhanced focus and resources",
-            "Opposition Seat — constituencies where the party may not be contesting directly, but SMCC runs narrative-building and attack content against opposition candidates",
-            "PI Team provides the seat classification list; classification may change during the campaign — structure with flexibility and factor changes into budget and resource planning"
-          ]
-        },
-        {
-          "title": "Hiring Process",
-          "items": [
-            "Refer to the Roles & Responsibilities document for required skill sets per role",
-            "Coordinate with HR Team for onboarding format and a single email-thread standard (avoids influx of emails)",
-            "For vendor onboarding: consult SMCC PD and State Lead first; onboarding mail must include the quotation (members, roles, financials), duration and end-date of engagement",
-            "After approval, work with the legal team to draft the vendor contract",
-            "TDS clarity is critical: 10% TDS will be deducted on payments even when the agreement states 'excluding GST and other taxes' — TDS is advance tax, NOT additional; vendor reclaims it via ITR",
-            "Worked example: ₹1,50,000/month excl. GST → ₹1,35,000 credited to vendor after 10% TDS"
-          ]
-        },
-        {
-          "title": "Operational Workflow",
-          "items": [
-            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-workflow.png\" alt=\"SMCC Operational Workflow — 14 steps with key roles legend\" style=\"max-width:100%;width:560px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 2 — SMCC Operational Workflow</figcaption>",
-            "ZC must coordinate closely with the production team during production to minimise revisions at the final review stage"
-          ]
-        },
-        {
-          "title": "Infrastructure — Shared Drive (Google Drive)",
-          "items": [
-            "A Shared Google Drive is the central SMCC repository — set up BEFORE any team member is onboarded",
-            "Request via the va-data-manager Slack channel, tagging the VA Data Manager and all relevant stakeholders",
-            "Shared Drive Manager access ONLY to: National Comms Head, State Lead, SMCC PD, SMCC Manager",
-            "Create deliverable-specific folders and share with the specific team members working on them",
-            "Vendors get access ONLY to the content production folder — never narratives or confidential files. SMAs get NO document access.",
-            "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE REQUEST MESSAGE</div><div style=\"text-align:center\"><img src=\"assets/smcc-drive-request.jpg\" alt=\"Sample Slack message requesting creation of a Shared Google Drive for SMCC\" style=\"max-width:100%;width:580px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 3 — Request for Google Drive (sample message in va-data-manager channel)</figcaption></div>"
-          ]
-        },
-        {
-          "title": "Infrastructure — Slack Channels",
-          "items": [
-            "Slack is used for ALL professional communication — ensures transparency and accountability",
-            "Raise channel-creation requests on va-data-manager; add National Comms Head, State Lead, SMCC PD, SMCC Manager and ZCs to ALL channels",
-            "<b>mh-smcc-zc</b> — ZCs only · all confidential deliverables and important communication",
-            "<b>mh-smcc-content</b> — ZCs, CWs, VEs, GDs, SMEs · all content production operations",
-            "<b>mh-smcc-pi-coordination</b> — PI PD, PI Managers, PI ZCs · PI raises content/ads requests; ZCs seek PI approval on narratives",
-            "<b>mh-smcc-3p</b> — 3P PD, 3P Managers, 3P ZCs · 3P content requests and coordination",
-            "<b>mh-smcc-growth</b> — Growth Team PoCs, SMEs · ALL ads-related conversations happen here",
-            "<b>mh-smcc-cms</b> — 3P PD, 3P Managers, 3P ZCs, CMS PoCs · all CMS requests",
-            "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE CHANNEL-CREATION REQUEST</div><div style=\"text-align:center\"><img src=\"assets/smcc-slack-request.jpg\" alt=\"Sample Slack messages requesting creation of TN-SMCC and TN-SMCC-PI-Coordination private channels\" style=\"max-width:100%;width:520px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 4 — Request for Slack Workspace (sample channel-creation messages)</figcaption></div>"
-          ]
-        },
-        {
-          "title": "Infrastructure — WhatsApp Groups",
-          "items": [
-            "WhatsApp is rapid-response and narrative-identification only — NOT official accountability proof (Slack is)",
-            "Exception: ZC ↔ SMA communication runs ONLY on WhatsApp",
-            "<b>Narrative Group</b> — all team members; share news, narratives and content-ready issues",
-            "<b>Zone-wise Groups</b> — each zone's ZC plus its SMAs; SMAs share narratives and content needing ZC approval",
-            "<b>Leads Group</b> — ZCs + CW Lead + SME Lead + Production Head; team-wide announcements and content discussions",
-            "SMCC PD and SMCC Manager must be added to all the above WA groups"
-          ]
-        },
-        {
-          "title": "Infrastructure — Asset Creation (Meta Pages + WA Groups)",
-          "items": [
-            "Obtain Focus Seats list from PI Team (post State Lead approval) — Meta Assets and WA Groups are created for these seats",
-            "A Disclaimer is mandatory authorisation to run political ads on Meta — pages cannot publish political ads without one",
-            "SMCC Manager coordinates with Growth Team on Disclaimer requirements; formal mail goes out AFTER State Lead and PD approval",
-            "Maintain ALL asset details (names, logos, cover pics, bios) in a single sheet — used for rapid re-creation if assets get struck down",
-            "Asset naming must be neutral and AC-level community-style — AVOID 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
-            "Meta Assets linked to personal accounts (Growth Team also creates these); all under a SINGLE Meta Business Manager (enables Meta API integration with Sprout Social etc.)",
-            "WA Groups created using a WA Business account (NOT personal) — enables tracking and WA Joining Ads"
-          ]
-        },
-        {
-          "title": "Cross-Team Co-ordination — PI Team",
-          "items": [
-            "Obtain 5 major AC/district/zone/state-level narratives (positive + negative) for each Focus Seat",
-            "Get leader-specific Chargesheet and Achievement documents → drives KYC/KYoC and achievement/chargesheet content",
-            "Ask for the DPU on a daily basis",
-            "Establish PI review/approval for Chargesheet, Achievement, KYC and KYoC content — script AND final output reviewed",
-            "Reach out to PI for hiring resources and SMAs via their FA contacts",
-            "Obtain AC pin codes for targeted ads"
-          ]
-        },
-        {
-          "title": "Cross-Team Co-ordination — 3P Campaigns",
-          "items": [
-            "Hire resources/SMAs through 3P FA contacts",
-            "Obtain 3P narrative documents and DPUs regularly; secure PI approval on those narratives before producing content",
-            "3P may raise content creation requests — check bandwidth and fulfil accordingly",
-            "Set up the CMS process EARLY — this is the most important coordination with the 3P Campaigns team"
-          ]
-        },
-        {
-          "title": "Cross-Team Co-ordination — Growth Team",
-          "items": [
-            "Share a (preferably inflated) rough estimate of Meta Pages, WA Groups and Disclaimers needed — ensures Growth procures SIMs from Admin in advance",
-            "Ask for SIM cards for creating WA Groups and ensure all SIMs are recharged at regular intervals",
-            "SMCC Manager + ZCs MUST sit with Growth to learn ad targeting (gender, interests, age, location, language, behaviour)",
-            "Obtain the Ads Sheet to be filled daily with post links",
-            "Obtain the weekly Ads report to analyse performance and strategise"
-          ]
-        },
-        {
-          "title": "Cross-Team Co-ordination — Admin & IT Team",
-          "items": [
-            "Obtain required number of SIM cards; ensure activation and timely recharges",
-            "Arrange laptops/machines for SMCC operations and dissemination",
-            "Arrange mobile phones for page posting, WA dissemination and coordination",
-            "Internet via dongles, Wi-Fi and data packs — must be uninterrupted",
-            "Create and manage official email IDs, passwords and access credentials",
-            "Tech support for setup, login, software installation and device troubleshooting",
-            "Inventory tracking of all issued devices, SIMs and operational assets; timely replacement/repair of faulty devices"
-          ]
-        },
-        {
-          "title": "WhatsApp Growth Strategy — 4 Dissemination Types",
-          "items": [
-            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-wa-dissemination.png\" alt=\"WhatsApp Dissemination — 4 group types (In-House, Infiltrated, Cohort-based, Party's WA Groups)\" style=\"max-width:100%;width:760px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 5 — WhatsApp Dissemination</figcaption>",
-            "Push mass, highly emotional, filmy, CapCut-style edited videos — easily forwarded and uploaded to stories; prioritise shareability",
-            "DO NOT spam — Manager must give clear mandates; curate strategy around peak active hours (dinner / post-working hours)",
-            "Push at regular pre-decided intervals; address opposition counter-arguments inside the groups; maintain activity to build ideological perception"
-          ]
-        },
-        {
-          "title": "WA Joining Ads — Case Studies",
-          "items": [
-            "Always A/B test creatives BEFORE large budget allocations",
-            "<b>Case Study 1 (Maharashtra LBY):</b> women-focused groups using Ladki Bahin Yojana benefit-led creatives (benefit amount prominently highlighted). WhatsApp Joining Ads targeting women 18+ → CPA per WA member dropped from ₹8 → ₹1.4",
-            "<b>Case Study 2 (TN):</b> hooks like 'To bring revolution in this AC, join…', 'To get news updates in this AC, join…', 'To see Modiji as our PM again, join…' — mix of creatives onboards believers, persuadables AND resisters",
-            "Do NOT build believer-only groups — healthy mix of believers, persuadables and resisters is the objective; we're targeting the entire electorate"
-          ]
-        },
-        {
-          "title": "Special Content & Experimentation — Case Studies",
-          "items": [
-            "Documentary on Pandav Vada Case",
-            "Blank Constitution Issue",
-            "Kerala KYC and KYoC Videos",
-            "Impact of Chargesheet Video",
-            "TN BJP Campaign Song (full Production → Dissemination owned by SMCC)",
-            "TN SMCC Phase-Wise Plan"
-          ]
-        }
+      {
+        "t": "6 PM",
+        "e": "First reels live"
+      }
+    ],
+    "category": "creative",
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Establish creator budget caps, map regional/district-level micro-creators, sign NDAs and lock baseline commercial rates"
+      },
+      {
+        "ph": 2,
+        "focus": "Break down manifesto into content buckets, onboard creators onto communication groups and conduct pilot shoots to test content style and tone"
+      },
+      {
+        "ph": 3,
+        "focus": "Execute synchronized mega-drops, focus on development narratives and youth outreach, and track initial traction and sentiment"
+      },
+      {
+        "ph": 4,
+        "focus": "Focus on Get Out The Vote (GOTV) messaging, deploy rapid counter-narratives and manage live candidate interactions and influencer collaborations",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 5,
+        "focus": "Consolidate reach, views and engagement metrics into final reports and retain high-performing creator networks for future campaigns"
+      }
+    ],
+    "criticalPhase": "Conversion",
+    "whyCritical": "High-volume GOTV messaging, rapid counter-narrative deployment and real-time influencer coordination during peak voter mobilisation"
+  },
+  {
+    "id": "legal",
+    "name": "Legal Team",
+    "icon": "⚖️",
+    "category": "ops",
+    "function": "Compliance & Legal",
+    "tagline": "Ensures all campaign activity remains compliant with ECI, MCC and election law.",
+    "purpose": "Ensures that all campaign activities, political advertisements, candidate operations, and ground-level election activities remain fully compliant with Election Commission of India (ECI) guidelines, election laws, and Model Code of Conduct (MCC) regulations. Without it: rejection of advertisements and TVCs, MCC violations, delayed permissions, legal notices, compliance gaps, and operational disruptions. Also safeguards the campaign from operational disruption and reputational damage by handling complaints, monitoring compliance, and addressing legal issues in real time.",
+    "structure": [
+      {
+        "role": "Manager (1)",
+        "detail": "Supervises strategy, escalations, coordination with party legal cell and senior leadership; ensures smooth functioning of overall legal process."
+      },
+      {
+        "role": "Consultants (3–4)",
+        "detail": "MCMC approvals, permissions, compliance, nomination support, complaint drafting, tracker management, coordination with other teams, Party legal cell, and authorities."
+      }
+    ],
+    "sizing": {
+      "min": "3 members (preferably one local resource from the state)",
+      "ideal": "4 members for active campaign operations",
+      "scale": "Large or high-intensity campaign states — constituency volume, permissions, nominations, MCC compliance, and polling-day escalations increase operational workload."
+    },
+    "skills": {
+      "must": [
+        "Strong understanding of ECI guidelines, MCC, RPA 1951, and nomination procedures",
+        "Drafting skills for complaints, representations, SOPs, and compliance formats",
+        "Coordination skills for working with candidates, authorities, and internal teams",
+        "Fast issue-spotting and escalation judgment during campaign and polling period",
+        "Knowledge of election commission compliance and relevant procedure",
+        "Ability to work under tight timelines and high-pressure election environments"
       ],
-      "objectivesAds": [
-        ["Page Like Ads", "Run ads to obtain page likes on FB. Avoid running ads for gaining followers on IG, as the conversion ratio is very low. Tip: Page Like ad creatives generally have lower CPMs when they feature Modiji or any popular personality. Create three different creatives with varying themes, run Page Like ads, conduct A/B testing, and then finalise the best-performing creative.", "Speak with the State Lead on whether the SMCC pages will be shown to the clients. If yes, ensure that each page has at least 5K followers. Ideally, you can acquire 1 follower for every ₹1 spent."],
-        ["Post Ads", "To get more views on the content. This is actual Amplification of the Content. Tip: Highly engaging content with a strong hook is key. Ads should primarily be either Awareness or Engagement ads. Prefer Awareness ads for positive/pro content and Engagement ads for negative content. The keyword here is 'prefer' — have regular discussions with the Growth Team to understand what is working and what is not.", "Allocate the budget for post ads based on the importance of the narrative and the electoral impact of the content in that region. Rural areas generally require higher budgets due to higher CPMs, whereas urban and city areas typically require lower budgets."],
-        ["Ghost Ads", "In this type of Ad, the content will not be visible on the main page timeline, but the Ads will still be served to the target audience. Tips: Use these Ads for content with a short lifespan and for narratives that are aggressive or slightly spiritually true.", "Allocate budget based on importance of the narrative"]
-      ],
-      "budgetEsc": [
-        ["Meta Ads (Backbone)", "Targeted Meta Ads — the strategic amplification layer that makes hyperlocal content matter", "More than 50% of overall SMCC budget"],
-        ["Production Team", "Content Writers, Video Editors, Graphic Designers (or vendor team if vendorised)", "Sized per state political/admin structure"],
-        ["SMA / SMCC-OCC Layer", "Social Media Associates OR reporter+cameraman team if vendorised", "Per AC / per zone"],
-        ["Infrastructure", "Devices, SIMs, WA Business accounts, dongles, software (via Admin & IT)", "Sized to team count"],
-        ["State Cost Sensitivity", "Maharashtra >> Puducherry; strong candidate hiring costs higher in TN vs Chhattisgarh", "Planned with State Lead, PI PD/Manager"],
-        ["Setup Timeline", "6 months before campaign (full setup) vs 2 months before voting (compressed/vendorised)", "Directly impacts team model and total spend"]
-      ],
-      "kpis": [
-        ["Page Like Ads — Cost per Follower", "Target ~₹1 per follower; each page should reach minimum 5K followers (if shown to clients)"],
-        ["Page Like Creatives", "Test 3 creatives with varying themes; finalise after A/B testing — featuring Modiji/popular leaders typically yields lower CPMs"],
-        ["Post Ads — Type Preference", "Prefer Awareness ads for positive/pro content; Engagement ads for negative content (always re-validate with Growth Team)"],
-        ["Post Ads — Geography Sensitivity", "Rural → higher CPMs → higher budgets; Urban → lower CPMs → lower budgets"],
-        ["Ads Mode", "Most (not all) ads should run in accelerated mode to maximise spend efficiency and impact"],
-        ["WA Joining Ads — CPA", "Maharashtra LBY (women-focused) case: CPA per WA member dropped from ₹8 → ₹1.4 with benefit-led creatives"],
-        ["WA Group Composition", "Mix of believers, persuadables AND resisters — do NOT target believers only"],
-        ["Budget Gate (per post)", "ZC can allocate up to the Manager-defined limit (e.g. ₹2000); above that, SMCC Manager approval required"]
+      "nice": [
+        "Political campaign experience",
+        "Social media law and digital compliance understanding",
+        "Public policy knowledge",
+        "Litigation exposure",
+        "Data management and reporting skills"
       ]
     },
-    {
-      "id": "surrogate",
-      "name": "Surrogate Pages Acquisition and Management",
-      "tagline": "Acquires Instagram pages aligned with our ideology and narratives and places them under vendor management.",
-      "hideTabs": ["hiring", "ops", "example", "downloads"],
-      "purpose": "This program focuses on acquiring Instagram pages aligned with our ideology and narratives and placing them under vendor management. While VA retains full ownership, the original admins continue to operate the pages and publish content aligned with our narratives.",
-      "skills": {
-        "must": [
-          "Deep understanding of the Instagram ecosystem and meme culture.",
-          "Strong political narrative understanding.",
-          "Negotiation and vendor-management capability.",
-          "Relationship management with page admins.",
-          "Fast communication and coordination skills.",
-          "Internet trend awareness and content instinct.",
-          "Crisis management and escalation judgment.",
-          "Ability to identify high-potential pages early."
+    "coreFunctions": [
+      {
+        "title": "Key Responsibilities",
+        "items": [
+          "MCMC approvals & legal vetting of political advertisements, creatives, scripts, social media content, and campaign material across GDNs, TVCs, Radio Jingles, Print Ads, SMS, OBDs, and digital campaigns",
+          "Executes appeals, representations, complaints, and submissions before the ECI, CEO Office, MCMC, District Authorities, and other election officials",
+          "Manages permissions and compliance for LED/Video Vans, rallies, public meetings, star campaigner vehicles, silent period communication, and other regulated campaign activities",
+          "Handles criminal antecedent compliance and statutory filings including C-1, C-2, C-7, and C-8 forms",
+          "Coordinates with Communications, Campaigns, CMS, PI, and Media Teams, State Legal Cell, and election authorities",
+          "Monitors social media, opposition violations, MCC breaches, electoral offences, and election-day incidents, and escalates complaints before relevant authorities",
+          "Supports GOTV and polling-day operations through legal escalation, sensitive booth monitoring, incident resolution, and liaison with police, observers, and election officials",
+          "Conducts legal training sessions and prepares SOPs, primers, compliance decks, checklists, operational advisories, and guidance documents"
         ]
       },
-      "structure": [
-        {
-          "role": "1 Manager",
-          "detail": "Responsible for the acquisition strategy, vendor management, narrative briefing, expansion targets, budgeting."
-        },
-        {
-          "role": "2 Lead",
-          "detail": "Responsible for the daily coordination, performance tracking, escalation handling and etc. work related to the page admin. Ideally one lead typically handles 20-25 surrogate pages."
-        }
-      ],
-      "coreFunctions": [
-        {
-          "title": "Operational Approach",
-          "items": [
-            "Identify and approach Instagram pages for acquisition based on their ideological alignment, content quality, and performance.",
-            "Ownership cost – a fixed one-time payment to acquire the page (IP).",
-            "Monthly operational cost – a recurring payment to vendors/page admins to run and manage the page.",
-            "After onboarding, we share daily research documents on selected narratives, based on which they create content and post on their pages. We also provide strategic inputs to improve page performance.",
-            "While we regularly reach out to onboard more ideologically aligned pages, the conversion rate remains low, as many page admins run their pages out of passion alongside other jobs and cannot commit full-time to managing them.",
-            "Most creators are accustomed to posting 1-2 pieces of content daily and are finding it difficult to manage the higher narrative and production volume."
-          ]
-        },
-        {
-          "title": "Working Objective",
-          "items": [
-            "Operates a distributed network of semi-independent ideological pages to push campaign narratives in native internet language.",
-            "Creates the perception that narratives are emerging organically through meme culture, youth conversations, and regional discourse.",
-            "Reduces dependence on official party handles by amplifying messaging through multiple independent-looking voices.",
-            "Makes campaign communication appear more authentic, relatable, and culturally embedded among audiences."
-          ]
-        },
-        {
-          "title": "Key dependency",
-          "items": [
-            "Strong coordination with QRT and Research Team for daily narrative alignment.",
-            "Fast turnaround from research to execution.",
-            "Reliable page admins for pushing the narrative timely.",
-            "Political sound team lead, so the pages cover the narrative in a cooling period also."
-          ]
-        },
-        {
-          "title": "Logic behind team sizing",
-          "items": [
-            "Surrogate operations are relationship-heavy rather than purely operational.",
-            "Daily coordination is manual.",
-            "Posting follow-ups require constant monitoring.",
-            "Many admins are part-time creators.",
-            "Narrative compliance needs regular supervision.",
-            "Crisis handling requires fast response."
-          ]
-        },
-        {
-          "title": "Daily Workflow / SOP",
-          "items": [
-            "Morning — Receive daily narrative line from Manager or QRT team.",
-            "Morning — Share research documents and key talking points.",
-            "Morning — Identify priority narratives and posting windows.",
-            "Morning — Coordinate with page admins regarding deliverables.",
-            "Evening — Peak posting window execution.",
-            "Evening — Monitoring engagement and traction.",
-            "Evening — Amplification coordination.",
-            "Evening — Crisis handling if any content goes off-script.",
-            "Evening — Performance tracking and reporting."
-          ]
-        },
-        {
-          "title": "Tools & Platforms Used",
-          "items": [
-            "Canva / Photoshop for creatives.",
-            "Adobe Premiere Pro for video editing."
-          ]
-        }
-      ],
-      "pricing": {
-        "ownership": [
-          [
-            "India 1",
-            "₹5 per follower"
-          ],
-          [
-            "India 2",
-            "₹3 per follower"
-          ],
-          [
-            "India 3",
-            "₹2 per follower"
-          ]
-        ],
-        "monthly": [
-          [
-            "1K to 10K followers",
-            "₹35,000",
-            "₹25,000",
-            "₹15,000"
-          ],
-          [
-            "10K – 50K followers",
-            "₹75,000",
-            "₹50,000",
-            "₹30,000"
-          ]
+      {
+        "title": "Working Logic",
+        "items": [
+          "Integrates legal compliance into every operational and communication layer of the campaign",
+          "Proactively reviews campaign material, secures permissions, resolves election-related disputes, and coordinates with Election Commission authorities to minimise legal risks",
+          "Impact: uninterrupted campaign operations, reduced advertisement rejections, mitigating MCC violations, protecting candidate interests, and enabling rapid legal escalation handling",
+          "Key dependency: Continuous coordination with Communications Team, Campaign Team, PI Team, Party State Legal Cell, Political Leadership, and Election Commission officials"
         ]
       },
-      "icon": "🌐",
-      "category": "creative",
-      "function": "Surrogate Network"
+      {
+        "title": "Daily Workflow",
+        "items": [
+          "Morning — reviewing overnight approvals and rejections, coordinating follow-ups with MCMC, internal teams and CEO offices, updating internal trackers, addressing urgent field escalations, and conducting coordination calls",
+          "Entire Day — submission of creatives and permissions, drafts complaints and representations, coordinates with internal teams, Party Legal Cell and ECI officials, resolves CMS team queries, scrutinizes candidate documentation, disseminates approval certificates, tracker consolidation and reporting"
+        ]
+      },
+      {
+        "title": "Tools & Platforms",
+        "items": [
+          "Google Sheets / Google Doc",
+          "PowerPoint Presentations",
+          "Complaint & Approval Trackers",
+          "Eci.net",
+          "cVIGIL",
+          "E-SUVIDHA (CEO/ECI Submission Portal)",
+          "Social Media Monitoring Platforms"
+        ]
+      },
+      {
+        "title": "Common Failure Points",
+        "items": [
+          "Delayed document submission by candidates and incomplete details",
+          "MCMC rejection due to non-compliant content",
+          "Incorrect vehicle documentation",
+          "Delayed escalation to authorities",
+          "Improper tracking of approvals",
+          "Communication gaps between teams"
+        ]
+      }
+    ],
+    "example": "A video creative is received from the communications team for immediate release. The legal team first vets the script and visuals for MCC compliance, AI disclosure, religious references, and other rejection risks; after corrections, it files the application before MCMC, follows up for approval, obtains the certificate, and shares the cleared approval with the communications team for dissemination.",
+    "statutoryForms": [
+      {
+        "form": "C-1",
+        "desc": "Criminal antecedents / statutory filing under election compliance"
+      },
+      {
+        "form": "C-2",
+        "desc": "Criminal antecedents / statutory filing under election compliance"
+      },
+      {
+        "form": "C-7",
+        "desc": "Criminal antecedents / statutory filing under election compliance"
+      },
+      {
+        "form": "C-8",
+        "desc": "Criminal antecedents / statutory filing under election compliance"
+      }
+    ],
+    "ipo": [
+      {
+        "stage": "Input",
+        "items": [
+          "Scripts and creatives from Communications/Campaigns Team",
+          "Documents from State Legal Cell",
+          "Candidate affidavit",
+          "Vehicle details from Campaigns Team",
+          "Complaints and field issues from CMS/ground teams",
+          "Election notifications and ECI circulars"
+        ]
+      },
+      {
+        "stage": "Process",
+        "items": [
+          "Legal vetting",
+          "Compliance review",
+          "MCC scrutiny",
+          "Documentation",
+          "Drafting representations",
+          "Filing applications",
+          "Escalation handling",
+          "Coordination with ECI officials"
+        ]
+      },
+      {
+        "stage": "Output",
+        "items": [
+          "Approved creatives and certificates",
+          "Cleared nominations and affidavits",
+          "Vehicle and campaign permissions",
+          "Legal advisories and SOPs",
+          "Complaint filings and escalations",
+          "Poll-day issue resolution support"
+        ]
+      }
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Establish legal coordination systems, understand ECI procedures, create trackers, define compliance workflows, coordinate with State Legal Cell and campaign teams before MCC implementation"
+      },
+      {
+        "ph": 2,
+        "focus": "Vet campaign creatives and advertisements for legal/compliance risks, coordinate with MCMC/EC authorities where required (especially GDN/TVC approvals), conduct legal training and streamline approval mechanisms"
+      },
+      {
+        "ph": 3,
+        "focus": "High-volume legal vetting and MCC compliance, including review of campaign creatives and ads, drafting complaints, securing permissions, handling escalations, and ensuring seamless campaign execution post-MCC implementation.",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Polling-day legal support, silence period compliance, booth-level escalation handling, coordination with authorities and rapid-response legal management during voting phase"
+      },
+      {
+        "ph": 5,
+        "focus": "Closure reporting, documentation, legal record archiving, campaign analysis and post-election compliance review"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "MCC implementation significantly increases compliance scrutiny, approval dependency, escalation handling and real-time legal coordination across campaign operations"
+  },
+  {
+    "id": "media",
+    "name": "Media Team",
+    "icon": "📰",
+    "category": "intel",
+    "function": "Media Intelligence",
+    "tagline": "Monitor, analyze, and shape media narratives across print, electronic, and digital platforms.",
+    "purpose": "Addresses the critical need for real-time tracking and analysis of narratives across print, electronic, and digital platforms. Supports the client by providing research inputs, drafting communication materials, and ensuring consistent dissemination of press notes and pro-client narratives. In the absence of this team, systematic media tracking would be severely compromised, leading to gaps in narrative awareness, delayed responses, and weakened coordination between the client and media stakeholders.",
+    "structure": [
+      {
+        "role": "Team Lead",
+        "detail": "Oversees the two primary verticals — Media Monitoring and Party Coordination — and is responsible for managing overall operations, strategic direction, and inter-team coordination. Reports directly to the Communications Lead."
+      },
+      {
+        "role": "Managers (2)",
+        "detail": "Two managers oversee one vertical each, ensuring smooth execution of daily operations and team coordination."
+      },
+      {
+        "role": "Media Associates",
+        "detail": "Responsible for monitoring, reporting, and coordination tasks across assigned states, with approximately 4–5 associates handling smaller states and 7–8 associates managing larger states."
+      }
+    ],
+    "sizing": {
+      "min": "2 Media Associates — sufficient to manage essential media monitoring, reporting, and client deliverables during non-campaign periods",
+      "ideal": "6 Media Associates and 2 Vertical Managers — split into Media Monitoring and Party Coordination verticals",
+      "scale": "Scales further based on campaign intensity, media volume, and coordination requirements during election periods"
     },
-    {
-      "id": "third-party",
-      "name": "Third Party Team",
-      "icon": "🎭",
-      "category": "creative",
-      "hideTabs": ["budget", "example", "downloads"],
-      "hideOverviewExtras": true,
-      "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
-      "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
-      "structure": [
-        {
-          "role": "Project Manager",
-          "detail": "Oversees the overall campaign workflow, coordination, narrative decision, approvals, and strategy."
-        },
-        {
-          "role": "Creator",
-          "detail": "Manages daily content creation, content research, daily publishing, coordination and other daily works."
-        },
-        {
-          "role": "Intern",
-          "detail": "Helping in daily backend work — searching old bytes and researching data/statements; also trained to manage pages when creators are on leave/exit."
-        },
-        {
-          "role": "Creative Team",
-          "detail": "Includes Graphic Designers, Video Editors (VE), and Animator responsible for daily creatives, reels, videos, motion graphics, and other visual creative content."
-        }
+    "skills": {
+      "must": [
+        "Strong political acumen and understanding of the media and political landscape",
+        "Proficiency in local languages for effective media tracking and regional coordination",
+        "Strong writing and communication skills, with the ability to draft clear, concise, and media-friendly content"
       ],
-      "coreFunctions": [
-        {
-          "title": "Working Objective",
-          "items": [
-            "Build and operate a decentralized network of internally managed third party properties designed to amplify campaign messaging through audience-native communication styles",
-            "Expand narrative reach beyond official political handles by distributing content through multiple independent-looking digital communities",
-            "Increase relatability and engagement through meme culture, trend-driven communication, regional references, and internet-first storytelling formats",
-            "Strengthen narrative visibility during high-attention political moments, major news cycles, and fast-moving online conversations",
-            "Create scalable communication ecosystems capable of shaping public discourse organically across diverse audience segments",
-            "Enable faster narrative dissemination, fast messaging, and high-frequency content participation during election periods"
-          ]
-        },
-        {
-          "title": "Operational Approach",
-          "items": [
-            "Plan and manage the broader digital narrative ecosystem in alignment with campaign communication objectives",
-            "Execute daily, weekly, and monthly content planning while ensuring quality control and consistency across all ecosystem properties",
-            "Monitor political developments, public discourse, rallies, protests, and media conversations for rapid content adaptation",
-            "Develop growth and engagement strategies to improve reach, audience penetration, and content performance across platforms",
-            "Coordinate with state-level social media teams, regional stakeholders, and campaign communication units for narrative alignment",
-            "Ensure surrogate pages maintain distinct audience identities, content styles, and platform-native positioning"
-          ]
-        },
-        {
-          "title": "Daily Workflow",
-          "items": [
-            "Receive daily narrative direction from Manager/QRT Team",
-            "Review research documents and key talking points",
-            "Identify priority narratives and create content around them",
-            "Assign content buckets to respective editor or graphic designer",
-            "Internally review the final output and post it on the page timely"
-          ]
-        },
-        {
-          "title": "Video Editing — Inputs/Outputs",
-          "items": [
-            "Inputs from Page Manager — opposition monitoring, viral trends, research insights",
-            "Core work — fast editing, meme adaptation, motion graphics, formatting/branding, subtitle integration, platform optimization, quality checks, narrative framing, attack videos, emotional edits, viral political content",
-            "Outputs delivered to — surrogate pages, meme networks, WhatsApp groups, influencer distribution channels"
-          ]
-        }
-      ],
-      "skills": {
-        "must": [
-          "Deep understanding of Instagram ecosystem and meme culture",
-          "Strong political narrative understanding",
-          "Trend spotting and rapid adaptation capability",
-          "High-speed content execution skills",
-          "Reel editing and meme creation capability",
-          "Audience psychology understanding",
-          "Internet culture awareness",
-          "Crisis management judgment",
-          "Strong coordination and communication ability",
-          "Ability to maintain narrative consistency while keeping content organic-looking"
-        ]
-      },
-      "kpis": [
-        "Daily Output: 5–7 videos per page",
-        "Weekly Output: 30–40 videos per page",
-        "Success metric: Virality, Shares, Narrative pickup, Organic engagement"
-      ],
-      "budget": [
-        ["Project Manager", "₹1L – ₹1.3L"],
-        ["Content Creator", "₹50K – ₹70K"],
-        ["Intern", "₹20K – ₹30K"],
-        ["Graphic Designer", "₹40K – ₹60K"],
-        ["Video Editor", "₹45K – ₹65K"]
-      ],
-      "tools": [
-        "Adobe Premiere Pro",
-        "After Effects",
-        "Photoshop",
-        "Ai Tools",
-        "FCP X",
-        "Davinci Resolve",
-        "Capcut"
-      ],
-      "platforms": [
-        "Instagram",
-        "Facebook",
-        "YouTube",
-        "X"
-      ],
-      "failurePoints": [
-        "Slow approvals",
-        "Heavy revision cycles",
-        "Overloaded editors",
-        "Narrative inconsistency",
-        "Fact-check risks",
-        "Slow trend adaptation"
-      ],
-      "escalation": [
-        [
-          "Editing delay",
-          "Team Lead",
-          "Immediate"
-        ],
-        [
-          "Sensitive content risk",
-          "Comms Lead",
-          "Immediate"
-        ],
-        [
-          "Missing footage",
-          "Content Poc",
-          "Immediate"
-        ],
-        [
-          "Narrative confusion",
-          "Content Poc",
-          "Immediate"
-        ]
-      ],
-      "phases": [
-        {
-          "ph": 1,
-          "focus": "Audience building",
-          "act": []
-        },
-        {
-          "ph": 2,
-          "focus": "Narrative expansion",
-          "act": []
-        },
-        {
-          "ph": 3,
-          "focus": "Aggressive counter campaigns",
-          "act": []
-        },
-        {
-          "ph": 4,
-          "focus": "Voter influence",
-          "act": []
-        },
-        {
-          "ph": 5,
-          "focus": "Narrative retention",
-          "act": []
-        }
-      ],
-      "function": "Surrogate Network"
-    },
-    {
-      "id": "tvc",
-      "name": "TVC & Documentaries",
-      "icon": "🎬",
-      "category": "creative",
-      "function": "Films & Documentaries",
-      "hideTabs": ["skills", "phases", "hiring", "budget", "ops", "example"],
-      "tagline": "Operational structure and workflow of the TVC & Documentaries team — from script to final delivery.",
-      "purpose": "The TVC & Documentaries team works closely with the Comms & PI team to understand the key narratives, political context, and communication priorities of the state. Based on these inputs, the team handles the complete process of making the ad films and documentaries — including conceptualisation, production, and post-production.",
-      "structure": [
-        {"role": "Team Lead / Senior Producer — Abhiraj", "detail": "Coordination with state leads and senior management, along with overseeing project planning and execution."},
-        {"role": "Associate Producer / Creative Producer (TVC) — Ritesh", "detail": "Coordinates with state teams on a daily basis for ad film requirements, scripting, production planning, and execution."},
-        {"role": "Associate Producer / Creative Producer (Documentaries) — Aditya", "detail": "Handles daily coordination for documentary-related work and long-format content execution."},
-        {"role": "Executing Team", "detail": "Directors, DOPs, Assistant Directors, Editors, DI Artists, Music Composers, Sound Designers, and a Post-Production Supervisor."},
-        {"role": "Team Strength", "detail": "10–12 in-house members per state, depending on campaign requirements and workload."}
-      ],
-      "scaleNote": "1 dedicated POC per campaign state — single POC ensures quicker decisions, consistent communication, and smoother day-to-day coordination.",
-      "scope": [
-        {"k": "Primary Function", "v": "Conceptualisation, production and post-production of ad films and documentaries"},
-        {"k": "Primary Coordinator", "v": "State Communication Team — routes all briefings, narratives, deadlines and approvals"},
-        {"k": "Narrative Source", "v": "State PI Team — state-level, AC-level, cohort-level, and issue-based narratives"},
-        {"k": "Compliance Layer", "v": "Legal Team — EC compliance review at script level; final edit submitted for EC approval"},
-        {"k": "Ideal Campaign Runway", "v": "4–5 months before polling (minimum 3 months)"},
-        {"k": "Final Phase Focus", "v": "AC-level films — constituency-specific narratives, local issues, targeted communication"}
-      ],
-      "deliverables": [
-        {"n": "YouTube Out", "d": "4K (16:9)"},
-        {"n": "Facebook Out", "d": "HD (16:9)"},
-        {"n": "WhatsApp Out", "d": "LQ (16:9)"},
-        {"n": "Instagram Out", "d": "4:5"},
-        {"n": "Clean MOV", "d": "4K (without any text & graphics)"},
-        {"n": "Radio Jingle", "d": "WAV (Audio mix)"},
-        {"n": "Subtitle File", "d": "SRT (English)"},
-        {"n": "Theatre Outs", "d": "If required"},
-        {"n": "TV Outs", "d": "If required"},
-        {"n": "Dubbing", "d": "Multiple languages — if required"}
-      ],
-      "coreFunctions": [
-        {
-          "title": "Coordination with Other Teams",
-          "items": [
-            "<b>State Communication Team</b> — primary coordinating team. Routes ALL campaign narratives, communication priorities, political context and content requirements. Provides initial briefings, campaign objectives, references, deadlines and specific instructions before each project starts. Also gives approvals at every major checkpoint (concepts, scripts, edits, final outputs). MUST assign one dedicated Point of Contact (POC) for coordination.",
-            "<b>State PI Team</b> — primary source for state-level, AC-level, cohort-level and issue-based narratives. Provides the political insights that shape the creative direction of the content.",
-            "<b>Research Team</b> — supports on an as-needed basis. Sources additional data, statistics, background info and factual inputs required for specific narratives or campaign requirements.",
-            "<b>Legal Team</b> — reviews scripts for Election Commission (EC) compliance and other legal requirements. Involvement is primarily at script level (concepts, dialogues, claims, visuals, messaging). Any additional compliance steps or precautions must be followed during production and post-production. Once edit is final, it is submitted for EC approval — disclaimers/modifications from Legal or EC must be incorporated before final exports."
-          ]
-        },
-        {
-          "title": "Campaign Workflow For Each Project",
-          "items": [
-            "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/tvc/workflow.jpg\" alt=\"TVC & Documentaries Campaign Workflow — 11 stages with Comms-approval checkpoints highlighted\" style=\"max-width:100%;width:700px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: TVC SOP §G — Campaign Workflow For Each Project · stages highlighted in green are Comms-approval checkpoints</figcaption>",
-            "Stages in order: Narrative Briefing from Comms Team → Ideation & Script Writing → <b>Script Approval (Comms Team)</b> → <b>Script Approval (Client)</b> → Project Budget Approval → Pre Production → Production → <b>Edit Approval (Comms Team)</b> → Final Edit Submission to EC → Post Production (Sound, Music, DI, Subtitles) → Final Delivery → Dubbing, TV, Theatre Outs (if required)"
-          ]
-        },
-        {
-          "title": "Pre-Campaign Preparation",
-          "items": [
-            "<b>Hiring</b> — early hiring and internal team planning based on expected campaign workload",
-            "<b>Early Touch Base with State Teams</b> — establish coordination to understand local political dynamics, key narratives and communication strategies",
-            "<b>Ground Work</b> — recce visits, identifying local crews, understanding locations, and building local production support systems for smoother execution"
-          ]
-        },
-        {
-          "title": "Logic of Process",
-          "items": [
-            "<b>Scalability</b> — streamlined workflow is critical for managing timelines, coordination, approvals and deliveries across multiple projects simultaneously during peak campaign",
-            "<b>20 Seconds</b> — most campaign ads designed in 20s format; works effectively as unskippable on digital platforms; better performance and retention vs longer skippable formats; easier to produce in bulk",
-            "<b>Longer Films</b> — generally perform better on social media; more effective for explaining complex narratives in detail; more creative flexibility for storytelling → better organic reach and virality",
-            "<b>Actor Retainers</b> — during peak campaign, actor availability and per-day costs become a major challenge. Working with lookalike actors on a retainer basis keeps them readily available, reduces repeated negotiation, coordination delays and high per-day talent costs",
-            "<b>Dedicated POCs</b> — one dedicated POC per campaign state ensures quicker decisions, consistent communication and smoother day-to-day coordination"
-          ]
-        },
-        {
-          "title": "Key Learnings — Start Early & Limited Narratives",
-          "items": [
-            "<b>Start Early</b> — campaigns should ideally be initiated <b>4–5 months before polling</b> (and nothing less than 3). Starting early aligns processes, streamlines approvals, builds smooth client coordination, lets us understand client expectations of films AND gives local teams time to understand state narratives in depth.",
-            "<b>Limited Narratives over Films</b> — a 20-second ad should focus on a SINGLE clear narrative. Multiple narratives in a 20s ad make script writing very difficult. Longer ads can accommodate 2–3 narratives only if they're relevant to one another.",
-            "<b>Narrative Beat Sheet</b> — narratives work best when shared as core ideas and directions instead of detailed scripts. Gives flexibility to develop scripts that work better from production and timeline perspectives while staying true to the intended message. State Comms + PI team should fill out the Narrative Beat Sheet (template linked under Resources)."
-          ]
-        },
-        {
-          "title": "Key Learnings — Internal Approval Process",
-          "items": [
-            "The approval process should be clearly defined at the START of the campaign and followed consistently by everyone",
-            "Proper alignment between script approvals, production and final delivery becomes critical during peak campaign phases",
-            "Every detail of a script — big or small — is accounted for and planned extensively. Changes made AFTER a script is locked and has moved into production create avoidable challenges. Even small changes can: (a) increase costs by affecting logistics, talent, locations and timelines; (b) disrupt production planning → execution delays and added pressure on delivery."
-          ]
-        },
-        {
-          "title": "Key Learnings — Expected Client Approval Obstacles & Workarounds",
-          "items": [
-            "When scripts/films remain stuck in review, planning, production and delivery timelines get affected. Solution: a clear client approval/review system with FIXED timelines at every stage.",
-            "<table class=\"std\" style=\"margin-top:6px\"><thead><tr><th>Stage of Campaign</th><th>Approval / Review TAT</th></tr></thead><tbody><tr><td>Initial Campaign Submissions <small style=\\\"color:#64748b\\\">(3 Months Before Polling)</small></td><td><b>Up to 14 Days</b></td></tr><tr><td>Mid Campaign Submissions <small style=\\\"color:#64748b\\\">(2 Months Before Polling)</small></td><td><b>Up to 3 Days</b></td></tr><tr><td>Peak Campaign Submissions <small style=\\\"color:#64748b\\\">(1 Month Before Polling)</small></td><td><b>1 Day</b></td></tr></tbody></table>",
-            "If approvals are delayed beyond these timelines → escalate to avoid workflow disruption",
-            "For 3P TVCs, OICs can be given approval authority so films do not always need client approval before production. Final films can still be shared with the client later — if they take them up, great; if not, they continue as planned on 3P."
-          ]
-        },
-        {
-          "title": "Key Learnings — CTAs & Endcard Protocols",
-          "items": [
-            "<b>Fixing CTAs Soon</b> — finalise CTAs during the scripting stage. In a 20s ad, the CTA usually gets only 2–3 seconds; adding/changing CTAs after production makes them difficult to fit. CTA also decides the ending mood/tone of the ad — early alignment avoids post-production rework.",
-            "<b>Mind-numbing Time Waste of Endcard Protocols</b> — even minor changes in logos, protocols or layouts require ALL final outputs to be exported again, delaying delivery during active campaigns. Finalise endcard requirements/protocols at an EARLY stage; wherever possible, avoid unnecessary protocol elements on end cards."
-          ]
-        },
-        {
-          "title": "Campaign Timeline — Phased Workload",
-          "items": [
-            "The campaign workload is executed in phases based on communication strategies and campaign timeline. This phased approach helps manage volume, maintain faster turnaround times, and streamline production planning.",
-            "<b>The Final Phase — Always AC-Level Films</b> — final phase is usually focused on AC-level films, where constituency-specific narratives, local issues and targeted communication become the primary focus."
-          ]
-        },
-        {
-          "title": "Phased Campaign Work — Week-by-Week",
-          "items": [
-            "<table class=\"std\"><thead><tr><th>Phase</th><th>Focus</th></tr></thead><tbody><tr><td><b>Preparation Phase</b><br><small style=\\\"color:#64748b\\\">28–24 Weeks Before</small></td><td>Understanding state narratives and communication priorities; establishing coordination with state teams; hiring based on campaign requirements; figuring out filming logistics, local crews and production support systems</td></tr><tr><td><b>20–16 Weeks Before Polling</b></td><td>Hiring and deployment of teams based on campaign requirements and workload planning</td></tr><tr><td><b>16–12 Weeks Before Polling</b></td><td>Production of the FIRST SET of state-level ads, along with initiation of special projects (magnum opus)</td></tr><tr><td><b>12–8 Weeks Before Polling</b></td><td>Second set of ads executed; special projects finalised; work on AC-level films begins</td></tr><tr><td><b>8–4 Weeks Before Polling</b></td><td>Execution of the final set of state ads and remaining special projects</td></tr><tr><td><b>4–1 Weeks Before Polling</b></td><td>Primary focus shifts to production and fast turnaround of AC-level films and ad-hoc state-level content requirements</td></tr><tr><td><b>1 Week Before Polling → 30 Days After Polling</b></td><td>Campaign closing activities and post-campaign requirements — campaign reports, key learnings, closing out budgets, data management etc.</td></tr></tbody></table>"
-          ]
-        }
-      ],
-      "videoExamples": [
-        {
-          "title": "20 Sec. Unskippable Ads",
-          "note": "20-second format ads designed for unskippable digital placements — high performance and retention.",
-          "items": [
-            {"thumb": "assets/tvc/unskippable-1.jpg", "url": "https://drive.google.com/file/d/1J2IjknImcbUPGJqDif_UKfVDd8eunVwm/view?usp=drive_link"},
-            {"thumb": "assets/tvc/unskippable-2.jpg", "url": "https://drive.google.com/file/d/1fJSzQ2H7DDCRVwYQVWv_cmv1w4RFNlun/view?usp=drive_link"},
-            {"thumb": "assets/tvc/unskippable-3.jpg", "url": "https://drive.google.com/file/d/1gxYlSh2FhjDb5qj-0B50NnR4iVMC_tPc/view?usp=drive_link"}
-          ]
-        },
-        {
-          "title": "Longer Skippable Ads (Magnum Opus)",
-          "note": "Longer-format films — better suited for explaining complex narratives in detail; greater creative flexibility for storytelling.",
-          "items": [
-            {"thumb": "assets/tvc/magnum-1.jpg", "url": "https://drive.google.com/file/d/19U18DblVcEd3fdPYY_bMPzwGIBXF7rXh/view?usp=drivesdk"},
-            {"thumb": "assets/tvc/magnum-2.jpg", "url": "https://drive.google.com/file/d/1l0W-Do7-5dwF3q8HcaEba7ntCug-8tEh/view?usp=drive_link", "label": "Maha Vikas Aghadi — MVANIMAL"},
-            {"thumb": "assets/tvc/magnum-3.jpg", "url": "https://drive.google.com/file/d/1vcOYuh_2eYb0Ef1AB-zcE85x8qW-fWXG/view?usp=drive_link"}
-          ]
-        },
-        {
-          "title": "Music Videos",
-          "note": "Musical narrative-driven films.",
-          "items": [
-            {"thumb": "assets/tvc/music-1.jpg", "url": "https://drive.google.com/file/d/1a9V1t9u_1ahTmT_ptvoiDbgcm0ORsmI0/view?usp=drive_link"},
-            {"thumb": "assets/tvc/music-2.jpg", "url": "https://drive.google.com/file/d/1UY5f10bGGI8XC0xcHWR0WT2ah1VQplnh/view?usp=drive_link"}
-          ]
-        },
-        {
-          "title": "Telecom Ads — AC Specific Videos",
-          "note": "Constituency-specific films — featured in the final phase of every campaign.",
-          "items": [
-            {"thumb": "assets/tvc/ac-1.jpg", "url": "https://drive.google.com/file/d/1WN0AazcMLBCjF-a8GqGtIrpXC7vf7Jcm/view?usp=drive_link"},
-            {"thumb": "assets/tvc/ac-2.jpg", "url": "https://drive.google.com/file/d/1yVH5DPe8IVx2VuR5-scrm0yKR3MJfgfz/view?usp=drive_link"},
-            {"thumb": "assets/tvc/ac-3.jpg", "url": "https://drive.google.com/file/d/1iUvq2gA_wr8W3qpawSlvePOny47HSyxD/view?usp=drive_link"}
-          ]
-        },
-        {
-          "title": "Telecom Ads — Narrative Based Videos",
-          "note": "Narrative-led short-format ads.",
-          "items": [
-            {"thumb": "assets/tvc/narrative-1.jpg", "url": "https://drive.google.com/file/d/1mOhbXS1cYCYZHwNI2AQ-zEZKMS_AU9Oh/view?usp=drive_link"},
-            {"thumb": "assets/tvc/narrative-2.jpg", "url": "https://drive.google.com/file/d/1FExS852cI6nXd8E_4EtMQMCpFj-XVXlE/view?usp=drive_link"},
-            {"thumb": "assets/tvc/narrative-3.jpg", "url": "https://drive.google.com/file/d/1uqUiazAZl7iG2WXO6ay1PefHx-Ji5g0M/view?usp=sharing"}
-          ]
-        },
-        {
-          "title": "Telecom Ads — Cohort Based Videos",
-          "note": "Cohort-targeted creative — speaks to specific demographics or community segments.",
-          "items": [
-            {"thumb": "assets/tvc/cohort-1.jpg", "url": "https://drive.google.com/file/d/1fcAzdm_TPJoll1fhdstfkYLuXt-flNme/view?usp=drive_link"},
-            {"thumb": "assets/tvc/cohort-2.jpg", "url": "https://drive.google.com/file/d/1iQjYK2rt6v99wm2GaBDTz4Os6PbCUmMf/view?usp=drive_link"},
-            {"thumb": "assets/tvc/cohort-3.jpg", "url": "https://drive.google.com/file/d/1gRP7NFGh9vQ1_qovYVs1pwk_1A3ZczSD/view?usp=sharing"}
-          ]
-        },
-        {
-          "title": "Manifesto Ads",
-          "note": "Films built around the party manifesto.",
-          "items": [
-            {"thumb": "assets/tvc/manifesto-1.jpg", "url": "https://drive.google.com/file/d/1d57zqbKFq8nXXanM1YBD3JEJDydjc85P/view?usp=drive_link"},
-            {"thumb": "assets/tvc/manifesto-2.jpg", "url": "https://drive.google.com/file/d/17kWavxY2R83LG0z6ZrE3gBKsVNhoUSjg/view?usp=drive_link"},
-            {"thumb": "assets/tvc/manifesto-3.jpg", "url": "https://drive.google.com/file/d/1I_2myGQYgDgoRysaHHAKZzvibS8jFoxm/view?usp=drive_link"}
-          ]
-        },
-        {
-          "title": "Achievement Documentaries",
-          "note": "Long-format documentaries highlighting scheme implementation, infrastructure and other government achievements.",
-          "items": [
-            {"thumb": "assets/tvc/achievement-1.jpg", "url": "https://drive.google.com/file/d/1rSaNlmIkzXks03v7lnxTGq9Z07QkY1rF/view?usp=sharing"},
-            {"thumb": "assets/tvc/achievement-2.jpg", "url": "https://drive.google.com/file/d/1tBMixMS1YktwWIUe9Bt5etIq6SNmPjyZ/view?usp=sharing"},
-            {"thumb": "assets/tvc/achievement-3.jpg", "url": "https://drive.google.com/drive/folders/11ho3hKzkob3xjjglq4ru7RxNi3Coddbx", "label": "Folder — multiple documentaries"}
-          ]
-        }
-      ],
-      "downloads": [
-        {"url": "https://docs.google.com/spreadsheets/d/1jOUchDTpiz-MKrOmnmdl-mbZilmo5rOI1eB6kaFDlcs/edit?gid=0#gid=0", "label": "Narrative Beat Sheet — Template", "note": "Structured template for State Comms & PI to share core ideas and directions (instead of detailed scripts)"}
-      ],
-      "stats": [
-        {"label": "In-house team / state", "value": "10–12"},
-        {"label": "Ideal runway", "value": "4–5 months"},
-        {"label": "Sample films catalogued", "value": "23"}
+      "nice": [
+        "Prior experience or background in media, journalism, or political communication",
+        "Media liaisoning and stakeholder coordination skills"
       ]
     },
-    {
-      "id": "partnership",
-      "name": "Partnership Program",
-      "icon": "🌟",
-      "category": "creative",
-      "function": "Creator Network",
-      "tagline": "Turns campaign messaging into public conversation through trusted creators.",
-      "purpose": "Helps turn campaign messaging into public conversation by using trusted creators instead of relying only on official party pages, spokespersons, or advertisements. People today trust creators, meme pages, regional influencers, satire accounts and community voices more than direct political communication.",
-      "philosophy": [
-        "One message shared by hundreds of trusted creators feels more real than one message coming from one official account.",
-        "Instead of depending only on party handles, ads, TV debates — push narratives through reels, memes, shorts, regional content, satire videos, community pages.",
-        "This creates stronger emotional connection and better audience trust."
-      ],
-      "structure": [
-        {
-          "role": "Head of Influencer Narrative Network",
-          "detail": "Overall creator strategy, narrative rollout planning, leadership coordination, crisis management, performance reporting."
-        },
-        {
-          "role": "Creator Relationship Executives",
-          "detail": "Managing creators daily, sharing briefs, following up on content, reviewing drafts, coordinating posting schedules, handling creator communication. Usually 1 executive manages around 25–40 creators."
-        }
-      ],
-      "scaleNote": "25–40 creators per executive",
-      "coreFunctions": [
-        {
-          "title": "Without a Creator Network",
-          "items": [
-            "Campaign messaging feels forced",
-            "Opposition narratives dominate social media",
-            "Youth audiences disconnect",
-            "Organic reach becomes weak",
-            "Cultural moments are missed",
-            "Response speed becomes slow"
-          ]
-        },
-        {
-          "title": "Creator Management",
-          "items": [
-            "Finds creators; evaluates creators; onboards creators",
-            "Builds long-term relationships",
-            "Handles payments and negotiations",
-            "Creators can include: political creators, meme pages, satire creators, lifestyle influencers, regional pages, youth creators, devotional pages, student creators"
-          ]
-        },
-        {
-          "title": "Narrative Execution",
-          "items": [
-            "Converts campaign messaging into creator-friendly content",
-            "Includes: creator briefs, talking points, reel ideas, captions, meme references, hashtags, infopacks",
-            "The content should feel natural and not scripted",
-            "Each creator presents the same narrative in their own style"
-          ]
-        },
-        {
-          "title": "Daily Operations",
-          "items": [
-            "Daily creator communication",
-            "Content approvals",
-            "Rollout planning",
-            "Posting schedules",
-            "Cross-promotion",
-            "Draft reviews",
-            "Crisis handling",
-            "Content correction if needed",
-            "The team works at internet speed and reacts quickly to breaking events"
-          ]
-        },
-        {
-          "title": "Performance Tracking",
-          "items": [
-            "Reach",
-            "Engagement",
-            "Watch time",
-            "Shares",
-            "Comment sentiment",
-            "Hashtag performance",
-            "Narrative spread",
-            "Focus is whether the narrative is actually influencing audience opinion — not only views"
-          ]
-        },
-        {
-          "title": "Inputs Received From",
-          "items": [
-            "Narrative Teams — daily political messaging, attack/defense priorities, rapid response narratives",
-            "Research Teams — audience insights, regional sentiment, geo-targeting data",
-            "Ground Teams — local issues, public mood, regional trends"
-          ]
-        },
-        {
-          "title": "Internal Workflow",
-          "items": [
-            "Receives campaign narrative",
-            "Converts it into creator content",
-            "Matches the narrative with suitable creators",
-            "Shares briefs and references",
-            "Reviews drafts",
-            "Approves final content",
-            "Coordinates posting",
-            "Tracks audience response"
-          ]
-        },
-        {
-          "title": "Operational Speed Example",
-          "items": [
-            "11 AM → Narrative changes",
-            "1 PM → Creator briefs updated",
-            "3 PM → Draft approvals complete",
-            "6 PM → Content live across creator network",
-            "Fast execution helps control online conversations before opposition narratives spread"
-          ]
-        },
-        {
-          "title": "Regional Understanding",
-          "items": [
-            "Local culture",
-            "Meme trends",
-            "Festivals",
-            "Religious sensitivity",
-            "Sports moments",
-            "Youth internet behavior",
-            "Regional language tone",
-            "Content timing should match audience mood and cultural context"
-          ]
-        }
-      ],
-      "skills": {
-        "must": [
-          "Cultural Understanding — regional culture, internet trends, political sentiment, meme culture",
-          "Creator Management — build creator relationships, negotiate effectively, retain creators long term",
-          "Narrative Writing — convert political messaging into reel concepts, captions, scripts, meme ideas, tweet threads",
-          "Fast Execution — react quickly, handle breaking news, coordinate fast rollouts",
-          "Crisis Handling — identify risky content, backlash risks, narrative mistakes before they become major issues"
+    "coreFunctions": [
+      {
+        "title": "Key Responsibilities",
+        "items": [
+          "Responsible for media monitoring, narrative analysis, and assessment of client and opposition coverage across print, electronic, and digital platforms",
+          "Prepares and delivers media coverage reports, speech pointers, article inputs, and press notes to support informed communication and strategic outreach",
+          "Manages coordination with the party's media team and oversees press release-related activities to ensure timely dissemination of information",
+          "Coordinates with Client's media unit",
+          "Delivers media monitoring and media coverage reports, speech pointers, article pointers and press notes"
         ]
       },
-      "finalGoal": [
-        "Shape online conversations",
-        "Influence public opinion",
-        "Build emotional connection with audiences",
-        "Spread narratives across social media naturally",
-        "Make campaign messaging feel like public sentiment instead of political advertising"
+      {
+        "title": "Role in Campaign Flow",
+        "items": [
+          "Input Received — media monitoring feeds, client mandates, leadership directives, political developments, and research inputs (coordinates with Research, Campaign, Analytics, Digital, Party Coordination)",
+          "Core Work — identifies and prioritises actionable narratives, conducts media research and analysis, develops explainers, drafts media-friendly communication, prepares strategic content (assists Quick Response, Digital, Research, Campaign)",
+          "Outputs delivered — media monitoring reports, narrative assessments, speech pointers, press notes, articles, and communication briefs (supports Communications, Digital, Research, Campaign)"
+        ]
+      },
+      {
+        "title": "Working Logic",
+        "items": [
+          "Continuously monitors mainstream media, identifies actionable narratives, assesses narrative penetration, recommends strategic counter-narratives aligned with the client's objectives",
+          "Supports communication efforts through media research, speech inputs, press notes, and narrative-driven content",
+          "Contributes to campaign success by shaping and responding to narratives in mainstream media, enabling timely communication, informed decision-making, and coordinated media outreach",
+          "Key dependencies: active client involvement, effective media management, and close coordination with research, campaign, and communication teams"
+        ]
+      },
+      {
+        "title": "Daily Workflow",
+        "items": [
+          "Morning (9–11 AM) — Tracking top national and regional headlines, analysing newspaper coverage, identifying actionable narratives, monitoring narrative penetration, conducting narrative calls, sharing morning media updates, and reviewing client mandates and priority tasks",
+          "Afternoon (12–5 PM) — Executing client mandates such as preparing speech pointers, press inputs, and media briefs; providing timely media updates to the client and internal teams; compiling media round-up reports, narrative assessments, and research-based deliverables",
+          "Evening (6–10 PM) — Monitoring prime-time debates, special programmes, and breaking developments across media platforms, while tracking emerging and actionable narratives for further escalation and strategic response"
+        ]
+      },
+      {
+        "title": "KPIs",
+        "items": [
+          "Daily Deliverables — print media coverage reports, electronic media coverage reports, bi-hourly media updates, narratives-of-the-day reports, editorial reports, press pointers, speech pointers, article inputs, press notes",
+          "Weekly Deliverables — consolidated compilations of daily reports, key media developments, major narratives, important political updates of the week",
+          "Quality — accuracy, relevance, and strategic value of narratives flagged; clarity, effectiveness, and media suitability of speech pointers/press inputs; consistency and comprehensiveness of monitoring",
+          "Speed — real-time or near real-time dissemination of media updates and narrative alerts; quick turnaround for client mandates, speech inputs, press notes, urgent media deliverables"
+        ]
+      },
+      {
+        "title": "Tools & Platforms",
+        "items": [
+          "Direct monitoring of newspapers, news channels, digital media platforms, and social media",
+          "Varahe Newscore Platform",
+          "Clipchamp",
+          "Google Studio",
+          "NordGPT",
+          "Perplexity",
+          "ChatGPT",
+          "National and regional digital media platforms, local news channels, newspapers, and social media platforms"
+        ]
+      },
+      {
+        "title": "Coordination with Other Teams",
+        "items": [
+          "Works closely with the client's media team, communications team, research teams, and campaign units",
+          "Depends on client mandates, leadership priorities, campaign requirements, and the evolving media and news cycle",
+          "Reports to the client's media team, communications leadership, and senior organisational leadership through regular media updates, narrative reports, and strategic communication deliverables"
+        ]
+      },
+      {
+        "title": "Common Failure Points",
+        "items": [
+          "Critical news developments or important narratives may occasionally be missed or not escalated in a timely manner due to the fast-paced and high-volume nature of media monitoring",
+          "Since Media Associates are often freshers or newly onboarded, there can be gaps in political understanding or contextual interpretation of issues with long-term strategic relevance",
+          "Media monitoring primarily relies on publicly available reporting which can provide only surface-level information; deeper political, policy, or strategic insights may require additional research and cross-team coordination"
+        ]
+      }
+    ],
+    "escalation": [
+      [
+        "Important news developments, media narratives, or sensitive political issues identified through monitoring",
+        "Internal teams, client communication channels, and relevant stakeholders through official escalation channels (primarily WhatsApp groups and reporting systems)",
+        "Real-time / Immediate"
       ],
-      "speedTimeline": [
-        {
-          "t": "11 AM",
-          "e": "Narrative changes"
-        },
-        {
-          "t": "1 PM",
-          "e": "Creator briefs updated"
-        },
-        {
-          "t": "3 PM",
-          "e": "Draft approvals complete"
-        },
-        {
-          "t": "6 PM",
-          "e": "Content live across creator network"
-        }
+      [
+        "Actionable narratives requiring strategic response",
+        "Communications, research, and media coordination teams",
+        "Within minutes of identification"
       ],
-      "heroCallout": "One message shared by hundreds of trusted creators feels more real than one message coming from one official account."
+      [
+        "Speech pointers, press inputs, and narrative explainers",
+        "Client leadership, spokespersons, and media teams",
+        "Within 1–2 hours"
+      ],
+      [
+        "Media coverage reports and detailed documentation",
+        "Client and internal leadership teams",
+        "As per reporting cycle"
+      ]
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Assess and evaluate media landscape, identify influential newspapers/channels/platforms, establish media coordination and reporting systems, onboard monitoring teams"
+      },
+      {
+        "ph": 2,
+        "focus": "Region-wise and bi-hourly reporting, narrative tracking, party liaisoning, localization of technical narratives into regional media friendly communication, increased media engagement"
+      },
+      {
+        "ph": 3,
+        "focus": "Media war room operations, press conference coordination, TV/media narrative management, rally coverage, electronic and digital media coordination, rapid narrative dissemination during MCC period",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Intensive press coordination, active media visibility management, press bites, campaign messaging amplification and election-focused media operations"
+      },
+      {
+        "ph": 5,
+        "focus": "Post-election narrative monitoring, media tracking, transition communication and continued reporting on major political developments"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "Real-time media coordination, narrative control, press management and high-pressure communication operations become most intensive during this phase"
+  },
+  {
+    "id": "narrative",
+    "name": "Narrative Team (QRT)",
+    "icon": "💡",
+    "category": "intel",
+    "function": "Narrative & Research",
+    "tagline": "Identifies issues and converts them into narratives, infopacks, speech pointers and ideation.",
+    "purpose": "The Quick Response Team identifies state/national issues and crafts narrative aligned with the client's messaging to the relevant target groups. Without QRT, teams cannot pick narratives crucial to the client.",
+    "structure": [
+      {
+        "role": "PD",
+        "detail": "Overall direction."
+      },
+      {
+        "role": "Manager",
+        "detail": "Direction on identifying patterns and narratives."
+      },
+      {
+        "role": "Team Lead",
+        "detail": "Takes the narrative and directs executives to convert into the desired output."
+      },
+      {
+        "role": "Executives",
+        "detail": "Convert TL/Manager directions into deliverables."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Responsible for",
+        "items": [
+          "Narratives",
+          "Ideation",
+          "Identifying the patterns"
+        ]
+      },
+      {
+        "title": "Coordinates With",
+        "items": [
+          "Leadership team",
+          "Media team",
+          "Communications team",
+          "Campaigns team",
+          "NexGrow team",
+          "Partnership team"
+        ]
+      },
+      {
+        "title": "Delivers",
+        "items": [
+          "Narrativized Infopacks",
+          "Media Pointers",
+          "PPTs",
+          "Book Reviews",
+          "Narrativized Research Documents",
+          "Campaign ideas",
+          "Communication ideas",
+          "Themes for the major milestones of the client",
+          "Counters for the ecosystem's fake claims",
+          "Narrative and issue tracking reports",
+          "Articles — Ghost writing and Byline writing",
+          "Speech Pointers",
+          "Long-term research",
+          "Influencers messaging",
+          "Bharat Darpan",
+          "Project Nandaka",
+          "The Indian Matrix on all social media platforms"
+        ]
+      },
+      {
+        "title": "Working Logic",
+        "items": [
+          "Identifies issues, patterns and narrativisation",
+          "Outputs flow to communications, campaigns, influencers, leadership",
+          "Central piece of campaign messaging — no key dependency"
+        ]
+      },
+      {
+        "title": "Tools & Platforms",
+        "items": [
+          "Tools: Gemini, Claude, Chat GPT",
+          "Platforms: Instagram, X, all media platforms"
+        ]
+      },
+      {
+        "title": "Coordination & Reporting",
+        "items": [
+          "Works closely with Communications, Media, Nexgrow and Partnership Program",
+          "Depends on Research, Media and PI",
+          "Reports to Shreyas Bharadwaj and Karthik Kamanna"
+        ]
+      }
+    ],
+    "kpis": [
+      [
+        "Narrativized Infopacks",
+        ""
+      ],
+      [
+        "Media Pointers",
+        ""
+      ],
+      [
+        "PPTs",
+        ""
+      ],
+      [
+        "Book Reviews",
+        ""
+      ],
+      [
+        "Narrativized Research Documents",
+        ""
+      ],
+      [
+        "Campaign ideas",
+        ""
+      ],
+      [
+        "Communication ideas",
+        ""
+      ],
+      [
+        "Themes for the major milestones of the client",
+        ""
+      ],
+      [
+        "Counters for the ecosystem's fake claims",
+        ""
+      ],
+      [
+        "Narrative and issue tracking reports",
+        ""
+      ],
+      [
+        "Articles — Ghost writing and Byline writing",
+        ""
+      ],
+      [
+        "Speech Pointers",
+        ""
+      ],
+      [
+        "Long-term research",
+        ""
+      ],
+      [
+        "Influencers messaging",
+        ""
+      ],
+      [
+        "Bharat Darpan",
+        ""
+      ],
+      [
+        "Project Nandaka",
+        ""
+      ],
+      [
+        "The Indian Matrix on all social media platforms",
+        ""
+      ]
+    ],
+    "example": {
+      "title": "Connecting the Crucial Dots — Red Fort Blast",
+      "content": "Post the Red Fort blast, QRT launched a high-intensity campaign against what it termed white-collar terrorism. As a result, the incident, which might otherwise have been treated as just another terror attack, gave rise to the now widely used term 'white-collar terrorism' — a phrase that has since been repeatedly invoked by media and social media platforms while discussing similar incidents. QRT connected the dots between the education of the terrorists and their terror activities and established the fact that it is the mentality of the quom that follows a book to create chaos, no matter what their level of education is. Narrativized infopacks, media pointers, influencer messaging, and other forms of messaging pieces were disseminated to the concerned teams to pick up the narrative."
+    },
+    "skills": {
+      "must": [
+        "Understanding of political nuances",
+        "Narrativization",
+        "Creativity to convert the issue and narrative into the desired output",
+        "Issue tracking"
+      ],
+      "nice": [
+        "Understanding of multiple states' political nuances"
+      ]
     }
-  ];;
+  },
+  {
+    "id": "non-meta",
+    "name": "Non-Meta Digital Ads",
+    "icon": "📡",
+    "category": "ops",
+    "function": "Paid Media & Operations",
+    "tagline": "GDN, YouTube, PG Deals, DV360, OTT, Apps and Telecom Ads.",
+    "purpose": "Non_Meta Digital Ads consist of GDN(Google Display Network), YouTube, PG Deals(Direct Deal with the Websites), DV360 (Miscellaneous), OTT, Apps, and Telecom Ads. GDNs, YT, PG Deals, DV360, Apps, and OTT ads help us target voters everywhere. Telecom Ads should be planned separately from everything else as we use them in the last phase and the purpose of those ads is a bit different from the rest.",
+    "structure": [
+      {
+        "role": "2 Managers",
+        "detail": "One to coordinate with the content creation team, and the other to coordinate with GTS, legal team, Nexgrow, and Vendors."
+      },
+      {
+        "role": "Content Writers",
+        "detail": "Four content writers are required for a few days as and when the work is required. But one dedicated content writer is required throughout the ad campaign for legal team docs and primary content QC."
+      },
+      {
+        "role": "5 Graphic Designers + 3 Video Editors",
+        "detail": "For designing and resizing of the deliverables."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Documentation — Two Master Sheets",
+        "items": [
+          "Telecom Ads Master Sheet — AC number, AC Name, Narrative, Campaign Unique ID, TG geographical description, and Cohort to be targeted",
+          "Comms internal sheet — content writers, graphic designers, and video editors; all your content will be in this sheet",
+          "Vendor sheet — AC number, AC name, Pin Codes, LatLong, and Content link",
+          "Drive folders to upload all the content according to the unique ID names for each",
+          "Other Non-Meta — One tracker with tabs: budget allocation and daily spend; content sizes and content formats; each section dedicated tab"
+        ]
+      },
+      {
+        "title": "Vertical Operations",
+        "items": [
+          "GDNs and YouTube — coordination with the Nexgrow team; share Master sheet, location, amount to be spent, and duration",
+          "PG Deals, DV360, OTT, Apps — managed by the vendor; clear and daily communication with the vendor; take written feedback (ideally in a group); enquire daily about the implementation",
+          "Telecom Ads — managed by the vendor; clear and precise timeframe at least 15 days before the day of polling; finalize number of creatives, number of sets, and number of constituencies with the vendor"
+        ]
+      },
+      {
+        "title": "Key Notes",
+        "items": [
+          "Coordination with several teams is crucial. Nexgrow, GTS, legal team, and most importantly vendor coordination is critical to the success of this project.",
+          "ARC PoC has to be involved right from the beginning. From documentation, to drive folders creation, and Unique ID has to be in coordination with the ARC PoC.",
+          "Dashboard/reports from each team is important for the campaign closure report."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "label": "Non-Meta Digital Ads Master Sheet Template",
+        "url": "https://docs.google.com/spreadsheets/d/1CXedE18ArJCOzqgF5Hr8i2KhEq63Bl39Jz_LbWwYZ6s/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Master Sheet Template",
+        "url": "https://docs.google.com/spreadsheets/d/1PrXp1KwdAJNpVFDhg4qF6Mtb5VHGFfSCn_zecYitouY/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Comms internal Template",
+        "url": "https://docs.google.com/spreadsheets/d/1wsXCaLfOpN7vJd9YRgEA-SO8Kb5ZIxjyTA68ksow7R0/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Vendor Sheet",
+        "url": "https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"
+      }
+    ],
+    "pipelines": [
+      {
+        "title": "Telecom Ads Pipeline",
+        "rows": [
+          [
+            "Strategy",
+            "Define narratives and actionable goals for specific constituencies and booths.",
+            "PI and Campaigns Teams"
+          ],
+          [
+            "Production",
+            "Develop copy, static graphics (GfX), and motion graphics.",
+            "Comms Team"
+          ],
+          [
+            "Quality Control",
+            "Multi-stage review: Manager QC, Final QC.",
+            "Telecom PoC"
+          ],
+          [
+            "Documentation",
+            "Upload to Drive with Unique IDs per narrative/constituency.",
+            "ARC Team"
+          ],
+          [
+            "Finalization",
+            "Acquire Pincodes and LatLongs; populate the Vendor Copy Sheet.",
+            "Analytics Team"
+          ]
+        ]
+      },
+      {
+        "title": "Non-Meta Digital Ads Pipeline",
+        "rows": [
+          [
+            "Scoping",
+            "Define target locations and finalize asset counts (creatives/videos) based on budget.",
+            "State Leadership"
+          ],
+          [
+            "Development",
+            "Write content, finalize designs, and resize assets for all platform verticals.",
+            "Comms & Branding Teams"
+          ],
+          [
+            "Broadcast Sync",
+            "Integrate and coordinate TVC (Television Commercial) assets.",
+            "GTS Team"
+          ],
+          [
+            "Compliance",
+            "Daily Coordination: Secure mandatory EC (Election Commission) approval for all creatives.",
+            "Legal Team"
+          ],
+          [
+            "Deployment",
+            "Release assets in iterative sets to reflect changing narratives and Manifesto promises.",
+            "Nexgrow Team and Vendors"
+          ]
+        ]
+      }
+    ],
+    "downloads": [
+      {
+        "label": "Non-Meta Digital Ads Master Sheet Template",
+        "url": "https://docs.google.com/spreadsheets/d/1CXedE18ArJCOzqgF5Hr8i2KhEq63Bl39Jz_LbWwYZ6s/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Master Sheet Template",
+        "url": "https://docs.google.com/spreadsheets/d/1PrXp1KwdAJNpVFDhg4qF6Mtb5VHGFfSCn_zecYitouY/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Comms Internal Template",
+        "url": "https://docs.google.com/spreadsheets/d/1wsXCaLfOpN7vJd9YRgEA-SO8Kb5ZIxjyTA68ksow7R0/edit?usp=sharing"
+      },
+      {
+        "label": "Telecom Ads Vendor Sheet",
+        "url": "https://docs.google.com/spreadsheets/d/1hOkgEBoMpkEGmXc9rT2X7stgGHn-Tte5fKIqmqIq1Ec/edit?usp=sharing"
+      }
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Campaign planning, resource allocation, branding discussions with state leadership, budget allocation, tracker and documentation setup, coordination with vendors and Nexgrow team"
+      },
+      {
+        "ph": 2,
+        "focus": "Creative writing, asset design, resizing of creatives/videos for multiple ad formats, deployment of GDN, YouTube, via Nexgrow and OTT, Apps, DV360, and PG deal ads via vendor, coordination with the legal team for EC approvals and content pipeline management."
+      },
+      {
+        "ph": 3,
+        "focus": "Manifesto-focused campaigns, high-volume deployment of all creative versions, aggressive amplification through non-meta channels, EC approvals, coordination with the PI and campaigns team for AC specific telecom ads preparation and execution coordination.",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Coordination with the analytics team for LatLongs and Pincodes for specific AC's/regions as per the requirement. Coordination with the vendor for next sets of Telecom ads execution."
+      },
+      {
+        "ph": 5,
+        "focus": "Campaign closure reporting, dashboard consolidation, vendor reconciliation, documentation closure and campaign analysis"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "Multi-platform narrative amplification, telecom targeting, manifesto dissemination, and large-scale coordinated deployment"
+  },
+  {
+    "id": "party-coord",
+    "name": "Party Coordination & Narrative Management",
+    "icon": "🤝",
+    "category": "ops",
+    "function": "Stakeholder Management",
+    "tagline": "The objective is not just coordination — it is controlled coordination.",
+    "purpose": "A successful political communication strategist ensures that leadership feels heard, the party feels supported, operations remain structured, and strategy stays protected from chaos.",
+    "coreFunctions": [
+      {
+        "title": "Establishing Authority Without Friction",
+        "items": [
+          "Enter as a solution partner, not as an agency/vendor",
+          "Build credibility early through quick wins, responsiveness, and preparedness",
+          "Always communicate with clarity, confidence, and data-backed reasoning",
+          "Understand internal party hierarchy before operations begin",
+          "Identify actual decision-makers vs influencers vs information carriers",
+          "Respect political sensitivities, egos, and chain of command",
+          "Never publicly contradict party leadership or senior functionaries",
+          "Ensure party POCs are informed before major narrative pushes"
+        ]
+      },
+      {
+        "title": "Building Rapport — Relationship Management",
+        "items": [
+          "Maintain regular personal communication beyond task-based interactions",
+          "Understand each POC's working style, political ambitions, and pressure points",
+          "Give credit to party teams publicly wherever necessary",
+          "Ensure party POCs feel included in strategy, not bypassed",
+          "Be accessible during high-pressure news cycles and crisis",
+          "Maintain composure even during emotional or aggressive conversations"
+        ]
+      },
+      {
+        "title": "Building Rapport — Trust Building",
+        "items": [
+          "Deliver on timelines consistently",
+          "Never overpromise to impress leadership",
+          "Share updates proactively before they ask",
+          "Protect confidential discussions and internal disagreements",
+          "Build confidence through preparedness in meetings and war-room discussions"
+        ]
+      },
+      {
+        "title": "Communication Discipline",
+        "items": [
+          "Define clear communication protocols from Day 1 — WhatsApp for urgent coordination, Daily narrative calls for narrative alignment, one clear approval chain for creatives/narratives",
+          "Avoid parallel instructions from multiple leaders without clarification",
+          "Always summarize verbal instructions in writing after meetings/calls",
+          "Use concise updates: what was done, current status, pending approvals, risks/issues"
+        ]
+      },
+      {
+        "title": "Managing Expectations & Unrealistic Demands — Handling Pressure",
+        "items": [
+          "Political environments are emotionally driven; avoid reactive responses",
+          "Separate urgency from importance",
+          "Not every leader request needs instant execution",
+          "Saying No diplomatically — never say 'This cannot be done'",
+          "Instead: explain operational limitations, provide alternative solutions, suggest realistic timelines, use data/platform limitations to justify pushback, convert emotional demands into measurable objectives"
+        ]
+      },
+      {
+        "title": "Managing Leadership Requests",
+        "items": [
+          "Prioritize tasks based on electoral impact, narrative relevance, resource availability, platform performance",
+          "Escalate conflicting instructions carefully and privately",
+          "Avoid creating dependence on unsustainable execution models"
+        ]
+      },
+      {
+        "title": "Taking Operational Control",
+        "items": [
+          "Establish systems early",
+          "Create centralized approval and escalation structures",
+          "Define who approves: creatives, captions, ad spends, crisis responses",
+          "Maintain structured reporting formats and dashboards",
+          "Control through process — documentation creates operational authority",
+          "Use daily trackers, content calendars and End of Day summaries",
+          "Reduce chaos by converting verbal politics into documented workflows"
+        ]
+      },
+      {
+        "title": "Conflict Management",
+        "items": [
+          "Never take political disagreements personally",
+          "Resolve disputes privately, never in group forums",
+          "During internal conflicts — stay neutral, factual and process-oriented",
+          "Maintain relationships across factions within the party structure",
+          "Avoid becoming associated with one internal camp/group"
+        ]
+      },
+      {
+        "title": "Election-Time Coordination Best Practices",
+        "items": [
+          "Conduct daily morning narrative sync calls",
+          "Maintain a real-time escalation group for urgent approvals",
+          "Share feedback with party leadership regularly",
+          "Ensure district-level and vidhan sabha level content alignment with central messaging",
+          "Maintain backup plans for account restrictions, media attacks, legal notices and opposition misinformation"
+        ]
+      },
+      {
+        "title": "Professional Conduct",
+        "items": [
+          "Never become emotionally invested in internal politics",
+          "Maintain discretion at all times",
+          "Avoid informal political gossip within campaign structures",
+          "Maintain written records of major approvals and strategic directions",
+          "Be calm under pressure — campaign environments reward stability"
+        ]
+      }
+    ],
+    "partyPhases": [
+      {
+        "n": 1,
+        "name": "Relationship Building & System Establishment",
+        "window": "6-4 Months Before Elections",
+        "purpose": "Build trust with party leadership, understand hierarchy, and establish operational systems before campaign pressure increases.",
+        "bullets": [
+          "Understand actual power structures: identify decision-makers, influencers, district leaders, and approval authorities.",
+          "Position the team as a strategic partner, not an execution vendor.",
+          "Build credibility through responsiveness, preparedness, and early delivery.",
+          "Establish clear communication protocols covering approval hierarchy, escalation matrix, narrative calls, and urgent coordination channels.",
+          "Develop strong working relationships with party POCs and understand individual working styles and expectations.",
+          "Introduce documentation systems such as trackers, content calendars, and approval logs.",
+          "Maintain confidentiality and avoid involvement in internal factional politics."
+        ]
+      },
+      {
+        "n": 2,
+        "name": "Active Campaign Coordination & Narrative Management",
+        "window": "3 Months Before Elections to Final 30 Days",
+        "purpose": "Ensure smooth coordination between leadership, campaign teams, and dissemination networks while maintaining narrative consistency.",
+        "bullets": [
+          "Conduct regular narrative calls with leadership based on media reports, opposition activity, and ground inputs.",
+          "Convert verbal discussions into written action points and clear task allocation.",
+          "Maintain alignment across all communication channels to avoid contradictory messaging.",
+          "Manage leadership expectations by balancing urgency, resources, and electoral impact.",
+          "Handle conflicting instructions diplomatically and escalate where required.",
+          "Provide proactive reporting covering status updates, risks/issues, pending approvals, and performance summaries.",
+          "Strengthen crisis coordination systems for misinformation, opposition attacks, and sensitive developments."
+        ]
+      },
+      {
+        "n": 3,
+        "name": "High Pressure Operations, Polling & Post-Election Management",
+        "window": "Final 30 Days to Post Results",
+        "purpose": "Maintain operational control, rapid decision-making, and political trust during peak campaign pressure.",
+        "bullets": [
+          "Shift to real-time coordination with faster approvals and extended availability.",
+          "Manage urgent requests, leadership pressure, rallies, media attacks, and campaign crises calmly.",
+          "Activate escalation groups and maintain direct communication with key stakeholders.",
+          "Use documentation and structured reporting to reduce confusion under pressure.",
+          "Coordinate polling day communication, voter mobilisation messaging, and misinformation response.",
+          "Manage result-day communication and maintain relationships irrespective of outcomes."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reporter",
+    "name": "Reporter Network (RN)",
+    "icon": "📹",
+    "category": "intel",
+    "function": "Field Intelligence",
+    "tagline": "Decentralized field intelligence and content execution system — local presence converted to usable assets.",
+    "purpose": "A decentralized field intelligence and content execution system built to provide rapid on-ground access, structured media inputs, and reliable operational support across geographically distributed environments. It exists to close the gap between central planning and field reality by converting local presence into usable assets, validated inputs, and auditable delivery.",
+    "stats": [
+      {
+        "label": "Active States",
+        "value": "14"
+      },
+      {
+        "label": "Contact-Access States",
+        "value": "7"
+      },
+      {
+        "label": "Baseline Reporters",
+        "value": "150–200"
+      },
+      {
+        "label": "Election Surge",
+        "value": "600+"
+      },
+      {
+        "label": "Archival Retrieval",
+        "value": "1–2 hrs"
+      },
+      {
+        "label": "Fresh Shoot",
+        "value": "24–48 hrs"
+      },
+      {
+        "label": "Monthly Output",
+        "value": "300–400 assets"
+      },
+      {
+        "label": "Per-task rate",
+        "value": "₹100–₹500"
+      },
+      {
+        "label": "Payment cycle",
+        "value": "15-day national"
+      }
+    ],
+    "scaleNote": "AC-level expansion in election states",
+    "recruitment": {
+      "feeders": [
+        "IPRD reports",
+        "Personal/professional contacts",
+        "Referrals from trusted sources"
+      ],
+      "criteria": [
+        "Current employment and conflict sensitivity review",
+        "Field reporting experience and ability to work with remote coordination",
+        "Equipment readiness: camera or smartphone, microphone where available, and reliable data connectivity",
+        "Location utility and responsiveness for district or AC-level access",
+        "Acceptance of RN operating standards on authenticity, lawful filming, and non-fabricated submissions"
+      ],
+      "steps": [
+        "Source identification and initial fit check",
+        "Verification of experience, geography, and equipment readiness",
+        "Orientation on assignment types, submission expectations, turnaround discipline, and payment logic",
+        "Assignment to a state-specific or campaign-specific execution pool",
+        "First-task activation with enhanced supervision until reliability is established"
+      ],
+      "content": [
+        "Assignment types: vox pops, field visuals, issue-ground inputs, archival retrieval support, and special shoots",
+        "Submission requirements: file naming, metadata, shot completeness, and delivery channels",
+        "Quality standards: video clarity, audio usability, framing, duration, and adherence to brief",
+        "Payment logic: task-specific payouts after QC validation and entry into state-wise payment sheets",
+        "Conduct requirements: no coercion, no impersonation, no staged public reactions presented as genuine, and respect for legal and safety constraints"
+      ]
+    },
+    "structure": [
+      {
+        "role": "Central Manager",
+        "detail": "All states. National oversight, task ownership, delivery quality, escalation handling, payout governance, and leadership reporting. Final call on delivery acceptance, escalations, payout approval readiness, surge activation."
+      },
+      {
+        "role": "RN Team Members ×3",
+        "detail": "Assigned state clusters. Task intake tracking, field coordination, reporter management, deadline adherence, and quality follow-through. Reporter allocation, first-line escalation, reshoot recommendation."
+      },
+      {
+        "role": "State / District / AC Reporters",
+        "detail": "Defined territories or assignments. Ground collection, raw visuals, vox pops, local access, and time-bound submission. Field execution within approved brief."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Operating Models",
+        "items": [
+          "Reactive execution — Page manager / internal team raises a task with location, narrative/content need, deadline, and deliverable requirement. RN assigns field reporters, conducts QC, and delivers approved assets to the internal team.",
+          "Proactive ideation — RN identifies timely political or social topics with field value and proposes them internally. RN develops a basic outline, executes collection, and returns final assets for editing and publishing."
+        ]
+      },
+      {
+        "title": "Strategic Importance",
+        "items": [
+          "Speed — supports archival retrieval in 1–2 hours and fresh shoots within 24–48 hours depending on urgency and field complexity",
+          "Coverage — maintains an always-available footprint across 14 active states, with 7 additional contact-access states for extension",
+          "Scalability — scales from 150–200 active reporters in steady state to 600+ during election operations through AC-level deployment",
+          "Cost efficiency — provides field outputs at a fraction of the cost of conventional production models that may require lakhs for single projects",
+          "Continuity — preserves institutional memory through recurring reporter relationships, payment documentation, and archival discipline"
+        ]
+      },
+      {
+        "title": "Task Intake — Mandatory Inputs",
+        "items": [
+          "Topic or issue statement",
+          "Location / geography",
+          "Deadline and urgency level",
+          "Content requirement (vox pop, visual package, issue scan, archival retrieval, interview support, etc.)",
+          "Questionnaire / outline / reference prompts",
+          "Any non-negotiable output conditions such as duration or shot list"
+        ]
+      },
+      {
+        "title": "Assignment Workflow",
+        "items": [
+          "Task received from page manager or internal stakeholder",
+          "RN team reviews brief for clarity, feasibility, and timing",
+          "Task is tagged as reactive execution or proactive ideation follow-through",
+          "The appropriate reporter or reporter cluster is identified based on geography, reliability, and urgency",
+          "Field briefs are communicated with deadlines, content requirements, and submission expectations",
+          "RN team tracks execution until submission, QC, and final delivery are complete"
+        ]
+      },
+      {
+        "title": "Field Execution & Deliverables",
+        "items": [
+          "Primary deliverables — vox pops/public bytes, raw visuals from field locations, issue-ground inputs and context clips, archival retrieval, special interview or event-based field packages",
+          "Video quality should be above 1080p wherever the device permits",
+          "Background noise should be minimized to preserve usability",
+          "Bytes should generally exceed 50 seconds when a byte is specifically requested",
+          "Visual packages should generally exceed 60 seconds of usable footage where visuals are required",
+          "Submission must match the approved brief in topic, location, and shot completeness",
+          "Basic metadata should accompany every submission: location, date, reporter, and assignment reference"
+        ]
+      },
+      {
+        "title": "3-Layer QC",
+        "items": [
+          "Technical QC — resolution, audio, stability, file integrity, duration, visibility (material is editable and platform-usable)",
+          "Brief QC — topic relevance, location match, requested responses/shots, completeness (submission materially addresses the request)",
+          "Administrative QC — naming, metadata, submission mapping, payment-sheet eligibility (submission can be tracked, archived, and paid without ambiguity)"
+        ]
+      },
+      {
+        "title": "Reshoot Triggers",
+        "items": [
+          "Low audio intelligibility or disruptive background noise",
+          "Wrong location or unverified context",
+          "Missing visual support where a package was requested",
+          "Insufficient duration for byte or visual requirement",
+          "Off-brief responses or incomplete coverage",
+          "File corruption or upload failure"
+        ]
+      },
+      {
+        "title": "Payment Operations",
+        "items": [
+          "Task-specific payouts — fixed rates generally range from ₹100 to ₹500 depending on state and assignment complexity",
+          "Workflow — reporter submits → RN validates quality → daily state-wise payment sheet → every 15 days consolidated into national payment sheet for approval → approved funds transferred centrally and distributed → payment screenshots and records stored for audit",
+          "Maintain a clear history of response time, acceptance rate, and quality reliability for repeat allocation",
+          "Separate high-trust reporters from opportunistic or inconsistent vendors",
+          "Close disputes with evidence: submission record, QC note, and payment proof",
+          "Protect retention by keeping payment cycles predictable and communication unambiguous"
+        ]
+      },
+      {
+        "title": "Crisis Response & Escalation",
+        "items": [
+          "Reporter unresponsive → switch to alternate reporter or adjacent geography → Assigned RN team member",
+          "Low-quality submission → trigger reshoot or partial salvage decision → Assigned RN team member + central manager if repeated",
+          "Field access disruption → use archived material, alternate district, or revised scope → Central manager",
+          "Payment dispute → check sheet entry, QC note, and transfer proof → Central manager / finance control owner",
+          "Compliance concern → hold delivery and review facts before release → Central manager + leadership"
+        ]
+      },
+      {
+        "title": "Campaign Support History",
+        "items": [
+          "Odisha legislative assembly election",
+          "Jharkhand legislative assembly election",
+          "Jammu by-elections (Budgam & Nagrota)",
+          "Punjab by-elections (Tarn Taran)",
+          "Odisha by-elections (Nuapada)",
+          "ULB campaigns (CG, HP, HR)",
+          "BMC Maharashtra",
+          "Goa by-elections (Ponda)",
+          "National issue-based campaigns"
+        ]
+      }
+    ],
+    "priorities": [
+      [
+        "L1",
+        "Immediate / highest priority",
+        "3–4 hours",
+        "Time-sensitive issue already in circulation or requiring urgent field confirmation"
+      ],
+      [
+        "L2",
+        "Planned / standard priority",
+        "24–48 hours",
+        "Pre-planned stories, scheduled shoots, or requested issue packages"
+      ],
+      [
+        "L3",
+        "Extended / low urgency",
+        "1–4 days",
+        "Longer-form assignments, person-specific or location-specific pieces, documentary-style requests"
+      ]
+    ],
+    "beforeAfter": [
+      [
+        "Field access",
+        "Ad hoc sourcing and uncertain local availability",
+        "Structured multi-state network with repeat-use field access"
+      ],
+      [
+        "Turnaround",
+        "Dependent on vendor mobilization and fragmented coordination",
+        "1–2 hour archival retrieval and 24–48 hour fresh shoot capability"
+      ],
+      [
+        "Cost profile",
+        "Traditional production teams may cost lakhs for single projects",
+        "Comparable field outputs delivered at a fraction of those costs"
+      ],
+      [
+        "Scale during campaigns",
+        "Rapid expansion is difficult and uneven",
+        "AC-level surge to 600+ reporters during election periods"
+      ],
+      [
+        "Documentation and auditability",
+        "Often scattered across vendors and threads",
+        "State-wise sheets, national consolidation, and payment proof records"
+      ]
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Built the campaign’s field intelligence and media network from scratch by mapping the complete state media ecosystem—local, mainstream, print, and digital. Identified aligned, neutral, and opposition-leaning media stakeholders, created verified reporter databases, and established a politically filtered outreach network for sensitive geographies."
+      },
+      {
+        "ph": 2,
+        "focus": "Onboarded and tested reporters through phased assignments to assess reliability, speed, ideological fit, and ground capability. Built structured systems for deployments, content collection, vox pops, and real-time reporting while mapping constituency-level resources for rapid mobilisation"
+      },
+      {
+        "ph": 3,
+        "focus": "Activated full-scale ground operations with AC-wise and block-wise reporter deployment. Managed a real-time intelligence network delivering public sentiment, opposition movement, event coverage, local issues, and campaign-critical field inputs at scale.",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Converted the network into an election-day monitoring engine by deploying resources across key and sensitive booths, supporting GOTV efforts through live issue tracking, turnout monitoring, and rapid escalation of ground incidents."
+      },
+      {
+        "ph": 5,
+        "focus": "Closed operations through audit-ready documentation, data archiving, performance analysis, and retention of high-performing field assets—ensuring the network remains campaign-ready for future deployment."
+      }
+    ],
+    "criticalPhase": "Peak Campaign"
+  },
+  {
+    "id": "smcc",
+    "name": "SMCC — Social Media Command Centre",
+    "icon": "🎯",
+    "category": "comms",
+    "function": "Hyperlocal Operations",
+    "hideTabs": [
+      "skills",
+      "downloads"
+    ],
+    "tagline": "Precision Political Communication Engine — hyperlocal narrative-driven content backed by political intelligence.",
+    "purpose": "The Social Media Command Centre (SMCC) is a key wing of the Communications team focused on creating high-impact hyperlocal content that can influence election outcomes. It is a centralised team built around two components — (1) producing Assembly Constituency (AC) level hyperlocal, narrative-driven content, and (2) building a hyperlocal dissemination network to amplify it. Unlike traditional communications (which primarily produces high-quality content for party pages and manages third-party pages), SMCC enables strategic hyperlocal content backed by political intelligence and has the flexibility to experiment with new formats and genres. This handbook is a guiding framework — not a fixed rulebook; processes must ultimately be shaped after analysing the political and organisational structure of the campaign State. The SMCC Manager must have a thorough understanding of the state's political scenario and overall narrative, referring to the PI Team's Primer Document and the National Research Team's State Achievement and Chargesheet documents.",
+    "objectives": [
+      "Establish BJP's digital footprint in every contested assembly segment",
+      "Run hyperlocal narratives that connect with voters at village, ward, and booth level",
+      "Attack opposition messaging through strategic counter-narrative content",
+      "Amplify BJP's governance achievements, candidate profiles & party ideology",
+      "Drive voter engagement & sentiment shift through targeted advertising"
+    ],
+    "contentFormats": [
+      {
+        "n": "Achievement Videos",
+        "d": "VO + Vox Pop highlighting government achievements (don't name the incumbent unless ticket is confirmed)"
+      },
+      {
+        "n": "Chargesheet Videos",
+        "d": "Failures, corruption, unfulfilled promises of opposition; VO + Public Vox Pops of dissatisfaction"
+      },
+      {
+        "n": "Cover Stories",
+        "d": "VO video with original footage, documents and Vox Pops"
+      },
+      {
+        "n": "Know Your Candidate (KYC)",
+        "d": "Candidate's life/political journey · supporter Vox Pops · 30–45s vote appeal"
+      },
+      {
+        "n": "Know Your Opposition (KYoC)",
+        "d": "Voice-over + Vox Pops against the opposition candidate"
+      },
+      {
+        "n": "Comparison Videos",
+        "d": "BJP candidate vs opposition — reuses KYC and KYoC Vox Pops"
+      },
+      {
+        "n": "CMS Requests",
+        "d": "Content as requested by CMS PoCs (via 3P Campaigns)"
+      },
+      {
+        "n": "Campaign Songs",
+        "d": "Production-to-dissemination owned by SMCC (e.g. TN BJP Campaign Song)"
+      }
+    ],
+    "activationChecklist": [
+      [
+        "SMCC Manager defines advertisement budget approval limits for ZCs",
+        "SMCC Manager"
+      ],
+      [
+        "Conduct WhatsApp call with all SMAs to discuss and finalise zone narratives",
+        "Zonal Coordinator"
+      ],
+      [
+        "Assign tasks on the designated Slack channel",
+        "Zonal Coordinator"
+      ],
+      [
+        "Assign the task to the respective Content Writer",
+        "CW Lead"
+      ],
+      [
+        "Draft the copy/content and post on Slack for ZC review",
+        "Content Writer"
+      ],
+      [
+        "Review content, suggest changes, and on approval tag the Production Head",
+        "Zonal Coordinator"
+      ],
+      [
+        "Assign creative task to Graphic Designer and Video Editor",
+        "Production Head"
+      ],
+      [
+        "Create and upload final creative/video output on Slack",
+        "GD / VE"
+      ],
+      [
+        "Review final output and approve by tagging the SME Lead",
+        "Zonal Coordinator"
+      ],
+      [
+        "Publish approved content on Facebook, Instagram, and WhatsApp",
+        "SME Lead"
+      ],
+      [
+        "Update the Ads Sheet with respective content links",
+        "SME Lead"
+      ],
+      [
+        "Allocate ads budget for the post (seek Manager approval if above limit, e.g. ₹2000)",
+        "Zonal Coordinator"
+      ]
+    ],
+    "adRules": [
+      "Meta Ads are the backbone of SMCC — production has little value without strategic amplification through targeted Meta Ads",
+      "SMCC Manager and ZCs MUST sit with the Growth Team to learn ad targeting parameters (gender, interests, age, location, language, behavioural)",
+      "Every social media page must have the necessary Disclaimer attached BEFORE running political ads on Meta",
+      "Obtain pin codes from PI Team and coordinate with Growth Team so ad sets cover the entire AC by AC-level pin demographics",
+      "Growth Team runs ads only AFTER SMEs add post links to the Ads Sheet AND budget is approved by ZC/Manager",
+      "Most (not all) SMCC ads should run in accelerated mode to maximise spend efficiency and impact",
+      "ZC owns per-post budget allocation; anything above the Manager-defined limit (example: ₹2000) needs Manager approval"
+    ],
+    "securityPolicy": [
+      "Slack is the only official professional communication channel — WhatsApp is rapid-response/narrative-identification only and is NOT considered official proof (exception: ZC ↔ SMA, which is WA-only)",
+      "Shared Drive Manager access is limited to National Comms Head, State Lead, SMCC PD and SMCC Manager — do NOT give broad drive access to all team members",
+      "Vendors get access ONLY to the content production folder — never to narratives or other confidential folders",
+      "SMAs are NOT given access to or shared any documents",
+      "Meta Assets must be linked to personal accounts (Growth Team creates these personal accounts and provides manager access)",
+      "All Meta assets created under a SINGLE Meta Business Manager — enables Meta API integration with Sprout Social and automated reporting dashboards",
+      "WhatsApp groups must be created using a WA Business account (not a personal account) — enables tracking and lets us run WA Joining Ads",
+      "Page names must sound neutral and AC-level community-oriented — AVOID names like 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
+      "Disclaimer is mandatory authorisation for political ads on Meta — coordinate with Growth Team early; secure State Lead + PD approval before formal Disclaimer request",
+      "Vendor 10% TDS must be communicated up-front — TDS is advance tax (vendor reclaims via ITR), NOT additional tax over GST"
+    ],
+    "goaExample": {
+      "state": "Tamil Nadu (33 seats · SMCC Production Team)",
+      "stats": [
+        {
+          "k": "Total Team Members",
+          "v": "55"
+        },
+        {
+          "k": "Social Media Associates (SMA)",
+          "v": "23"
+        },
+        {
+          "k": "Video Editors",
+          "v": "10"
+        },
+        {
+          "k": "Graphics Designers",
+          "v": "5"
+        },
+        {
+          "k": "Content Writers",
+          "v": "9"
+        },
+        {
+          "k": "Zonal Co-ordinators",
+          "v": "3 (one per zone — never vendorised)"
+        },
+        {
+          "k": "SM Executives & Others",
+          "v": "5"
+        },
+        {
+          "k": "Comparative Setup — Pondicherry",
+          "v": "First fully-vendorised production team; set up 2 months before election. SMCC-OCC deployed in Pondicherry town; SMAs in Karaikal."
+        }
+      ],
+      "attack": "Opposition government's chargesheet, corruption and unfulfilled promises — sharpened through KYoC and Chargesheet videos (script + final output reviewed by PI Team)",
+      "positive": "BJP candidate's KYC, leader-specific achievement and chargesheet content, scheme-driven hyperlocal narratives",
+      "focus": "TN Phase-Wise Plan · Kerala KYC/KYoC bilingual experimentation · Documentary on Pandav Vada Case · Blank Constitution Issue · Impact of Chargesheet Video · TN BJP Campaign Song (full production-to-dissemination)"
+    },
+    "scope": [
+      {
+        "k": "Two Core Components",
+        "v": "Hyperlocal Content Creation + Building Dissemination Network"
+      },
+      {
+        "k": "Primary Platforms",
+        "v": "Facebook & Instagram (Targeted Meta Ads) · WhatsApp (AC-level WA Groups)"
+      },
+      {
+        "k": "Geographic Unit",
+        "v": "Assembly Constituency (AC) — content always contextualised to local electorate"
+      },
+      {
+        "k": "Seat Categories",
+        "v": "Focus Seats · High Priority Seats (Cat A/B/C — enhanced focus) · Opposition Seats (narrative attack only)"
+      },
+      {
+        "k": "Content Adaptation",
+        "v": "Design, language and aesthetics adapted to AC context (e.g. Malayalam statewide; Kannada in Kasaragod AC)"
+      },
+      {
+        "k": "Budget Backbone",
+        "v": "Meta Ads typically >50% of overall SMCC budget"
+      },
+      {
+        "k": "Setup Timeline",
+        "v": "Ideal: ~6 months before campaign · Compressed (vendorised) model: <2 months before voting"
+      }
+    ],
+    "structure": [
+      {
+        "role": "SMCC Project Director (PD)",
+        "detail": "Leads the SMCC budgeting in consultation with National Comms Head, State Lead and State Comms Head. Final approvals on vendor onboarding, Disclaimers and asset creation."
+      },
+      {
+        "role": "SMCC Manager",
+        "detail": "Owns the state's SMCC operations end-to-end. Defines ZC ad-budget approval limits. Sits with PI/3P/Growth/Admin teams to set up cross-team processes. Must have thorough grasp of state political scenario (PI Primer + State Achievement/Chargesheet docs)."
+      },
+      {
+        "role": "Zonal Coordinator (ZC)",
+        "detail": "Single point of contact for all zone-level activities — narratives, approvals, deliverables. Conducts WA calls with SMAs to finalise zone narratives. Owns final content approval. Never vendorised — takes key political and strategic decisions."
+      },
+      {
+        "role": "CW Lead (Content Writers Lead)",
+        "detail": "Single point of contact for the content writing vertical. Routes ZC-assigned tasks to the right Content Writer."
+      },
+      {
+        "role": "Production Head",
+        "detail": "Single point of contact for the production vertical. Routes ZC-approved tasks to Graphic Designers and Video Editors."
+      },
+      {
+        "role": "SME Lead (Social Media Executives Lead)",
+        "detail": "Single point of contact for publishing and updates. Publishes approved content across FB, IG and WhatsApp. Updates the Ads Sheet with respective post links."
+      },
+      {
+        "role": "Content Writer (CW)",
+        "detail": "Drafts copy/content and posts on Slack for ZC review. One per cluster of seats as per team-sizing."
+      },
+      {
+        "role": "Graphic Designer (GD)",
+        "detail": "Creates static creatives and graphics; uploads final output on Slack."
+      },
+      {
+        "role": "Video Editor (VE)",
+        "detail": "Creates and edits videos; uploads final output on Slack."
+      },
+      {
+        "role": "Social Media Associate (SMA)",
+        "detail": "On-ground narrative gatherer at AC level. Communicates with ZC over WhatsApp only. In vendorised model, SMAs are replaced by an on-ground SMCC-OCC team (1 reporter + 1 cameraman)."
+      }
+    ],
+    "teamCalc": {
+      "formula": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:6px 0 4px\"><div style=\"background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;padding:16px\"><div style=\"display:inline-block;background:#16a34a;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.6px;margin-bottom:8px\">RECOMMENDED</div><div style=\"font-size:16px;font-weight:700;color:#0f172a\">Hiring Team from Scratch</div><div style=\"display:inline-block;background:#fff;border:1px solid #86efac;color:#15803d;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:8px\">Ideal Period: More than 2 Months time for election date</div><p style=\"margin:10px 0 0;font-size:13px;color:#334155;line-height:1.55\">This is the <b>most suitable and recommended model</b>, as it ensures better ideological alignment and thorough skill evaluation during hiring.</p><p style=\"margin:8px 0 0;font-size:13px;color:#334155;line-height:1.55\">Under this model, SMAs are directly hired and integrated into the team structure.</p></div><div style=\"background:#fff7ed;border:1px solid #fb923c;border-radius:12px;padding:16px\"><div style=\"display:inline-block;background:#ea580c;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.6px;margin-bottom:8px\">COMPRESSED TIMELINE</div><div style=\"font-size:16px;font-weight:700;color:#0f172a\">Vendorising</div><div style=\"display:inline-block;background:#fff;border:1px solid #fdba74;color:#c2410c;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:8px\">Ideal Period: Less than 2 Months time for election date</div><p style=\"margin:10px 0 0;font-size:13px;color:#334155;line-height:1.55\">This model should be implemented only when there is limited time available to set up the SMCC and the first model cannot be implemented.</p><p style=\"margin:8px 0 0;font-size:13px;color:#334155;line-height:1.55\">Under this model, the entire production team which includes CW, VE and GD is vendorised. SMAs are replaced with an on-ground SMCC OCC team comprising one reporter and one cameraman.</p><p style=\"margin:8px 0 0;font-size:12.5px;color:#475569;font-style:italic;line-height:1.55\">Note: Zonal Coordinators (ZCs) should not be vendorised, as they are responsible for taking key political and strategic decisions.</p></div></div><div style=\"font-size:12.5px;color:#475569;background:#f1f5f9;border-radius:8px;padding:10px 12px;margin-top:10px;line-height:1.55\"><b style=\"color:#0f172a\">Note:</b> There is no fixed rule that only one of these models must be adopted. A hybrid approach can also be implemented. For example, an SMCC-OCC team can be deployed in urban areas, while rural areas can operate with SMAs. News and narratives from urban regions are generally easier to capture and audiences often consume higher quality content production.</div><div style=\"font-size:11.5px;color:#64748b;margin-top:8px;font-style:italic;line-height:1.5\">Footnote (PDF): In Pondicherry, the SMCC was set up just two months before the election. This was the first instance where the entire production team was fully vendorised. After analysing the small geography of the UT, a strategic decision was made to deploy the SMCC-OCC model in the Pondicherry town region, while SMAs were deployed in the Karaikal region.</div><div style=\"font-size:12.5px;color:#0369a1;background:#e0f2fe;border-left:4px solid #0284c7;border-radius:6px;padding:8px 12px;margin-top:10px;line-height:1.5\">A worked example of the Tamil Nadu SMCC team structure (33 seats · 55 members) is available on the <b>Example</b> tab.</div>"
+    },
+    "scaleNote": "One Zonal Coordinator per zone. ZCs must NEVER be vendorised — they take key political and strategic decisions.",
+    "coreFunctions": [
+      {
+        "title": "What SMCC Does — 5 Strategic Objectives",
+        "items": [
+          "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-objectives.png\" alt=\"SMCC — Precision Political Communication Engine: 5 strategic objectives\" style=\"max-width:100%;width:880px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 1 — Precision Political Communication Engine</figcaption>"
+        ]
+      },
+      {
+        "title": "Two Major Components",
+        "items": [
+          "A. Hyperlocal Content Creation — produce AC-level narrative-driven curated content; narratives can be AC/district/zone/state/national but MUST be contextualised for the local electorate",
+          "Content curation adapts design aesthetics, language and elements (e.g. Malayalam statewide in Kerala; Kannada also produced for Kasaragod AC's Kannada-speaking electorate)",
+          "B. Building Dissemination Network — content creation has no value without hyperlocal dissemination; aim is to reach EVERY voter in the AC",
+          "Dissemination platforms: Facebook + Instagram via Targeted Meta Ads; WhatsApp via AC-level WA Groups"
+        ]
+      },
+      {
+        "title": "Budgeting",
+        "items": [
+          "First major setup step — led by the SMCC Project Director in consultation with National Comms Head, State Lead and State Comms Head",
+          "Before starting: analyse political and organisational structure of the State — admin zones, expected number of focus seats, SMCC scope and expected deliverables (do this with State Lead, PI PD and PI Manager)",
+          "Clearly define the SMCC scope FIRST — if State Comms is producing achievement/chargesheet videos, those deliverables should NOT be inside SMCC budget; this affects team structure and hiring",
+          "Meta Ads typically account for MORE THAN 50% of overall SMCC budget — they are the backbone",
+          "State context drives both team structure and ad budget — Maharashtra >> Puducherry; hiring strong candidates costs higher in TN vs Chhattisgarh",
+          "Timeline matters — ~6 months before campaign (full setup) vs ~2 months before voting (compressed/vendorised setup)"
+        ]
+      },
+      {
+        "title": "Team Structure — Two Models",
+        "items": [
+          "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0\"><div style=\"background:#ecfdf5;border:1px solid #86efac;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#15803d;font-weight:700;letter-spacing:.5px\">RECOMMENDED · >2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Hiring Team from Scratch</b><div style=\"font-size:13px;margin-top:6px\">Better ideological alignment, thorough skill evaluation. SMAs directly hired and integrated into team structure.</div></div><div style=\"background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:14px\"><div style=\"font-size:11px;color:#c2410c;font-weight:700;letter-spacing:.5px\">FALLBACK · <2 MONTHS RUNWAY</div><b style=\"font-size:15px\">Vendorising</b><div style=\"font-size:13px;margin-top:6px\">Entire production team (CW, VE, GD) vendorised. SMAs replaced by on-ground SMCC-OCC team (1 reporter + 1 cameraman). ZCs are NEVER vendorised — they take key political/strategic decisions.</div></div></div>",
+          "Hybrid is permitted — e.g. SMCC-OCC for urban areas (easier news capture, higher quality expectations), SMAs for rural areas",
+          "Tamil Nadu (33 seats) team example: 23 SMAs · 10 VEs · 5 GDs · 9 CWs · 3 ZCs · 5 SM Execs & Others = 55 members",
+          "Pondicherry was the first fully-vendorised production team (2-month runway); SMCC-OCC in Pondicherry town, SMAs in Karaikal — strategic call based on UT's small geography"
+        ]
+      },
+      {
+        "title": "Seat Categories",
+        "items": [
+          "Focus Seat — ACs where SMCC actively runs AC-level pages and digital campaigns",
+          "High Priority Seat — subset of Focus Seats strategically important by winnability, political significance or key leader/candidate presence (Cat A, B, C); enhanced focus and resources",
+          "Opposition Seat — constituencies where the party may not be contesting directly, but SMCC runs narrative-building and attack content against opposition candidates",
+          "PI Team provides the seat classification list; classification may change during the campaign — structure with flexibility and factor changes into budget and resource planning"
+        ]
+      },
+      {
+        "title": "Hiring Process",
+        "items": [
+          "Refer to the Roles & Responsibilities document for required skill sets per role",
+          "Coordinate with HR Team for onboarding format and a single email-thread standard (avoids influx of emails)",
+          "For vendor onboarding: consult SMCC PD and State Lead first; onboarding mail must include the quotation (members, roles, financials), duration and end-date of engagement",
+          "After approval, work with the legal team to draft the vendor contract",
+          "TDS clarity is critical: 10% TDS will be deducted on payments even when the agreement states 'excluding GST and other taxes' — TDS is advance tax, NOT additional; vendor reclaims it via ITR",
+          "Worked example: ₹1,50,000/month excl. GST → ₹1,35,000 credited to vendor after 10% TDS"
+        ]
+      },
+      {
+        "title": "Operational Workflow",
+        "items": [
+          "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-workflow.png\" alt=\"SMCC Operational Workflow — 14 steps with key roles legend\" style=\"max-width:100%;width:560px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 2 — SMCC Operational Workflow</figcaption>",
+          "ZC must coordinate closely with the production team during production to minimise revisions at the final review stage"
+        ]
+      },
+      {
+        "title": "Infrastructure — Shared Drive (Google Drive)",
+        "items": [
+          "A Shared Google Drive is the central SMCC repository — set up BEFORE any team member is onboarded",
+          "Request via the va-data-manager Slack channel, tagging the VA Data Manager and all relevant stakeholders",
+          "Shared Drive Manager access ONLY to: National Comms Head, State Lead, SMCC PD, SMCC Manager",
+          "Create deliverable-specific folders and share with the specific team members working on them",
+          "Vendors get access ONLY to the content production folder — never narratives or confidential files. SMAs get NO document access.",
+          "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE REQUEST MESSAGE</div><div style=\"text-align:center\"><img src=\"assets/smcc-drive-request.jpg\" alt=\"Sample Slack message requesting creation of a Shared Google Drive for SMCC\" style=\"max-width:100%;width:580px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 3 — Request for Google Drive (sample message in va-data-manager channel)</figcaption></div>"
+        ]
+      },
+      {
+        "title": "Infrastructure — Slack Channels",
+        "items": [
+          "Slack is used for ALL professional communication — ensures transparency and accountability",
+          "Raise channel-creation requests on va-data-manager; add National Comms Head, State Lead, SMCC PD, SMCC Manager and ZCs to ALL channels",
+          "<b>mh-smcc-zc</b> — ZCs only · all confidential deliverables and important communication",
+          "<b>mh-smcc-content</b> — ZCs, CWs, VEs, GDs, SMEs · all content production operations",
+          "<b>mh-smcc-pi-coordination</b> — PI PD, PI Managers, PI ZCs · PI raises content/ads requests; ZCs seek PI approval on narratives",
+          "<b>mh-smcc-3p</b> — 3P PD, 3P Managers, 3P ZCs · 3P content requests and coordination",
+          "<b>mh-smcc-growth</b> — Growth Team PoCs, SMEs · ALL ads-related conversations happen here",
+          "<b>mh-smcc-cms</b> — 3P PD, 3P Managers, 3P ZCs, CMS PoCs · all CMS requests",
+          "<div style=\"margin:10px 0 4px\"><div style=\"font-size:11px;color:#64748b;font-weight:700;letter-spacing:.5px;margin-bottom:6px\">REFERENCE · SAMPLE CHANNEL-CREATION REQUEST</div><div style=\"text-align:center\"><img src=\"assets/smcc-slack-request.jpg\" alt=\"Sample Slack messages requesting creation of TN-SMCC and TN-SMCC-PI-Coordination private channels\" style=\"max-width:100%;width:520px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.08)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin-top:6px\">Source: SMCC SOP, Image 4 — Request for Slack Workspace (sample channel-creation messages)</figcaption></div>"
+        ]
+      },
+      {
+        "title": "Infrastructure — WhatsApp Groups",
+        "items": [
+          "WhatsApp is rapid-response and narrative-identification only — NOT official accountability proof (Slack is)",
+          "Exception: ZC ↔ SMA communication runs ONLY on WhatsApp",
+          "<b>Narrative Group</b> — all team members; share news, narratives and content-ready issues",
+          "<b>Zone-wise Groups</b> — each zone's ZC plus its SMAs; SMAs share narratives and content needing ZC approval",
+          "<b>Leads Group</b> — ZCs + CW Lead + SME Lead + Production Head; team-wide announcements and content discussions",
+          "SMCC PD and SMCC Manager must be added to all the above WA groups"
+        ]
+      },
+      {
+        "title": "Infrastructure — Asset Creation (Meta Pages + WA Groups)",
+        "items": [
+          "Obtain Focus Seats list from PI Team (post State Lead approval) — Meta Assets and WA Groups are created for these seats",
+          "A Disclaimer is mandatory authorisation to run political ads on Meta — pages cannot publish political ads without one",
+          "SMCC Manager coordinates with Growth Team on Disclaimer requirements; formal mail goes out AFTER State Lead and PD approval",
+          "Maintain ALL asset details (names, logos, cover pics, bios) in a single sheet — used for rapid re-creation if assets get struck down",
+          "Asset naming must be neutral and AC-level community-style — AVOID 'BJP4Solapur' or 'Rightwing_Solapur'; both name and branding should be AC-specific and non-political",
+          "Meta Assets linked to personal accounts (Growth Team also creates these); all under a SINGLE Meta Business Manager (enables Meta API integration with Sprout Social etc.)",
+          "WA Groups created using a WA Business account (NOT personal) — enables tracking and WA Joining Ads"
+        ]
+      },
+      {
+        "title": "Cross-Team Co-ordination — PI Team",
+        "items": [
+          "Obtain 5 major AC/district/zone/state-level narratives (positive + negative) for each Focus Seat",
+          "Get leader-specific Chargesheet and Achievement documents → drives KYC/KYoC and achievement/chargesheet content",
+          "Ask for the DPU on a daily basis",
+          "Establish PI review/approval for Chargesheet, Achievement, KYC and KYoC content — script AND final output reviewed",
+          "Reach out to PI for hiring resources and SMAs via their FA contacts",
+          "Obtain AC pin codes for targeted ads"
+        ]
+      },
+      {
+        "title": "Cross-Team Co-ordination — 3P Campaigns",
+        "items": [
+          "Hire resources/SMAs through 3P FA contacts",
+          "Obtain 3P narrative documents and DPUs regularly; secure PI approval on those narratives before producing content",
+          "3P may raise content creation requests — check bandwidth and fulfil accordingly",
+          "Set up the CMS process EARLY — this is the most important coordination with the 3P Campaigns team"
+        ]
+      },
+      {
+        "title": "Cross-Team Co-ordination — Growth Team",
+        "items": [
+          "Share a (preferably inflated) rough estimate of Meta Pages, WA Groups and Disclaimers needed — ensures Growth procures SIMs from Admin in advance",
+          "Ask for SIM cards for creating WA Groups and ensure all SIMs are recharged at regular intervals",
+          "SMCC Manager + ZCs MUST sit with Growth to learn ad targeting (gender, interests, age, location, language, behaviour)",
+          "Obtain the Ads Sheet to be filled daily with post links",
+          "Obtain the weekly Ads report to analyse performance and strategise"
+        ]
+      },
+      {
+        "title": "Cross-Team Co-ordination — Admin & IT Team",
+        "items": [
+          "Obtain required number of SIM cards; ensure activation and timely recharges",
+          "Arrange laptops/machines for SMCC operations and dissemination",
+          "Arrange mobile phones for page posting, WA dissemination and coordination",
+          "Internet via dongles, Wi-Fi and data packs — must be uninterrupted",
+          "Create and manage official email IDs, passwords and access credentials",
+          "Tech support for setup, login, software installation and device troubleshooting",
+          "Inventory tracking of all issued devices, SIMs and operational assets; timely replacement/repair of faulty devices"
+        ]
+      },
+      {
+        "title": "WhatsApp Growth Strategy — 4 Dissemination Types",
+        "items": [
+          "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/smcc-wa-dissemination.png\" alt=\"WhatsApp Dissemination — 4 group types (In-House, Infiltrated, Cohort-based, Party's WA Groups)\" style=\"max-width:100%;width:760px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: SMCC SOP, Image 5 — WhatsApp Dissemination</figcaption>",
+          "Push mass, highly emotional, filmy, CapCut-style edited videos — easily forwarded and uploaded to stories; prioritise shareability",
+          "DO NOT spam — Manager must give clear mandates; curate strategy around peak active hours (dinner / post-working hours)",
+          "Push at regular pre-decided intervals; address opposition counter-arguments inside the groups; maintain activity to build ideological perception"
+        ]
+      },
+      {
+        "title": "WA Joining Ads — Case Studies",
+        "items": [
+          "Always A/B test creatives BEFORE large budget allocations",
+          "<b>Case Study 1 (Maharashtra LBY):</b> women-focused groups using Ladki Bahin Yojana benefit-led creatives (benefit amount prominently highlighted). WhatsApp Joining Ads targeting women 18+ → CPA per WA member dropped from ₹8 → ₹1.4",
+          "<b>Case Study 2 (TN):</b> hooks like 'To bring revolution in this AC, join…', 'To get news updates in this AC, join…', 'To see Modiji as our PM again, join…' — mix of creatives onboards believers, persuadables AND resisters",
+          "Do NOT build believer-only groups — healthy mix of believers, persuadables and resisters is the objective; we're targeting the entire electorate"
+        ]
+      },
+      {
+        "title": "Special Content & Experimentation — Case Studies",
+        "items": [
+          "Documentary on Pandav Vada Case",
+          "Blank Constitution Issue",
+          "Kerala KYC and KYoC Videos",
+          "Impact of Chargesheet Video",
+          "TN BJP Campaign Song (full Production → Dissemination owned by SMCC)",
+          "TN SMCC Phase-Wise Plan"
+        ]
+      }
+    ],
+    "objectivesAds": [
+      [
+        "Page Like Ads",
+        "Run ads to obtain page likes on FB. Avoid running ads for gaining followers on IG, as the conversion ratio is very low. Tip: Page Like ad creatives generally have lower CPMs when they feature Modiji or any popular personality. Create three different creatives with varying themes, run Page Like ads, conduct A/B testing, and then finalise the best-performing creative.",
+        "Speak with the State Lead on whether the SMCC pages will be shown to the clients. If yes, ensure that each page has at least 5K followers. Ideally, you can acquire 1 follower for every ₹1 spent."
+      ],
+      [
+        "Post Ads",
+        "To get more views on the content. This is actual Amplification of the Content. Tip: Highly engaging content with a strong hook is key. Ads should primarily be either Awareness or Engagement ads. Prefer Awareness ads for positive/pro content and Engagement ads for negative content. The keyword here is 'prefer' — have regular discussions with the Growth Team to understand what is working and what is not.",
+        "Allocate the budget for post ads based on the importance of the narrative and the electoral impact of the content in that region. Rural areas generally require higher budgets due to higher CPMs, whereas urban and city areas typically require lower budgets."
+      ],
+      [
+        "Ghost Ads",
+        "In this type of Ad, the content will not be visible on the main page timeline, but the Ads will still be served to the target audience. Tips: Use these Ads for content with a short lifespan and for narratives that are aggressive or slightly spiritually true.",
+        "Allocate budget based on importance of the narrative"
+      ]
+    ],
+    "budgetEsc": [
+      [
+        "Meta Ads (Backbone)",
+        "Targeted Meta Ads — the strategic amplification layer that makes hyperlocal content matter",
+        "More than 50% of overall SMCC budget"
+      ],
+      [
+        "Production Team",
+        "Content Writers, Video Editors, Graphic Designers (or vendor team if vendorised)",
+        "Sized per state political/admin structure"
+      ],
+      [
+        "SMA / SMCC-OCC Layer",
+        "Social Media Associates OR reporter+cameraman team if vendorised",
+        "Per AC / per zone"
+      ],
+      [
+        "Infrastructure",
+        "Devices, SIMs, WA Business accounts, dongles, software (via Admin & IT)",
+        "Sized to team count"
+      ],
+      [
+        "State Cost Sensitivity",
+        "Maharashtra >> Puducherry; strong candidate hiring costs higher in TN vs Chhattisgarh",
+        "Planned with State Lead, PI PD/Manager"
+      ],
+      [
+        "Setup Timeline",
+        "6 months before campaign (full setup) vs 2 months before voting (compressed/vendorised)",
+        "Directly impacts team model and total spend"
+      ]
+    ],
+    "kpis": [
+      [
+        "Page Like Ads — Cost per Follower",
+        "Target ~₹1 per follower; each page should reach minimum 5K followers (if shown to clients)"
+      ],
+      [
+        "Page Like Creatives",
+        "Test 3 creatives with varying themes; finalise after A/B testing — featuring Modiji/popular leaders typically yields lower CPMs"
+      ],
+      [
+        "Post Ads — Type Preference",
+        "Prefer Awareness ads for positive/pro content; Engagement ads for negative content (always re-validate with Growth Team)"
+      ],
+      [
+        "Post Ads — Geography Sensitivity",
+        "Rural → higher CPMs → higher budgets; Urban → lower CPMs → lower budgets"
+      ],
+      [
+        "Ads Mode",
+        "Most (not all) ads should run in accelerated mode to maximise spend efficiency and impact"
+      ],
+      [
+        "WA Joining Ads — CPA",
+        "Maharashtra LBY (women-focused) case: CPA per WA member dropped from ₹8 → ₹1.4 with benefit-led creatives"
+      ],
+      [
+        "WA Group Composition",
+        "Mix of believers, persuadables AND resisters — do NOT target believers only"
+      ],
+      [
+        "Budget Gate (per post)",
+        "ZC can allocate up to the Manager-defined limit (e.g. ₹2000); above that, SMCC Manager approval required"
+      ]
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "State-specific campaign planning, budgeting, hiring, dissemination network setup, page creation, WhatsApp group setup, narrative familiarization, hyperlocal content planning, coordination with PI and Growth teams"
+      },
+      {
+        "ph": 2,
+        "focus": "Pre-candidate announcement narrative campaigns including chargesheet videos, achievement videos, cover stories and constituency-level narrative dissemination without direct candidate focus"
+      },
+      {
+        "ph": 3,
+        "focus": "Post-candidate announcement campaigns including KYC/KYoC content, candidate-specific videos, fan pages, comparison videos, aggressive hyperlocal dissemination and Meta ad amplification, Candidate Management System (CMS) deliverables",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Intensive targeted dissemination through WhatsApp groups, Meta Ads, constituency-level narrative pushes and rapid-response content deployment"
+      },
+      {
+        "ph": 5,
+        "focus": "Campaign closure, reporting, dissemination wrap-up and operational transition"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "Hyperlocal voter targeting, candidate-focused communication, constituency-level dissemination and high-volume narrative amplification"
+  },
+  {
+    "id": "surrogate",
+    "name": "Surrogate Pages Acquisition and Management",
+    "tagline": "Acquires Instagram pages aligned with our ideology and narratives and places them under vendor management.",
+    "hideTabs": [
+      "hiring",
+      "ops",
+      "example",
+      "downloads"
+    ],
+    "purpose": "This program focuses on acquiring Instagram pages aligned with our ideology and narratives and placing them under vendor management. While VA retains full ownership, the original admins continue to operate the pages and publish content aligned with our narratives.",
+    "skills": {
+      "must": [
+        "Deep understanding of the Instagram ecosystem and meme culture.",
+        "Strong political narrative understanding.",
+        "Negotiation and vendor-management capability.",
+        "Relationship management with page admins.",
+        "Fast communication and coordination skills.",
+        "Internet trend awareness and content instinct.",
+        "Crisis management and escalation judgment.",
+        "Ability to identify high-potential pages early."
+      ]
+    },
+    "structure": [
+      {
+        "role": "1 Manager",
+        "detail": "Responsible for the acquisition strategy, vendor management, narrative briefing, expansion targets, budgeting."
+      },
+      {
+        "role": "2 Lead",
+        "detail": "Responsible for the daily coordination, performance tracking, escalation handling and etc. work related to the page admin. Ideally one lead typically handles 20-25 surrogate pages."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Operational Approach",
+        "items": [
+          "Identify and approach Instagram pages for acquisition based on their ideological alignment, content quality, and performance.",
+          "Ownership cost – a fixed one-time payment to acquire the page (IP).",
+          "Monthly operational cost – a recurring payment to vendors/page admins to run and manage the page.",
+          "After onboarding, we share daily research documents on selected narratives, based on which they create content and post on their pages. We also provide strategic inputs to improve page performance.",
+          "While we regularly reach out to onboard more ideologically aligned pages, the conversion rate remains low, as many page admins run their pages out of passion alongside other jobs and cannot commit full-time to managing them.",
+          "Most creators are accustomed to posting 1-2 pieces of content daily and are finding it difficult to manage the higher narrative and production volume."
+        ]
+      },
+      {
+        "title": "Working Objective",
+        "items": [
+          "Operates a distributed network of semi-independent ideological pages to push campaign narratives in native internet language.",
+          "Creates the perception that narratives are emerging organically through meme culture, youth conversations, and regional discourse.",
+          "Reduces dependence on official party handles by amplifying messaging through multiple independent-looking voices.",
+          "Makes campaign communication appear more authentic, relatable, and culturally embedded among audiences."
+        ]
+      },
+      {
+        "title": "Key dependency",
+        "items": [
+          "Strong coordination with QRT and Research Team for daily narrative alignment.",
+          "Fast turnaround from research to execution.",
+          "Reliable page admins for pushing the narrative timely.",
+          "Political sound team lead, so the pages cover the narrative in a cooling period also."
+        ]
+      },
+      {
+        "title": "Logic behind team sizing",
+        "items": [
+          "Surrogate operations are relationship-heavy rather than purely operational.",
+          "Daily coordination is manual.",
+          "Posting follow-ups require constant monitoring.",
+          "Many admins are part-time creators.",
+          "Narrative compliance needs regular supervision.",
+          "Crisis handling requires fast response."
+        ]
+      },
+      {
+        "title": "Daily Workflow / SOP",
+        "items": [
+          "Morning — Receive daily narrative line from Manager or QRT team.",
+          "Morning — Share research documents and key talking points.",
+          "Morning — Identify priority narratives and posting windows.",
+          "Morning — Coordinate with page admins regarding deliverables.",
+          "Evening — Peak posting window execution.",
+          "Evening — Monitoring engagement and traction.",
+          "Evening — Amplification coordination.",
+          "Evening — Crisis handling if any content goes off-script.",
+          "Evening — Performance tracking and reporting."
+        ]
+      },
+      {
+        "title": "Tools & Platforms Used",
+        "items": [
+          "Canva / Photoshop for creatives.",
+          "Adobe Premiere Pro for video editing."
+        ]
+      }
+    ],
+    "pricing": {
+      "ownership": [
+        [
+          "India 1",
+          "₹5 per follower"
+        ],
+        [
+          "India 2",
+          "₹3 per follower"
+        ],
+        [
+          "India 3",
+          "₹2 per follower"
+        ]
+      ],
+      "monthly": [
+        [
+          "1K to 10K followers",
+          "₹35,000",
+          "₹25,000",
+          "₹15,000"
+        ],
+        [
+          "10K – 50K followers",
+          "₹75,000",
+          "₹50,000",
+          "₹30,000"
+        ]
+      ]
+    },
+    "icon": "🌐",
+    "category": "creative",
+    "function": "Surrogate Network",
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "State-specific campaign planning starting, budgeting, hiring, creation and setup of third-party pages; page positioning and narrative definition begins 6–7 months before elections; initial posting with 1–2 narratives"
+      },
+      {
+        "ph": 2,
+        "focus": "Audience amplification phase; follower growth strategies implemented; state-specific content strategy execution; narratives expanded to 3–4 key themes 3–4 months before elections"
+      },
+      {
+        "ph": 3,
+        "focus": "Aggressive campaign execution after MCC implementation; high-frequency narrative dissemination, attack campaigns, amplification of achievements and opposition targeting",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Intensive voter influence and engagement through third-party pages and rapid narrative push"
+      },
+      {
+        "ph": 5,
+        "focus": "Gradual reduction in campaign intensity and content activity post elections"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "High-volume aggressive narrative amplification and strategic social media influence operations"
+  },
+  {
+    "id": "third-party",
+    "name": "Third Party Team",
+    "icon": "🎭",
+    "category": "creative",
+    "hideTabs": [
+      "budget",
+      "example",
+      "downloads"
+    ],
+    "hideOverviewExtras": true,
+    "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
+    "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
+    "structure": [
+      {
+        "role": "Project Manager",
+        "detail": "Oversees the overall campaign workflow, coordination, narrative decision, approvals, and strategy."
+      },
+      {
+        "role": "Creator",
+        "detail": "Manages daily content creation, content research, daily publishing, coordination and other daily works."
+      },
+      {
+        "role": "Intern",
+        "detail": "Helping in daily backend work — searching old bytes and researching data/statements; also trained to manage pages when creators are on leave/exit."
+      },
+      {
+        "role": "Creative Team",
+        "detail": "Includes Graphic Designers, Video Editors (VE), and Animator responsible for daily creatives, reels, videos, motion graphics, and other visual creative content."
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Working Objective",
+        "items": [
+          "Build and operate a decentralized network of internally managed third party properties designed to amplify campaign messaging through audience-native communication styles",
+          "Expand narrative reach beyond official political handles by distributing content through multiple independent-looking digital communities",
+          "Increase relatability and engagement through meme culture, trend-driven communication, regional references, and internet-first storytelling formats",
+          "Strengthen narrative visibility during high-attention political moments, major news cycles, and fast-moving online conversations",
+          "Create scalable communication ecosystems capable of shaping public discourse organically across diverse audience segments",
+          "Enable faster narrative dissemination, fast messaging, and high-frequency content participation during election periods"
+        ]
+      },
+      {
+        "title": "Operational Approach",
+        "items": [
+          "Plan and manage the broader digital narrative ecosystem in alignment with campaign communication objectives",
+          "Execute daily, weekly, and monthly content planning while ensuring quality control and consistency across all ecosystem properties",
+          "Monitor political developments, public discourse, rallies, protests, and media conversations for rapid content adaptation",
+          "Develop growth and engagement strategies to improve reach, audience penetration, and content performance across platforms",
+          "Coordinate with state-level social media teams, regional stakeholders, and campaign communication units for narrative alignment",
+          "Ensure surrogate pages maintain distinct audience identities, content styles, and platform-native positioning"
+        ]
+      },
+      {
+        "title": "Daily Workflow",
+        "items": [
+          "Receive daily narrative direction from Manager/QRT Team",
+          "Review research documents and key talking points",
+          "Identify priority narratives and create content around them",
+          "Assign content buckets to respective editor or graphic designer",
+          "Internally review the final output and post it on the page timely"
+        ]
+      },
+      {
+        "title": "Video Editing — Inputs/Outputs",
+        "items": [
+          "Inputs from Page Manager — opposition monitoring, viral trends, research insights",
+          "Core work — fast editing, meme adaptation, motion graphics, formatting/branding, subtitle integration, platform optimization, quality checks, narrative framing, attack videos, emotional edits, viral political content",
+          "Outputs delivered to — surrogate pages, meme networks, WhatsApp groups, influencer distribution channels"
+        ]
+      }
+    ],
+    "skills": {
+      "must": [
+        "Deep understanding of Instagram ecosystem and meme culture",
+        "Strong political narrative understanding",
+        "Trend spotting and rapid adaptation capability",
+        "High-speed content execution skills",
+        "Reel editing and meme creation capability",
+        "Audience psychology understanding",
+        "Internet culture awareness",
+        "Crisis management judgment",
+        "Strong coordination and communication ability",
+        "Ability to maintain narrative consistency while keeping content organic-looking"
+      ]
+    },
+    "kpis": [
+      "Daily Output: 5–7 videos per page",
+      "Weekly Output: 30–40 videos per page",
+      "Success metric: Virality, Shares, Narrative pickup, Organic engagement"
+    ],
+    "budget": [
+      [
+        "Project Manager",
+        "₹1L – ₹1.3L"
+      ],
+      [
+        "Content Creator",
+        "₹50K – ₹70K"
+      ],
+      [
+        "Intern",
+        "₹20K – ₹30K"
+      ],
+      [
+        "Graphic Designer",
+        "₹40K – ₹60K"
+      ],
+      [
+        "Video Editor",
+        "₹45K – ₹65K"
+      ]
+    ],
+    "tools": [
+      "Adobe Premiere Pro",
+      "After Effects",
+      "Photoshop",
+      "Ai Tools",
+      "FCP X",
+      "Davinci Resolve",
+      "Capcut"
+    ],
+    "platforms": [
+      "Instagram",
+      "Facebook",
+      "YouTube",
+      "X"
+    ],
+    "failurePoints": [
+      "Slow approvals",
+      "Heavy revision cycles",
+      "Overloaded editors",
+      "Narrative inconsistency",
+      "Fact-check risks",
+      "Slow trend adaptation"
+    ],
+    "escalation": [
+      [
+        "Editing delay",
+        "Team Lead",
+        "Immediate"
+      ],
+      [
+        "Sensitive content risk",
+        "Comms Lead",
+        "Immediate"
+      ],
+      [
+        "Missing footage",
+        "Content Poc",
+        "Immediate"
+      ],
+      [
+        "Narrative confusion",
+        "Content Poc",
+        "Immediate"
+      ]
+    ],
+    "function": "Surrogate Network",
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "State-specific campaign planning starting, budgeting, hiring, creation and setup of third-party pages; page positioning and narrative definition begins 6–7 months before elections; initial posting with 1–2 narratives"
+      },
+      {
+        "ph": 2,
+        "focus": "Audience amplification phase; follower growth strategies implemented; state-specific content strategy execution; narratives expanded to 3–4 key themes 3–4 months before elections"
+      },
+      {
+        "ph": 3,
+        "focus": "Aggressive campaign execution after MCC implementation; high-frequency narrative dissemination, attack campaigns, amplification of achievements and opposition targeting",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Intensive voter influence and engagement through third-party pages and rapid narrative push"
+      },
+      {
+        "ph": 5,
+        "focus": "Gradual reduction in campaign intensity and content activity post elections"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "High-volume aggressive narrative amplification and strategic social media influence operations"
+  },
+  {
+    "id": "tvc",
+    "name": "TVC & Documentaries",
+    "icon": "🎬",
+    "category": "creative",
+    "function": "Films & Documentaries",
+    "hideTabs": [
+      "skills",
+      "phases",
+      "hiring",
+      "budget",
+      "ops",
+      "example"
+    ],
+    "tagline": "Operational structure and workflow of the TVC & Documentaries team — from script to final delivery.",
+    "purpose": "The TVC & Documentaries team works closely with the Comms & PI team to understand the key narratives, political context, and communication priorities of the state. Based on these inputs, the team handles the complete process of making the ad films and documentaries — including conceptualisation, production, and post-production.",
+    "structure": [
+      {
+        "role": "Team Lead / Senior Producer — Abhiraj",
+        "detail": "Coordination with state leads and senior management, along with overseeing project planning and execution."
+      },
+      {
+        "role": "Associate Producer / Creative Producer (TVC) — Ritesh",
+        "detail": "Coordinates with state teams on a daily basis for ad film requirements, scripting, production planning, and execution."
+      },
+      {
+        "role": "Associate Producer / Creative Producer (Documentaries) — Aditya",
+        "detail": "Handles daily coordination for documentary-related work and long-format content execution."
+      },
+      {
+        "role": "Executing Team",
+        "detail": "Directors, DOPs, Assistant Directors, Editors, DI Artists, Music Composers, Sound Designers, and a Post-Production Supervisor."
+      },
+      {
+        "role": "Team Strength",
+        "detail": "10–12 in-house members per state, depending on campaign requirements and workload."
+      }
+    ],
+    "scaleNote": "1 dedicated POC per campaign state — single POC ensures quicker decisions, consistent communication, and smoother day-to-day coordination.",
+    "scope": [
+      {
+        "k": "Primary Function",
+        "v": "Conceptualisation, production and post-production of ad films and documentaries"
+      },
+      {
+        "k": "Primary Coordinator",
+        "v": "State Communication Team — routes all briefings, narratives, deadlines and approvals"
+      },
+      {
+        "k": "Narrative Source",
+        "v": "State PI Team — state-level, AC-level, cohort-level, and issue-based narratives"
+      },
+      {
+        "k": "Compliance Layer",
+        "v": "Legal Team — EC compliance review at script level; final edit submitted for EC approval"
+      },
+      {
+        "k": "Ideal Campaign Runway",
+        "v": "4–5 months before polling (minimum 3 months)"
+      },
+      {
+        "k": "Final Phase Focus",
+        "v": "AC-level films — constituency-specific narratives, local issues, targeted communication"
+      }
+    ],
+    "deliverables": [
+      {
+        "n": "YouTube Out",
+        "d": "4K (16:9)"
+      },
+      {
+        "n": "Facebook Out",
+        "d": "HD (16:9)"
+      },
+      {
+        "n": "WhatsApp Out",
+        "d": "LQ (16:9)"
+      },
+      {
+        "n": "Instagram Out",
+        "d": "4:5"
+      },
+      {
+        "n": "Clean MOV",
+        "d": "4K (without any text & graphics)"
+      },
+      {
+        "n": "Radio Jingle",
+        "d": "WAV (Audio mix)"
+      },
+      {
+        "n": "Subtitle File",
+        "d": "SRT (English)"
+      },
+      {
+        "n": "Theatre Outs",
+        "d": "If required"
+      },
+      {
+        "n": "TV Outs",
+        "d": "If required"
+      },
+      {
+        "n": "Dubbing",
+        "d": "Multiple languages — if required"
+      }
+    ],
+    "coreFunctions": [
+      {
+        "title": "Coordination with Other Teams",
+        "items": [
+          "<b>State Communication Team</b> — primary coordinating team. Routes ALL campaign narratives, communication priorities, political context and content requirements. Provides initial briefings, campaign objectives, references, deadlines and specific instructions before each project starts. Also gives approvals at every major checkpoint (concepts, scripts, edits, final outputs). MUST assign one dedicated Point of Contact (POC) for coordination.",
+          "<b>State PI Team</b> — primary source for state-level, AC-level, cohort-level and issue-based narratives. Provides the political insights that shape the creative direction of the content.",
+          "<b>Research Team</b> — supports on an as-needed basis. Sources additional data, statistics, background info and factual inputs required for specific narratives or campaign requirements.",
+          "<b>Legal Team</b> — reviews scripts for Election Commission (EC) compliance and other legal requirements. Involvement is primarily at script level (concepts, dialogues, claims, visuals, messaging). Any additional compliance steps or precautions must be followed during production and post-production. Once edit is final, it is submitted for EC approval — disclaimers/modifications from Legal or EC must be incorporated before final exports."
+        ]
+      },
+      {
+        "title": "Campaign Workflow For Each Project",
+        "items": [
+          "<div style=\"margin:8px 0 6px;text-align:center\"><img src=\"assets/tvc/workflow.jpg\" alt=\"TVC & Documentaries Campaign Workflow — 11 stages with Comms-approval checkpoints highlighted\" style=\"max-width:100%;width:700px;height:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(15,23,42,.06)\"></div><figcaption style=\"text-align:center;font-size:11.5px;color:#64748b;margin:4px 0 8px\">Source: TVC SOP §G — Campaign Workflow For Each Project · stages highlighted in green are Comms-approval checkpoints</figcaption>",
+          "Stages in order: Narrative Briefing from Comms Team → Ideation & Script Writing → <b>Script Approval (Comms Team)</b> → <b>Script Approval (Client)</b> → Project Budget Approval → Pre Production → Production → <b>Edit Approval (Comms Team)</b> → Final Edit Submission to EC → Post Production (Sound, Music, DI, Subtitles) → Final Delivery → Dubbing, TV, Theatre Outs (if required)"
+        ]
+      },
+      {
+        "title": "Pre-Campaign Preparation",
+        "items": [
+          "<b>Hiring</b> — early hiring and internal team planning based on expected campaign workload",
+          "<b>Early Touch Base with State Teams</b> — establish coordination to understand local political dynamics, key narratives and communication strategies",
+          "<b>Ground Work</b> — recce visits, identifying local crews, understanding locations, and building local production support systems for smoother execution"
+        ]
+      },
+      {
+        "title": "Logic of Process",
+        "items": [
+          "<b>Scalability</b> — streamlined workflow is critical for managing timelines, coordination, approvals and deliveries across multiple projects simultaneously during peak campaign",
+          "<b>20 Seconds</b> — most campaign ads designed in 20s format; works effectively as unskippable on digital platforms; better performance and retention vs longer skippable formats; easier to produce in bulk",
+          "<b>Longer Films</b> — generally perform better on social media; more effective for explaining complex narratives in detail; more creative flexibility for storytelling → better organic reach and virality",
+          "<b>Actor Retainers</b> — during peak campaign, actor availability and per-day costs become a major challenge. Working with lookalike actors on a retainer basis keeps them readily available, reduces repeated negotiation, coordination delays and high per-day talent costs",
+          "<b>Dedicated POCs</b> — one dedicated POC per campaign state ensures quicker decisions, consistent communication and smoother day-to-day coordination"
+        ]
+      },
+      {
+        "title": "Key Learnings — Start Early & Limited Narratives",
+        "items": [
+          "<b>Start Early</b> — campaigns should ideally be initiated <b>4–5 months before polling</b> (and nothing less than 3). Starting early aligns processes, streamlines approvals, builds smooth client coordination, lets us understand client expectations of films AND gives local teams time to understand state narratives in depth.",
+          "<b>Limited Narratives over Films</b> — a 20-second ad should focus on a SINGLE clear narrative. Multiple narratives in a 20s ad make script writing very difficult. Longer ads can accommodate 2–3 narratives only if they're relevant to one another.",
+          "<b>Narrative Beat Sheet</b> — narratives work best when shared as core ideas and directions instead of detailed scripts. Gives flexibility to develop scripts that work better from production and timeline perspectives while staying true to the intended message. State Comms + PI team should fill out the Narrative Beat Sheet (template linked under Resources)."
+        ]
+      },
+      {
+        "title": "Key Learnings — Internal Approval Process",
+        "items": [
+          "The approval process should be clearly defined at the START of the campaign and followed consistently by everyone",
+          "Proper alignment between script approvals, production and final delivery becomes critical during peak campaign phases",
+          "Every detail of a script — big or small — is accounted for and planned extensively. Changes made AFTER a script is locked and has moved into production create avoidable challenges. Even small changes can: (a) increase costs by affecting logistics, talent, locations and timelines; (b) disrupt production planning → execution delays and added pressure on delivery."
+        ]
+      },
+      {
+        "title": "Key Learnings — Expected Client Approval Obstacles & Workarounds",
+        "items": [
+          "When scripts/films remain stuck in review, planning, production and delivery timelines get affected. Solution: a clear client approval/review system with FIXED timelines at every stage.",
+          "<table class=\"std\" style=\"margin-top:6px\"><thead><tr><th>Stage of Campaign</th><th>Approval / Review TAT</th></tr></thead><tbody><tr><td>Initial Campaign Submissions <small style=\\\"color:#64748b\\\">(3 Months Before Polling)</small></td><td><b>Up to 14 Days</b></td></tr><tr><td>Mid Campaign Submissions <small style=\\\"color:#64748b\\\">(2 Months Before Polling)</small></td><td><b>Up to 3 Days</b></td></tr><tr><td>Peak Campaign Submissions <small style=\\\"color:#64748b\\\">(1 Month Before Polling)</small></td><td><b>1 Day</b></td></tr></tbody></table>",
+          "If approvals are delayed beyond these timelines → escalate to avoid workflow disruption",
+          "For 3P TVCs, OICs can be given approval authority so films do not always need client approval before production. Final films can still be shared with the client later — if they take them up, great; if not, they continue as planned on 3P."
+        ]
+      },
+      {
+        "title": "Key Learnings — CTAs & Endcard Protocols",
+        "items": [
+          "<b>Fixing CTAs Soon</b> — finalise CTAs during the scripting stage. In a 20s ad, the CTA usually gets only 2–3 seconds; adding/changing CTAs after production makes them difficult to fit. CTA also decides the ending mood/tone of the ad — early alignment avoids post-production rework.",
+          "<b>Mind-numbing Time Waste of Endcard Protocols</b> — even minor changes in logos, protocols or layouts require ALL final outputs to be exported again, delaying delivery during active campaigns. Finalise endcard requirements/protocols at an EARLY stage; wherever possible, avoid unnecessary protocol elements on end cards."
+        ]
+      },
+      {
+        "title": "Campaign Timeline — Phased Workload",
+        "items": [
+          "The campaign workload is executed in phases based on communication strategies and campaign timeline. This phased approach helps manage volume, maintain faster turnaround times, and streamline production planning.",
+          "<b>The Final Phase — Always AC-Level Films</b> — final phase is usually focused on AC-level films, where constituency-specific narratives, local issues and targeted communication become the primary focus."
+        ]
+      },
+      {
+        "title": "Phased Campaign Work — Week-by-Week",
+        "items": [
+          "<table class=\"std\"><thead><tr><th>Phase</th><th>Focus</th></tr></thead><tbody><tr><td><b>Preparation Phase</b><br><small style=\\\"color:#64748b\\\">28–24 Weeks Before</small></td><td>Understanding state narratives and communication priorities; establishing coordination with state teams; hiring based on campaign requirements; figuring out filming logistics, local crews and production support systems</td></tr><tr><td><b>20–16 Weeks Before Polling</b></td><td>Hiring and deployment of teams based on campaign requirements and workload planning</td></tr><tr><td><b>16–12 Weeks Before Polling</b></td><td>Production of the FIRST SET of state-level ads, along with initiation of special projects (magnum opus)</td></tr><tr><td><b>12–8 Weeks Before Polling</b></td><td>Second set of ads executed; special projects finalised; work on AC-level films begins</td></tr><tr><td><b>8–4 Weeks Before Polling</b></td><td>Execution of the final set of state ads and remaining special projects</td></tr><tr><td><b>4–1 Weeks Before Polling</b></td><td>Primary focus shifts to production and fast turnaround of AC-level films and ad-hoc state-level content requirements</td></tr><tr><td><b>1 Week Before Polling → 30 Days After Polling</b></td><td>Campaign closing activities and post-campaign requirements — campaign reports, key learnings, closing out budgets, data management etc.</td></tr></tbody></table>"
+        ]
+      }
+    ],
+    "videoExamples": [
+      {
+        "title": "20 Sec. Unskippable Ads",
+        "note": "20-second format ads designed for unskippable digital placements — high performance and retention.",
+        "items": [
+          {
+            "thumb": "assets/tvc/unskippable-1.jpg",
+            "url": "https://drive.google.com/file/d/1J2IjknImcbUPGJqDif_UKfVDd8eunVwm/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/unskippable-2.jpg",
+            "url": "https://drive.google.com/file/d/1fJSzQ2H7DDCRVwYQVWv_cmv1w4RFNlun/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/unskippable-3.jpg",
+            "url": "https://drive.google.com/file/d/1gxYlSh2FhjDb5qj-0B50NnR4iVMC_tPc/view?usp=drive_link"
+          }
+        ]
+      },
+      {
+        "title": "Longer Skippable Ads (Magnum Opus)",
+        "note": "Longer-format films — better suited for explaining complex narratives in detail; greater creative flexibility for storytelling.",
+        "items": [
+          {
+            "thumb": "assets/tvc/magnum-1.jpg",
+            "url": "https://drive.google.com/file/d/19U18DblVcEd3fdPYY_bMPzwGIBXF7rXh/view?usp=drivesdk"
+          },
+          {
+            "thumb": "assets/tvc/magnum-2.jpg",
+            "url": "https://drive.google.com/file/d/1l0W-Do7-5dwF3q8HcaEba7ntCug-8tEh/view?usp=drive_link",
+            "label": "Maha Vikas Aghadi — MVANIMAL"
+          },
+          {
+            "thumb": "assets/tvc/magnum-3.jpg",
+            "url": "https://drive.google.com/file/d/1vcOYuh_2eYb0Ef1AB-zcE85x8qW-fWXG/view?usp=drive_link"
+          }
+        ]
+      },
+      {
+        "title": "Music Videos",
+        "note": "Musical narrative-driven films.",
+        "items": [
+          {
+            "thumb": "assets/tvc/music-1.jpg",
+            "url": "https://drive.google.com/file/d/1a9V1t9u_1ahTmT_ptvoiDbgcm0ORsmI0/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/music-2.jpg",
+            "url": "https://drive.google.com/file/d/1UY5f10bGGI8XC0xcHWR0WT2ah1VQplnh/view?usp=drive_link"
+          }
+        ]
+      },
+      {
+        "title": "Telecom Ads — AC Specific Videos",
+        "note": "Constituency-specific films — featured in the final phase of every campaign.",
+        "items": [
+          {
+            "thumb": "assets/tvc/ac-1.jpg",
+            "url": "https://drive.google.com/file/d/1WN0AazcMLBCjF-a8GqGtIrpXC7vf7Jcm/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/ac-2.jpg",
+            "url": "https://drive.google.com/file/d/1yVH5DPe8IVx2VuR5-scrm0yKR3MJfgfz/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/ac-3.jpg",
+            "url": "https://drive.google.com/file/d/1iUvq2gA_wr8W3qpawSlvePOny47HSyxD/view?usp=drive_link"
+          }
+        ]
+      },
+      {
+        "title": "Telecom Ads — Narrative Based Videos",
+        "note": "Narrative-led short-format ads.",
+        "items": [
+          {
+            "thumb": "assets/tvc/narrative-1.jpg",
+            "url": "https://drive.google.com/file/d/1mOhbXS1cYCYZHwNI2AQ-zEZKMS_AU9Oh/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/narrative-2.jpg",
+            "url": "https://drive.google.com/file/d/1FExS852cI6nXd8E_4EtMQMCpFj-XVXlE/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/narrative-3.jpg",
+            "url": "https://drive.google.com/file/d/1uqUiazAZl7iG2WXO6ay1PefHx-Ji5g0M/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        "title": "Telecom Ads — Cohort Based Videos",
+        "note": "Cohort-targeted creative — speaks to specific demographics or community segments.",
+        "items": [
+          {
+            "thumb": "assets/tvc/cohort-1.jpg",
+            "url": "https://drive.google.com/file/d/1fcAzdm_TPJoll1fhdstfkYLuXt-flNme/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/cohort-2.jpg",
+            "url": "https://drive.google.com/file/d/1iQjYK2rt6v99wm2GaBDTz4Os6PbCUmMf/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/cohort-3.jpg",
+            "url": "https://drive.google.com/file/d/1gRP7NFGh9vQ1_qovYVs1pwk_1A3ZczSD/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        "title": "Manifesto Ads",
+        "note": "Films built around the party manifesto.",
+        "items": [
+          {
+            "thumb": "assets/tvc/manifesto-1.jpg",
+            "url": "https://drive.google.com/file/d/1d57zqbKFq8nXXanM1YBD3JEJDydjc85P/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/manifesto-2.jpg",
+            "url": "https://drive.google.com/file/d/17kWavxY2R83LG0z6ZrE3gBKsVNhoUSjg/view?usp=drive_link"
+          },
+          {
+            "thumb": "assets/tvc/manifesto-3.jpg",
+            "url": "https://drive.google.com/file/d/1I_2myGQYgDgoRysaHHAKZzvibS8jFoxm/view?usp=drive_link"
+          }
+        ]
+      },
+      {
+        "title": "Achievement Documentaries",
+        "note": "Long-format documentaries highlighting scheme implementation, infrastructure and other government achievements.",
+        "items": [
+          {
+            "thumb": "assets/tvc/achievement-1.jpg",
+            "url": "https://drive.google.com/file/d/1rSaNlmIkzXks03v7lnxTGq9Z07QkY1rF/view?usp=sharing"
+          },
+          {
+            "thumb": "assets/tvc/achievement-2.jpg",
+            "url": "https://drive.google.com/file/d/1tBMixMS1YktwWIUe9Bt5etIq6SNmPjyZ/view?usp=sharing"
+          },
+          {
+            "thumb": "assets/tvc/achievement-3.jpg",
+            "url": "https://drive.google.com/drive/folders/11ho3hKzkob3xjjglq4ru7RxNi3Coddbx",
+            "label": "Folder — multiple documentaries"
+          }
+        ]
+      }
+    ],
+    "downloads": [
+      {
+        "url": "https://docs.google.com/spreadsheets/d/1jOUchDTpiz-MKrOmnmdl-mbZilmo5rOI1eB6kaFDlcs/edit?gid=0#gid=0",
+        "label": "Narrative Beat Sheet — Template",
+        "note": "Structured template for State Comms & PI to share core ideas and directions (instead of detailed scripts)"
+      }
+    ],
+    "stats": [
+      {
+        "label": "In-house team / state",
+        "value": "10–12"
+      },
+      {
+        "label": "Ideal runway",
+        "value": "4–5 months"
+      },
+      {
+        "label": "Sample films catalogued",
+        "value": "23"
+      }
+    ],
+    "phases": [
+      {
+        "ph": 1,
+        "focus": "Understand state political narratives and Communication priorities, conduct hiring/interviews, figuring out the filming logistics, local crews, and production support systems."
+      },
+      {
+        "ph": 2,
+        "focus": "Finalise hiring and deploy teams in election states, start the production of the first set of state-level ads along with the initiation of special projects (magnum opus)."
+      },
+      {
+        "ph": 3,
+        "focus": "Execute second set of ad productions and Magnum Opus projects, ensure rapid delivery of campaign films and special projects, start submitting films to EC certification, start getting information filled up in narrative sheet for AC levle ads",
+        "intensity": "very-high"
+      },
+      {
+        "ph": 4,
+        "focus": "Execute final set of state level ads, handle adhoc party requirements, start the production of hyperlocal AC-level films during peak voter outreach operations"
+      },
+      {
+        "ph": 5,
+        "focus": "Deliver all the final films before polling, handle adhoc requests, documentation, reporting, data management, budget closure and archival of campaign assets"
+      }
+    ],
+    "criticalPhase": "Peak Campaign",
+    "whyCritical": "Requires high-volume production, rapid turnaround, hyperlocal campaign execution and continuous coordination with multiple teams under strict timelines"
+  },
+  {
+    "id": "partnership",
+    "name": "Partnership Program",
+    "icon": "🌟",
+    "category": "creative",
+    "function": "Creator Network",
+    "tagline": "Turns campaign messaging into public conversation through trusted creators.",
+    "purpose": "Helps turn campaign messaging into public conversation by using trusted creators instead of relying only on official party pages, spokespersons, or advertisements. People today trust creators, meme pages, regional influencers, satire accounts and community voices more than direct political communication.",
+    "philosophy": [
+      "One message shared by hundreds of trusted creators feels more real than one message coming from one official account.",
+      "Instead of depending only on party handles, ads, TV debates — push narratives through reels, memes, shorts, regional content, satire videos, community pages.",
+      "This creates stronger emotional connection and better audience trust."
+    ],
+    "structure": [
+      {
+        "role": "Head of Influencer Narrative Network",
+        "detail": "Overall creator strategy, narrative rollout planning, leadership coordination, crisis management, performance reporting."
+      },
+      {
+        "role": "Creator Relationship Executives",
+        "detail": "Managing creators daily, sharing briefs, following up on content, reviewing drafts, coordinating posting schedules, handling creator communication. Usually 1 executive manages around 25–40 creators."
+      }
+    ],
+    "scaleNote": "25–40 creators per executive",
+    "coreFunctions": [
+      {
+        "title": "Without a Creator Network",
+        "items": [
+          "Campaign messaging feels forced",
+          "Opposition narratives dominate social media",
+          "Youth audiences disconnect",
+          "Organic reach becomes weak",
+          "Cultural moments are missed",
+          "Response speed becomes slow"
+        ]
+      },
+      {
+        "title": "Creator Management",
+        "items": [
+          "Finds creators; evaluates creators; onboards creators",
+          "Builds long-term relationships",
+          "Handles payments and negotiations",
+          "Creators can include: political creators, meme pages, satire creators, lifestyle influencers, regional pages, youth creators, devotional pages, student creators"
+        ]
+      },
+      {
+        "title": "Narrative Execution",
+        "items": [
+          "Converts campaign messaging into creator-friendly content",
+          "Includes: creator briefs, talking points, reel ideas, captions, meme references, hashtags, infopacks",
+          "The content should feel natural and not scripted",
+          "Each creator presents the same narrative in their own style"
+        ]
+      },
+      {
+        "title": "Daily Operations",
+        "items": [
+          "Daily creator communication",
+          "Content approvals",
+          "Rollout planning",
+          "Posting schedules",
+          "Cross-promotion",
+          "Draft reviews",
+          "Crisis handling",
+          "Content correction if needed",
+          "The team works at internet speed and reacts quickly to breaking events"
+        ]
+      },
+      {
+        "title": "Performance Tracking",
+        "items": [
+          "Reach",
+          "Engagement",
+          "Watch time",
+          "Shares",
+          "Comment sentiment",
+          "Hashtag performance",
+          "Narrative spread",
+          "Focus is whether the narrative is actually influencing audience opinion — not only views"
+        ]
+      },
+      {
+        "title": "Inputs Received From",
+        "items": [
+          "Narrative Teams — daily political messaging, attack/defense priorities, rapid response narratives",
+          "Research Teams — audience insights, regional sentiment, geo-targeting data",
+          "Ground Teams — local issues, public mood, regional trends"
+        ]
+      },
+      {
+        "title": "Internal Workflow",
+        "items": [
+          "Receives campaign narrative",
+          "Converts it into creator content",
+          "Matches the narrative with suitable creators",
+          "Shares briefs and references",
+          "Reviews drafts",
+          "Approves final content",
+          "Coordinates posting",
+          "Tracks audience response"
+        ]
+      },
+      {
+        "title": "Operational Speed Example",
+        "items": [
+          "11 AM → Narrative changes",
+          "1 PM → Creator briefs updated",
+          "3 PM → Draft approvals complete",
+          "6 PM → Content live across creator network",
+          "Fast execution helps control online conversations before opposition narratives spread"
+        ]
+      },
+      {
+        "title": "Regional Understanding",
+        "items": [
+          "Local culture",
+          "Meme trends",
+          "Festivals",
+          "Religious sensitivity",
+          "Sports moments",
+          "Youth internet behavior",
+          "Regional language tone",
+          "Content timing should match audience mood and cultural context"
+        ]
+      }
+    ],
+    "skills": {
+      "must": [
+        "Cultural Understanding — regional culture, internet trends, political sentiment, meme culture",
+        "Creator Management — build creator relationships, negotiate effectively, retain creators long term",
+        "Narrative Writing — convert political messaging into reel concepts, captions, scripts, meme ideas, tweet threads",
+        "Fast Execution — react quickly, handle breaking news, coordinate fast rollouts",
+        "Crisis Handling — identify risky content, backlash risks, narrative mistakes before they become major issues"
+      ]
+    },
+    "finalGoal": [
+      "Shape online conversations",
+      "Influence public opinion",
+      "Build emotional connection with audiences",
+      "Spread narratives across social media naturally",
+      "Make campaign messaging feel like public sentiment instead of political advertising"
+    ],
+    "speedTimeline": [
+      {
+        "t": "11 AM",
+        "e": "Narrative changes"
+      },
+      {
+        "t": "1 PM",
+        "e": "Creator briefs updated"
+      },
+      {
+        "t": "3 PM",
+        "e": "Draft approvals complete"
+      },
+      {
+        "t": "6 PM",
+        "e": "Content live across creator network"
+      }
+    ],
+    "heroCallout": "One message shared by hundreds of trusted creators feels more real than one message coming from one official account.",
+    "workflowFlow": [
+      "Creator identification & onboarding",
+      "State-wise creator mapping and outreach",
+      "Approval from leadership/concerned teams",
+      "Contracting and legal coordination",
+      "Social media page/account setup",
+      "Narrative alignment and briefing",
+      "Content production (vox pop, original content, campaign narratives)",
+      "Real-time coordination during elections",
+      "Performance tracking and creator retention for future campaigns"
+    ]
+  }
+];;
 
 /* Multi-category tags used by the interactive hub-diagram badges on the landing page.
    Each team can belong to multiple categories. You can update these mappings any time

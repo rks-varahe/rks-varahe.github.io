@@ -745,16 +745,9 @@
         ${t.skills.nice?`<div class="chart-wrap"><h3>Good-to-have</h3><ul>${t.skills.nice.map(s=>`<li>${s}</li>`).join("")}</ul></div>`:""}
       </div>`;
   }
-  // Team-involvement defaults per phase — used when a phase doesn't list teams explicitly.
-  const DEFAULT_PHASE_TEAMS = {
-    1: ["Legal", "ARC", "Research", "Comms", "Party Coordination"],
-    2: ["Comms", "Growth", "SMCC", "Narrative/QRT", "Media"],
-    3: ["All Teams"],
-    4: ["All Teams"],
-    5: ["ARC", "Legal", "Comms", "Leadership"]
-  };
-
   function renderPhases(t){
+    if(t.partyPhases)   return renderPartyPhases(t);
+    if(t.workflowFlow)  return renderWorkflowFlow(t);
     let parts = [`<h2 class="scroll-reveal">Campaign Phase Involvement</h2>`];
     if(!t.phases || !t.phases.length){
       return parts.join("") + noData();
@@ -763,31 +756,125 @@
     parts.push(`<div class="phase-timeline scroll-reveal">`);
     phases.forEach((p,i)=>{
       const ph = PHASES.find(x=>x.n===p.ph)||{};
-      const w = {low:25,medium:55,high:80,"very-high":100}[p.intensity||ph.intensity]||40;
-      const teamsList = p.teams && p.teams.length ? p.teams : DEFAULT_PHASE_TEAMS[p.ph] || [];
-      const teamsDefault = !(p.teams && p.teams.length);
-      const phaseName = p.name || ph.name || "";
-      const phaseSub = p.sub || ph.sub || "";
-      const intLabel = (p.intensity||ph.intensity||'') + (p.intensityNote?` · ${p.intensityNote}`:'');
-      parts.push(`<div class="phase-step ${p.inferred?'inferred':''}">
+      const w = {low:25,medium:55,high:80,"very-high":100}[p.intensity]||0;
+      const phaseName = ph.name || "";
+      const phaseSub = ph.sub || "";
+      parts.push(`<div class="phase-step">
         <div class="phase-dot" data-ph="${p.ph}"><span>${p.ph}</span></div>
         <div class="phase-card">
           <div class="phase-card-head">
             <h4>Phase ${p.ph} · ${phaseName}</h4>
-            <span class="phase-int phase-int-${(p.intensity||ph.intensity||'low').replace(' ','-')}">${intLabel}</span>
+            ${p.intensity?`<span class="phase-int phase-int-${p.intensity.replace(' ','-')}">${p.intensity}</span>`:""}
           </div>
-          <p class="phase-sub muted">${phaseSub}${p.inferred?' · <i>inferred</i>':''}</p>
-          <p><b>Focus:</b> ${p.focus||""}</p>
-          ${p.act&&p.act.length?`<div class="phase-block"><span class="phase-label">Key activities</span><div class="badges">${p.act.map(a=>`<span class="badge">${a}</span>`).join("")}</div></div>`:""}
-          ${p.output?`<div class="phase-block"><span class="phase-label">Output expectation</span><p style="margin:0;font-size:.92rem">${p.output}</p></div>`:""}
-          ${teamsList.length?`<div class="phase-block"><span class="phase-label">Teams involved${teamsDefault?' <i style="font-weight:400;color:var(--muted)">· default</i>':''}</span><div class="badges">${teamsList.map(x=>`<span class="badge dark">${x}</span>`).join("")}</div></div>`:""}
-          <div class="intensity-bar" style="--w:${w}%"></div>
+          <p class="phase-sub muted">${phaseSub}</p>
+          <p>${p.focus||""}</p>
+          ${p.intensity?`<div class="intensity-bar" style="--w:${w}%"></div>`:""}
         </div>
       </div>`);
     });
     parts.push(`</div>`);
+    if(t.criticalPhase){
+      parts.push(`<div class="critical-callout scroll-reveal">
+        <span class="kicker">Most Critical Phase</span>
+        <h4>${t.criticalPhase}</h4>
+        ${t.whyCritical?`<p>${t.whyCritical}</p>`:""}
+      </div>`);
+    }
     return parts.join("");
   }
+
+  function renderPartyPhases(t){
+    const phases = t.partyPhases || [];
+    let parts = [`<h2 class="scroll-reveal">Campaign Phase Involvement</h2>`];
+    parts.push(`<div class="party-phase-stack scroll-reveal">`);
+    phases.forEach(p => {
+      let body = "";
+      if (p.bullets && p.bullets.length){
+        body = `<ul class="pp-bullets">${p.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>`;
+      } else if (p.opsGroups && p.opsGroups.length){
+        body = `<div class="pp-ops">${p.opsGroups.map(g=>`
+          <div class="pp-op">
+            <b>${g.head||""}</b>
+            <ul>${(g.bullets||[]).map(b=>`<li>${b}</li>`).join("")}</ul>
+          </div>`).join("")}</div>`;
+      }
+      parts.push(`
+        <article class="pp-card">
+          <header class="pp-head">
+            <div class="pp-num"><span>${p.n}</span></div>
+            <div class="pp-titles">
+              ${p.window?`<span class="pp-window">${p.window}</span>`:""}
+              <h3>${p.name||""}</h3>
+            </div>
+          </header>
+          ${p.purpose?`<p class="pp-purpose">${p.purpose}</p>`:""}
+          ${body?`<div class="pp-keyops"><span class="pp-keyops-label">Key Operations</span>${body}</div>`:""}
+        </article>`);
+    });
+    parts.push(`</div>`);
+    return parts.join("");
+  }
+
+  function renderWorkflowFlow(t){
+    const steps = t.workflowFlow || [];
+    const n = steps.length || 1;
+    const cx = 260, cy = 260, R = 200, nodeR = 28;
+    const nodes = steps.map((s, idx) => {
+      const ang = (idx / n) * Math.PI * 2 - Math.PI / 2;
+      return { s, idx, ang, x: cx + R * Math.cos(ang), y: cy + R * Math.sin(ang) };
+    });
+    const arcPath = (a, b) => {
+      const rOut = R - 4;
+      const ax = cx + rOut * Math.cos(a.ang);
+      const ay = cy + rOut * Math.sin(a.ang);
+      const bx = cx + rOut * Math.cos(b.ang);
+      const by = cy + rOut * Math.sin(b.ang);
+      return `M ${ax} ${ay} A ${rOut} ${rOut} 0 0 1 ${bx} ${by}`;
+    };
+    const ringSvg = `
+      <svg class="wf-loop-ring" viewBox="0 0 520 520" aria-hidden="true">
+        <defs>
+          <radialGradient id="wfGlow" cx="50%" cy="50%" r="55%">
+            <stop offset="0%" stop-color="#ccfbf1" stop-opacity=".9"/>
+            <stop offset="65%" stop-color="#ecfeff" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#ecfeff" stop-opacity="0"/>
+          </radialGradient>
+          <marker id="wfArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" fill="#0e7490"/>
+          </marker>
+        </defs>
+        <circle cx="${cx}" cy="${cy}" r="${R + 24}" fill="url(#wfGlow)"/>
+        <circle class="wf-ring-line" cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="6 6" opacity=".55"/>
+        ${nodes.map((nd,i)=>{
+          const nxt = nodes[(i+1) % n];
+          return `<path class="wf-arc" d="${arcPath(nd, nxt)}" stroke="#0e7490" stroke-width="2.5" fill="none" marker-end="url(#wfArrow)" opacity=".7"/>`;
+        }).join("")}
+        <g class="wf-centre">
+          <circle cx="${cx}" cy="${cy}" r="78" fill="#0e7490"/>
+          <circle cx="${cx}" cy="${cy}" r="70" fill="#155e75"/>
+          <text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#ecfeff" font-size="32">${(t.icon||"♻️")}</text>
+          <text x="${cx}" y="${cy+22}" text-anchor="middle" fill="#a5f3fc" font-size="11" font-weight="600" letter-spacing="2">LOOP</text>
+        </g>
+        ${nodes.map(nd => `
+          <g class="wf-node" data-idx="${nd.idx}">
+            <circle cx="${nd.x}" cy="${nd.y}" r="${nodeR}" fill="#ffffff" stroke="#0e7490" stroke-width="2.5"/>
+            <text x="${nd.x}" y="${nd.y+6}" text-anchor="middle" font-size="18" font-weight="700" fill="#0e7490">${nd.idx + 1}</text>
+          </g>`).join("")}
+      </svg>`;
+    const list = steps.map((s,i)=>`
+      <li class="wf-step">
+        <span class="wf-num">${i+1}</span>
+        <span class="wf-text">${s}</span>
+      </li>`).join("");
+    return `
+      <h2 class="scroll-reveal">Workflow</h2>
+      <div class="wf-loop-wrap scroll-reveal">
+        <div class="wf-loop-ring-col">${ringSvg}</div>
+        <ol class="workflow-chain wf-loop-list">${list}</ol>
+      </div>
+    `;
+  }
+
 
   function renderExample(t){
     const e = t.example;
