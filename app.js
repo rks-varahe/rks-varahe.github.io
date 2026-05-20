@@ -664,7 +664,8 @@
         ${t.igHighlights?`<div class="chart-wrap"><h4>Instagram Story Highlights</h4><div class="badges">${t.igHighlights.map(x=>`<span class="badge">${x}</span>`).join("")}</div></div>`:""}`;
     // Fallback right-column content: pull in summary cards built from data the team already has
     // (KPIs / Platforms / Tools) so the column isn't blank for teams without stats/scope/sizing.
-    if(!rightBody.trim()){
+    // Teams can opt out by setting hideOverviewExtras: true.
+    if(!rightBody.trim() && !t.hideOverviewExtras){
       const blocks = [];
       if(t.kpis && t.kpis.length){
         blocks.push(`<div class="chart-wrap"><h3>At a glance</h3><ul style="margin:0;padding-left:18px;line-height:1.6">${t.kpis.map(r=>`<li>${Array.isArray(r)?`<b>${r[0]}</b> — ${r[1]}`:r}</li>`).join("")}</ul></div>`);
@@ -680,7 +681,7 @@
     if(rightBody.trim()){
       parts.push(`<div class="row-2 scroll-reveal"><div>${leftBody}</div><div>${rightBody}</div></div>`);
     } else {
-      parts.push(`<div class="scroll-reveal" style="max-width:820px">${leftBody}</div>`);
+      parts.push(`<div class="scroll-reveal" style="max-width:1080px">${leftBody}</div>`);
     }
     parts.push(renderExtrasFor("overview", t));
     return parts.join("");

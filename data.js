@@ -2166,7 +2166,20 @@ const TEAMS = [
       "id": "surrogate",
       "name": "Surrogate Pages Acquisition and Management",
       "tagline": "Acquires Instagram pages aligned with our ideology and narratives and places them under vendor management.",
+      "hideTabs": ["hiring", "ops", "example", "downloads"],
       "purpose": "This program focuses on acquiring Instagram pages aligned with our ideology and narratives and placing them under vendor management. While VA retains full ownership, the original admins continue to operate the pages and publish content aligned with our narratives.",
+      "skills": {
+        "must": [
+          "Deep understanding of the Instagram ecosystem and meme culture.",
+          "Strong political narrative understanding.",
+          "Negotiation and vendor-management capability.",
+          "Relationship management with page admins.",
+          "Fast communication and coordination skills.",
+          "Internet trend awareness and content instinct.",
+          "Crisis management and escalation judgment.",
+          "Ability to identify high-potential pages early."
+        ]
+      },
       "structure": [
         {
           "role": "1 Manager",
@@ -2233,19 +2246,6 @@ const TEAMS = [
           ]
         },
         {
-          "title": "Skills Required",
-          "items": [
-            "Deep understanding of the Instagram ecosystem and meme culture.",
-            "Strong political narrative understanding.",
-            "Negotiation and vendor-management capability.",
-            "Relationship management with page admins.",
-            "Fast communication and coordination skills.",
-            "Internet trend awareness and content instinct.",
-            "Crisis management and escalation judgment.",
-            "Ability to identify high-potential pages early."
-          ]
-        },
-        {
           "title": "Tools & Platforms Used",
           "items": [
             "Canva / Photoshop for creatives.",
@@ -2293,6 +2293,7 @@ const TEAMS = [
       "icon": "🎭",
       "category": "creative",
       "hideTabs": ["budget", "example", "downloads"],
+      "hideOverviewExtras": true,
       "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
       "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
       "structure": [
@@ -2370,9 +2371,16 @@ const TEAMS = [
         ]
       },
       "kpis": [
-        "Daily output: 10–20 video per day",
-        "Weekly output: 80–100 videos",
+        "Daily Output: 5–7 videos per page",
+        "Weekly Output: 30–40 videos per page",
         "Success metric: Virality, Shares, Narrative pickup, Organic engagement"
+      ],
+      "budget": [
+        ["Project Manager", "₹1L – ₹1.3L"],
+        ["Content Creator", "₹50K – ₹70K"],
+        ["Intern", "₹20K – ₹30K"],
+        ["Graphic Designer", "₹40K – ₹60K"],
+        ["Video Editor", "₹45K – ₹65K"]
       ],
       "tools": [
         "Adobe Premiere Pro",
