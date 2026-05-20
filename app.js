@@ -82,7 +82,7 @@
       });
       const matches = hay.filter(x=>x.blob.includes(q)).slice(0,8);
       const glossMatches = Object.entries(GLOSSARY).filter(([k,v])=>(k+" "+v).toLowerCase().includes(q)).slice(0,5);
-      pop.innerHTML = matches.map(m=>`<div class="res" onclick="location.href='team.html?id=${m.t.id}'"><b>${m.t.icon} ${m.t.name}</b><small>${m.t.tagline}</small></div>`).join("")
+      pop.innerHTML = matches.map(m=>`<div class="res" onclick="location.href='team.html?id=${m.t.id}'"><b>${m.t.icon?m.t.icon+' ':''}${m.t.name}</b><small>${m.t.tagline}</small></div>`).join("")
         + (glossMatches.length?`<div style="padding:8px 14px;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;border-top:1px solid var(--line);margin-top:6px">Glossary</div>`:"")
         + glossMatches.map(([k,v])=>`<div class="res"><b>${k}</b><small>${v}</small></div>`).join("");
       if(!matches.length && !glossMatches.length) pop.innerHTML = `<div class="res"><small>No results for "${q}"</small></div>`;
@@ -557,7 +557,7 @@
         <div class="container">
           <div class="crumbs scroll-reveal"><a href="index.html">Varahe NCC</a> · <a href="index.html#teams">Teams</a> · ${t.name}</div>
           <span class="kicker scroll-reveal">${t.function}</span>
-          <h1 class="scroll-reveal">${t.icon} ${t.name}</h1>
+          <h1 class="scroll-reveal">${t.icon?t.icon+' ':''}${t.name}</h1>
           <p class="hero-lead scroll-reveal">${t.tagline}</p>
           ${t.id==="reporter"?`<div class="scroll-reveal">${renderReporterMap()}</div>`:""}
           ${TEAM_ART[t.id]?`<div class="team-art scroll-reveal"><img src="${TEAM_ART[t.id]}" alt="${t.name} visual"/></div>`:""}
@@ -727,8 +727,17 @@
       </div>`:""}${extras}`;
   }
   function renderSkills(t){
-    if(!t.skills || (!t.skills.must?.length && !t.skills.nice?.length)){
+    const hasTable = t.skills && t.skills.table && t.skills.table.headers && t.skills.table.rows;
+    if(!t.skills || (!hasTable && !t.skills.must?.length && !t.skills.nice?.length)){
       return `<h2 class="scroll-reveal">Skills Required</h2>${noData()}`;
+    }
+    if(hasTable){
+      const {headers, rows} = t.skills.table;
+      return `<h2 class="scroll-reveal">Skills Required</h2>
+        <table class="std scroll-reveal" style="max-width:760px">
+          <thead><tr>${headers.map(h=>`<th>${h}</th>`).join("")}</tr></thead>
+          <tbody>${rows.map(r=>`<tr>${headers.map((_,i)=>`<td>${r[i]||""}</td>`).join("")}</tr>`).join("")}</tbody>
+        </table>`;
     }
     return `<h2 class="scroll-reveal">Skills Required</h2>
       <div class="row scroll-reveal">

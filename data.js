@@ -121,14 +121,27 @@ const TEAMS = [
     {
       "id": "campaign-branding",
       "name": "Campaign Branding & Ads",
-      "icon": "🎨",
+      "icon": "",
       "category": "creative",
       "function": "Creative & Campaigns",
+      "hideTabs": ["budget"],
       "tagline": "Centralised branding, creative and coordination unit across print, digital, ground, video, animation and tech.",
       "purpose": "The Campaign Branding & Ads Team functions as a centralised branding, creative and coordination unit that supports national and state-level campaigns across multiple formats and platforms. It ensures smooth implementation of campaign-related requirements involving branding, events, print communication, digital creatives, media support, video communication, presentations, animation and campaign infrastructure support.",
+      "skills": {
+        "table": {
+          "headers": ["Graphic Designing", "Video Editing"],
+          "rows": [
+            ["Adobe Photoshop", "Adobe Premiere Pro"],
+            ["Adobe Illustrator", "Adobe After Effect"],
+            ["Adobe InDesign", "AI Tools"],
+            ["Corel Draw", ""],
+            ["AI Tools", ""]
+          ]
+        }
+      },
       "structure": [
         {
-          "role": "Team Lead",
+          "role": "Project Manager",
           "detail": "Planning, priority management, resource allocation, approval coordination, inter-department coordination, final supervision."
         },
         {
@@ -163,6 +176,7 @@ const TEAMS = [
           "items": [
             "Begins with: a campaign brief, event requirement, communication objective, research-based narrative, media requirement, or stakeholder request",
             "PoC coordinates objective, timeline/urgency, deliverables, platform/usage, approval flow, language/state adaptations",
+            "Designers and editors begin execution according to the inputs received from the PoC",
             "Inputs from Research, Campaign, Communication, Media, Ground/Event, Leadership Offices"
           ]
         },
@@ -2854,13 +2868,18 @@ const COORD_EDGES = [
   ["media","party"],["media","party-coord"],["media","smcc"],
   ["legal","growth"],["legal","smcc"],["legal","non-meta"],["legal","tvc"],["legal","campaign-branding"],
   ["growth","smcc"],["growth","campaign-branding"],["growth","non-meta"],
-  ["smcc","campaign-branding"],["smcc","third-party"],["smcc","party"],
-  ["partnership","arc"],["partnership","growth"],["partnership","legal"],["partnership","third-party"],
+  ["smcc","campaign-branding"],["smcc","party"],
+  ["partnership","arc"],["partnership","growth"],["partnership","legal"],
   ["reporter","media"],["reporter","tvc"],["reporter","party"],
   ["tvc","campaign-branding"],["tvc","non-meta"],
   ["party-coord","party"],["party-coord","media"],["party-coord","smcc"],
-  ["surrogate","third-party"],
-  ["campaign-branding","party"]
+  ["campaign-branding","party"],
+
+  // Third Party — connects only to the 8 teams listed in source: arc,
+  // campaign-branding, party, growth, legal, media, reporter, surrogate
+  ["third-party","arc"],["third-party","campaign-branding"],["third-party","party"],
+  ["third-party","growth"],["third-party","legal"],["third-party","media"],
+  ["third-party","reporter"],["third-party","surrogate"]
 ];
 
 /* Image generation prompts to be handed to the user */
