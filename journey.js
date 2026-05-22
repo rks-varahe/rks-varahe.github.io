@@ -87,6 +87,22 @@
     return p ? (p.focus || "") : "";
   }
 
+  // Split a paragraph into sentence-level bullets. Robust to numbered lists / ellipses.
+  function toBullets(text, cls){
+    if (!text) return "";
+    cls = cls || "drw-bullets";
+    // 1) split on explicit bullets if the source already uses ";", "•", or numbered lists
+    let parts;
+    if (/[•·]\s/.test(text))            parts = text.split(/[•·]\s+/);
+    else if (/;\s/.test(text))          parts = text.split(/;\s+/);
+    else                                parts = text.match(/[^.!?]+[.!?]+(?:["')\]]+)?|[^.!?]+$/g) || [text];
+    const items = parts
+      .map(s => s.trim().replace(/^[-–—•·]\s*/, ""))
+      .filter(s => s.length > 2);
+    if (items.length <= 1) return `<ul class="${cls}"><li>${items[0]||text}</li></ul>`;
+    return `<ul class="${cls}">${items.map(b=>`<li>${b}</li>`).join("")}</ul>`;
+  }
+
   function fullRoleFor(teamId, ph){
     const t = teamById(teamId);
     if (!t) return "";
@@ -96,7 +112,7 @@
       if (!block) return "";
       return `<span class="drw-window">${block.window||""}</span>
               <h4>${block.name||""}</h4>
-              <p class="drw-purpose">${block.purpose||""}</p>
+              ${toBullets(block.purpose, "drw-bullets drw-bullets-purpose")}
               ${block.opsGroups ? `
                 <div class="drw-ops">${block.opsGroups.map(g=>`
                   <div class="drw-op">
@@ -110,7 +126,7 @@
       if (!block) return "";
       return `<span class="drw-window">${block.window||""}</span>
               <h4>${block.name||""}</h4>
-              <p class="drw-purpose">${block.purpose||""}</p>
+              ${toBullets(block.purpose, "drw-bullets drw-bullets-purpose")}
               ${block.bullets ? `<ul class="drw-bullets">${block.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>`:""}`;
     }
     if (teamId === "partnership" && t.workflowFlow){
@@ -121,16 +137,39 @@
     }
     if (teamId === "narrative"){
       const r = ROLES["narrative"][ph]||"";
-      return `<h4>Narrative — Phase ${ph}</h4><p>${r}</p>`;
+      return `<h4>Narrative — Phase ${ph}</h4>${toBullets(r)}`;
+    }
+    // Prefer curated bullets when available
+    const curated = (typeof TEAM_PHASE_BULLETS !== "undefined") ? TEAM_PHASE_BULLETS[teamId] : null;
+    if (curated){
+      const phaseBullets = curated.phases && curated.phases[String(ph)];
+      if (phaseBullets && phaseBullets.length){
+        let body = `<h4>Phase ${ph} focus</h4><ul class="drw-bullets">${phaseBullets.map(b=>`<li>${b}</li>`).join("")}</ul>`;
+        if (t.phases){
+          const p = t.phases.find(x=>x.ph===ph);
+          if (p && p.intensity) body += `<p class="muted" style="font-size:.85rem">Intensity: ${p.intensity}</p>`;
+        }
+        if (t.criticalPhase && isCriticalPhase(t, ph)){
+          const whyBullets = curated.whyCritical;
+          if (whyBullets && whyBullets.length){
+            body += `<div class="drw-crit"><span class="kicker">Most Critical Phase</span>
+                     <ul class="drw-bullets">${whyBullets.map(b=>`<li>${b}</li>`).join("")}</ul></div>`;
+          } else {
+            body += `<div class="drw-crit"><span class="kicker">Most Critical Phase</span>
+                     ${toBullets(t.whyCritical||"")}</div>`;
+          }
+        }
+        return body;
+      }
     }
     if (t.phases){
       const p = t.phases.find(x=>x.ph===ph);
       if (p){
-        let body = `<h4>Phase ${ph} focus</h4><p>${p.focus||""}</p>`;
+        let body = `<h4>Phase ${ph} focus</h4>${toBullets(p.focus||"")}`;
         if (p.intensity) body += `<p class="muted" style="font-size:.85rem">Intensity: ${p.intensity}</p>`;
         if (t.criticalPhase && isCriticalPhase(t, ph)){
           body += `<div class="drw-crit"><span class="kicker">Most Critical Phase</span>
-                   <p>${t.whyCritical||""}</p></div>`;
+                   ${toBullets(t.whyCritical||"")}</div>`;
         }
         return body;
       }

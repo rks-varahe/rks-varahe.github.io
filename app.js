@@ -569,8 +569,8 @@
 
           <nav class="tabs" id="teamTabs">
             <button class="tab active" data-tab="overview">Overview</button>
-            <button class="tab" data-tab="structure">Structure</button>
-            <button class="tab" data-tab="responsibilities">Responsibilities</button>
+            ${(t.hideTabs||[]).includes("structure")?"":`<button class="tab" data-tab="structure">Structure</button>`}
+            ${(t.hideTabs||[]).includes("responsibilities")?"":`<button class="tab" data-tab="responsibilities">Responsibilities</button>`}
             ${(t.hideTabs||[]).includes("skills")?"":`<button class="tab" data-tab="skills">Skills</button>`}
             ${(t.hideTabs||[]).includes("phases")?"":`<button class="tab" data-tab="phases">Campaign Flow</button>`}
             ${(t.hideTabs||[]).includes("hiring")?"":`<button class="tab" data-tab="hiring">Hiring</button>`}
@@ -587,8 +587,8 @@
         <div id="tab-overview" class="tab-content active">
           ${renderOverview(t)}
         </div>
-        <div id="tab-structure" class="tab-content">${renderStructure(t)}</div>
-        <div id="tab-responsibilities" class="tab-content">${renderResp(t)}</div>
+        ${(t.hideTabs||[]).includes("structure")?"":`<div id="tab-structure" class="tab-content">${renderStructure(t)}</div>`}
+        ${(t.hideTabs||[]).includes("responsibilities")?"":`<div id="tab-responsibilities" class="tab-content">${renderResp(t)}</div>`}
         ${(t.hideTabs||[]).includes("skills")?"":`<div id="tab-skills" class="tab-content">${renderSkills(t)}</div>`}
         ${(t.hideTabs||[]).includes("phases")?"":`<div id="tab-phases" class="tab-content">${renderPhases(t)}</div>`}
         ${(t.hideTabs||[]).includes("hiring")?"":`<div id="tab-hiring" class="tab-content">${renderHiring(t)}</div>`}

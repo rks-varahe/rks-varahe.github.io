@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="landing-journey.css" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/logo.png" />
 </head>
 <body>
@@ -20,10 +22,9 @@
       <span>Varahe Analytics<small>Communications</small></span>
     </a>
     <nav class="nav-links">
-      <a href="#hub">Hub</a>
-      <a href="#timeline">Campaign Flow</a>
-      <a href="#teams">Teams</a>
+      <a href="#campaign-flow">Campaign Flow</a>
       <a href="#coord">Coordination</a>
+      <a href="#teams">Teams</a>
       <a href="#glossary">Glossary</a>
       <a href="resources.html">Sample Decks</a>
       <a href="journey.html">Journey</a>
@@ -51,31 +52,214 @@
   </div>
 </section>
 
-<section id="hub" class="container">
-  <div class="diagram-wrap scroll-reveal">
-    <div class="diagram-title">
+<!-- CAMPAIGN FLOW · six-chapter timeline -->
+<section id="campaign-flow" class="lj-section">
+  <div class="container">
+    <div class="lj-head">
       <div>
-        <span class="kicker">Hub & spoke</span>
-        <h2>How the teams connect</h2>
-        <p class="muted" style="max-width:620px">Click any node to drill into that team. The centre is the Communications spine — every spoke is a specialised arm.</p>
+        <span class="kicker">Campaign Flow · Six chapters</span>
+        <h2>How a campaign is made.</h2>
+        <p class="muted" style="max-width:640px">A timeline of the work — from the first quiet hires to the morning after polling. Tap any marker to read the chapter.</p>
       </div>
-      <div class="tag-row" id="hubTagFilter"></div>
     </div>
-    <div id="hubDiagram"></div>
+
+    <!-- HORIZONTAL TIMELINE: top-row cards | rail | bottom-row cards -->
+    <div class="lj-tlh" aria-label="Six-chapter campaign timeline">
+
+      <!-- TOP ROW: chapters 1, 3, 5 -->
+      <ol class="lj-tlh-row lj-tlh-row-top">
+        <li class="lj-tlh-slot" data-col="1">
+          <article class="lj-tlh-card" data-ch="1">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="18" height="18"><circle cx="24" cy="30" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 16 v6 M24 22 l-5 5 M24 22 l5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span>
+              <span class="lj-tlh-num">Chapter 01</span>
+            </header>
+            <h3 class="lj-tlh-title">The Quiet Build</h3>
+            <p class="lj-tlh-body">Narrative drafts infopacks for issues that haven't broken. ARC measures the digital baseline. SMCC quietly hires before the first ad ships.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+          <span class="lj-tlh-connector lj-conn-down" aria-hidden="true"></span>
+        </li>
+        <li class="lj-tlh-slot lj-empty" data-col="2" aria-hidden="true"></li>
+        <li class="lj-tlh-slot lj-tlh-peak" data-col="3">
+          <article class="lj-tlh-card" data-ch="3">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="20" height="20"><path d="M24 6 L29 19 L43 19 L32 28 L36 42 L24 33 L12 42 L16 28 L5 19 L19 19 Z" fill="currentColor"/></svg></span>
+              <span class="lj-tlh-num">Chapter 03</span>
+              <span class="lj-tlh-tag">Peak</span>
+            </header>
+            <h3 class="lj-tlh-title">The Day a Narrative Moves</h3>
+            <p class="lj-tlh-body">Morning to evening, one sentence becomes a country's conversation. Brief, script, creator drop, regional copy, reels live — all in a single day.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+          <span class="lj-tlh-connector lj-conn-down" aria-hidden="true"></span>
+        </li>
+        <li class="lj-tlh-slot lj-empty" data-col="4" aria-hidden="true"></li>
+        <li class="lj-tlh-slot" data-col="5">
+          <article class="lj-tlh-card" data-ch="5">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="18" height="18"><path d="M30 8 A 16 16 0 1 0 40 28 A 12 12 0 0 1 30 8 Z" fill="currentColor"/></svg></span>
+              <span class="lj-tlh-num">Chapter 05</span>
+            </header>
+            <h3 class="lj-tlh-title">The Silence Before the Vote</h3>
+            <p class="lj-tlh-body">Paid ads stop. The dashboard goes dark. Emotional cuts, closing rallies, final appeals — keeping the convinced from sitting at home.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+          <span class="lj-tlh-connector lj-conn-down" aria-hidden="true"></span>
+        </li>
+        <li class="lj-tlh-slot lj-empty" data-col="6" aria-hidden="true"></li>
+      </ol>
+
+      <!-- RAIL -->
+      <div class="lj-tlh-rail" aria-hidden="true">
+        <div class="lj-tlh-line"></div>
+        <div class="lj-tlh-markers">
+          <div class="lj-tlh-marker" data-stop="1"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T-180</span></div>
+          <div class="lj-tlh-marker" data-stop="2"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T-90</span></div>
+          <div class="lj-tlh-marker lj-tlh-marker-peak" data-stop="3"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T-45</span></div>
+          <div class="lj-tlh-marker" data-stop="4"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T-21</span></div>
+          <div class="lj-tlh-marker" data-stop="5"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T-3</span></div>
+          <div class="lj-tlh-marker" data-stop="6"><span class="lj-tlh-dot"></span><span class="lj-tlh-when">T+0</span></div>
+        </div>
+      </div>
+
+      <!-- BOTTOM ROW: chapters 2, 4, 6 -->
+      <ol class="lj-tlh-row lj-tlh-row-bot">
+        <li class="lj-tlh-slot lj-empty" data-col="1" aria-hidden="true"></li>
+        <li class="lj-tlh-slot" data-col="2">
+          <span class="lj-tlh-connector lj-conn-up" aria-hidden="true"></span>
+          <article class="lj-tlh-card" data-ch="2">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="18" height="18"><rect x="10" y="14" width="28" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 22 l8 5 -8 5 Z" fill="currentColor"/><path d="M14 38 h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="lj-tlh-num">Chapter 02</span>
+            </header>
+            <h3 class="lj-tlh-title">First Ads, First Lessons</h3>
+            <p class="lj-tlh-body">TVC ships short cuts to ask questions, not win votes. Growth burns a slice of budget to learn. Influencer Management warms up the creator roster.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+        </li>
+        <li class="lj-tlh-slot lj-empty" data-col="3" aria-hidden="true"></li>
+        <li class="lj-tlh-slot" data-col="4">
+          <span class="lj-tlh-connector lj-conn-up" aria-hidden="true"></span>
+          <article class="lj-tlh-card" data-ch="4">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="18" height="18"><path d="M6 38 L18 22 L26 30 L42 10" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 10 L42 10 L42 18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></span>
+              <span class="lj-tlh-num">Chapter 04</span>
+            </header>
+            <h3 class="lj-tlh-title">Inside the Final Weeks</h3>
+            <p class="lj-tlh-body">Dashboards read continuously. Prime-time mined every evening. ARC ships the Daily Narrative Performance Report. A restricted page is mirrored back in two hours.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+        </li>
+        <li class="lj-tlh-slot lj-empty" data-col="5" aria-hidden="true"></li>
+        <li class="lj-tlh-slot" data-col="6">
+          <span class="lj-tlh-connector lj-conn-up" aria-hidden="true"></span>
+          <article class="lj-tlh-card" data-ch="6">
+            <header class="lj-tlh-head">
+              <span class="lj-tlh-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="18" height="18"><circle cx="24" cy="28" r="9" fill="currentColor"/><path d="M24 12 v3 M24 41 v3 M8 28 h3 M37 28 h3 M13 17 l2 2 M33 39 l2 2 M13 39 l2 -2 M33 17 l2 -2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="lj-tlh-num">Chapter 06</span>
+            </header>
+            <h3 class="lj-tlh-title">The Morning After</h3>
+            <p class="lj-tlh-body">Results-day comms before the trends are clear. ARC writes the Closure Report. The war room becomes an office — and the next campaign is already studying this one.</p>
+            <span class="lj-tlh-more">Read the chapter <span aria-hidden="true">→</span></span>
+          </article>
+        </li>
+      </ol>
+
+    </div>
+
+    <div class="lj-foot">
+      <a class="lj-cta" href="journey.html">See phase-wise tasks <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <!-- Hidden chapter source for the popup -->
+  <template id="ljChapters">
+    <article data-ch="1">
+      <div class="lj-dr-chap">Chapter One · Months before polling</div>
+      <h2>The Quiet Build</h2>
+      <p>Long before the Model Code of Conduct comes into force, the work begins in offices that do not yet have a public face. The Narrative Team — the team responsible for the strategic ideas a campaign will eventually carry — sits with two reference projects open at all times. The first, <em>Bharat Darpan</em>, tracks the country's macro mood: inflation, employment, the recurring headlines. The second, <em>Project Nandaka</em>, tracks something more granular: the political grievances of districts no national outlet is reporting from.</p>
+      <p>Down the corridor, the team called <strong>ARC</strong> — short for Feedback and Reporting — is preparing a baseline. ARC's job is to know what the state's digital landscape looked like before the campaign touched it. Which pages dominate. Which narratives travel. Which constituencies respond to which kinds of content. Without this baseline, every later number is meaningless.</p>
+      <p>At the same time, <strong>SMCC</strong> — the Social Media Command Centre — begins hiring. Writers, designers, video editors, organised into small teams that will each cover a cluster of assembly constituencies. By the time the first ad ships, the people who will write, design, and edit every piece of that campaign's regional content are already at their desks.</p>
+      <blockquote>Nothing is being said yet. But everything is being measured.</blockquote>
+      <p>The work in this phase is not visible. That is the point. A campaign that announces its own preparation gives the opposition the only thing it cannot recover from: time.</p>
+    </article>
+    <article data-ch="2">
+      <div class="lj-dr-chap">Chapter Two · The build-up</div>
+      <h2>First Ads, First Lessons</h2>
+      <p>The first ads a campaign runs are not built to change minds. They are built to answer questions. The <strong>TVC team</strong> — responsible for video production — releases short cuts in small batches and watches what happens. Which thumbnail holds attention. Which voice-over performs in which language belt. Which length earns a share, and which length is closed before the second second.</p>
+      <p>This is also when the <strong>Growth Team</strong> — the in-house ads operation — does its most important work of the year, which is to fail visibly. A measured slice of the campaign's total media budget is spent here, on ads that are expected to teach more than they win. Every line that does not perform now is a line that will not be paid for later, when paying for the wrong line can cost a constituency.</p>
+      <p><strong>Influencer Management</strong>, meanwhile, is in conversation with a long roster of creators across languages. No briefs go out yet. The relationships are being kept warm. When the campaign needs many voices to say one thing at the same time — and it will — the conversation cannot start from scratch.</p>
+    </article>
+    <article data-ch="3">
+      <div class="lj-dr-chap">Chapter Three · The acceleration</div>
+      <h2>The Day a Narrative Moves</h2>
+      <p>By the time the daily war-room meeting becomes routine, the campaign's machinery is observable. The SMCC pages — one per assembly constituency, sometimes two — are growing visibly week after week. The Reporter Network, which has been the field layer all along, expands sharply to cover every state the campaign cares about.</p>
+      <p>The internal handbook describes the speed at which this machinery now operates with a single label: <em>L1</em>. An L1 turnaround is, in practice, the time it takes most organisations to schedule a meeting.</p>
+      <p>To see the system at work, follow a single narrative through a single day:</p>
+      <ol class="lj-dr-steps">
+        <li><strong>Morning.</strong> The Narrative Team identifies an opposition weakness — a contradiction, a missed promise, a quote — and writes a one-page brief.</li>
+        <li><strong>Midday.</strong> The TVC team scripts a short cut. A voice-over is booked.</li>
+        <li><strong>Afternoon.</strong> The brief is distributed, with creative variations, to the influencer roster.</li>
+        <li><strong>Late afternoon.</strong> SMCC writers, working in every relevant language, draft regional copy for the constituency-level pages.</li>
+        <li><strong>Evening.</strong> The reels go live across the network — together, not in sequence.</li>
+      </ol>
+      <p>By the time the opposition's spokespeople respond to the narrative on a nine o'clock panel, the conversation has already taken place — on phones, in WhatsApp groups, and in the comment sections under regional news pages. The window for response has closed.</p>
+    </article>
+    <article data-ch="4">
+      <div class="lj-dr-chap">Chapter Four · Peak campaign</div>
+      <h2>Inside the Final Weeks</h2>
+      <p>In the closing weeks before polling, the campaign's daily rhythm tightens. The Growth Team's dashboards, which had been read once a day, are now read continuously. Cost per impression is held below an internal ceiling. Frequency is capped so a voter does not see the same ad ten times in a day. Anything underperforming is paused before the day is out; anything winning is scaled overnight.</p>
+      <p>The <strong>Media Team</strong> operates from a dedicated room inside the party headquarters. Prime-time television is monitored every evening. A line dropped by a panellist becomes a speech pointer for the next morning, a tweet thread before the show ends, and — if the line travels — a reel by sunrise. Each morning's plan is partly written by the previous evening's television.</p>
+      <p>ARC, which has been quietly assembling reports for months, now publishes a daily document called the <em>Daily Narrative Performance Report</em>. Reach, sentiment, share velocity, the health of every page in the network — collated overnight, on a desk before the war room opens.</p>
+      <blockquote>By the time the room sees the dashboard, the dashboard has been read.</blockquote>
+      <p>It is also in this phase that the campaign learns what it costs to be silent for an afternoon. A page — one of the AC-level pages running multiple posts a day — is restricted by the platform. ARC flags it within minutes. The Growth Team escalates to the platform's account team. The state head triggers a mirror to the backup page. By the evening news, the content is live again on a parallel handle. The voters, mostly, did not see the gap.</p>
+    </article>
+    <article data-ch="5">
+      <div class="lj-dr-chap">Chapter Five · The final days</div>
+      <h2>The Silence Before the Vote</h2>
+      <p>In the final stretch before polling, the Model Code of Conduct forces a hard line. Paid advertising stops. The dashboard the Growth Team has been reading goes dark — not because the work is finished, but because the work changes shape.</p>
+      <p>The video work softens. TVC's emotional cuts — appeals rather than arguments — go out across the same channels that once carried attacks. Influencers post final messages. They do not try to convince anyone new; they try to keep the convinced from sitting at home.</p>
+      <p>The Reporter Network records the closing rallies. Party teams work the ground in shifts that have lost their weekday names. In the ARC room, the dashboard is still on, but the people watching it are no longer planning anything. They are recording what the campaign sounded like in its last hours, so that tomorrow it can be remembered correctly.</p>
+    </article>
+    <article data-ch="6">
+      <div class="lj-dr-chap">Chapter Six · After</div>
+      <h2>The Morning After</h2>
+      <p>Results-day communication goes out before the trends are clear. Congratulations, gratitude, framing. The first version of the story the campaign will tell about itself is written in the hours after polling closes.</p>
+      <p>ARC then begins its longest document of the cycle, the <em>Comprehensive Campaign Closure Report</em>. Every page, every ad, every reel, every constituency — recorded, indexed, and judged. What worked. What did not. And, in the appendix that few outside the team will read, what the campaign did not understand at the time and now does.</p>
+      <p>The SMCC hiring engine unwinds. Pages either hand off to local units or are archived. The Reporter Network shrinks back to its peacetime size. Vendors are paid. Drives are catalogued. The war room becomes an office again.</p>
+      <p>Somewhere on a different floor, an analyst is already opening the closure report from the <em>last</em> campaign — the one before this one — to study what it got right. The work has already restarted.</p>
+      <blockquote>A campaign does not end on result day. It ends when the next one inherits everything it learned.</blockquote>
+    </article>
+  </template>
+
+  <!-- Chapter popup -->
+  <div class="lj-modal" id="ljModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ljModalTitle">
+    <div class="lj-modal-scrim" id="ljModalScrim"></div>
+    <div class="lj-modal-card">
+      <button class="lj-modal-close" id="ljModalClose" aria-label="Close chapter">×</button>
+      <div class="lj-modal-body" id="ljModalBody"></div>
+      <nav class="lj-modal-nav">
+        <button class="lj-modal-prev" id="ljModalPrev" type="button">← Previous chapter</button>
+        <button class="lj-modal-next" id="ljModalNext" type="button">Next chapter →</button>
+      </nav>
+    </div>
   </div>
 </section>
 
-<section id="timeline" class="section">
+<section id="coord" class="section">
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="kicker scroll-reveal">From Pre-MCC to post-result</span>
-        <h2 class="scroll-reveal">The Campaign Flow</h2>
-        <p class="muted scroll-reveal" style="max-width:680px">Five phases shape every state engagement. Intensity rises and falls; teams cycle in and out. Hover or tap each phase to feel the curve.</p>
+        <span class="kicker scroll-reveal">Inter-team coordination</span>
+        <h2 class="scroll-reveal">How the teams connect</h2>
+        <p class="muted scroll-reveal" style="max-width:640px">Hover a node to highlight every team it works with — narrative flows, approval chains and dependencies surface in one view.</p>
       </div>
     </div>
-    <div class="timeline-art scroll-reveal"><img src="assets/flow.svg" alt="Campaign flow across five phases"/></div>
-    <div id="campaignTimeline"></div>
+    <div class="coord-layout scroll-reveal">
+      <div class="coord-map" id="coordMap"></div>
+      <aside class="coord-info" id="coordInfo"></aside>
+    </div>
   </div>
 </section>
 
@@ -95,22 +279,6 @@
       </div>
     </div>
     <div class="grid" id="teamGrid"></div>
-  </div>
-</section>
-
-<section id="coord" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <span class="kicker scroll-reveal">Inter-team coordination</span>
-        <h2 class="scroll-reveal">Who works with whom</h2>
-        <p class="muted scroll-reveal" style="max-width:640px">Hover a node to highlight every team it works with — narrative flows, approval chains and dependencies surface in one view.</p>
-      </div>
-    </div>
-    <div class="coord-layout scroll-reveal">
-      <div class="coord-map" id="coordMap"></div>
-      <aside class="coord-info" id="coordInfo"></aside>
-    </div>
   </div>
 </section>
 
@@ -137,10 +305,9 @@
       <div>
         <h4>Sections</h4>
         <ul>
-          <li><a href="#hub">Hub & Spoke</a></li>
-          <li><a href="#timeline">Campaign Flow</a></li>
+          <li><a href="#campaign-flow">Campaign Flow</a></li>
+          <li><a href="#coord">Coordination</a></li>
           <li><a href="#teams">Teams</a></li>
-          <li><a href="#coord">Coordination Map</a></li>
           <li><a href="#glossary">Glossary</a></li>
         </ul>
       </div>
@@ -155,6 +322,7 @@
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script src="landing-journey.js"></script>
 <script>
   // populate footer team list
   document.getElementById("footerTeams").innerHTML =

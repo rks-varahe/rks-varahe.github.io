@@ -44,6 +44,7 @@ const PHASES = [
 const TEAMS = [
   {
     "id": "arc",
+    "hideTabs": ["budget","ops","example","downloads"],
     "name": "ARC | Feedback and Reporting",
     "tagline": "Converts raw platform numbers, narratives and performance trends into actionable strategic inputs.",
     "purpose": "To function as the central communication reporting, monitoring and strategic support during and outside campaigns. The team converts raw platform numbers, narratives and performance trends into actionable strategic inputs for National, State and Campaign teams on a weekly, monthly and ad-hoc basis. It is especially critical during elections because it helps in real-time decision-making, narrative correction and content optimisation across Official, VA-Administered, In-House and Partnership programmes, influencer and amplification networks. Without ARC, the communication efforts become fragmented and reactive to measurement. During election or polling phases, ARC resources act as the dedicated monitoring and strategic coordination unit, aiding in competition analysis, narrative alignment, issue escalation and state-level communication optimisation.",
@@ -149,9 +150,7 @@ const TEAMS = [
     "icon": "",
     "category": "creative",
     "function": "Creative & Campaigns",
-    "hideTabs": [
-      "budget"
-    ],
+    "hideTabs": ["budget","downloads"],
     "tagline": "Centralised branding, creative and coordination unit across print, digital, ground, video, animation and tech.",
     "purpose": "The Campaign Branding & Ads Team functions as a centralised branding, creative and coordination unit that supports national and state-level campaigns across multiple formats and platforms. It ensures smooth implementation of campaign-related requirements involving branding, events, print communication, digital creatives, media support, video communication, presentations, animation and campaign infrastructure support.",
     "skills": {
@@ -349,6 +348,7 @@ const TEAMS = [
   },
   {
     "id": "party",
+    "hideTabs": ["skills","hiring","budget","example","downloads"],
     "name": "Party Team",
     "icon": "🏛️",
     "category": "comms",
@@ -695,6 +695,7 @@ const TEAMS = [
   },
   {
     "id": "growth",
+    "hideTabs": ["example","downloads"],
     "name": "Growth Team",
     "icon": "📈",
     "tagline": "Manages, executes, optimises and safeguards political digital advertising operations across platforms.",
@@ -942,6 +943,7 @@ const TEAMS = [
   },
   {
     "id": "influencer",
+    "hideTabs": ["budget","example","downloads"],
     "name": "Influencer Management",
     "icon": "🎙️",
     "function": "Creator Network",
@@ -1073,6 +1075,7 @@ const TEAMS = [
   },
   {
     "id": "legal",
+    "hideTabs": ["budget","ops","downloads"],
     "name": "Legal Team",
     "icon": "⚖️",
     "category": "ops",
@@ -1249,6 +1252,7 @@ const TEAMS = [
   },
   {
     "id": "media",
+    "hideTabs": ["budget","example","downloads"],
     "name": "Media Team",
     "icon": "📰",
     "category": "intel",
@@ -1410,6 +1414,7 @@ const TEAMS = [
   },
   {
     "id": "narrative",
+    "hideTabs": ["phases","budget","downloads"],
     "name": "Narrative Team (QRT)",
     "icon": "💡",
     "category": "intel",
@@ -1588,6 +1593,7 @@ const TEAMS = [
   },
   {
     "id": "non-meta",
+    "hideTabs": ["skills","hiring","budget","example"],
     "name": "Non-Meta Digital Ads",
     "icon": "📡",
     "category": "ops",
@@ -1762,6 +1768,7 @@ const TEAMS = [
   },
   {
     "id": "party-coord",
+    "hideTabs": ["structure","skills","hiring","budget","ops","example","downloads"],
     "name": "Party Coordination & Narrative Management",
     "icon": "🤝",
     "category": "ops",
@@ -1922,6 +1929,7 @@ const TEAMS = [
   },
   {
     "id": "reporter",
+    "hideTabs": ["skills","budget","example","downloads"],
     "name": "Reporter Network (RN)",
     "icon": "📹",
     "category": "intel",
@@ -2194,10 +2202,7 @@ const TEAMS = [
     "icon": "🎯",
     "category": "comms",
     "function": "Hyperlocal Operations",
-    "hideTabs": [
-      "skills",
-      "downloads"
-    ],
+    "hideTabs": ["skills","example","downloads"],
     "tagline": "Precision Political Communication Engine — hyperlocal narrative-driven content backed by political intelligence.",
     "purpose": "The Social Media Command Centre (SMCC) is a key wing of the Communications team focused on creating high-impact hyperlocal content that can influence election outcomes. It is a centralised team built around two components — (1) producing Assembly Constituency (AC) level hyperlocal, narrative-driven content, and (2) building a hyperlocal dissemination network to amplify it. Unlike traditional communications (which primarily produces high-quality content for party pages and manages third-party pages), SMCC enables strategic hyperlocal content backed by political intelligence and has the flexibility to experiment with new formats and genres. This handbook is a guiding framework — not a fixed rulebook; processes must ultimately be shaped after analysing the political and organisational structure of the campaign State. The SMCC Manager must have a thorough understanding of the state's political scenario and overall narrative, referring to the PI Team's Primer Document and the National Research Team's State Achievement and Chargesheet documents.",
     "objectives": [
@@ -2724,12 +2729,7 @@ const TEAMS = [
     "id": "surrogate",
     "name": "Surrogate Pages Acquisition and Management",
     "tagline": "Acquires Instagram pages aligned with our ideology and narratives and places them under vendor management.",
-    "hideTabs": [
-      "hiring",
-      "ops",
-      "example",
-      "downloads"
-    ],
+    "hideTabs": ["ops","example","downloads"],
     "purpose": "This program focuses on acquiring Instagram pages aligned with our ideology and narratives and placing them under vendor management. While VA retains full ownership, the original admins continue to operate the pages and publish content aligned with our narratives.",
     "skills": {
       "must": [
@@ -2880,11 +2880,7 @@ const TEAMS = [
     "name": "Third Party Team",
     "icon": "🎭",
     "category": "creative",
-    "hideTabs": [
-      "budget",
-      "example",
-      "downloads"
-    ],
+    "hideTabs": ["budget","example","downloads"],
     "hideOverviewExtras": true,
     "tagline": "Internally managed surrogate Instagram pages amplifying state-political narratives.",
     "purpose": "The Third-Party Ecosystem is designed to build and operate independent-looking digital communities and social media properties that align with broader communication objectives during high-focus political periods, particularly elections.\n\nUnlike official communication channels, these properties function through decentralized and audience-native content formats, enabling narratives to be communicated in a more organic, culturally relevant, and internet-friendly manner. The ecosystem allows messaging to reach diverse audience segments through indirect engagement models that appear more conversational and community-driven rather than institutionally branded.",
@@ -3067,14 +3063,7 @@ const TEAMS = [
     "icon": "🎬",
     "category": "creative",
     "function": "Films & Documentaries",
-    "hideTabs": [
-      "skills",
-      "phases",
-      "hiring",
-      "budget",
-      "ops",
-      "example"
-    ],
+    "hideTabs": ["skills","hiring","budget","ops","example"],
     "tagline": "Operational structure and workflow of the TVC & Documentaries team — from script to final delivery.",
     "purpose": "The TVC & Documentaries team works closely with the Comms & PI team to understand the key narratives, political context, and communication priorities of the state. Based on these inputs, the team handles the complete process of making the ad films and documentaries — including conceptualisation, production, and post-production.",
     "structure": [
@@ -3442,6 +3431,7 @@ const TEAMS = [
   },
   {
     "id": "partnership",
+    "hideTabs": ["budget","example","downloads"],
     "name": "Partnership Program",
     "icon": "🌟",
     "category": "creative",
