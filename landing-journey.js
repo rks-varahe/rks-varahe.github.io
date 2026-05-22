@@ -1,4 +1,4 @@
-/* Campaign Flow popup — open full chapter on card click */
+/* Campaign Flow popup - open full chapter on card click */
 (function(){
   const template = document.getElementById('ljChapters');
   const modal    = document.getElementById('ljModal');

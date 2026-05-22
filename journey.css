@@ -1,4 +1,4 @@
-/* Campaign Journey — scroll-driven car/road narrative */
+/* Campaign Journey - scroll-driven car/road narrative */
 
 .jrn-body{background:#fafafa}
 
@@ -20,13 +20,8 @@
   .jrn-ribbon{grid-template-columns:repeat(2,1fr)}
 }
 
-/* STAGE + CAR RAIL */
+/* STAGE */
 .jrn-stage{position:relative;padding:40px 0 60px}
-/* The stage reserves a right-gutter for the car rail so it never overlaps */
-.jrn-stage > .container{padding-right:96px}
-@media (max-width:700px){
-  .jrn-stage > .container{padding-right:64px}
-}
 
 .jrn-car-rail{position:absolute;top:0;bottom:0;right:24px;width:64px;pointer-events:none;z-index:5}
 @media (max-width:700px){
@@ -39,7 +34,7 @@
   .jrn-car svg{width:42px;height:21px}
 }
 
-/* SCENE — one per phase */
+/* SCENE - one per phase */
 .jrn-scene{position:relative;padding:32px 0 36px;border-radius:20px;margin-bottom:36px;background:linear-gradient(180deg,var(--tint) 0%,#fff 78%);border:1px solid var(--line);box-shadow:0 4px 18px rgba(15,23,42,.04);overflow:hidden}
 .jrn-scene::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
 .jrn-scene::after{content:attr(data-ph);position:absolute;right:18px;top:8px;font-size:6.5rem;font-weight:800;color:var(--accent);opacity:.06;font-family:var(--font-display);pointer-events:none;line-height:1}
@@ -50,7 +45,7 @@
 .jrn-scene-headline{font-size:1rem;color:var(--accent);font-weight:600;margin:0 0 6px;line-height:1.4}
 .jrn-scene-blurb{font-size:.92rem;color:#475569;line-height:1.6;margin:0;max-width:780px}
 
-/* SCENE FLOW — vertical stack of 6 lanes; each lane = label-left + chips-right */
+/* SCENE FLOW - vertical stack of 6 lanes; each lane = label-left + chips-right */
 .jrn-scene-flow{display:flex;flex-direction:column;gap:8px;padding:0 24px;position:relative}
 .jrn-lane{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:stretch;padding:10px 14px 10px 0;background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;position:relative;z-index:1;box-shadow:var(--shadow-sm)}
 .jrn-lane-side{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:6px 12px;border-right:1px dashed color-mix(in srgb, var(--accent) 30%, #e2e8f0)}

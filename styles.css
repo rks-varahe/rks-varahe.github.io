@@ -1,4 +1,4 @@
-/* Varahe National Communications — Theme */
+/* Varahe National Communications - Theme */
 :root{
   --teal-50:#ecfeff; --teal-100:#cffafe; --teal-300:#67e8f9; --teal-400:#22d3ee;
   --teal-500:#06b6d4; --teal-600:#0891b2; --teal-700:#0e7490; --teal-800:#155e75;
@@ -313,7 +313,7 @@ html[data-theme="dark"] .rn-mk-lbl.muted{fill:#92aabd}
 .donut-legend div{display:flex;align-items:center;gap:10px;font-size:.9rem}
 .donut-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
 
-/* COORDINATION MAP — single ring layout + side info panel */
+/* COORDINATION MAP - single ring layout + side info panel */
 .coord-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 @media(max-width:980px){.coord-layout{grid-template-columns:1fr}}
 /* Both boxes are locked to the same square footprint so hover-driven content
@@ -427,7 +427,7 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
   .nav-links{display:none}
 }
 
-/* Hiring tab — sizing tiles + role grid */
+/* Hiring tab - sizing tiles + role grid */
 .hire-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0}
 .hire-tile{padding:18px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);border-top:3px solid var(--teal-500)}
 .hire-tile b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--teal-800);line-height:1.3;margin-bottom:6px}
@@ -438,7 +438,7 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .role-card b{display:block;font-family:var(--font-display);font-size:.98rem;color:var(--ink);margin-bottom:8px}
 .role-card p{margin:0;font-size:.86rem;line-height:1.5;color:var(--muted)}
 
-/* Mini team cards — icon + name, dense grid */
+/* Mini team cards - icon + name, dense grid */
 .mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .mini-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 12px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:var(--transition);text-align:center;overflow:hidden;position:relative}
 .mini-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--gradient);opacity:0;transition:var(--transition)}
@@ -447,10 +447,10 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .mini-card .icon{width:42px;height:42px;border-radius:10px;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .mini-card span:last-child{font-family:var(--font-display);font-weight:600;font-size:.85rem;line-height:1.25;color:var(--ink)}
 
-/* Hero callout — manifesto-style quote */
+/* Hero callout - manifesto-style quote */
 .hero-callout{padding:24px 28px;background:var(--gradient-soft);border-left:4px solid var(--teal-500);border-radius:var(--radius);font-family:var(--font-display);font-size:1.15rem;line-height:1.45;color:var(--teal-800);margin:18px 0;font-style:italic;font-weight:500}
 
-/* Speed clock — horizontal timeline of moments */
+/* Speed clock - horizontal timeline of moments */
 .speed-clock{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;padding:14px 0}
 .sc-step{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);position:relative;flex:1;min-width:180px}
 .sc-step .sc-t{font-family:var(--font-display);font-weight:700;color:var(--teal-700);font-size:.95rem}
@@ -465,14 +465,14 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .bucket b{display:block;font-size:.92rem;margin-bottom:4px}
 .bucket span{font-size:.82rem;color:var(--muted);line-height:1.45}
 
-/* Statutory forms — legal mini-cards */
+/* Statutory forms - legal mini-cards */
 .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .form-card{padding:16px 18px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);position:relative;overflow:hidden}
 .form-card::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--gradient)}
 .form-card b{display:block;font-family:var(--font-display);font-size:1.4rem;color:var(--teal-800);margin-bottom:4px;padding-left:8px}
 .form-card span{display:block;font-size:.85rem;color:var(--muted);padding-left:8px}
 
-/* IPO — input → process → output 3-col flow */
+/* IPO - input → process → output 3-col flow */
 .ipo{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
 .ipo-col{flex:1;min-width:220px;padding:18px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius)}
 .ipo-stage{display:inline-block;font-family:var(--font-display);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--gradient);padding:4px 12px;border-radius:999px;margin-bottom:10px}
@@ -541,7 +541,7 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .deck-cta{font-size:.85rem;font-weight:700;color:var(--teal-700);white-space:nowrap;flex-shrink:0}
 .deck-card:hover .deck-cta{color:var(--teal-800)}
 
-/* Contact tab — 3 person-cards */
+/* Contact tab - 3 person-cards */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:18px}
 .contact-card{padding:22px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:var(--transition);position:relative;overflow:hidden}
 .contact-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--gradient)}
@@ -555,14 +555,14 @@ table.std tr:nth-child(even) td{background:color-mix(in oklab,var(--paper-2) 92%
 .contact-list a{color:var(--ink);text-decoration:none;transition:var(--transition);word-break:break-all}
 .contact-list a:hover{color:var(--teal-700)}
 
-/* Example tab — story-card */
+/* Example tab - story-card */
 .example-wrap{position:relative;padding:36px 32px 32px;background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--teal-500);border-radius:var(--radius);box-shadow:var(--shadow-sm);margin-top:18px}
 .example-wrap::before{content:"";position:absolute;top:14px;right:18px;width:48px;height:48px;background:var(--gradient-soft);border-radius:12px;display:flex;align-items:center;justify-content:center}
 .example-wrap .example-tag{position:absolute;top:-12px;left:24px;display:inline-block;padding:4px 14px;background:var(--gradient);color:#fff;font-family:var(--font-display);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;border-radius:999px;font-weight:700}
 .example-wrap h3{font-size:1.25rem;margin:6px 0 14px}
 .example-wrap p{font-size:1rem;line-height:1.7;color:var(--ink)}
 
-/* GLOSSARY — flat grid (no extra rule, keeping the marker line) */
+/* GLOSSARY - flat grid (no extra rule, keeping the marker line) */
 .glossary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .gloss-item{padding:16px 18px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);transition:var(--transition);border-left:3px solid var(--teal-500)}
 .gloss-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-left-color:var(--teal-700)}
@@ -575,75 +575,75 @@ html[data-theme="dark"] .gloss-item dt{color:var(--teal-300)}
 /* Cards: clamp the description so taglines don't blow card heights apart */
 .card .desc{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
-/* Team page meta pills — tighter rhythm + label kicker contrast */
+/* Team page meta pills - tighter rhythm + label kicker contrast */
 .team-meta{margin-top:14px;gap:10px}
 .meta-pill{padding:6px 12px;font-size:.82rem}
 
-/* Tabs — keep horizontal-scroll bar invisible but functional on mobile */
+/* Tabs - keep horizontal-scroll bar invisible but functional on mobile */
 .tabs::-webkit-scrollbar{height:6px}
 .tabs::-webkit-scrollbar-thumb{background:var(--teal-300);border-radius:3px}
 .tab{padding:13px 16px}
 
-/* Team-art SVGs sit in the hero — cap height so they don't dominate */
+/* Team-art SVGs sit in the hero - cap height so they don't dominate */
 .team-art{max-height:220px}
 .team-art img{max-height:220px;object-fit:cover}
-/* Hero copy on team pages — force breaks on long acronym runs */
+/* Hero copy on team pages - force breaks on long acronym runs */
 .team-hero .hero-lead{overflow-wrap:anywhere;word-break:normal;max-width:920px}
 .team-hero h1{overflow-wrap:break-word;max-width:960px}
 
-/* Section heads — even spacing across all pages */
+/* Section heads - even spacing across all pages */
 .section-head{margin-bottom:30px}
 .section{padding:70px 0}
 
-/* Hero stats — avoid wide gaps on intermediate widths */
+/* Hero stats - avoid wide gaps on intermediate widths */
 .hero-stats{gap:14px}
 .stat{min-width:140px;padding:14px 18px}
 .stat b{font-size:1.4rem}
 
-/* Glossary tooltip — keep inside viewport on narrow screens */
+/* Glossary tooltip - keep inside viewport on narrow screens */
 @media(max-width:600px){
   .tip:hover::after{left:auto;right:0;transform:none;min-width:0;max-width:80vw;font-size:.78rem}
   .tip:hover::before{display:none}
 }
 
-/* Search popup — never wider than viewport on phones */
+/* Search popup - never wider than viewport on phones */
 @media(max-width:560px){
   .search-pop{position:fixed;top:72px;left:8px;right:8px;width:auto;max-height:70vh}
 }
 
-/* Footer — long team names truncate gracefully */
+/* Footer - long team names truncate gracefully */
 .footer li a{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
 
-/* Phase timeline — better wrapping when intensity tag + title collide */
+/* Phase timeline - better wrapping when intensity tag + title collide */
 .phase-card-head h4{flex:1;min-width:0}
 .phase-card .badges{margin:6px 0 8px}
 .badge{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-/* Download cards — wrap host badge cleanly when label is long */
+/* Download cards - wrap host badge cleanly when label is long */
 .download-card b{word-break:break-word}
 
-/* Team-nav buttons — tidy when team name wraps */
+/* Team-nav buttons - tidy when team name wraps */
 .team-nav-btn .tnb-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
 
-/* Org chart — prevent role text from breaking awkwardly mid-word */
+/* Org chart - prevent role text from breaking awkwardly mid-word */
 .org-node{word-break:normal;hyphens:auto;max-width:280px}
 
-/* Coord map — under-circle label gets a white halo so it stays legible over edge lines */
+/* Coord map - under-circle label gets a white halo so it stays legible over edge lines */
 .coord-node text:last-of-type{paint-order:stroke;stroke:var(--paper);stroke-width:3;stroke-linejoin:round}
 
-/* Hub diagram — same paint-order halo for crispness over orbits */
+/* Hub diagram - same paint-order halo for crispness over orbits */
 .hub-node text{paint-order:stroke;stroke:var(--paper);stroke-width:3;stroke-linejoin:round}
 .hub-node:hover text{stroke-width:0}
 
-/* Donut chart — collapse cleanly on narrow viewports */
+/* Donut chart - collapse cleanly on narrow viewports */
 .donut{gap:20px}
 .donut svg{flex-shrink:0}
 
-/* Reporter Network stat tiles — even vertical rhythm */
+/* Reporter Network stat tiles - even vertical rhythm */
 .rn-stat{padding:12px 8px}
 .rn-stat b{font-size:1.15rem}
 
-/* Section "Other teams" on team page — match section-head spacing */
+/* Section "Other teams" on team page - match section-head spacing */
 .team-nav + .container h2{margin-top:30px}
 
 /* Kill legacy classes that are never used but could leak into new content */
@@ -656,7 +656,7 @@ html[data-theme="dark"] .gloss-item dt{color:var(--teal-300)}
 .critical-callout h4{margin:6px 0 8px;color:#991b1b;font-size:1.05rem}
 .critical-callout p{margin:0;color:#7f1d1d;line-height:1.55;font-size:.94rem}
 
-/* Party / Party-Coord — verbatim docx phase stack */
+/* Party / Party-Coord - verbatim docx phase stack */
 .party-phase-stack{display:flex;flex-direction:column;gap:18px;margin-top:18px}
 .pp-card{position:relative;padding:22px 24px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal-700);border-radius:14px;box-shadow:var(--shadow-sm);transition:var(--transition)}
 .pp-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(15,23,42,.08)}
@@ -680,7 +680,7 @@ html[data-theme="dark"] .gloss-item dt{color:var(--teal-300)}
   .pp-ops{grid-template-columns:1fr}
 }
 
-/* Partnership — verbatim linear workflow chain */
+/* Partnership - verbatim linear workflow chain */
 .workflow-chain{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:10px;position:relative}
 .workflow-chain::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--teal-300),var(--teal-600));border-radius:2px}
 .wf-step{position:relative;display:flex;align-items:center;gap:14px;padding:12px 16px 12px 12px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-sm);transition:var(--transition)}
@@ -732,7 +732,7 @@ html[data-theme="dark"] .gloss-item dt{color:var(--teal-300)}
   .cd-ops-grid{grid-template-columns:1fr}
 }
 
-/* Flow Cycle — continuous operating loop view (narrative, partnership) */
+/* Flow Cycle - continuous operating loop view (narrative, partnership) */
 .flow-cycle-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:14px 0 8px}
 .fc-cadence-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper-2);border:1px solid var(--teal-300);color:var(--teal-700);font-size:.8rem;font-weight:600}
 .flow-cycle-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:start;margin-top:18px;padding:24px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}

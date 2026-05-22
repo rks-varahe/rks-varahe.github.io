@@ -394,14 +394,14 @@ const TEAM_PHASE_BULLETS = {
       "1": [
         "State-specific campaign planning starts; budgeting and hiring begin",
         "Third-party pages are created and set up",
-        "Page positioning and narrative definition begins 6–7 months before elections",
-        "Initial posting goes live with 1–2 narratives"
+        "Page positioning and narrative definition begins 6-7 months before elections",
+        "Initial posting goes live with 1-2 narratives"
       ],
       "2": [
         "Audience amplification phase begins across the page network",
         "Follower-growth strategies are implemented",
         "State-specific content strategy is executed",
-        "Narratives expand to 3–4 key themes 3–4 months before elections"
+        "Narratives expand to 3-4 key themes 3-4 months before elections"
       ],
       "3": [
         "Aggressive campaign execution kicks in after MCC implementation",

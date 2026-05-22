@@ -1,5 +1,5 @@
 /* Lightweight copy deterrent.
-   Note: client-side protection is a deterrent, not a security control —
+   Note: client-side protection is a deterrent, not a security control -
    anyone can extract text via view-source, curl, or disabling JS. */
 
 /* 1. Disable text selection site-wide. */

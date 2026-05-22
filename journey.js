@@ -1,4 +1,4 @@
-/* Campaign Journey — scroll-driven narrative through 5 phases × team handoff lanes.
+/* Campaign Journey - scroll-driven narrative through 5 phases × team handoff lanes.
    Role text per team-per-phase is composed from each team's own phase data in data.js
    (XLSX focus text for the 12 sheet teams; docx purpose/window for party/party-coord;
    workflow steps for partnership). The journey itself is a designed product.
@@ -11,7 +11,7 @@
     { n:1, name:"Foundation & Setup", duration:"3 months", window:"T-6 mo → T-3 mo",
       tint:"#ecfeff", accent:"#0e7490",
       headline:"Set the political direction. Build the infrastructure.",
-      blurb:"Teams form. Maps and baselines are drawn. The handles, the legal scaffolding, the reporter network — everything that the later phases will lean on — is built now, quietly." },
+      blurb:"Teams form. Maps and baselines are drawn. The handles, the legal scaffolding, the reporter network - everything that the later phases will lean on - is built now, quietly." },
     { n:2, name:"Narrative Build-Up", duration:"1 month", window:"T-3 mo → T-2 mo",
       tint:"#f0fdfa", accent:"#0891b2",
       headline:"Narratives go live. Networks warm up.",
@@ -30,7 +30,7 @@
       blurb:"Result-day comms. Final reports. The networks built over six months are stabilised for the next state." }
   ];
 
-  // ---- Lane definitions — which teams sit in which lane ----
+  // ---- Lane definitions - which teams sit in which lane ----
   const LANES = [
     { id:"strategy",     label:"Strategy",      teams:["party","party-coord"] },
     { id:"intel",        label:"Intelligence",  teams:["arc","reporter","media"] },
@@ -46,7 +46,7 @@
   const ROLES = {
     "party": {
       1: "Sets political direction with leadership; defines narrative buckets, constituency map and content bank.",
-      2: "Narratives go live softly — governance, welfare and leadership messaging start receiving visibility.",
+      2: "Narratives go live softly - governance, welfare and leadership messaging start receiving visibility.",
       3: "Daily narrative meetings begin. Quick Response System activates. Paid campaigns roll out.",
       4: "Star campaigners covered live. Mass dissemination across WhatsApp, AC pages and influencers.",
       5: "Result-day narrative prepared in advance; learnings archived for the next election."
@@ -59,7 +59,7 @@
       5: "Result-day comms and relationship continuity beyond the result."
     },
     "narrative": {
-      1: "Maps the campaign's strategic spine — narrative priorities, opposition vulnerabilities and angles to seed.",
+      1: "Maps the campaign's strategic spine - narrative priorities, opposition vulnerabilities and angles to seed.",
       2: "Translates buckets into reactive frames; briefs content teams as narratives go live.",
       3: "Daily narrative cycles. Triggers from media, opposition and ground are converted into infopacks and speech pointers.",
       4: "Real-time counter-narratives. Rapid frames for star-campaigner moments and ground incidents.",
@@ -76,7 +76,7 @@
 
   function teamById(id){ return TEAMS.find(t => t.id === id); }
   function teamShortName(t){
-    return t.name.split(" — ")[0].split(" / ")[0].split(" (")[0];
+    return t.name.split(" - ")[0].split(" / ")[0].split(" (")[0];
   }
 
   function roleFor(teamId, ph){
@@ -97,7 +97,7 @@
     else if (/;\s/.test(text))          parts = text.split(/;\s+/);
     else                                parts = text.match(/[^.!?]+[.!?]+(?:["')\]]+)?|[^.!?]+$/g) || [text];
     const items = parts
-      .map(s => s.trim().replace(/^[-–—•·]\s*/, ""))
+      .map(s => s.trim().replace(/^[---•·]\s*/, ""))
       .filter(s => s.length > 2);
     if (items.length <= 1) return `<ul class="${cls}"><li>${items[0]||text}</li></ul>`;
     return `<ul class="${cls}">${items.map(b=>`<li>${b}</li>`).join("")}</ul>`;
@@ -137,7 +137,7 @@
     }
     if (teamId === "narrative"){
       const r = ROLES["narrative"][ph]||"";
-      return `<h4>Narrative — Phase ${ph}</h4>${toBullets(r)}`;
+      return `<h4>Narrative - Phase ${ph}</h4>${toBullets(r)}`;
     }
     // Prefer curated bullets when available
     const curated = (typeof TEAM_PHASE_BULLETS !== "undefined") ? TEAM_PHASE_BULLETS[teamId] : null;
@@ -223,7 +223,7 @@
             <span class="chip-icon">${icon}</span>
             <span class="chip-body">
               <b>${teamShortName(t)}</b>
-              <span>${role || "—"}</span>
+              <span>${role || "-"}</span>
             </span>
             ${critical?`<span class="chip-flag" title="Most critical phase">★</span>`:""}
           </button>`;
@@ -299,18 +299,6 @@
     const vp = window.innerHeight;
     let progress = (window.scrollY + vp*0.45 - stageTop) / stageHeight;
     progress = Math.max(0, Math.min(1, progress));
-
-    const car = document.getElementById("jrnCar");
-    if (!car) return;
-    const rail = car.parentElement;
-    const railHeight = rail.offsetHeight;
-    const carHeight = car.offsetHeight;
-    const usable = railHeight - carHeight;
-    const y = progress * usable;
-    const tilt = Math.sin(progress * Math.PI * 4) * 4;
-    car.style.transform = `translateY(${y}px) rotate(${tilt}deg)`;
-    const wiggle = Math.sin(progress * Math.PI * 5) * 14;
-    car.style.marginLeft = `${wiggle}px`;
 
     const currentPh = Math.min(5, Math.max(1, Math.ceil(progress * 5 + 0.001)));
     document.querySelectorAll(".jrn-rib-chip").forEach(el => {

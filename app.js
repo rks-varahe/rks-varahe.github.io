@@ -1,8 +1,8 @@
-/* Varahe NCC — App */
+/* Varahe NCC - App */
 (function(){
   const $ = (s, root=document) => root.querySelector(s);
   const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
-  // Short display name — strip secondary clauses so labels don't overflow into neighbours
+  // Short display name - strip secondary clauses so labels don't overflow into neighbours
   const TEAM_SHORT = {
     "arc":"ARC","smcc":"SMCC","party":"Party","growth":"Growth","media":"Media","legal":"Legal",
     "narrative":"Narrative","reporter":"Reporter Net","tvc":"TVC & Docs","partnership":"Partnership",
@@ -14,7 +14,7 @@
       const t = TEAMS.find(x=>x.name===n);
       if(t && TEAM_SHORT[t.id]) return TEAM_SHORT[t.id];
     }
-    return n.split(" — ")[0].split(" / ")[0].split(" (")[0];
+    return n.split(" - ")[0].split(" / ")[0].split(" (")[0];
   };
 
   /* --------------- Theme + Density + Accent --------------- */
@@ -313,7 +313,7 @@
 
     wrap.innerHTML = svg;
 
-    // Info panel — colours used for the small dot per category tag
+    // Info panel - colours used for the small dot per category tag
     const TAG_COLOR = {
       "Intelligence":"#06b6d4","Creative":"#a855f7","Communications":"#0ea5e9",
       "Operations":"#14b8a6","Structure":"#0e7490","Strategy":"#f59e0b"
@@ -340,7 +340,7 @@
         <div class="ci-head">
           <span class="ci-icon">${t.icon}</span>
           <div>
-            <h3>${t.name.split(" — ")[0].split(" (")[0]}</h3>
+            <h3>${t.name.split(" - ")[0].split(" (")[0]}</h3>
             <p class="muted">${t.tagline||""}</p>
           </div>
         </div>
@@ -349,7 +349,7 @@
           ${linked.map(o=>`
             <a class="ci-row" href="team.html?id=${o.id}">
               <span class="ci-dot" style="background:${dotColor(o)}"></span>
-              <span>${o.name.split(" — ")[0].split(" (")[0]}</span>
+              <span>${o.name.split(" - ")[0].split(" (")[0]}</span>
               <span class="ci-arrow">→</span>
             </a>`).join("")}
         </div>`;
@@ -417,7 +417,7 @@
     "smcc":"assets/hex.svg"
   };
 
-  // Reporter Network India map — coords in the Varnam canonical canvas (1510×820, SOI / LGD authoritative)
+  // Reporter Network India map - coords in the Varnam canonical canvas (1510×820, SOI / LGD authoritative)
   const RN_CANVAS = {w:1510, h:820};
   // Marker x,y = state capital location in the Varnam canonical canvas (1510×820).
   // Most coords sourced verbatim from india.json metros list (Srinagar, Shimla, Chandigarh,
@@ -425,7 +425,7 @@
   // Jaipur, Bhopal, Hyderabad, Thiruvananthapuram). Goa/Panaji, Gujarat/Gandhinagar,
   // AP/Amaravati and Assam/Dispur are projected to the same canvas via lat/lng interpolation
   // off neighboring metros.
-  // Marker position is the geometric centre (bbox centroid) of each state path —
+  // Marker position is the geometric centre (bbox centroid) of each state path -
   // computed at runtime from the SOI shapes. Capital metadata preserved for tooltips.
   const RN_ACTIVE = [
     {n:"Jammu & Kashmir", key:"JAMMU & KASHMIR",  cap:"Srinagar"},
@@ -488,10 +488,10 @@
         <div class="rn-stats">
           <div class="rn-stat"><b>14</b><span>Active states</span></div>
           <div class="rn-stat"><b>7</b><span>Contact-access states</span></div>
-          <div class="rn-stat"><b>150–200</b><span>Baseline reporters</span></div>
+          <div class="rn-stat"><b>150-200</b><span>Baseline reporters</span></div>
           <div class="rn-stat"><b>600+</b><span>Election surge</span></div>
-          <div class="rn-stat"><b>1–2 hr</b><span>Archival retrieval</span></div>
-          <div class="rn-stat"><b>24–48 hr</b><span>Fresh shoot</span></div>
+          <div class="rn-stat"><b>1-2 hr</b><span>Archival retrieval</span></div>
+          <div class="rn-stat"><b>24-48 hr</b><span>Fresh shoot</span></div>
         </div>
       </div>`;
   }
@@ -550,7 +550,7 @@
     const wrap = $("#teamPage"); if(!wrap) return;
     const id = new URLSearchParams(location.search).get("id") || TEAMS[0].id;
     const t = TEAMS.find(x=>x.id===id) || TEAMS[0];
-    document.title = `${t.name} — Varahe NCC`;
+    document.title = `${t.name} - Varahe NCC`;
 
     let html = `
       <section class="team-hero">
@@ -599,7 +599,26 @@
         <div id="tab-contact" class="tab-content">${renderContact(t)}</div>
       </section>
 
-      <section class="container team-nav scroll-reveal" style="padding-top:50px">
+      <section class="container" style="padding:50px 0 30px">
+        ${(()=>{const coordIds = new Set();
+          COORD_EDGES.forEach(([a,b])=>{ if(a===t.id) coordIds.add(b); else if(b===t.id) coordIds.add(a); });
+          const coords = TEAMS.filter(o=>coordIds.has(o.id));
+          if(!coords.length) return `
+            <span class="kicker scroll-reveal">Browse</span>
+            <h2 class="scroll-reveal">All teams</h2>
+            <div class="mini-grid scroll-reveal">${TEAMS.filter(o=>o.id!==t.id).map(o=>`
+              <a class="mini-card" href="team.html?id=${o.id}"><span class="icon">${o.icon}</span><span>${o.name.split(" - ")[0]}</span></a>`).join("")}</div>`;
+          return `
+            <span class="kicker scroll-reveal">Works with</span>
+            <h2 class="scroll-reveal">Coordinated teams · ${coords.length}</h2>
+            <p class="muted scroll-reveal" style="max-width:640px;margin-top:-8px;margin-bottom:24px">Teams this group syncs with regularly - sourced from the inter-team coordination map.</p>
+            <div class="mini-grid scroll-reveal">${coords.map(o=>`
+              <a class="mini-card" href="team.html?id=${o.id}" title="${o.tagline}">
+                <span class="icon">${o.icon}</span><span>${o.name.split(" - ")[0].split(" / ")[0].split(" (")[0]}</span>
+              </a>`).join("")}</div>`;})()}
+      </section>
+
+      <section class="container team-nav scroll-reveal" style="padding:20px 0 80px">
         ${(()=>{const i=TEAMS.findIndex(x=>x.id===t.id);const prev=TEAMS[(i-1+TEAMS.length)%TEAMS.length];const next=TEAMS[(i+1)%TEAMS.length];
           return `
             <a class="team-nav-btn prev" href="team.html?id=${prev.id}">
@@ -612,25 +631,6 @@
               <span class="tnb-icon">${next.icon}</span>
               <span class="tnb-name">${next.name}</span>
             </a>`;})()}
-      </section>
-
-      <section class="container" style="padding:30px 0 80px">
-        ${(()=>{const coordIds = new Set();
-          COORD_EDGES.forEach(([a,b])=>{ if(a===t.id) coordIds.add(b); else if(b===t.id) coordIds.add(a); });
-          const coords = TEAMS.filter(o=>coordIds.has(o.id));
-          if(!coords.length) return `
-            <span class="kicker scroll-reveal">Browse</span>
-            <h2 class="scroll-reveal">All teams</h2>
-            <div class="mini-grid scroll-reveal">${TEAMS.filter(o=>o.id!==t.id).map(o=>`
-              <a class="mini-card" href="team.html?id=${o.id}"><span class="icon">${o.icon}</span><span>${o.name.split(" — ")[0]}</span></a>`).join("")}</div>`;
-          return `
-            <span class="kicker scroll-reveal">Works with</span>
-            <h2 class="scroll-reveal">Coordinated teams · ${coords.length}</h2>
-            <p class="muted scroll-reveal" style="max-width:640px;margin-top:-8px;margin-bottom:24px">Teams this group syncs with regularly — sourced from the inter-team coordination map.</p>
-            <div class="mini-grid scroll-reveal">${coords.map(o=>`
-              <a class="mini-card" href="team.html?id=${o.id}" title="${o.tagline}">
-                <span class="icon">${o.icon}</span><span>${o.name.split(" — ")[0].split(" / ")[0].split(" (")[0]}</span>
-              </a>`).join("")}</div>`;})()}
       </section>`;
     wrap.innerHTML = html;
 
@@ -668,7 +668,7 @@
     if(!rightBody.trim() && !t.hideOverviewExtras){
       const blocks = [];
       if(t.kpis && t.kpis.length){
-        blocks.push(`<div class="chart-wrap"><h3>At a glance</h3><ul style="margin:0;padding-left:18px;line-height:1.6">${t.kpis.map(r=>`<li>${Array.isArray(r)?`<b>${r[0]}</b> — ${r[1]}`:r}</li>`).join("")}</ul></div>`);
+        blocks.push(`<div class="chart-wrap"><h3>At a glance</h3><ul style="margin:0;padding-left:18px;line-height:1.6">${t.kpis.map(r=>`<li>${Array.isArray(r)?`<b>${r[0]}</b> - ${r[1]}`:r}</li>`).join("")}</ul></div>`);
       }
       if(t.platforms && t.platforms.length){
         blocks.push(`<div class="chart-wrap"><h3>Platforms</h3><div class="badges">${t.platforms.map(x=>`<span class="badge dark">${x}</span>`).join("")}</div></div>`);
@@ -887,7 +887,7 @@
       const isString = typeof e === "string";
       parts.push(`
         <h2 class="scroll-reveal">Example Use Case</h2>
-        <p class="muted scroll-reveal" style="max-width:720px">A real-world scenario showing how the ${t.name.split(" — ")[0]} team works end-to-end.</p>
+        <p class="muted scroll-reveal" style="max-width:720px">A real-world scenario showing how the ${t.name.split(" - ")[0]} team works end-to-end.</p>
         <div class="example-wrap scroll-reveal">
           <span class="example-tag">Scenario</span>
           ${isString ? `<p>${e}</p>` : `<h3>${e.title}</h3><p>${e.content}</p>`}
@@ -900,16 +900,16 @@
   }
 
   function renderContact(t){
-    // Placeholder contacts — replace once real directory is wired in.
+    // Placeholder contacts - replace once real directory is wired in.
     const slug = t.id;
     const contacts = [
-      {role:"Team POC",     name:`POC, ${t.name.split(" — ")[0]}`,    phone:"+91 98XXX 10001", email:`poc.${slug}@varahe.in`,    slack:`@${slug}-poc`},
-      {role:"Team Lead",    name:`Lead, ${t.name.split(" — ")[0]}`,   phone:"+91 98XXX 10002", email:`lead.${slug}@varahe.in`,   slack:`@${slug}-lead`},
-      {role:"Team Manager", name:`Manager, ${t.name.split(" — ")[0]}`,phone:"+91 98XXX 10003", email:`manager.${slug}@varahe.in`,slack:`@${slug}-manager`}
+      {role:"Team POC",     name:`POC, ${t.name.split(" - ")[0]}`,    phone:"+91 98XXX 10001", email:`poc.${slug}@varahe.in`,    slack:`@${slug}-poc`},
+      {role:"Team Lead",    name:`Lead, ${t.name.split(" - ")[0]}`,   phone:"+91 98XXX 10002", email:`lead.${slug}@varahe.in`,   slack:`@${slug}-lead`},
+      {role:"Team Manager", name:`Manager, ${t.name.split(" - ")[0]}`,phone:"+91 98XXX 10003", email:`manager.${slug}@varahe.in`,slack:`@${slug}-manager`}
     ];
     return `
       <h2 class="scroll-reveal">Contact</h2>
-      <p class="muted scroll-reveal" style="max-width:720px">Reach the ${t.name.split(" — ")[0]} team — point of contact, lead and manager. Phone is for urgent escalations; email for documented hand-offs; Slack for routine coordination.</p>
+      <p class="muted scroll-reveal" style="max-width:720px">Reach the ${t.name.split(" - ")[0]} team - point of contact, lead and manager. Phone is for urgent escalations; email for documented hand-offs; Slack for routine coordination.</p>
       <p class="callout scroll-reveal" style="font-size:.86rem;background:#fef3c7;border-left-color:#f59e0b;color:#92400e">⚠️ <b>Placeholder data.</b> These are gimmick contacts for layout preview. Replace with the actual team directory before sharing externally.</p>
       <div class="contact-grid scroll-reveal">
         ${contacts.map(c=>`
@@ -949,7 +949,7 @@
       </div>`);
     }
     if(hasVideos){
-      parts.push(`<h3 class="scroll-reveal" style="margin-top:36px">Weapon Arsenal — Sample Films</h3>
+      parts.push(`<h3 class="scroll-reveal" style="margin-top:36px">Weapon Arsenal - Sample Films</h3>
         <p class="muted scroll-reveal" style="max-width:720px;margin-top:-6px">Categories of films produced by the team. Click any thumbnail to open the reference video on Google Drive.</p>`);
       t.videoExamples.forEach(cat=>{
         parts.push(`<div class="scroll-reveal" style="margin-top:22px">
@@ -1127,7 +1127,7 @@
       <h3 class="scroll-reveal" style="margin-top:30px">Advertising mix (3 tiers)</h3>
       <div class="row-2 scroll-reveal">
         <div class="chart-wrap">${renderDonut(t.adTierMix)}</div>
-        <div class="chart-wrap"><ul>${t.adTierMix.map(a=>`<li><b>${a.label}</b> — ${a.note}</li>`).join("")}</ul></div>
+        <div class="chart-wrap"><ul>${t.adTierMix.map(a=>`<li><b>${a.label}</b> - ${a.note}</li>`).join("")}</ul></div>
       </div>`},
     adRules: {slot:"ops", render:t=>`
       <h3 class="scroll-reveal" style="margin-top:30px">Ad performance rules</h3>

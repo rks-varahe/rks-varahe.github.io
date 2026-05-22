@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Campaign Journey · Varahe NCC</title>
-<meta name="description" content="An animated journey through every campaign phase — see how the narrative flows from Party Team to ground." />
+<meta name="description" content="An animated journey through every campaign phase - see how the narrative flows from Party Team to ground." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <a href="index.html#coord">Comms Wiring</a>
       <a href="index.html#glossary">Jargons</a>
       <a href="resources.html">Playbooks</a>
-      <a href="journey.html" style="color:var(--teal-700);font-weight:700">Rajnitik Abhiyan Yatra</a>
+      <a href="journey.html" style="color:var(--teal-700);font-weight:700">Journey</a>
     </nav>
     <div class="nav-search">
       <input type="text" id="globalSearch" placeholder="Search teams, SOPs, terms…" autocomplete="off" />
@@ -39,9 +39,9 @@
 <!-- HERO -->
 <section class="jrn-hero">
   <div class="container">
-    <span class="kicker scroll-reveal">From kickoff to result day</span>
+    <span class="kicker scroll-reveal">Phase-by-phase tasks, team by team</span>
     <h1 class="scroll-reveal">The <span class="grad">Campaign Journey</span><br/>through every team.</h1>
-    <p class="hero-lead scroll-reveal" style="max-width:680px">Follow the car. It rolls through six months of campaign time — phase by phase, team by team — showing how a single brief from the Party Team becomes a narrative, becomes a creative, becomes a vote.</p>
+    <p class="hero-lead scroll-reveal" style="max-width:720px">What each team actually does in each phase of a campaign. Scroll through the five phases below - every block lists the teams active in that phase and the work they take on. Click any team chip to see its full role for that phase.</p>
   </div>
 
   <!-- Phase ribbon -->
@@ -52,31 +52,6 @@
 
 <!-- THE JOURNEY -->
 <main class="jrn-stage" id="jrnStage">
-  <!-- fixed car element (positioned by JS based on scroll progress) -->
-  <div class="jrn-car-rail" aria-hidden="true">
-    <div class="jrn-car" id="jrnCar">
-      <svg viewBox="0 0 64 32" width="64" height="32">
-        <!-- shadow -->
-        <ellipse cx="32" cy="30" rx="24" ry="2" fill="rgba(15,23,42,.18)"/>
-        <!-- body -->
-        <path d="M6 22 L10 13 Q12 10 16 10 L40 10 Q44 10 47 13 L54 18 Q58 18 58 22 L58 26 Q58 27 57 27 L7 27 Q6 27 6 26 Z" fill="#0e7490"/>
-        <!-- windshield -->
-        <path d="M18 13 L24 11 L36 11 L40 13 L40 18 L18 18 Z" fill="#67e8f9" opacity=".85"/>
-        <!-- door line -->
-        <line x1="29" y1="13" x2="29" y2="18" stroke="#155e75" stroke-width=".7"/>
-        <!-- wheels -->
-        <circle cx="18" cy="27" r="4" fill="#0f172a"/>
-        <circle cx="18" cy="27" r="1.6" fill="#94a3b8"/>
-        <circle cx="46" cy="27" r="4" fill="#0f172a"/>
-        <circle cx="46" cy="27" r="1.6" fill="#94a3b8"/>
-        <!-- headlight -->
-        <circle cx="56" cy="22" r="1.4" fill="#fef3c7"/>
-      </svg>
-    </div>
-    <!-- vertical road line -->
-    <div class="jrn-road-line"></div>
-  </div>
-
   <div class="container" id="jrnScenes"></div>
 </main>
 
@@ -84,7 +59,7 @@
 <section class="container jrn-footer-section">
   <div class="jrn-legend scroll-reveal">
     <h3>How to read this journey</h3>
-    <p class="muted">Each phase block has six lanes — the same handoff chain from <b>Strategy</b> on the left to <b>Amplification</b> on the right. Click any team chip to see its full role in that phase.</p>
+    <p class="muted">Each phase block has six lanes - the same handoff chain from <b>Strategy</b> on the left to <b>Amplification</b> on the right. Click any team chip to see its full role in that phase.</p>
     <div class="jrn-lane-key">
       <span data-lane="strategy">Strategy</span>
       <span data-lane="intel">Intelligence</span>

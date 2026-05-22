@@ -1,4 +1,4 @@
-// identity-validate fires BEFORE the user is created — the canonical place to
+// identity-validate fires BEFORE the user is created - the canonical place to
 // reject signups (including via Google / other external providers). Returning
 // status >= 400 cancels the signup.
 //

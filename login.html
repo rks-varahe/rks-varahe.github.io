@@ -78,7 +78,7 @@
   function sanitiseGotrueStorage(){
     try{
       const keys = ["gotrue.user"];
-      // Some widget versions key by their api URL prefix — sweep anything starting with gotrue.
+      // Some widget versions key by their api URL prefix - sweep anything starting with gotrue.
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
         if (k && k.indexOf("gotrue") === 0 && keys.indexOf(k) === -1) keys.push(k);
@@ -88,7 +88,7 @@
         if (!raw) return;
         let parsed;
         try { parsed = JSON.parse(raw); } catch(_) { localStorage.removeItem(k); return; }
-        // Bad shape — wipe.
+        // Bad shape - wipe.
         if (!parsed || typeof parsed !== "object" || !parsed.token) { localStorage.removeItem(k); return; }
         // Ensure user_metadata exists so the widget's render path doesn't crash.
         if (!parsed.user_metadata) parsed.user_metadata = {};
@@ -171,7 +171,7 @@
     document.getElementById("logout-link").onclick = () => { clearLoop(); if(id) id.logout(); else location.reload(); };
   }
 
-  // After login the in-memory user object may be stale — the role set by
+  // After login the in-memory user object may be stale - the role set by
   // identity-validate hasn't propagated to the JWT yet. Force a token refresh
   // before deciding whether to grant access.
   async function refreshAndCheck(user){
@@ -208,7 +208,7 @@
     busy(false);
     if (!hasStaffRole(current)) { showNoAccess(current && current.email); return; }
     if (countAndCheckLoop()) { showContinue(); return; }
-    ok("Welcome — opening the handbook…");
+    ok("Welcome - opening the handbook…");
     setTimeout(() => location.href = "/", 400);
   }
 

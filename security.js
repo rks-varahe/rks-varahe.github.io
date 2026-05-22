@@ -1,4 +1,4 @@
-/* Lightweight copy deterrent — blocks clipboard events, right-click,
+/* Lightweight copy deterrent - blocks clipboard events, right-click,
    and common copy/save/view-source keyboard shortcuts. Form inputs are
    left alone so the search box still works.
 
