@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sign in · Varahe NCC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:Poppins,system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#0b1726 0%,#10243a 45%,#155e75 100%);color:#e6f1f7;-webkit-font-smoothing:antialiased}
+  .hero{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}
+  .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.45;z-index:0;pointer-events:none}
+  .blob.a{width:520px;height:520px;background:#06b6d4;top:-160px;right:-120px;animation:f1 14s ease-in-out infinite}
+  .blob.b{width:460px;height:460px;background:#14b8a6;bottom:-140px;left:-120px;animation:f1 18s ease-in-out infinite reverse}
+  @keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(40px)}}
+  .card{position:relative;z-index:1;background:rgba(255,255,255,.98);color:#0b1726;border-radius:22px;padding:48px 42px;max-width:460px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.35);text-align:center;animation:in .5s ease}
+  @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .card img{height:46px;margin-bottom:22px}
+  .card h1{font-family:"Poppins",sans-serif;font-size:1.7rem;margin:0 0 10px;letter-spacing:-.02em;color:#0b1726;line-height:1.15}
+  .card p{color:#587184;margin:0 0 26px;font-size:.94rem;line-height:1.55}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 18px;background:linear-gradient(135deg,#06b6d4 0%,#0ea5e9 50%,#14b8a6 100%);color:#fff;border:0;border-radius:11px;font-weight:600;font-size:1rem;cursor:pointer;font-family:inherit;transition:transform .2s, box-shadow .2s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(6,182,212,.4)}
+  .btn:disabled{opacity:.6;cursor:wait;transform:none}
+  .err{margin-top:18px;padding:12px 14px;background:#fee2e2;color:#991b1b;border-radius:8px;font-size:.86rem;line-height:1.45;text-align:left}
+  .ok{margin-top:18px;padding:12px 14px;background:#dcfce7;color:#166534;border-radius:8px;font-size:.86rem;line-height:1.45}
+  .foot{margin-top:22px;font-size:.78rem;color:#92aabd}
+  .spinner{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:999px;animation:spin .8s linear infinite;vertical-align:middle;margin-right:8px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .badge{display:inline-block;margin-bottom:18px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#0e7490;font-weight:700;font-family:"Poppins",sans-serif}
+</style>
+</head>
+<body>
+<div class="hero">
+  <span class="blob a"></span>
+  <span class="blob b"></span>
+  <div class="card">
+    <img src="assets/logo.png" alt="Varahe Analytics" />
+    <span class="badge">Internal access</span>
+    <h1>National Communications Handbook</h1>
+    <p>Sign in with your <b>@varaheanalytics.com</b>, <b>@nexgrowdigital.com</b> or <b>@goodtakestudio.com</b> Google account to open the handbook.</p>
+    <button class="btn" id="signin"><span id="lbl">Continue with Google</span></button>
+    <div id="msg"></div>
+    <p class="foot">For internal use only · Varahe Analytics</p>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("signin");
+  const lbl = document.getElementById("lbl");
+  const msg = document.getElementById("msg");
+  function busy(b){ btn.disabled = b; lbl.innerHTML = b ? '<span class="spinner"></span>Connecting…' : 'Continue with Google'; }
+  function err(t){ msg.innerHTML = '<div class="err">' + t + '</div>'; }
+  function ok(t){ msg.innerHTML = '<div class="ok">' + t + '</div>'; }
+
+  // Parse any error returned by the OAuth bounce (Google → Netlify → here).
+  // Netlify Identity returns error info in the URL fragment after a failed redirect.
+  function parseFragmentError() {
+    if (!location.hash) return null;
+    const params = new URLSearchParams(location.hash.replace(/^#/, ""));
+    const e = params.get("error_description") || params.get("error") || params.get("msg");
+    if (e) {
+      // Clean the hash so a refresh doesn't keep showing the error.
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (_){}
+      return decodeURIComponent(e.replace(/\+/g, " "));
+    }
+    return null;
+  }
+  const fragErr = parseFragmentError();
+  if (fragErr) err("Sign-in rejected: " + fragErr);
+
+  // --- Sanitise any stale / malformed gotrue token in localStorage so the
+  // netlify-identity-widget doesn't crash trying to read user.user_metadata.full_name.
+  // This is a known crash path when an invite-accept flow gets interrupted.
+  function sanitiseGotrueStorage(){
+    try{
+      const keys = ["gotrue.user"];
+      // Some widget versions key by their api URL prefix — sweep anything starting with gotrue.
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf("gotrue") === 0 && keys.indexOf(k) === -1) keys.push(k);
+      }
+      keys.forEach(k=>{
+        const raw = localStorage.getItem(k);
+        if (!raw) return;
+        let parsed;
+        try { parsed = JSON.parse(raw); } catch(_) { localStorage.removeItem(k); return; }
+        // Bad shape — wipe.
+        if (!parsed || typeof parsed !== "object" || !parsed.token) { localStorage.removeItem(k); return; }
+        // Ensure user_metadata exists so the widget's render path doesn't crash.
+        if (!parsed.user_metadata) parsed.user_metadata = {};
+        if (parsed.user_metadata && typeof parsed.user_metadata !== "object") parsed.user_metadata = {};
+        if (!parsed.app_metadata) parsed.app_metadata = {};
+        localStorage.setItem(k, JSON.stringify(parsed));
+      });
+    }catch(e){
+      console.warn("Could not sanitise gotrue storage", e);
+    }
+  }
+  function nukeIdentityState(){
+    try{
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && (k.indexOf("gotrue") === 0 || k.indexOf("nf_jwt") === 0)) localStorage.removeItem(k);
+      }
+    }catch(_){}
+  }
+  sanitiseGotrueStorage();
+
+  // Catch the widget's mobx crash and recover (clear storage + reload once).
+  window.addEventListener("error", (ev) => {
+    const m = String(ev && ev.message || "");
+    if (m.indexOf("full_name") !== -1 || (m.indexOf("Cannot read") !== -1 && m.indexOf("undefined") !== -1)) {
+      if (!sessionStorage.getItem("vct-identity-nuke")) {
+        sessionStorage.setItem("vct-identity-nuke","1");
+        nukeIdentityState();
+        location.reload();
+      } else {
+        err("The sign-in widget hit a bad state. Try clearing site data for this domain, then reload.");
+      }
+    }
+  });
+
+  const id = window.netlifyIdentity;
+  if (!id) { err("Identity widget failed to load. Refresh the page or check your connection."); }
+
+  btn.addEventListener("click", () => {
+    if (!id) return;
+    busy(true);
+    msg.innerHTML = "";
+    try { id.open("login"); } catch (e) { busy(false); err("Could not open login: " + e.message); }
+  });
+
+  // --- Loop circuit-breaker -----------------------------------------------
+  // If we've redirected to / more than N times in 10 s, stop auto-redirecting
+  // and show a manual "Continue" button. Prevents tight loops when the JWT
+  // race condition kicks in.
+  const LOOP_KEY = "vct-redir";
+  const LOOP_WINDOW_MS = 10000;
+  const LOOP_THRESHOLD = 2;
+  function countAndCheckLoop(){
+    let s; try{ s = JSON.parse(sessionStorage.getItem(LOOP_KEY) || "null"); }catch(_){ s = null; }
+    const now = Date.now();
+    if(!s || (now - s.first) > LOOP_WINDOW_MS) s = { first: now, n: 0 };
+    s.n += 1; sessionStorage.setItem(LOOP_KEY, JSON.stringify(s));
+    return s.n > LOOP_THRESHOLD;
+  }
+  function clearLoop(){ sessionStorage.removeItem(LOOP_KEY); }
+
+  function hasStaffRole(user){
+    const roles = (user && user.app_metadata && user.app_metadata.roles) || [];
+    return roles.indexOf("staff") !== -1;
+  }
+
+  function showContinue(){
+    msg.innerHTML =
+      '<div class="ok">You\'re signed in. Click below to open the handbook.</div>' +
+      '<button class="btn" id="goto-home" style="margin-top:12px">Open the handbook →</button>' +
+      '<button id="logout-link" style="margin-top:14px;background:none;border:0;color:#587184;font-size:.85rem;cursor:pointer;text-decoration:underline">Sign out</button>';
+    document.getElementById("goto-home").onclick = () => { clearLoop(); location.href = "/"; };
+    document.getElementById("logout-link").onclick = () => { clearLoop(); if(id) id.logout(); else location.reload(); };
+  }
+
+  function showNoAccess(email){
+    msg.innerHTML =
+      '<div class="err">Your account (<b>' + (email||"signed in") + '</b>) is signed in but doesn\'t yet have access to this handbook. Ask an admin to grant you the <b>staff</b> role, then sign in again.</div>' +
+      '<button id="logout-link" style="margin-top:14px;background:none;border:0;color:#587184;font-size:.85rem;cursor:pointer;text-decoration:underline">Sign out and try a different account</button>';
+    document.getElementById("logout-link").onclick = () => { clearLoop(); if(id) id.logout(); else location.reload(); };
+  }
+
+  // After login the in-memory user object may be stale — the role set by
+  // identity-validate hasn't propagated to the JWT yet. Force a token refresh
+  // before deciding whether to grant access.
+  async function refreshAndCheck(user){
+    if (!user) return null;
+    try {
+      // gotrue-js: user.jwt(true) returns a fresh JWT and updates the cookie.
+      if (typeof user.jwt === "function") {
+        await user.jwt(true);
+      }
+      // Some widget versions also expose update / getUserData
+      if (typeof user.getUserData === "function") {
+        try { await user.getUserData(); } catch(_){}
+      }
+      // Re-read currentUser so we get the updated app_metadata
+      const fresh = (window.netlifyIdentity && window.netlifyIdentity.currentUser && window.netlifyIdentity.currentUser()) || user;
+      return fresh;
+    } catch(e){
+      console.warn("token refresh failed", e);
+      return user;
+    }
+  }
+  async function handleSignedIn(user){
+    busy(true);
+    lbl.textContent = "Verifying access…";
+    // Up to ~5 s of retries: refresh the JWT and check for the staff role.
+    let attempt = 0;
+    let current = user;
+    while (attempt < 5) {
+      current = await refreshAndCheck(current);
+      if (hasStaffRole(current)) break;
+      attempt++;
+      await new Promise(r => setTimeout(r, 800));
+    }
+    busy(false);
+    if (!hasStaffRole(current)) { showNoAccess(current && current.email); return; }
+    if (countAndCheckLoop()) { showContinue(); return; }
+    ok("Welcome — opening the handbook…");
+    setTimeout(() => location.href = "/", 400);
+  }
+
+  if (id) {
+    id.on("init", (user) => { if (user) handleSignedIn(user); else clearLoop(); });
+    id.on("login", (user) => { id.close(); handleSignedIn(user); });
+    id.on("close", () => busy(false));
+    id.on("error", (e) => {
+      busy(false);
+      const m =
+        (e && (e.json && (e.json.msg || e.json.error_description || e.json.error))) ||
+        (e && e.message) ||
+        (typeof e === "string" ? e : "unknown error");
+      err("Sign-in failed: " + m);
+    });
+    // Some widget versions emit "external_provider_error" or "validation"; surface those too.
+    id.on("external_provider_error", (e) => { busy(false); err("External provider error: " + (e && (e.message || e.msg) || "unknown")); });
+    id.on("validation", (e) => { busy(false); err("Validation: " + (e && (e.message || e.msg) || "rejected")); });
+    try { id.init(); }
+    catch (e) {
+      console.warn("identity init crashed", e);
+      nukeIdentityState();
+      err("Sign-in state was corrupted and has been reset. Reload the page to try again.");
+    }
+    // Clear the one-shot nuke flag once we get this far without errors.
+    setTimeout(()=>{ try{ sessionStorage.removeItem("vct-identity-nuke"); }catch(_){} }, 1500);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Public allow-list — match path-to-path, then catch-all gating below
+/login.html              /login.html              200
+/assets/logo.png         /assets/logo.png         200
+/assets/hero-mark.svg    /assets/hero-mark.svg    200
+/assets/wave-divider.svg /assets/wave-divider.svg 200
+
+# Authenticated route: serve the requested path only if the user has role=staff
+/*                       /:splat                  200!  Role=staff
+
+# Fallback: send everyone else to the login page
+/*                       /login.html              302!
